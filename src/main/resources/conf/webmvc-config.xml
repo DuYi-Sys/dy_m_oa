@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.duyi"/>
+
+    <bean class="org.springframework.web.servlet.view.velocity.VelocityConfigurer" id="velocityConfigurer">
+        <property name="resourceLoaderPath">
+            <value>/templates/</value>
+        </property>
+
+        <property name="velocityProperties">
+            <props>
+                <prop key="input.encoding">gbk</prop>
+                <prop key="output.encoding">gbk</prop>
+                <prop key="directive.foreach.counter.name">loopCounter</prop>
+                <prop key="directive.foreach.counter.initial.value">0</prop>
+                <!--<prop key="velocimacro.library.autoreload">true</prop>-->
+                <!--<prop key="velocimacro.library">macro.vm</prop>-->
+            </props>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver" id="viewResolver">
+        <property name="suffix">
+            <value>.vm</value>
+        </property>
+        <property name="contentType"><value>text/html;charset=UTF-8</value></property>
+        <property name="prefix" value=""/>
+        <property name="cache" value="false"/>
+        <property name="toolboxConfigLocation" value="/WEB-INF/classes/tools.xml"></property>
+        <property name="exposeSpringMacroHelpers" value="true"/>
+        <property name="viewClass" value="com.clibchina.financial.tools.VelocityToolbox20View" />
+        <property name="order" value="0"/>
+        <property name="dateToolAttribute"><value>dateTool</value></property>
+        <property name="numberToolAttribute"><value>numberTool</value></property>
+        <property name="requestContextAttribute" value="rc"></property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver" id="viewResolverSession">
+        <property name="suffix"> <value>.vm</value> </property>
+        <property name="contentType"> <value>text/html;charset=utf-8</value> </property>
+        <property name="exposeSessionAttributes"> <value>true</value> </property>
+    </bean>
+
+
+    <!--<bean id="log4jInitializer" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">-->
+    <!--<property name="targetClass" value="org.springframework.util.Log4jConfigurer"/>-->
+    <!--<property name="targetMethod" value="initLogging"/>-->
+    <!--<property name="arguments">-->
+    <!--<list>-->
+    <!--<value>classpath:conf/log4j.xml</value>-->
+    <!--</list>-->
+    <!--</property>-->
+    <!--</bean>-->
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+</beans>

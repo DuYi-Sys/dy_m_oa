@@ -1,48 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 		http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:component-scan base-package="com.duyi"/>
+    <context:component-scan base-package="com.duyi.oa.dao"></context:component-scan>
 
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${driver}" />
-        <property name="url" value="${url}" />
-        <property name="username" value="${username}" />
-        <property name="password" value="${password}" />
-        <!-- 初始化连接大小 -->
-        <property name="initialSize" value="${initialSize}" />
-        <!-- 连接池最大数量 -->
-        <property name="maxActive" value="${maxActive}" />
-        <!-- 连接池最大空闲 -->
-        <property name="maxIdle" value="${maxIdle}" />
-        <!-- 连接池最小空闲 -->
-        <property name="minIdle" value="${minIdle}" />
-        <!-- 获取连接最大等待时间 -->
-        <property name="maxWait" value="${maxWait}" />
+    <!--2 配置C3P0数据源 -->
+    <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <!--驱动类名 -->
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <!-- url -->
+        <property name="jdbcUrl" value="jdbc:mysql://47.106.168.190:3306/duyi_core?useUnicode=true&amp;characterEncoding=utf8" />
+        <!-- 用户名 -->
+        <property name="user" value="root" />
+        <!-- 密码 -->
+        <property name="password" value="alkf@xpdw" />
+        <!-- 当连接池中的连接耗尽的时候c3p0一次同时获取的连接数  -->
+        <property name="acquireIncrement" value="5"></property>
+        <!-- 初始连接池大小 -->
+        <property name="initialPoolSize" value="10"></property>
+        <!-- 连接池中连接最小个数 -->
+        <property name="minPoolSize" value="5"></property>
+        <!-- 连接池中连接最大个数 -->
+        <property name="maxPoolSize" value="20"></property>
     </bean>
 
-    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <!--3 会话工厂bean sqlSessionFactoryBean -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <!-- 自动扫描mapping.xml文件，**表示迭代查找 -->
-        <property name="mapperLocations" value="classpath:com/duyi/oa/dao/**/*.xml" />
+        <!-- 数据源 -->
+        <property name="dataSource" ref="datasource"></property>
+        <!-- 别名 -->
+        <property name="typeAliasesPackage" value="com.duyi.oa.dao"></property>
+        <!-- sql映射文件路径 -->
+        <property name="mapperLocations" value="classpath*:com/duyi/oa/dao/*Mapper.xml"></property>
     </bean>
 
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 ,包下的类需要使用@MapperScan注解,否则容器注入会失败 -->
+    <!--4 自动扫描对象关系映射 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.hua.saf.*" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <!--指定会话工厂，如果当前上下文中只定义了一个则该属性可省去 -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+        <!-- 指定要自动扫描接口的基础包，实现接口 -->
+        <property name="basePackage" value="com.duyi.oa.dao"></property>
     </bean>
 
-    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
-    </bean>
+    <!--5 声明式事务管理 -->
+    <!--定义事物管理器，由spring管理事务 -->
+    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+        <!--<property name="dataSource" ref="datasource"></property>-->
+    <!--</bean>-->
+    <!--支持注解驱动的事务管理，指定事务管理器 -->
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+    <!--6 容器自动扫描IOC组件  -->
+
+
+    <!--7 aspectj支持自动代理实现AOP功能 -->
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 
 
     <!--<bean id="log4jInitializer" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">-->

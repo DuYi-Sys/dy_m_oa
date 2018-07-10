@@ -1,0 +1,6 @@
+<mapper namespace="com.duyi.oa.dao.TestDao">
+    　　<!-- 根据id查询得到一个user对象-->
+    　　<select id="getAll" parameterType="int" resultType="com.duyi.oa.domain.Test">
+    　　　　   select * from test;
+    　　</select>
+</mapper>

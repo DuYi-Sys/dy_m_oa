@@ -9,43 +9,39 @@
 
     <context:component-scan base-package="com.duyi"/>
 
-    <bean class="org.springframework.web.servlet.view.velocity.VelocityConfigurer" id="velocityConfigurer">
-        <property name="resourceLoaderPath">
-            <value>/templates/</value>
-        </property>
-
-        <property name="velocityProperties">
-            <props>
-                <prop key="input.encoding">gbk</prop>
-                <prop key="output.encoding">gbk</prop>
-                <prop key="directive.foreach.counter.name">loopCounter</prop>
-                <prop key="directive.foreach.counter.initial.value">0</prop>
-                <!--<prop key="velocimacro.library.autoreload">true</prop>-->
-                <!--<prop key="velocimacro.library">macro.vm</prop>-->
-            </props>
-        </property>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${driver}" />
+        <property name="url" value="${url}" />
+        <property name="username" value="${username}" />
+        <property name="password" value="${password}" />
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="${initialSize}" />
+        <!-- 连接池最大数量 -->
+        <property name="maxActive" value="${maxActive}" />
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${maxIdle}" />
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${minIdle}" />
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${maxWait}" />
     </bean>
 
-    <bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver" id="viewResolver">
-        <property name="suffix">
-            <value>.vm</value>
-        </property>
-        <property name="contentType"><value>text/html;charset=UTF-8</value></property>
-        <property name="prefix" value=""/>
-        <property name="cache" value="false"/>
-        <property name="toolboxConfigLocation" value="/WEB-INF/classes/tools.xml"></property>
-        <property name="exposeSpringMacroHelpers" value="true"/>
-        <property name="viewClass" value="com.clibchina.financial.tools.VelocityToolbox20View" />
-        <property name="order" value="0"/>
-        <property name="dateToolAttribute"><value>dateTool</value></property>
-        <property name="numberToolAttribute"><value>numberTool</value></property>
-        <property name="requestContextAttribute" value="rc"></property>
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 自动扫描mapping.xml文件，**表示迭代查找 -->
+        <property name="mapperLocations" value="classpath:com/duyi/oa/dao/**/*.xml" />
     </bean>
 
-    <bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver" id="viewResolverSession">
-        <property name="suffix"> <value>.vm</value> </property>
-        <property name="contentType"> <value>text/html;charset=utf-8</value> </property>
-        <property name="exposeSessionAttributes"> <value>true</value> </property>
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 ,包下的类需要使用@MapperScan注解,否则容器注入会失败 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.hua.saf.*" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
     </bean>
 
 

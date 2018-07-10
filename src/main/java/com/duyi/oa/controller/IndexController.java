@@ -8,9 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by changlifeng on 16/11/25.
- */
 @Controller
 public class IndexController {
 
@@ -26,7 +23,7 @@ public class IndexController {
     @RequestMapping(value = "/")
     @ResponseBody
     public ModelAndView index() {
-        return new ModelAndView("main");
+        return new ModelAndView("index.html");
     }
 
 }

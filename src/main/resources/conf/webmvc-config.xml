@@ -46,7 +46,7 @@
         <!--指定会话工厂，如果当前上下文中只定义了一个则该属性可省去 -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
         <!-- 指定要自动扫描接口的基础包，实现接口 -->
-        <property name="basePackage" value="com.duyi.oa.dao"></property>
+        <property name="basePackage" value="com.duyi.oa.dao,com.duyi.admin.dao"></property>
     </bean>
 
     <!--5 声明式事务管理 -->

@@ -1,0 +1,7 @@
+*.class
+*.jar
+*.war
+/WEB-INF/*
+/target/*
+.project
+/.settings/*

@@ -5,16 +5,19 @@ package com.duyi.admin.service;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import com.duyi.admin.dao.AdminUserDao;
 import com.duyi.admin.domain.AdminUserInfo;
+import com.duyi.commons.log.Trace;
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.commons.page.PageableExecutionUtils;
 import com.duyi.commons.page.PageableExecutionUtils.TotalSupplier;
+import com.duyi.security.PasswordEncoder;
 import com.google.common.base.Strings;
 
 /**
@@ -24,8 +27,13 @@ import com.google.common.base.Strings;
 @Service
 public class AdminUserServiceImpl implements IAdminUserService {
 
+	private static Trace log=Trace.register(AdminUserServiceImpl.class);
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	@Autowired
 	private AdminUserDao userDao;
+
+	
 	/* (non-Javadoc)
 	 * @see com.duyi.admin.service.IAdminUserService#getByUsername(java.lang.String)
 	 */
@@ -41,9 +49,10 @@ public class AdminUserServiceImpl implements IAdminUserService {
 	public AdminUserInfo addAdminUser(AdminUserInfo user) {
 		Assert.notNull(user);
 		if(!Strings.isNullOrEmpty(user.getUnencodePassword()) ) {
-			user.setCredential(encodePasssword(user.getUnencodePassword()));
+			user.setCredential(passwordEncoder.encode(user.getUnencodePassword()));
 		}
-		return userDao.add(user);
+		userDao.add(user);
+		return user;
 	}
 
 	/* (non-Javadoc)
@@ -53,7 +62,7 @@ public class AdminUserServiceImpl implements IAdminUserService {
 	public AdminUserInfo modifyAdminUser(AdminUserInfo user) {
 		Assert.notNull(user);
 		if(!Strings.isNullOrEmpty(user.getUnencodePassword()) ) {
-			user.setCredential(encodePasssword(user.getUnencodePassword()));
+			user.setCredential(passwordEncoder.encode(user.getUnencodePassword()));
 		}
 		return userDao.update(user);
 	}
@@ -65,7 +74,17 @@ public class AdminUserServiceImpl implements IAdminUserService {
 	public Page<AdminUserInfo> findUsers(Pageable pageable) {
 		int startPosition=pageable.getOffset();
 		int maxResult=pageable.getPageSize();
-		List<AdminUserInfo> users=userDao.findAll(startPosition, maxResult);
+		log.info("startPosition:"+startPosition);
+		log.info("maxResult:"+maxResult);
+		RowBounds bounds=new RowBounds(startPosition,maxResult);
+		List<AdminUserInfo> users=userDao.findPageAll(bounds);
+//		for(AdminUserInfo userInfo : users) {
+//			log.info("userId"+userInfo.getId());
+//			List<AdminRoleInfo> roles=roleDao.findByUserId(userInfo.getId());
+//			log.info("roles"+roles);
+//
+//			userInfo.setRoles(roles);
+//		}
 		return PageableExecutionUtils.getPage(users, pageable, new TotalSupplier() {
 
 			@Override
@@ -81,10 +100,14 @@ public class AdminUserServiceImpl implements IAdminUserService {
 	 */
 	@Override
 	public Page<AdminUserInfo> findUsersByUsername(Pageable pageable,final String username) {
-
+		if(Strings.isNullOrEmpty(username)) {
+			return findUsers(pageable);
+		}
 		int startPosition=pageable.getOffset();
 		int maxResult=pageable.getPageSize();
-		List<AdminUserInfo> users=userDao.findByUsername(username, startPosition, maxResult);
+		RowBounds bounds=new RowBounds(startPosition,maxResult);
+
+		List<AdminUserInfo> users=userDao.findByUsername(username, bounds);
 		return PageableExecutionUtils.getPage(users, pageable, new TotalSupplier() {
 
 			@Override
@@ -94,7 +117,7 @@ public class AdminUserServiceImpl implements IAdminUserService {
 			
 		});
 	}
-	private String encodePasssword(String unencodePassword) {
-		return unencodePassword;
-	}
+
+
+
 }

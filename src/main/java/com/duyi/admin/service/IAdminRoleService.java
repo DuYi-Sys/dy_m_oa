@@ -14,8 +14,13 @@ import com.duyi.commons.page.Pageable;
  *
  */
 public interface IAdminRoleService {
+	AdminRoleInfo getById(Long id);
+
 	AdminRoleInfo getByName(String name);
 	AdminRoleInfo addRole(AdminRoleInfo role);
+	void addRoleUsers(Long roleId,Long[] userIds);
+	void addRoleOperations(Long roleId,Long[] operationIds);
+
 	AdminRoleInfo modifyRole(AdminRoleInfo role);
 	Page<AdminRoleInfo> findRoles(Pageable pageable);
 	List<AdminRoleInfo> findAllRoles();

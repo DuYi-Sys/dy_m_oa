@@ -3,9 +3,9 @@
  */
 package com.duyi.admin.domain;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * @author wangyan
@@ -18,13 +18,15 @@ public class AdminUserInfo  {
 	protected String username;
 	protected String name;
 	
+	@JsonIgnore
 	protected String credential;
 	
 	protected boolean actived=true;
 	
 	protected String unencodePassword;
 
-	protected List<AdminRoleInfo> roles;
+	private List<AdminRoleInfo> roles;
+
 	public String getUsername() {
 		return this.username;
 	}
@@ -40,20 +42,14 @@ public class AdminUserInfo  {
 	}
 
 
-
-	public List<AdminRoleInfo> getRoles() {
-		return roles;
-	}
-
-
 	public Long getId() {
-		return this.id;
+		return id;
 	}
+
 
 	public void setId(Long id) {
-		this.id=id;
+		this.id = id;
 	}
-
 
 
 	public boolean isActived() {
@@ -88,9 +84,15 @@ public class AdminUserInfo  {
 	}
 
 
+	public List<AdminRoleInfo> getRoles() {
+		return roles;
+	}
+
+
 	public void setRoles(List<AdminRoleInfo> roles) {
 		this.roles = roles;
 	}
+
 
 
 

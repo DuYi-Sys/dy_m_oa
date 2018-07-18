@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.duyi.admin.domain.AdminRoleInfo;
 import com.duyi.admin.service.IAdminRoleService;
+import com.duyi.commons.log.Trace;
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 
@@ -26,6 +26,7 @@ import com.duyi.commons.page.Pageable;
 @RequestMapping("/api/adminroles")
 public class AdminRoleApiController {
 
+	private static Trace log=Trace.register(AdminRoleApiController.class);
 	@Autowired
 	private IAdminRoleService roleService;
 	
@@ -41,15 +42,25 @@ public class AdminRoleApiController {
 		return roleService.modifyRole(role);
 		 
 	}
+	@RequestMapping(value="/{id}/users",method=RequestMethod.POST,consumes="application/json")
+	public void addRoleUsers(@PathVariable Long id, @RequestBody Long[] userIds) {
+		roleService.addRoleUsers(id, userIds);
+		
+	}
+	@RequestMapping(value="/{id}/operations",method=RequestMethod.POST,consumes="application/json")
+	public void addRoleOperations(@PathVariable Long id, @RequestBody Long[] operationIds) {
+//		roleService.addRoleUsers(id, userIds);
+		
+	}
 	
-	@RequestMapping(method=RequestMethod.GET, produces="application/json",consumes="application/json")
-	public Page<AdminRoleInfo> findAdminRoles(Pageable pageable,@RequestParam(name="name") String name) {
+	@RequestMapping(method=RequestMethod.GET, produces="application/json")
+	public Page<AdminRoleInfo> findAdminRoles(Pageable pageable, String name) {
 		return roleService.findRolesByName(name, pageable);
 	}
 	
-	@RequestMapping(value="/{name}",method=RequestMethod.GET)
-	public AdminRoleInfo findRole(@PathVariable String name) {
-		return roleService.getByName(name);
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
+	public AdminRoleInfo findRole(@PathVariable Long id) {
+		return roleService.getById(id);
 	}
 	
 	@RequestMapping(value="all",method=RequestMethod.GET)

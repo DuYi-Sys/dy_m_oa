@@ -36,5 +36,31 @@
         <servlet-name>appServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+<!--     <filter>
+    	<filter-name>testFilter</filter-name>
+    	<filter-class>com.duyi.security.filter.TestFilter</filter-class>
+    </filter>
+        <filter-mapping>
+        <filter-name>testFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> -->
+    <filter>
+        <filter-name>DelegatingFilterProxy</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetBeanName</param-name>
+            <!-- 自定义filter -->
+            <param-value>filterChainProxy</param-value>
+        </init-param>
+        <init-param>
+        	<!-- 判断targetFilterLifecycle属性是false还是true,决定是否调用自定义类的init()、destry()方法 -->
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>DelegatingFilterProxy</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

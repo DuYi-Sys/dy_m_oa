@@ -5,7 +5,5 @@ import java.util.List;
 
 
 public interface TestDao {
-
     public List<Test> getAll();
-
 }

@@ -44,7 +44,7 @@
 	            <property name="mapUnderscoreToCamelCase" value="true"/>
 	        </bean>
 	    </property>
-        
+
     </bean>
 
     <!--4 自动扫描对象关系映射 -->
@@ -55,6 +55,10 @@
         <property name="basePackage" value="com.duyi.oa.dao,com.duyi.admin.dao"></property>
     </bean>
 
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="datasource"></property>
+    </bean>
+
     <!--5 声明式事务管理 -->
     <!--定义事物管理器，由spring管理事务 -->
     <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
@@ -62,13 +66,10 @@
     <!--</bean>-->
     <!--支持注解驱动的事务管理，指定事务管理器 -->
     <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
-
     <!--6 容器自动扫描IOC组件  -->
-
 
     <!--7 aspectj支持自动代理实现AOP功能 -->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
-
 
     <!--<bean id="log4jInitializer" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">-->
     <!--<property name="targetClass" value="org.springframework.util.Log4jConfigurer"/>-->

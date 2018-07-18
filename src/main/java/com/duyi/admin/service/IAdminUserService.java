@@ -12,10 +12,10 @@ import com.duyi.commons.page.Pageable;
  *
  */
 public interface IAdminUserService {
+	
 	AdminUserInfo getByUsername(String username);
 	AdminUserInfo addAdminUser(AdminUserInfo user);
 	AdminUserInfo modifyAdminUser(AdminUserInfo user);
-
 	Page<AdminUserInfo> findUsers(Pageable pageable);
 	Page<AdminUserInfo> findUsersByUsername(Pageable pageable,String username);
 }

@@ -4,6 +4,7 @@
 package com.duyi.admin.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,17 +37,14 @@ public class AdminOperationApiController {
 	
 	@RequestMapping(method= {RequestMethod.PUT, RequestMethod.PATCH},produces="application/json",consumes="application/json")
 	public AdminOperationInfo updateOperation(@RequestBody  AdminOperationInfo operation) {
-
 		return operationService.modifyOperation(operation);
-		 
 	}
-	
-	@RequestMapping(method=RequestMethod.GET, produces="application/json",consumes="application/json")
-	public Page<AdminOperationInfo> findAdminOperations( Pageable pageable,@RequestParam(name="name") String name) {
-		Page<AdminOperationInfo> page=operationService.findAllByName(pageable, name);
+	@RequestMapping(method=RequestMethod.GET, produces="application/json")
+	public Page<AdminOperationInfo> findAdminOperations( Pageable pageable) {
+		Page<AdminOperationInfo> page=operationService.findAll(pageable);
 		return page;
 	}
-	
+
 	@RequestMapping(method=RequestMethod.DELETE)
 	public void deleteOperation(@RequestParam(name="id")Long id) {
 		operationService.deleteAdminOperation(id);

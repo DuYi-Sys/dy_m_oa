@@ -9,7 +9,6 @@ package com.duyi.admin.domain;
  */
 
 public class AdminOperationInfo{
-
 	/**
 	 * 
 	 */
@@ -20,6 +19,7 @@ public class AdminOperationInfo{
 	
 	private String path;
 	
+	private String operation;
 	
 
 	public Long getId() {
@@ -37,7 +37,14 @@ public class AdminOperationInfo{
 	}
 
 
+	public String getOperation() {
+		return operation;
+	}
 
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+	}
 
 
 	public void setId(Long id) {
@@ -50,6 +57,12 @@ public class AdminOperationInfo{
 
 	public void setPath(String path) {
 		this.path = path;
+	}
+
+
+	@Override
+	public String toString() {
+		return "AdminOperationInfo [id=" + id + ", name=" + name + ", path=" + path + ", operation=" + operation + "]";
 	}
 
 

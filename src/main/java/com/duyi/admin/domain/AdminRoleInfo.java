@@ -17,10 +17,6 @@ public class AdminRoleInfo  {
 	
 	private String cnName;
 
-	private List<AdminDeptInfo> depts;
-	
-	private List<AdminMenuInfo> menus;
-	
 	private List<AdminOperationInfo> operations;
 	public Long getId() {
 		return id;
@@ -44,26 +40,6 @@ public class AdminRoleInfo  {
 
 	public void setCnName(String cnName) {
 		this.cnName = cnName;
-	}
-
-
-	public List<AdminDeptInfo> getDepts() {
-		return depts;
-	}
-
-
-	public void setDepts(List<AdminDeptInfo> depts) {
-		this.depts = depts;
-	}
-
-
-	public List<AdminMenuInfo> getMenus() {
-		return menus;
-	}
-
-
-	public void setMenus(List<AdminMenuInfo> menus) {
-		this.menus = menus;
 	}
 
 

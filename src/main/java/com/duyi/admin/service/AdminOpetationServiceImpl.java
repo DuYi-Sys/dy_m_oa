@@ -5,6 +5,7 @@ package com.duyi.admin.service;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -29,8 +30,8 @@ public class AdminOpetationServiceImpl implements IAdminOperationService {
 	 * @see com.duyi.admin.service.IAdminOpetationService#getByPath(java.lang.String)
 	 */
 	@Override
-	public AdminOperationInfo getByPath(String path) {
-		return operationDao.getByPath(path);
+	public List<AdminOperationInfo> findByPath(String path) {
+		return operationDao.findByPath(path);
 	}
 
 	/* (non-Javadoc)
@@ -39,7 +40,8 @@ public class AdminOpetationServiceImpl implements IAdminOperationService {
 	@Override
 	public AdminOperationInfo addOperation(AdminOperationInfo operation) {
 		Assert.notNull(operation);
-		return operationDao.add(operation);
+		int row=operationDao.add(operation);
+		return operation;
 	}
 
 	/* (non-Javadoc)
@@ -48,7 +50,8 @@ public class AdminOpetationServiceImpl implements IAdminOperationService {
 	@Override
 	public AdminOperationInfo modifyOperation(AdminOperationInfo operation) {
 		Assert.notNull(operation);
-		return operationDao.update(operation);
+		int row=operationDao.update(operation);
+		return operation;
 	}
 
 
@@ -61,31 +64,16 @@ public class AdminOpetationServiceImpl implements IAdminOperationService {
 		operationDao.deleteById(id);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.duyi.admin.service.IAdminOperationService#findByName(com.duyi.commons.page.Pageable, java.lang.String)
-	 */
-	@Override
-	public Page<AdminOperationInfo> findAllByName(Pageable pageable, String name) {
-		int startPosition=pageable.getOffset();
-		int maxResult=pageable.getPageSize();
-		List<AdminOperationInfo> operations=operationDao.findAllByName(startPosition, maxResult, name);
-		return PageableExecutionUtils.getPage(operations, pageable, new TotalSupplier() {
-			@Override
-			public long get() {
-				return operationDao.getCountByName();
-			}
-			
-		});
-	}
+
 
 	/* (non-Javadoc)
 	 * @see com.duyi.admin.service.IAdminOperationService#findAll(com.duyi.commons.page.Pageable)
 	 */
 	@Override
 	public Page<AdminOperationInfo> findAll(Pageable pageable) {
-		int startPosition=pageable.getOffset();
-		int maxResult=pageable.getPageSize();
-		List<AdminOperationInfo> operations=operationDao.findAll(startPosition, maxResult);
+		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+
+		List<AdminOperationInfo> operations=operationDao.findAll(bounds);
 		return PageableExecutionUtils.getPage(operations, pageable, new TotalSupplier() {
 			@Override
 			public long get() {

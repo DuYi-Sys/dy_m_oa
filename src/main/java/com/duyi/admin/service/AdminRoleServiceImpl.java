@@ -5,12 +5,16 @@ package com.duyi.admin.service;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import com.duyi.admin.dao.AdminRoleDao;
 import com.duyi.admin.domain.AdminRoleInfo;
+import com.duyi.commons.log.Trace;
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.commons.page.PageableExecutionUtils;
@@ -24,6 +28,7 @@ import com.google.common.base.Strings;
 @Service
 public class AdminRoleServiceImpl implements IAdminRoleService {
 
+	private static Trace log=Trace.register(AdminRoleServiceImpl.class);
 	@Autowired
 	private AdminRoleDao roleDao;
 	/* (non-Javadoc)
@@ -40,8 +45,8 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	@Override
 	public AdminRoleInfo addRole(AdminRoleInfo role) {
 		Assert.notNull(role);
-		return roleDao.add(role);
-
+		roleDao.add(role);
+		return role;
 	}
 
 	/* (non-Javadoc)
@@ -50,7 +55,8 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	@Override
 	public AdminRoleInfo modifyRole(AdminRoleInfo role) {
 		Assert.notNull(role);
-		return roleDao.update(role);
+		roleDao.update(role);
+		return role;
 	}
 
 	/* (non-Javadoc)
@@ -58,17 +64,13 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	 */
 	@Override
 	public Page<AdminRoleInfo> findRoles(Pageable pageable) {
-		int startPosition=pageable.getOffset();
-		int maxResult=pageable.getPageSize();
-		
-		List<AdminRoleInfo> roles=roleDao.findAll(startPosition, maxResult);
+		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+		List<AdminRoleInfo> roles=roleDao.findAll(bounds);
 		return PageableExecutionUtils.getPage(roles, pageable, new TotalSupplier() {
-
 			@Override
 			public long get() {
 				return roleDao.getCount();
 			}
-			
 		});
 	}
 
@@ -77,7 +79,7 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	 */
 	@Override
 	public List<AdminRoleInfo> findAllRoles() {
-		return roleDao.findAll();
+		return roleDao.findAll(null);
 	}
 
 	/* (non-Javadoc)
@@ -90,8 +92,9 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 		}
 		int startPosition=pageable.getOffset();
 		int maxResult=pageable.getPageSize();
-		
-		List<AdminRoleInfo> roles=roleDao.findByName(startPosition, maxResult, name);
+		RowBounds bounds=new RowBounds(startPosition,maxResult);
+
+		List<AdminRoleInfo> roles=roleDao.findByName(bounds, name);
 		return PageableExecutionUtils.getPage(roles, pageable, new TotalSupplier() {
 
 			@Override
@@ -101,5 +104,45 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 			
 		});
 	}
+
+	/* (non-Javadoc)
+	 * @see com.duyi.admin.service.IAdminRoleService#AddRoleUsers(java.lang.Long, java.lang.Long[])
+	 */
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void addRoleUsers(Long roleId, Long[] userIds) {
+		for(Long userId:userIds) {
+			log.info("roleId:"+roleId+", userIds:"+userId);
+			AdminRoleInfo roleInfo=roleDao.getByRoleIdAndUserId(roleId, userId);
+			if(roleInfo==null) {
+				roleDao.addRoleUsers(roleId, userId);
+			}
+		}
+	}
+
+	/* (non-Javadoc)
+	 * @see com.duyi.admin.service.IAdminRoleService#getById(java.lang.Long)
+	 */
+	@Override
+	public AdminRoleInfo getById(Long id) {
+		return roleDao.getById(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.duyi.admin.service.IAdminRoleService#addRoleOperations(java.lang.Long, java.lang.Long[])
+	 */
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void addRoleOperations(Long roleId, Long[] operationIds) {
+		for(Long operationId:operationIds) {
+			log.info("roleId:"+roleId+", operationIds:"+operationId);
+			AdminRoleInfo roleInfo=roleDao.getByRoleIdAndOperationId(roleId, operationId);
+			if(roleInfo==null) {
+				roleDao.addRoleOperations(roleId, operationId);
+			}
+		}
+	}
+
+
 
 }

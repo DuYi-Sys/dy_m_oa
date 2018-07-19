@@ -3,7 +3,9 @@
  */
 package com.duyi.admin.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.util.Assert;
 
 import com.duyi.admin.dao.AdminOperationDao;
 import com.duyi.admin.domain.AdminOperationInfo;
+import com.duyi.commons.log.Trace;
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.commons.page.PageableExecutionUtils;
@@ -22,10 +25,13 @@ import com.duyi.commons.page.PageableExecutionUtils.TotalSupplier;
  *
  */
 @Service
-public class AdminOpetationServiceImpl implements IAdminOperationService {
+public class AdminOpetationServiceImpl  implements IAdminOperationService {
 
+	private static Trace log=Trace.register(AdminOpetationServiceImpl.class);
+	
 	@Autowired
 	private AdminOperationDao operationDao;
+	
 	/* (non-Javadoc)
 	 * @see com.duyi.admin.service.IAdminOpetationService#getByPath(java.lang.String)
 	 */
@@ -82,5 +88,10 @@ public class AdminOpetationServiceImpl implements IAdminOperationService {
 			
 		});
 	}
+
+
+
+
+
 
 }

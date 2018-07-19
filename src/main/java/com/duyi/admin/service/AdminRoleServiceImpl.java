@@ -25,7 +25,7 @@ import com.google.common.base.Strings;
  * @author wangyan
  *
  */
-@Service
+@Service("adminRoleService")
 public class AdminRoleServiceImpl implements IAdminRoleService {
 
 	private static Trace log=Trace.register(AdminRoleServiceImpl.class);
@@ -65,7 +65,7 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	@Override
 	public Page<AdminRoleInfo> findRoles(Pageable pageable) {
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
-		List<AdminRoleInfo> roles=roleDao.findAll(bounds);
+		List<AdminRoleInfo> roles=roleDao.findPageAll(bounds);
 		return PageableExecutionUtils.getPage(roles, pageable, new TotalSupplier() {
 			@Override
 			public long get() {
@@ -79,7 +79,7 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	 */
 	@Override
 	public List<AdminRoleInfo> findAllRoles() {
-		return roleDao.findAll(null);
+		return roleDao.findAll();
 	}
 
 	/* (non-Javadoc)

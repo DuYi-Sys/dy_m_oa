@@ -15,7 +15,9 @@ import com.duyi.admin.service.IAdminUserService;
 import com.duyi.commons.log.Trace;
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
+import com.duyi.security.PasswordEncoder;
 import com.duyi.security.SecurityContextHolder;
+import com.duyi.security.model.UserDetails;
 
 /**
  * @author wangyan
@@ -28,7 +30,8 @@ public class AdminUserApiController {
 	private static Trace log=Trace.register(AdminUserApiController.class);
 	@Autowired
 	private IAdminUserService adminUserService;
-
+	@Autowired
+	private PasswordEncoder encoder;
 	
 	
 	@RequestMapping(method=RequestMethod.POST,consumes="application/json")
@@ -61,13 +64,30 @@ public class AdminUserApiController {
 	
 	@RequestMapping(value="/{username}",method=RequestMethod.GET)
 	public AdminUserInfo findUser(@PathVariable String username) {
-		log.info("current user"+SecurityContextHolder.getContext().getPrincipal().getUsername());
-		AdminUserInfo adminUserInfo=new AdminUserInfo();
-		adminUserInfo.setName("abc");
-		return adminUserInfo;
+		
+		return adminUserService.getByUsername(username);
 //		return adminUserService.getByUsername(username);
 	}
-
-	
-	
+	@RequestMapping(value="/current",method=RequestMethod.GET)
+	public AdminUserInfo getCurrentUser() {
+		String username =SecurityContextHolder.getContext().getPrincipal().getUsername();
+		log.info("=======user name"+username);
+		return adminUserService.getByUsername(username);
+	}
+	@RequestMapping(value="/modifyPwd",method=RequestMethod.POST)
+	public String modifyPassword(String oldPassword,String unencodePassword) {
+		log.info("oldPassword:"+oldPassword+"unencodePassword:"+unencodePassword);
+		String username =SecurityContextHolder.getContext().getPrincipal().getUsername();
+		log.info("=======user name"+username);
+		AdminUserInfo adminUserInfo=adminUserService.getByUsername(username);
+		if(encoder.matches(oldPassword, adminUserInfo.getCredential())) {
+			adminUserInfo.setUnencodePassword(unencodePassword);
+			adminUserService.modifyAdminUser(adminUserInfo);
+			return "1";
+		}else {
+			return "-1";
+		}
+		
+		
+	}
 }

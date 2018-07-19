@@ -21,7 +21,8 @@ public class AdminOperationInfo{
 	
 	private String operation;
 	
-
+	
+	
 	public Long getId() {
 		return id;
 	}

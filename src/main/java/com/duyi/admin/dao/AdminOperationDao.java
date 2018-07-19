@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.session.RowBounds;
 
 import com.duyi.admin.domain.AdminOperationInfo;
@@ -16,17 +17,21 @@ import com.duyi.admin.domain.AdminOperationInfo;
  *
  */
 public interface AdminOperationDao {
-	AdminOperationInfo getByPath(String path);
+	
 	
 	@Insert("INSERT INTO admin_operation(NAME, `PATH`, OPERATION) VALUES(#{name}, #{path}, #{operation})")
 	int add(AdminOperationInfo operation);
+	
+	@Update("UPDATE admin_operation set NAME=#{name}, PATH=#{path},OPERATION=#{operation} WHERE id=#{id}")
 	int update(AdminOperationInfo operation);
+	
 	void deleteById(Long id);
 	@Select("select count(id) from admin_operation")
 	int getCount();
 
 	@Select("select * from admin_operation")
 	List<AdminOperationInfo> findAll(RowBounds brounds);
+	@Select("select * from admin_operation where id=#{id}")
 	AdminOperationInfo findById(Long id);
 	@Select("select o.* from admin_operation o left join admin_role_operation ro on o.id=ro.operation_id where ro.role_id=#{roleId} ")
 	List<AdminOperationInfo> findByRoleId(Long roleId);

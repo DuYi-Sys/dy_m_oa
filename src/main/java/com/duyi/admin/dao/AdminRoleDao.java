@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.session.RowBounds;
 
 import com.duyi.admin.domain.AdminRoleInfo;
@@ -23,7 +24,7 @@ public interface AdminRoleDao {
 	
 	@Insert( "INSERT INTO admin_role  ( NAME, CN_NAME)  VALUES(#{name},#{cnName} ) " )
 	int add(AdminRoleInfo role);
-	
+	@Update("UPDATE admin_role set NAME=#{name}, CN_NAME=#{cnName} WHERE id=#{id}")
 	int update(AdminRoleInfo role);
 	@Insert("INSERT INTO admin_role_user (ROLE_ID,USER_ID) VALUES(#{roleId},#{userId})")
 	int addRoleUsers(@Param("roleId") Long roleId,@Param("userId") Long userId);

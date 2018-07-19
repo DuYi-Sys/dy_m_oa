@@ -35,7 +35,7 @@ public interface AdminUserDao {
 	List<AdminUserInfo> findPageAll(RowBounds brounds);
 	@Select("select * from admin_user where username like  concat('%', #{username}, '%')")
 	List<AdminUserInfo> findByUsername(String username,RowBounds brounds);
-
+	@Select("select * from admin_user where id=#{id} ")
 	AdminUserInfo getById(Long id);
 	@Select("select * from admin_user where username=#{username}")
 	@Results({

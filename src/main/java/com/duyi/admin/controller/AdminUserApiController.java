@@ -17,7 +17,6 @@ import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.security.PasswordEncoder;
 import com.duyi.security.SecurityContextHolder;
-import com.duyi.security.model.UserDetails;
 
 /**
  * @author wangyan

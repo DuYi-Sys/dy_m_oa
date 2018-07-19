@@ -19,6 +19,7 @@ import org.springframework.web.filter.GenericFilterBean;
 
 import com.duyi.admin.domain.AdminOperationInfo;
 import com.duyi.admin.service.IAdminOperationService;
+import com.duyi.admin.service.IPermissionService;
 import com.duyi.commons.log.Trace;
 import com.duyi.security.PasswordEncoder;
 import com.duyi.security.SecurityContextHolder;
@@ -49,6 +50,8 @@ public class LoginFilter extends GenericFilterBean {
 	private IJwtGenerator jwtGenerator;
 	@Autowired
 	private IAdminOperationService operationService;
+	@Autowired
+	private IPermissionService permissionService;
 	/* (non-Javadoc)
 	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
@@ -97,7 +100,7 @@ public class LoginFilter extends GenericFilterBean {
 			}
 			
 			//是否有权限
-			if (!hasPermission(path,servletRequest.getMethod())) {
+			if (!permissionService.hasPermission(path, servletRequest.getMethod(), jwtUser.getRoles().toArray(new String[jwtUser.getRoles().size()]))) {
 				servletResponse.sendRedirect(forbiddenPath);
 				return;
 

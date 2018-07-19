@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.session.RowBounds;
 
 import com.duyi.admin.domain.AdminUserInfo;
@@ -24,7 +25,8 @@ public interface AdminUserDao {
 			"values(#{actived}, #{credential}, #{name}, #{username})")
 //    @Options(useGeneratedKeys=true,keyProperty="id")
 	Long add(AdminUserInfo user);
-	AdminUserInfo update(AdminUserInfo user);
+	@Update("UPDATE admin_user set actived=#{actived}, credential=#{credential}, username=#{username} WHERE id=#{id}")
+	int update(AdminUserInfo user);
 	@Select("select * from admin_user ")
 	@Results({
 		@Result(property="id",column="id"),

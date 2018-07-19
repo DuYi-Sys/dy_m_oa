@@ -64,7 +64,8 @@ public class AdminUserServiceImpl implements IAdminUserService {
 		if(!Strings.isNullOrEmpty(user.getUnencodePassword()) ) {
 			user.setCredential(passwordEncoder.encode(user.getUnencodePassword()));
 		}
-		return userDao.update(user);
+		userDao.update(user);
+		return user;
 	}
 
 	/* (non-Javadoc)

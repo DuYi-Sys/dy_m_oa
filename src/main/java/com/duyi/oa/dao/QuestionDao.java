@@ -8,8 +8,6 @@ import java.util.HashMap;
 import org.apache.ibatis.annotations.*;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 public interface QuestionDao {
     public HashMap<String, String> getGetUrlParams(HttpServletRequest request);
     public HashMap<String, String> getPostUrlParams(HttpServletRequest request);

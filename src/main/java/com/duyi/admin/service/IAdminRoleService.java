@@ -25,5 +25,5 @@ public interface IAdminRoleService {
 	Page<AdminRoleInfo> findRoles(Pageable pageable);
 	List<AdminRoleInfo> findAllRoles();
 	Page<AdminRoleInfo> findRolesByName(String name,Pageable pageable);
-
+	void delete(Long id);
 }

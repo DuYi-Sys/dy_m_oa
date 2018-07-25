@@ -25,7 +25,9 @@ public interface AdminRoleDao {
 	
 	@Insert( "INSERT INTO admin_role  ( NAME, CN_NAME)  VALUES(#{name},#{cnName} ) " )
 	int add(AdminRoleInfo role);
+
 	@Update("UPDATE admin_role set name=#{name}, cn_name=#{cnName} WHERE id=#{id}")
+
 	int update(AdminRoleInfo role);
 	@Insert("INSERT INTO admin_role_user (ROLE_ID,USER_ID) VALUES(#{roleId},#{userId})")
 	int addRoleUsers(@Param("roleId") Long roleId,@Param("userId") Long userId);

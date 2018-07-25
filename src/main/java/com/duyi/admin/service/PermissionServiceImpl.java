@@ -25,6 +25,7 @@ import com.duyi.commons.log.Trace;
 public class PermissionServiceImpl extends AbstractSmartLifecycle implements IPermissionService {
 	private static Trace log=Trace.register(PermissionServiceImpl.class);
 
+	private Thread thread;
 	@Autowired
 	private IAdminRoleService roleService;
 	@Autowired
@@ -65,10 +66,24 @@ public class PermissionServiceImpl extends AbstractSmartLifecycle implements IPe
 	 */
 	@Override
 	protected void doStart() {
-		List<AdminRoleInfo> roles=roleService.findAllRoles();
-		for(AdminRoleInfo role :roles) {
-			operationMap.put(role.getName(), role.getOperations());
-		}
+		thread=new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				while(true) {
+					List<AdminRoleInfo> roles=roleService.findAllRoles();
+					for(AdminRoleInfo role :roles) {
+						operationMap.put(role.getName(), role.getOperations());
+					}
+					try {
+						Thread.sleep(5*60*1000L);
+					} catch (InterruptedException e) {
+					
+					}
+				}
+			}
+		});
+		
 		
 		log.info("=======================operation service start=====");
 		
@@ -79,7 +94,8 @@ public class PermissionServiceImpl extends AbstractSmartLifecycle implements IPe
 	 */
 	@Override
 	protected void doStop() {
-		// TODO Auto-generated method stub
-		
+		thread.interrupt();
+		thread=null;
+		operationMap.clear();
 	}
 }

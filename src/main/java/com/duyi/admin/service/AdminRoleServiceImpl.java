@@ -64,12 +64,19 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	 */
 	@Override
 	public Page<AdminRoleInfo> findRoles(Pageable pageable) {
+
+		final int count= roleDao.getCount();
+
+		if(count<=pageable.getPageSize()) {
+			pageable=pageable.previousOrFirst();
+		}
+
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 		List<AdminRoleInfo> roles=roleDao.findPageAll(bounds);
 		return PageableExecutionUtils.getPage(roles, pageable, new TotalSupplier() {
 			@Override
 			public long get() {
-				return roleDao.getCount();
+				return count;
 			}
 		});
 	}
@@ -90,16 +97,19 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 		if(Strings.isNullOrEmpty(name)) {
 			return findRoles(pageable);
 		}
-		int startPosition=pageable.getOffset();
-		int maxResult=pageable.getPageSize();
-		RowBounds bounds=new RowBounds(startPosition,maxResult);
+		
+		final int count=roleDao.getCountByName(name);
+		if(count<=pageable.getPageSize()) {
+			pageable=pageable.previousOrFirst();
+		}
+		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 
 		List<AdminRoleInfo> roles=roleDao.findByName(bounds, name);
 		return PageableExecutionUtils.getPage(roles, pageable, new TotalSupplier() {
 
 			@Override
 			public long get() {
-				return roleDao.getCountByName(name);
+				return count;
 			}
 			
 		});
@@ -141,6 +151,14 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 				roleDao.addRoleOperations(roleId, operationId);
 			}
 		}
+	}
+
+	/* (non-Javadoc)
+	 * @see com.duyi.admin.service.IAdminRoleService#delete(java.lang.Long)
+	 */
+	@Override
+	public void delete(Long id) {
+		roleDao.delete(id);
 	}
 
 

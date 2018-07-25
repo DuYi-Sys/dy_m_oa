@@ -36,6 +36,10 @@ public interface AdminUserDao {
 	@Select("select * from admin_user where username like  concat('%', #{username}, '%')")
 	List<AdminUserInfo> findByUsername(String username,RowBounds brounds);
 
+	@Select("select * from admin_user where name like  concat('%', #{name}, '%')")
+	List<AdminUserInfo> findByName(String name,RowBounds brounds);
+	
+	@Select("select * from admin_user where id =#{id}")
 	AdminUserInfo getById(Long id);
 	@Select("select * from admin_user where username=#{username}")
 	@Results({
@@ -47,5 +51,7 @@ public interface AdminUserDao {
 	int getCount();
 	@Select("select count(id) from admin_user where username=#{username} ")
 	int getCountByUsername(String username);
+	@Select("select count(id) from admin_user where name=#{name} ")
+	int getCountByName(String name);
 
 }

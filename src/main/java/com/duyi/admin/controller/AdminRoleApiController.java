@@ -36,7 +36,7 @@ public class AdminRoleApiController {
 		return roleService.addRole(role);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, produces="application/json",consumes="application/json")
+	@RequestMapping(method= RequestMethod.PUT, produces="application/json",consumes="application/json")
 	public AdminRoleInfo updateRole(@RequestBody  AdminRoleInfo role) {
 
 		return roleService.modifyRole(role);
@@ -59,12 +59,16 @@ public class AdminRoleApiController {
 	}
 	
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
-	public AdminRoleInfo findRole(@PathVariable Long id) {
+	public AdminRoleInfo getRole(@PathVariable Long id) {
 		return roleService.getById(id);
 	}
 	
 	@RequestMapping(value="all",method=RequestMethod.GET)
 	public List<AdminRoleInfo> findAllRoles() {
 		return roleService.findAllRoles();
+	}
+	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
+	public void deleteRole(@PathVariable Long id) {
+		roleService.delete(id);
 	}
 }

@@ -18,7 +18,5 @@ public interface IAdminUserService {
 	AdminUserInfo modifyAdminUser(AdminUserInfo user);
 	Page<AdminUserInfo> findUsers(Pageable pageable);
 	Page<AdminUserInfo> findUsersByUsername(Pageable pageable,String username);
-	Page<AdminUserInfo> findUsersByName(Pageable pageable,String name);
-
 	
 }

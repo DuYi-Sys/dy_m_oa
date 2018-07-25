@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.duyi.admin.domain.AdminOperationInfo;
@@ -34,7 +35,7 @@ public class AdminOperationApiController {
 		return operationService.addOperation(operation);
 	}
 	
-	@RequestMapping(method= RequestMethod.PUT,produces="application/json",consumes="application/json")
+	@RequestMapping(method= {RequestMethod.PUT, RequestMethod.PATCH},produces="application/json",consumes="application/json")
 	public AdminOperationInfo updateOperation(@RequestBody  AdminOperationInfo operation) {
 		return operationService.modifyOperation(operation);
 	}
@@ -43,13 +44,9 @@ public class AdminOperationApiController {
 		Page<AdminOperationInfo> page=operationService.findAll(pageable);
 		return page;
 	}
-	@RequestMapping(value="/{id}",method=RequestMethod.GET)
-	public AdminOperationInfo getOperation(@PathVariable Long id) {
-		return operationService.getById(id);
-	}
 
-	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
-	public void deleteOperation(@PathVariable("id") Long id) {
+	@RequestMapping(method=RequestMethod.DELETE)
+	public void deleteOperation(@RequestParam(name="id")Long id) {
 		operationService.deleteAdminOperation(id);
 	}
 	

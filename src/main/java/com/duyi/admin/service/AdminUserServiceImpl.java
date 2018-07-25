@@ -73,12 +73,11 @@ public class AdminUserServiceImpl implements IAdminUserService {
 	 */
 	@Override
 	public Page<AdminUserInfo> findUsers(Pageable pageable) {
-		final int count= userDao.getCount();
-
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
-		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+		int startPosition=pageable.getOffset();
+		int maxResult=pageable.getPageSize();
+		log.info("startPosition:"+startPosition);
+		log.info("maxResult:"+maxResult);
+		RowBounds bounds=new RowBounds(startPosition,maxResult);
 		List<AdminUserInfo> users=userDao.findPageAll(bounds);
 //		for(AdminUserInfo userInfo : users) {
 //			log.info("userId"+userInfo.getId());
@@ -88,9 +87,10 @@ public class AdminUserServiceImpl implements IAdminUserService {
 //			userInfo.setRoles(roles);
 //		}
 		return PageableExecutionUtils.getPage(users, pageable, new TotalSupplier() {
+
 			@Override
 			public long get() {
-				return count;
+				return userDao.getCount();
 			}
 			
 		});
@@ -104,12 +104,9 @@ public class AdminUserServiceImpl implements IAdminUserService {
 		if(Strings.isNullOrEmpty(username)) {
 			return findUsers(pageable);
 		}
-		final int count= userDao.getCountByUsername(username);
-
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
-		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+		int startPosition=pageable.getOffset();
+		int maxResult=pageable.getPageSize();
+		RowBounds bounds=new RowBounds(startPosition,maxResult);
 
 		List<AdminUserInfo> users=userDao.findByUsername(username, bounds);
 		return PageableExecutionUtils.getPage(users, pageable, new TotalSupplier() {
@@ -117,32 +114,6 @@ public class AdminUserServiceImpl implements IAdminUserService {
 			@Override
 			public long get() {
 				return userDao.getCountByUsername(username);
-			}
-			
-		});
-	}
-
-	/* (non-Javadoc)
-	 * @see com.duyi.admin.service.IAdminUserService#findUsersByName(com.duyi.commons.page.Pageable, java.lang.String)
-	 */
-	@Override
-	public Page<AdminUserInfo> findUsersByName(Pageable pageable, String name) {
-		if(Strings.isNullOrEmpty(name)) {
-			return findUsers(pageable);
-		}
-		final int count= userDao.getCountByName(name);
-
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
-		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
-
-		List<AdminUserInfo> users=userDao.findByName(name, bounds);
-		return PageableExecutionUtils.getPage(users, pageable, new TotalSupplier() {
-
-			@Override
-			public long get() {
-				return count;
 			}
 			
 		});

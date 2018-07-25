@@ -17,6 +17,7 @@ import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.security.PasswordEncoder;
 import com.duyi.security.SecurityContextHolder;
+import com.duyi.security.model.UserDetails;
 
 /**
  * @author wangyan
@@ -53,11 +54,11 @@ public class AdminUserApiController {
 //		return adminUserService.findUsersByUsername(pageable, username);
 //	}
 	@RequestMapping(method=RequestMethod.GET, produces="application/json")
-	public Page<AdminUserInfo> findAdminUsers(Pageable pageable,String name) {
-//		log.info("pageable"+pageable);
-//		log.info("current user:"+SecurityContextHolder.getContext().getPrincipal().getUsername());
+	public Page<AdminUserInfo> findAdminUsers(Pageable pageable) {
+		log.info("pageable"+pageable);
+		log.info("current user:"+SecurityContextHolder.getContext().getPrincipal().getUsername());
 
-		return adminUserService.findUsersByName(pageable,name);
+		return adminUserService.findUsers(pageable);
 	}
 	
 	
@@ -77,7 +78,7 @@ public class AdminUserApiController {
 	public String modifyPassword(String oldPassword,String unencodePassword) {
 		log.info("oldPassword:"+oldPassword+"unencodePassword:"+unencodePassword);
 		String username =SecurityContextHolder.getContext().getPrincipal().getUsername();
-//		log.info("=======user name"+username);
+		log.info("=======user name"+username);
 		AdminUserInfo adminUserInfo=adminUserService.getByUsername(username);
 		if(encoder.matches(oldPassword, adminUserInfo.getCredential())) {
 			adminUserInfo.setUnencodePassword(unencodePassword);
@@ -86,6 +87,7 @@ public class AdminUserApiController {
 		}else {
 			return "-1";
 		}
+		
+		
 	}
 }
-

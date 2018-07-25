@@ -77,28 +77,16 @@ public class AdminOpetationServiceImpl  implements IAdminOperationService {
 	 */
 	@Override
 	public Page<AdminOperationInfo> findAll(Pageable pageable) {
-		final int count=operationDao.getCount();
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 
 		List<AdminOperationInfo> operations=operationDao.findAll(bounds);
 		return PageableExecutionUtils.getPage(operations, pageable, new TotalSupplier() {
 			@Override
 			public long get() {
-				return count;
+				return operationDao.getCount();
 			}
 			
 		});
-	}
-
-	/* (non-Javadoc)
-	 * @see com.duyi.admin.service.IAdminOperationService#getById(java.lang.Long)
-	 */
-	@Override
-	public AdminOperationInfo getById(Long id) {
-		return operationDao.getById(id);
 	}
 
 

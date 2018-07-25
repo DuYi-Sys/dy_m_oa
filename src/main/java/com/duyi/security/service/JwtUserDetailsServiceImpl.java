@@ -38,7 +38,6 @@ public class JwtUserDetailsServiceImpl implements IUserDetailsService {
 			jwtUser.setId(user.getId());
 			jwtUser.setUsername(username);
 			jwtUser.setPassword(user.getCredential());
-			jwtUser.setName(user.getName());
 			List<String> roles=new ArrayList<>();
 			List<AdminRoleInfo> adminRoles=user.getRoles();
 			log.info("ADMIN ROLES=="+adminRoles);

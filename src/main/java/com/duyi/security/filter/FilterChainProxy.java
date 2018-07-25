@@ -26,14 +26,15 @@ public class FilterChainProxy extends GenericFilterBean {
 
 	private static Trace log=Trace.register(FilterChainProxy.class);
 	@Resource(name="LoginFilter")
-	private Filter loginFilter;
+	private Filter f1;
 	/* (non-Javadoc)
 	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		loginFilter.doFilter(request, response, chain);
+		log.info("filterChainProxy===");
+		f1.doFilter(request, response, chain);
 //		chain.doFilter(request, response);
 	}
 

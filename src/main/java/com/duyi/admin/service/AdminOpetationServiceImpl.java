@@ -3,6 +3,7 @@
  */
 package com.duyi.admin.service;
 
+import java.io.Console;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,9 +79,9 @@ public class AdminOpetationServiceImpl  implements IAdminOperationService {
 	@Override
 	public Page<AdminOperationInfo> findAll(Pageable pageable) {
 		final int count=operationDao.getCount();
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
+		log.info(pageable);
+		pageable=PageableExecutionUtils.calculatePageable(count, pageable);
+		log.info(pageable);
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 
 		List<AdminOperationInfo> operations=operationDao.findAll(bounds);

@@ -74,7 +74,9 @@ public class LoginFilter extends GenericFilterBean {
 				return ;
 			}else {
 				if(!encoder.matches(password, user.getPassword())) {
-					servletResponse.sendRedirect(unauthorizedPath);
+//					servletResponse.sendRedirect(unauthorizedPath);
+					request.getRequestDispatcher(unauthorizedPath).forward(request, response);
+
 					return ;
 				}else {
 					String token=jwtGenerator.generateToken(user);
@@ -95,13 +97,15 @@ public class LoginFilter extends GenericFilterBean {
 		
 		
 			if (jwtUser == null) {
-				servletResponse.sendRedirect(unauthorizedPath);
+				request.getRequestDispatcher(unauthorizedPath).forward(request, response);
 				return;
 			}
 			
 			//是否有权限
 			if (!permissionService.hasPermission(path, servletRequest.getMethod(), jwtUser.getRoles().toArray(new String[jwtUser.getRoles().size()]))) {
-				servletResponse.sendRedirect(forbiddenPath);
+//				servletResponse.sendRedirect(forbiddenPath);
+				request.getRequestDispatcher(forbiddenPath).forward(request, response);
+
 				return;
 
 			} 

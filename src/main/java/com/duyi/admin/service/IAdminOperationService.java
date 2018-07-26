@@ -14,6 +14,7 @@ import com.duyi.commons.page.Pageable;
  *
  */
 public interface IAdminOperationService {
+	AdminOperationInfo getById(Long id);
 	List<AdminOperationInfo> findByPath(String path);
 
 	AdminOperationInfo addOperation(AdminOperationInfo operation);

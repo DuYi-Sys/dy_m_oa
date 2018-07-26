@@ -67,9 +67,8 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 
 		final int count= roleDao.getCount();
 
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
+		pageable=PageableExecutionUtils.calculatePageable(count, pageable);
+
 
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 		List<AdminRoleInfo> roles=roleDao.findPageAll(bounds);
@@ -99,9 +98,8 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 		}
 		
 		final int count=roleDao.getCountByName(name);
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
+		pageable=PageableExecutionUtils.calculatePageable(count, pageable);
+
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 
 		List<AdminRoleInfo> roles=roleDao.findByName(bounds, name);

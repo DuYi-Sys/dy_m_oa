@@ -75,9 +75,8 @@ public class AdminUserServiceImpl implements IAdminUserService {
 	public Page<AdminUserInfo> findUsers(Pageable pageable) {
 		final int count= userDao.getCount();
 
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
+		pageable=PageableExecutionUtils.calculatePageable(count, pageable);
+
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 		List<AdminUserInfo> users=userDao.findPageAll(bounds);
 //		for(AdminUserInfo userInfo : users) {
@@ -106,9 +105,8 @@ public class AdminUserServiceImpl implements IAdminUserService {
 		}
 		final int count= userDao.getCountByUsername(username);
 
-		if(count<=pageable.getPageSize()) {
-			pageable=pageable.previousOrFirst();
-		}
+		pageable=PageableExecutionUtils.calculatePageable(count, pageable);
+
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 
 		List<AdminUserInfo> users=userDao.findByUsername(username, bounds);

@@ -1,7 +1,12 @@
 package com.duyi.oa.service;
 
+import com.duyi.admin.domain.AdminRoleInfo;
+import com.duyi.commons.page.Page;
+import com.duyi.commons.page.Pageable;
+import com.duyi.commons.page.PageableExecutionUtils;
 import com.duyi.oa.dao.QuestionDao;
 import com.duyi.oa.domain.QuestionBody;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,17 +18,33 @@ public class QuestionProcess {
     @Autowired
     QuestionDao questionDao;
 
-    public ArrayList<QuestionBody> selectOperation(Long topicId, Long uploadId, String keyWord, Long status, String strData){
-        ArrayList<QuestionBody> res = new ArrayList(); // res set
+    public Page<QuestionBody> selectOperation(Pageable pageable, Long topicId, Long uploadId, String keyWord, Long status, String strData){
+        List<QuestionBody>  res = new ArrayList(); // res set
+        int cnt = 0;
         if( uploadId > 0 && topicId <= 0 ){
-            res = questionDao.selectQuestionUploadId(uploadId, keyWord, status, strData); // uploadId
+            cnt = questionDao.getQuestionUploadIdCnt( uploadId, keyWord, status, strData);
+            pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+            RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+            res = questionDao.selectQuestionUploadId(bounds, uploadId, keyWord, status, strData); // uploadId
         }else if(uploadId <= 0 && topicId >  0){
-            res = questionDao.selectQuestionTopicId(topicId, keyWord, status, strData); // topicId
+            cnt = questionDao.getQuestionTopicIdCnt(topicId, keyWord, status, strData);
+            pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+            RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+            res = questionDao.selectQuestionTopicId(bounds, topicId, keyWord, status, strData); // topicId
         }else if (uploadId > 0 && topicId > 0){
-            res = questionDao.selectQuestionUploadTopic(uploadId, topicId, keyWord, status, strData);
+            cnt = questionDao.getQuestionUploadTopicCnt(uploadId, topicId, keyWord, status, strData);
+            pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+            RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+            res = questionDao.selectQuestionUploadTopic(bounds, uploadId, topicId, keyWord, status, strData);
         }
 
-        return  res; // set
+        final int count = cnt;
+        return PageableExecutionUtils.getPage(res, pageable, new PageableExecutionUtils.TotalSupplier() {
+            @Override
+            public long get() {
+                return count;
+            }
+        });
     }
 
     public HashMap<String, String> getGetUrlParams(HttpServletRequest request){

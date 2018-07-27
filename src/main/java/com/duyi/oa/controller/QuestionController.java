@@ -1,5 +1,7 @@
 package com.duyi.oa.controller;
 
+import com.duyi.commons.page.Page;
+import com.duyi.commons.page.Pageable;
 import com.duyi.oa.service.QuestionProcess;
 import com.duyi.oa.domain.QuestionBody;
 import com.duyi.oa.dao.QuestionDao;
@@ -49,10 +51,10 @@ public class QuestionController {
     }
 
     @RequestMapping( method= {RequestMethod.GET, RequestMethod.PATCH },produces="application/json" )
-    public List<QuestionBody> selectOperation(@RequestParam(name="topicId") Long topicId,@RequestParam(name="uploadId")Long uploadId,
-                                              @RequestParam(name="keyWord") String keyWord,@RequestParam(name="status") Long status, @RequestParam(name="date") String strData){
+    public Page<QuestionBody> selectOperation(Pageable pageable, @RequestParam(name="topicId") Long topicId, @RequestParam(name="uploadId")Long uploadId,
+                                              @RequestParam(name="keyWord") String keyWord, @RequestParam(name="status") Long status, @RequestParam(name="date") String strData){
         if( strData.isEmpty() ) { strData = "1990-11-06"; }
-        ArrayList<QuestionBody> res = operationService.selectOperation(topicId, uploadId, keyWord, status, strData);
+        Page<QuestionBody> res = operationService.selectOperation(pageable, topicId, uploadId, keyWord, status, strData);
         return  res;
     }
 

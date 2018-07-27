@@ -41,6 +41,7 @@ public class PermissionServiceImpl extends AbstractSmartLifecycle implements IPe
 		for(String roleName:roleNames) {
 			List<AdminOperationInfo> operationInfos=operationMap.get(roleName);
 			if(operationInfos==null || operationInfos.size()==0) {
+				log.info("operationMap="+operationMap);
 				return false;
 			}
 			for (AdminOperationInfo operationInfo : operationInfos) {
@@ -71,8 +72,11 @@ public class PermissionServiceImpl extends AbstractSmartLifecycle implements IPe
 			@Override
 			public void run() {
 				while(true) {
+					log.info("run==========");
 					List<AdminRoleInfo> roles=roleService.findAllRoles();
+					log.info("run=====roles====="+roles);
 					for(AdminRoleInfo role :roles) {
+						
 						operationMap.put(role.getName(), role.getOperations());
 					}
 					try {
@@ -83,7 +87,7 @@ public class PermissionServiceImpl extends AbstractSmartLifecycle implements IPe
 				}
 			}
 		});
-		
+		thread.start();
 		
 		log.info("=======================operation service start=====");
 		

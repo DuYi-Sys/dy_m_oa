@@ -1,7 +1,7 @@
 package com.duyi.oa.domain;
 
 public class StudentBody {
-    private int id;
+    private Long id = 0L;
     private String name;
     private int sex;
     private int age;
@@ -14,8 +14,8 @@ public class StudentBody {
     private int level; // 0: 1: 付费意愿不强, 2: 有付费意愿, 3: 付费意愿强烈
     private int status; // 1/2 not paid/charges paid
 
-    public int getId(){ return  id;}
-    public void setId(int id){ this.id = id;}
+    public Long getId(){ return  id;}
+    public void setId(Long id){ this.id = id;}
 
     public int getSex(){ return  sex;}
     public void setSex(int sex){this.sex = sex;}

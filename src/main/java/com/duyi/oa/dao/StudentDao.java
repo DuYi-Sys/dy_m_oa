@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public interface StudentDao {
-    @Insert("insert into student_info(name,sex, age, phone, weixin, qq, upload_id, address, type, status) values(#{name},#{sex}," +
-            "#{age},#{phone},#{weixin},#{qq},#{uploadId},#{address},#{type},#{status})")
+    @Insert("insert into student_info(name,sex, age, phone, weixin, qq, upload_id, address, level, type, status) values(#{name},#{sex}," +
+            "#{age},#{phone},#{weixin},#{qq},#{uploadId},#{address},#{level}, #{type},#{status})")
     public int insertStudentInfo(StudentBody studentBody);
 
     @Delete("delete from student_info where id = #{id}")

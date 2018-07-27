@@ -13,14 +13,14 @@ public class QuestionProcess {
     @Autowired
     QuestionDao questionDao;
 
-    public ArrayList<QuestionBody> selectOperation(Long topicId, Long reviewerId, Long status){
+    public ArrayList<QuestionBody> selectOperation(Long topicId, Long uploadId, String keyWord, Long status, String strData){
         ArrayList<QuestionBody> res = new ArrayList(); // res set
-        if( reviewerId > 0 && topicId <= 0 ){
-            res = questionDao.selectQuestionUploadId(reviewerId, status); // uploadId
-        }else if(reviewerId <= 0 && topicId >  0){
-            res = questionDao.selectQuestionTopicId(topicId, status); // topicId
-        }else if (reviewerId > 0 && topicId > 0){
-            res = questionDao.selectQuestionUploadTopic(reviewerId, topicId, status);
+        if( uploadId > 0 && topicId <= 0 ){
+            res = questionDao.selectQuestionUploadId(uploadId, keyWord, status, strData); // uploadId
+        }else if(uploadId <= 0 && topicId >  0){
+            res = questionDao.selectQuestionTopicId(topicId, keyWord, status, strData); // topicId
+        }else if (uploadId > 0 && topicId > 0){
+            res = questionDao.selectQuestionUploadTopic(uploadId, topicId, keyWord, status, strData);
         }
 
         return  res; // set

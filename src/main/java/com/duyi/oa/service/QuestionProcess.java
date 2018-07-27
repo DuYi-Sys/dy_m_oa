@@ -1,6 +1,5 @@
 package com.duyi.oa.service;
 
-import com.duyi.admin.domain.AdminRoleInfo;
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.commons.page.PageableExecutionUtils;

@@ -3,6 +3,8 @@
  */
 package com.duyi.admin.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -52,5 +54,12 @@ public class AdminOperationApiController {
 	public void deleteOperation(@PathVariable("id") Long id) {
 		operationService.deleteAdminOperation(id);
 	}
+	@RequestMapping(path="list",method=RequestMethod.GET, produces="application/json")
+	public List<AdminOperationInfo> findAdminUsers(String name) {
+		List<AdminOperationInfo> list=operationService.findByName(name);
+
+		return list;
+	}
+	
 	
 }

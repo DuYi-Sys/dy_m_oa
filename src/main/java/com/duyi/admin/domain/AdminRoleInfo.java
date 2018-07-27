@@ -18,6 +18,8 @@ public class AdminRoleInfo  {
 	private String cnName;
 
 	private List<AdminOperationInfo> operations;
+	private List<AdminUserInfo> users;
+
 	public Long getId() {
 		return id;
 	}
@@ -50,6 +52,16 @@ public class AdminRoleInfo  {
 
 	public void setOperations(List<AdminOperationInfo> operations) {
 		this.operations = operations;
+	}
+
+
+	public List<AdminUserInfo> getUsers() {
+		return users;
+	}
+
+
+	public void setUsers(List<AdminUserInfo> users) {
+		this.users = users;
 	}
 	
 }

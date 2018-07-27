@@ -3,6 +3,8 @@
  */
 package com.duyi.admin.service;
 
+import java.util.List;
+
 import com.duyi.admin.domain.AdminUserInfo;
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
@@ -19,6 +21,7 @@ public interface IAdminUserService {
 	Page<AdminUserInfo> findUsers(Pageable pageable);
 	Page<AdminUserInfo> findUsersByUsername(Pageable pageable,String username);
 	Page<AdminUserInfo> findUsersByName(Pageable pageable,String name);
+	List<AdminUserInfo> findUsersByName(String name);
 
 	
 }

@@ -20,5 +20,7 @@ public interface IAdminOperationService {
 	AdminOperationInfo addOperation(AdminOperationInfo operation);
 	AdminOperationInfo modifyOperation(AdminOperationInfo operation);
 	Page<AdminOperationInfo> findAll(Pageable pageable );
+	List<AdminOperationInfo> findByName(String name );
+
 	void deleteAdminOperation(Long id);
 }

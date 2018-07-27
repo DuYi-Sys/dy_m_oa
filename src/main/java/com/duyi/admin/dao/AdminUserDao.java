@@ -38,10 +38,16 @@ public interface AdminUserDao {
 
 
 	@Select("select * from admin_user where name like  concat('%', #{name}, '%')")
-	List<AdminUserInfo> findByName(String name,RowBounds brounds);
+	List<AdminUserInfo> findPageByName(String name,RowBounds brounds);
+	
+
+	@Select("select * from admin_user where name like  concat('%', #{name}, '%')")
+	List<AdminUserInfo> findByName(String name);
+	
+	@Select("select u.* from admin_user u left join admin_role_user ru on u.id=ru.user_id where ru.role_id=#{roleId} ")
+	List<AdminUserInfo> findByRoleId(Long roleId);
 	
 	@Select("select * from admin_user where id =#{id}")
-
 	AdminUserInfo getById(Long id);
 	@Select("select * from admin_user where username=#{username}")
 	@Results({

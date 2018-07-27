@@ -119,6 +119,7 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void addRoleUsers(Long roleId, Long[] userIds) {
+		roleDao.deleteRoleUsers(roleId);
 		for(Long userId:userIds) {
 			log.info("roleId:"+roleId+", userIds:"+userId);
 			AdminRoleInfo roleInfo=roleDao.getByRoleIdAndUserId(roleId, userId);
@@ -142,6 +143,7 @@ public class AdminRoleServiceImpl implements IAdminRoleService {
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void addRoleOperations(Long roleId, Long[] operationIds) {
+		roleDao.deleteRoleOperations(roleId);
 		for(Long operationId:operationIds) {
 			log.info("roleId:"+roleId+", operationIds:"+operationId);
 			AdminRoleInfo roleInfo=roleDao.getByRoleIdAndOperationId(roleId, operationId);

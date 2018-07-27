@@ -49,7 +49,7 @@ public class AdminRoleApiController {
 	}
 	@RequestMapping(value="/{id}/operations",method=RequestMethod.POST,consumes="application/json")
 	public void addRoleOperations(@PathVariable Long id, @RequestBody Long[] operationIds) {
-//		roleService.addRoleUsers(id, userIds);
+		roleService.addRoleOperations(id, operationIds);
 		
 	}
 	

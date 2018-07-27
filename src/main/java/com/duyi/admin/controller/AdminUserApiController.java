@@ -3,6 +3,8 @@
  */
 package com.duyi.admin.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -60,6 +62,14 @@ public class AdminUserApiController {
 		return adminUserService.findUsersByName(pageable,name);
 	}
 	
+	@RequestMapping(path="list",method=RequestMethod.GET, produces="application/json")
+	public List<AdminUserInfo> findAdminUsers(String name) {
+		log.info("findAdminUsers name:"+name);
+		List<AdminUserInfo> list=adminUserService.findUsersByName(name);
+		log.info("findAdminUsers list:"+list);
+
+		return list;
+	}
 	
 	@RequestMapping(value="/{username}",method=RequestMethod.GET)
 	public AdminUserInfo findUser(@PathVariable String username) {

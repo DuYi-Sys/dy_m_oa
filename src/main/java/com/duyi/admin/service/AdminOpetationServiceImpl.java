@@ -102,6 +102,14 @@ public class AdminOpetationServiceImpl  implements IAdminOperationService {
 		return operationDao.getById(id);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.duyi.admin.service.IAdminOperationService#findByName(java.lang.String)
+	 */
+	@Override
+	public List<AdminOperationInfo> findByName(String name) {
+		return operationDao.findByName(name);
+	}
+
 
 
 

@@ -135,7 +135,7 @@ public class AdminUserServiceImpl implements IAdminUserService {
 		}
 		RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
 
-		List<AdminUserInfo> users=userDao.findByName(name, bounds);
+		List<AdminUserInfo> users=userDao.findPageByName(name, bounds);
 		return PageableExecutionUtils.getPage(users, pageable, new TotalSupplier() {
 
 			@Override
@@ -144,6 +144,14 @@ public class AdminUserServiceImpl implements IAdminUserService {
 			}
 			
 		});
+	}
+
+	/* (non-Javadoc)
+	 * @see com.duyi.admin.service.IAdminUserService#findUsersByName(java.lang.String)
+	 */
+	@Override
+	public List<AdminUserInfo> findUsersByName(String name) {
+		return userDao.findByName(name);
 	}
 
 

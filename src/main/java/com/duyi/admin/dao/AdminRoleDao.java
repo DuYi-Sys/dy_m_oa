@@ -29,11 +29,21 @@ public interface AdminRoleDao {
 	@Update("UPDATE admin_role set name=#{name}, cn_name=#{cnName} WHERE id=#{id}")
 
 	int update(AdminRoleInfo role);
+	@Insert("delete  from admin_role_user where ROLE_ID=#{roleId}")
+	int deleteRoleUsers(@Param("roleId") Long roleId);
+	@Insert("delete  from admin_role_operation where ROLE_ID=#{roleId}")
+	int deleteRoleOperations(@Param("roleId") Long roleId);
+	
 	@Insert("INSERT INTO admin_role_user (ROLE_ID,USER_ID) VALUES(#{roleId},#{userId})")
 	int addRoleUsers(@Param("roleId") Long roleId,@Param("userId") Long userId);
 	@Insert("INSERT INTO admin_role_operation (ROLE_ID,OPERATION_ID) VALUES(#{roleId},#{operationId})")
 	int addRoleOperations(@Param("roleId") Long roleId,@Param("operationId") Long operationId);
 	@Select("select * from admin_role where id =#{id}")
+	@Results({
+		@Result(property="id",column="id"),
+		@Result(property="operations",column="id",many=@Many(select="com.duyi.admin.dao.AdminOperationDao.findByRoleId")),
+		@Result(property="users",column="id",many=@Many(select="com.duyi.admin.dao.AdminUserDao.findByRoleId"))
+	})
 	AdminRoleInfo getById(Long id);
 	@Select("select * from admin_role where name =#{name}")
 	AdminRoleInfo getByName(String name);
@@ -50,12 +60,13 @@ public interface AdminRoleDao {
 	@Select("select * from admin_role ")
 	@Results({
 		@Result(property="id",column="id"),
-		@Result(property="operations",column="id",many=@Many(select="com.duyi.admin.dao.AdminOperationDao.findByRoleId"))
+		@Result(property="operations",column="id",many=@Many(select="com.duyi.admin.dao.AdminOperationDao.findByRoleId")),
+		@Result(property="users",column="id",many=@Many(select="com.duyi.admin.dao.AdminUserDao.findByRoleId"))
 	})
 	List<AdminRoleInfo> findPageAll(RowBounds brounds);
 	@Select("select * from admin_role ")
 	@Results({
-		@Result(property="operations",column="id",many=@Many(select="com.duyi.admin.dao.AdminOperationDao.findByRoleId"))
+		@Result(property="operations",column="id",many=@Many(select="com.duyi.admin.dao.AdminOperationDao.findByRoleId")),
 	})
 	List<AdminRoleInfo> findAll();
 

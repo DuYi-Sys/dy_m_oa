@@ -80,7 +80,7 @@ public class PermissionServiceImpl extends AbstractSmartLifecycle implements IPe
 						operationMap.put(role.getName(), role.getOperations());
 					}
 					try {
-						Thread.sleep(5*60*1000L);
+						Thread.sleep(1*60*1000L);
 					} catch (InterruptedException e) {
 					
 					}

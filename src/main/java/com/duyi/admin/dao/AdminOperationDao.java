@@ -41,4 +41,6 @@ public interface AdminOperationDao {
 	List<AdminOperationInfo> findByRoleId(Long roleId);
 	@Select("select * from admin_operation where path like  concat('%', #{path}, '%')" )
 	List<AdminOperationInfo> findByPath(String path);
+	@Select("select * from admin_operation where name like  concat('%', #{name}, '%')" )
+	List<AdminOperationInfo> findByName(String path);
 }

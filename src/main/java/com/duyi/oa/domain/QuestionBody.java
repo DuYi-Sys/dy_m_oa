@@ -1,5 +1,7 @@
 package com.duyi.oa.domain;
 
+import java.util.Date;
+
 public class QuestionBody {
     private int id = 0;
     private Long uploadId;
@@ -10,7 +12,8 @@ public class QuestionBody {
     private  String questionBody;
     private String questionAnalysis;
     private String pic;
-
+    private Date date;
+    
     public int getId(){ return this.id;}
     public void setId(int id) {
         this.id = id;
@@ -24,11 +27,11 @@ public class QuestionBody {
     public Long getUploadId(){ return  this.uploadId; }
     public void setUploadId(Long uploadId){ this.uploadId = uploadId; }
 
-    public int getTopicdId(){
+    public int getTopicId(){
         return  this.topicId;
     }
-    public void setTopicdId(int topicdId){
-        this.topicId = topicdId;
+    public void setTopicId(int topicId){
+        this.topicId = topicId;
     }
 
     public  String getTitle(){
@@ -55,4 +58,12 @@ public class QuestionBody {
 
     public Long getReviewerId(){ return  this.reviewerId;}
     public void setReviewerId(Long reviewerId){ this.reviewerId = reviewerId; }
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+    
+    
 }

@@ -38,6 +38,7 @@ public class QuestionProcess {
         }
 
         final int count = cnt;
+        System.err.println("count===="+count);
         return PageableExecutionUtils.getPage(res, pageable, new PageableExecutionUtils.TotalSupplier() {
             @Override
             public long get() {

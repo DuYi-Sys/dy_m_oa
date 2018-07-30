@@ -25,10 +25,10 @@ public interface QuestionDao {
     public int getQuestionUploadIdCnt(@Param("uploadId")Long uploadId, @Param("keyWord") String keyWord, @Param("status")Long status, @Param("strDate") String strDate);
 
     @Select("select id,upload_id,topic_id,title,question_body,reviewer_id,question_analysis, pic,status from question_bank "
-            +" where topic_id = #{topicId} and status=#{status } and update_time > #{strDate} and LOCATE(#{keyWord},question_body) > 0")
+            +" where topic_id = #{topicId} and status=#{status} and update_time > #{strDate} and LOCATE(#{keyWord},question_body) > 0")
     public ArrayList<QuestionBody> selectQuestionTopicId(RowBounds brounds, @Param("topicId")Long topicId, @Param("keyWord") String keyWord, @Param("status")Long status, @Param("strDate") String strDate);
 
-    @Select("select count(*) from question_bank where topic_id = #{topicId} and status=#{status } and update_time > #{strDate} and LOCATE(#{keyWord},question_body) > 0")
+    @Select("select count(*) from question_bank where topic_id = #{topicId} and status=#{status} and update_time > #{strDate} and LOCATE(#{keyWord},question_body) > 0")
     public int getQuestionTopicIdCnt(@Param("topicId")Long topicId, @Param("keyWord") String keyWord, @Param("status")Long status, @Param("strDate") String strDate);
 
     @Select("select id,upload_id,topic_id,title,question_body, reviewer_id, question_analysis, pic, status from question_bank "

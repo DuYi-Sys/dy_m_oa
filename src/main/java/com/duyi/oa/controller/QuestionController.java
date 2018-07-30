@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-@RequestMapping("/api/addQuestion")
+@RequestMapping("/api/s/addQuestion")
 public class QuestionController {
     @Autowired
     private QuestionProcess operationService;// 问题处理对象
@@ -31,24 +31,25 @@ public class QuestionController {
     public int addQuestion(@RequestBody  QuestionBody operation) {
         Long uploadId =SecurityContextHolder.getContext().getPrincipal().getId();
         operation.setUploadId(uploadId); // insert body
+        operation.setStatus(1);
         int res = operationDao.insertQuestion(operation);
         return  res;
     }
 
-    @RequestMapping( method=RequestMethod.POST, produces="application/json",consumes="application/json", path = "auditQuestion")
+    @RequestMapping( method=RequestMethod.POST,consumes="application/json", path = "auditQuestion")
     public int auditQuestion(@RequestParam(name="id") Long id,@RequestParam(name = "status") Long status) {
         Long reviewer_id =SecurityContextHolder.getContext().getPrincipal().getId();
         int res = operationDao.auditOperation(id, reviewer_id, status);
         return  res;
     }
 
-    @RequestMapping( method= {RequestMethod.PUT, RequestMethod.PATCH },produces="application/json",consumes="application/json" )
+    @RequestMapping( method= {RequestMethod.PUT, RequestMethod.PUT },produces="application/json",consumes="application/json" )
     public int updateOperation(@RequestBody  QuestionBody operation){
         int res = operationDao.updateOperation(operation);
         return  res;
     }
 
-    @RequestMapping( method= {RequestMethod.GET, RequestMethod.PATCH },produces="application/json" )
+    @RequestMapping( method= {RequestMethod.GET},produces="application/json" )
     public Page<QuestionBody> selectOperation(Pageable pageable, @RequestParam(name="topicId") Long topicId, @RequestParam(name="uploadId")Long uploadId,
                                               @RequestParam(name="keyWord") String keyWord, @RequestParam(name="status") Long status, @RequestParam(name="date") String strData){
         if( strData.isEmpty() ) { strData = "1990-11-06"; }

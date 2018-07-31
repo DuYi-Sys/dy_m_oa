@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-@RequestMapping("/api/s/addQuestion")
+@RequestMapping("/api/addQuestion")
 public class QuestionController {
     @Autowired
     private QuestionProcess operationService;// 问题处理对象

@@ -21,31 +21,52 @@ public class QuestionProcess {
         List<QuestionBody>  res = new ArrayList(); // res set
         int cnt = 0;
         if( uploadId > 0 && topicId <= 0 ){
-            cnt = questionDao.getQuestionUploadIdCnt( uploadId, keyWord, status, strData);
-            pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
-            RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
             if(status > 0){
+                cnt = questionDao.getQuestionUploadIdCnt( uploadId, keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
                 res = questionDao.selectQuestionUploadId(bounds, uploadId, keyWord, status, strData); // uploadId
             }else{
+                cnt = questionDao.selectQuestionUploadIdStatusCnt( uploadId, keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
                 res = questionDao.selectQuestionUploadIdStatus(bounds, uploadId, keyWord, status, strData); // uploadId
             }
         }else if(uploadId <= 0 && topicId >  0){
-            cnt = questionDao.getQuestionTopicIdCnt(topicId, keyWord, status, strData);
-            pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
-            RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
             if (status > 0){
+                cnt = questionDao.getQuestionTopicIdCnt(topicId, keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
                 res = questionDao.selectQuestionTopicId(bounds, topicId, keyWord, status, strData); // topicId
             }else{
+                cnt = questionDao.selectQuestionTopicIdStatusCnt(topicId, keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
                 res = questionDao.selectQuestionTopicIdStatus(bounds, topicId, keyWord, status, strData); // topicId
             }
-        }else if (uploadId > 0 && topicId > 0){
-            cnt = questionDao.getQuestionUploadTopicCnt(uploadId, topicId, keyWord, status, strData);
-            pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
-            RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+        }else if ( uploadId > 0 && topicId > 0 ){
             if(status > 0){
+                cnt = questionDao.getQuestionUploadTopicCnt(uploadId, topicId, keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
                 res = questionDao.selectQuestionUploadTopic(bounds, uploadId, topicId, keyWord, status, strData);
             }else{
+                cnt = questionDao.selectQuestionUploadTopicStatusCnt(uploadId, topicId, keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
                 res = questionDao.selectQuestionUploadTopicStatus(bounds, uploadId, topicId, keyWord, status, strData);
+            }
+        }else if (uploadId < 0 && topicId < 0){
+            if(status > 0){
+                cnt = questionDao.selectQuestionKeyWordsCnt(keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+                res = questionDao.selectQuestionKeyWords(bounds, keyWord, status, strData);
+            }else{
+                cnt = questionDao.selectQuestionKeyWordsStatusCnt(keyWord, status, strData);
+                pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+                RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+                res = questionDao.selectQuestionKeyWordsStatus(bounds, keyWord, status, strData);
             }
         }
 

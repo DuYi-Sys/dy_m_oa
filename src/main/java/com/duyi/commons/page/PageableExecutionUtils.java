@@ -16,7 +16,7 @@ public abstract class PageableExecutionUtils {
 		
 	}
 	public static Pageable calculatePageable(int count, Pageable pageable) {
-		if(count<(pageable.getOffset()+pageable.getPageSize())) {
+		if(count<=(pageable.getOffset())) {
 			pageable=pageable.previousOrFirst();
 		}
 		return pageable;

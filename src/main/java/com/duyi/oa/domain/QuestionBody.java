@@ -15,12 +15,17 @@ public class QuestionBody {
     private String questionAnalysis;
     private String pic;
     private Date date;
+    private String reason;
     private AdminUserInfo userInfo;
     private TopicBody topicBody;
+
     public int getId(){ return this.id;}
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getReason(){return  this.reason;}
+    public void setReason(String reason){ this.reason = reason;}
 
     public int getStatus() { return status; }
     public  void  setStatus(int status) {

@@ -37,9 +37,9 @@ public class QuestionController {
     }
 
     @RequestMapping( method=RequestMethod.POST,consumes="application/json", path = "auditQuestion")
-    public int auditQuestion(@RequestParam(name="id") Long id,@RequestParam(name = "status") Long status) {
+    public int auditQuestion(@RequestParam(name="id") Long id,@RequestParam(name = "reason") String reason,@RequestParam(name = "status") Long status) {
         Long reviewer_id =SecurityContextHolder.getContext().getPrincipal().getId();
-        int res = operationDao.auditOperation(id, reviewer_id, status);
+        int res = operationDao.auditOperation(id, reviewer_id, reason, status);
         return  res;
     }
 

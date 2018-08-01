@@ -16,4 +16,7 @@ public interface TopicDao {
 
     @Select("select id, name, level, important,parent_id from topic where parent_id = #{parentId}")
     public ArrayList<TopicBody> selectParentTopic(@Param("parentId") Long parentId);
+    
+    @Select("select id, name, level, important,parent_id from topic where id = #{id}")
+    public TopicBody getById(@Param("id") Long id);
 }

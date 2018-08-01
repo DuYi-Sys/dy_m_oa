@@ -56,7 +56,7 @@ public class QuestionProcess {
                 RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
                 res = questionDao.selectQuestionUploadTopicStatus(bounds, uploadId, topicId, keyWord, status, strData);
             }
-        }else if (uploadId < 0 && topicId < 0){
+        }else if ( uploadId <= 0 && topicId <= 0){
             if(status > 0){
                 cnt = questionDao.selectQuestionKeyWordsCnt(keyWord, status, strData);
                 pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);

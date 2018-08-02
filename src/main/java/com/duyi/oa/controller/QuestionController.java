@@ -37,7 +37,7 @@ public class QuestionController {
     }
 
     @RequestMapping( method=RequestMethod.POST,consumes="application/json", path = "auditQuestion")
-    public int auditQuestion(@RequestParam(name="id") Long id,@RequestParam(name = "reason") String reason,@RequestParam(name = "status") Long status) {
+    public int auditQuestion(@RequestParam(name="id") Long id,@RequestParam(name = "reason",required=false) String reason,@RequestParam(name = "status") Long status) {
         Long reviewer_id =SecurityContextHolder.getContext().getPrincipal().getId();
         int res = operationDao.auditOperation(id, reviewer_id, reason, status);
         return  res;
@@ -53,6 +53,7 @@ public class QuestionController {
     public Page<QuestionBody> selectOperation(Pageable pageable, @RequestParam(name="topicId") Long topicId, @RequestParam(name="uploadId")Long uploadId,
                                               @RequestParam(name="keyWord") String keyWord, @RequestParam(name="status") Long status, @RequestParam(name="date") String strData){
         if( strData.isEmpty() ) { strData = "1990-11-06"; }
+        System.out.println("str date "+strData);
         Page<QuestionBody> res = operationService.selectOperation(pageable, topicId, uploadId, keyWord, status, strData);
         return  res;
     }

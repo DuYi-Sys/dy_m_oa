@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author wangyan
+ * @author liming
  *
  */
 
@@ -31,6 +31,4 @@ public class StudentController {
         int res = studentDao.deleteOperation(id);
         return  res;
     }
-
-
 }

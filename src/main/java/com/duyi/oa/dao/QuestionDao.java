@@ -13,7 +13,7 @@ public interface QuestionDao {
     public HashMap<String, String> getGetUrlParams(HttpServletRequest request);
     public HashMap<String, String> getPostUrlParams(HttpServletRequest request);
 
-    @Insert("insert into question_bank(upload_id,topic_id,reviewer_id,title,question_body, question_analysis, pic,status)\n" +
+    @Insert("insert into question_bank(upload_id,topic_id,reviewer_id,title,question_body, question_analysis, pic,status)" +
             "  values(#{uploadId},#{topicId},#{reviewerId},#{title},#{questionBody},#{questionAnalysis}, #{pic}, #{status})")
     public int insertQuestion(QuestionBody questBody);
 
@@ -113,7 +113,7 @@ public interface QuestionDao {
     public int selectQuestionKeyWordsStatusCnt(@Param("keyWord") String keyWord, @Param("status")Long status,@Param("strDate") String strDate );
 
     @Delete("delete from question_bank where id = #{id}")
-    public int deleteOperation(@RequestParam(name = "id", required = false) Long id);
+    public int deleteOperation(@Param("id") Long id);
 
     @Update("update question_bank set upload_id=#{uploadId},topic_id=#{topicId},reviewer_id=#{reviewerId},title=#{title}, "
             + " question_body=#{questionBody},question_analysis=#{questionAnalysis},pic=#{pic},status=#{status} where id = #{id}")

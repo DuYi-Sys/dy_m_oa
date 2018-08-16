@@ -16,7 +16,7 @@ public interface IntentionDao {
     public int insertIntention(IntentionBody intentionBody);
 
     @Update("update intention set weixin=#{weiXin},`group`=#{group},weixin_name=#{weiXinName},platform=#{platform},identity=#{identity},age=#{age}," +
-            "progress=#{progress},have_train=#{haveTrain},haveOpen=#{requirements},requirements=#{requirements},communicate_num=#{communicateNum}," +
+            "progress=#{progress},have_train=#{haveTrain},have_open=#{haveOpen},requirements=#{requirements},communicate_num=#{communicateNum}," +
             "acceptance=#{acceptance},characteristics=#{characteristics},visit_record=#{visitRecord},have_pay=#{havePay},upload_id=#{uploadId}," +
             "claim_id=#{claimId},status=#{status},ini_registration_time=#{iniRegistrationTime} where id=#{id}")
     public int updateIntention(IntentionBody intentionBody);
@@ -27,6 +27,11 @@ public interface IntentionDao {
     @Update("update intention set claim_id=#{claimId}, status=2 where id=#{id}")
     public int claimIntenion(@Param("id") Long id, @Param("claimId") Long claimId);
 
+    @Select("select count(*) from intention ")
+    public int countAllIntention();
+    @Select("select * from intention ")
+    public ArrayList<IntentionBody> selectAllIntention(RowBounds brounds);
+    
     @Select("select count(*) from intention where claim_id=#{claimId} and status=#{status}")
     public int countIntention(@Param("claimId") Long claimId, @Param("status") int status);
 

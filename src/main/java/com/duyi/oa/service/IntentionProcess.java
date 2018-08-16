@@ -47,4 +47,16 @@ public class IntentionProcess {
             }
         });
     }
+    public Page<IntentionBody>  selectOperation(Pageable pageable){
+        final int cnt = intentionDao.countAllIntention();
+        pageable = PageableExecutionUtils.calculatePageable(cnt, pageable);
+        RowBounds bounds=new RowBounds(pageable.getOffset(),pageable.getPageSize());
+        List<IntentionBody> res = intentionDao.selectAllIntention(bounds);
+        return PageableExecutionUtils.getPage(res, pageable, new PageableExecutionUtils.TotalSupplier() {
+            @Override
+            public long get() {
+                return cnt;
+            }
+        });
+    }
 }

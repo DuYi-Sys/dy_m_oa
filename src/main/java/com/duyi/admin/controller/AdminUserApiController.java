@@ -97,5 +97,10 @@ public class AdminUserApiController {
 			return "-1";
 		}
 	}
+	@RequestMapping(value="/roles/{roleId}",method=RequestMethod.GET)
+	public List<AdminUserInfo> findUserByRoleId(@PathVariable Long roleId) {
+		
+		return adminUserService.findUsersByRoleId(roleId);
+	}
 }
 

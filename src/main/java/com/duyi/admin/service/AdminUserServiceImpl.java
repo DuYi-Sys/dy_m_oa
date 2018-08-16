@@ -154,6 +154,14 @@ public class AdminUserServiceImpl implements IAdminUserService {
 		return userDao.findByName(name);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.duyi.admin.service.IAdminUserService#findUsersByRoleId(java.lang.Long)
+	 */
+	@Override
+	public List<AdminUserInfo> findUsersByRoleId(Long roleId) {
+		return userDao.findByRoleId(roleId);
+	}
+
 
 
 }

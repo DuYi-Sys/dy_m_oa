@@ -6,7 +6,7 @@ public class IntentionBody {
     private Long id=0L;
     private String weiXin; // 微信号
     private String weiXinName; // 微信名
-    private int group; // 公益群号
+    private String group; // 公益群号
     private String platform; // 引流平台
     private int identity; // 身份 1:在校 2:在职3:离职
     private int age; // 年龄
@@ -21,7 +21,7 @@ public class IntentionBody {
     private Long uploadId; // 上传人id
     private Long claimId; // 审核人id
     private int status; // 认领状态: 1: 未认领 2: 已认领
-    private int acceptance;
+    private int acceptance;//综合意向评分
     private Date iniRegistrationTime; // 初始登记时间
     private Date lastLinkupTime; // 最后沟通日期
 
@@ -37,10 +37,15 @@ public class IntentionBody {
     public String getWeiXinName(){ return  this.weiXinName;}
     public void setWeiXinName(String weiXinName){ this.weiXinName = weiXinName;}
 
-    public int getGroup(){ return  this.group;}
-    public void setGroup(int group){ this.group = group;}
+   
 
-    public String getPlatform(){ return  this.platform;}
+    public String getGroup() {
+		return group;
+	}
+	public void setGroup(String group) {
+		this.group = group;
+	}
+	public String getPlatform(){ return  this.platform;}
     public void setPlatform(String platform){ this.platform = platform;}
 
     public int getIdentity(){ return this.identity;}

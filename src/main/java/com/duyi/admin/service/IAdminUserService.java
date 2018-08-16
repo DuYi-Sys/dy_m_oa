@@ -22,6 +22,6 @@ public interface IAdminUserService {
 	Page<AdminUserInfo> findUsersByUsername(Pageable pageable,String username);
 	Page<AdminUserInfo> findUsersByName(Pageable pageable,String name);
 	List<AdminUserInfo> findUsersByName(String name);
-
+	List<AdminUserInfo> findUsersByRoleId(Long roleId);
 	
 }

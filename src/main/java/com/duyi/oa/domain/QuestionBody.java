@@ -84,7 +84,4 @@ public class QuestionBody {
 	public void setTopicBody(TopicBody topicBody) {
 		this.topicBody = topicBody;
 	}
-
-    
-    
 }

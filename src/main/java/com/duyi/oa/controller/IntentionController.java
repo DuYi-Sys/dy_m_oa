@@ -27,7 +27,7 @@ public class IntentionController { // intention
 
     @RequestMapping( method=RequestMethod.POST, produces="application/json",consumes="application/json" )
     public int addIntention(@RequestBody IntentionBody operation){
-    		operation.setStatus(1);
+        operation.setStatus(1);
         Long userId = SecurityContextHolder.getContext().getPrincipal().getId();
         operation.setUploadId(userId);
         int res = intentionProcess.insertIntention(operation);

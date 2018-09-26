@@ -1,13 +1,21 @@
 package com.duyi.oa.dao;
 
-import com.duyi.oa.domain.QuestionBody;
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.ibatis.annotations.*;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.One;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.session.RowBounds;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import com.duyi.oa.domain.QuestionBody;
 
 public interface QuestionDao {
     public HashMap<String, String> getGetUrlParams(HttpServletRequest request);

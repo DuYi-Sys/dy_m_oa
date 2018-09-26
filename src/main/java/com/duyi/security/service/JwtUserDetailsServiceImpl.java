@@ -20,7 +20,7 @@ import com.duyi.security.model.UserDetails;
  * @author wangyan
  *
  */
-@Service
+@Service("adminUserDetailsService")
 public class JwtUserDetailsServiceImpl implements IUserDetailsService {
 
 	private static Trace log=Trace.register(JwtUserDetailsServiceImpl.class);

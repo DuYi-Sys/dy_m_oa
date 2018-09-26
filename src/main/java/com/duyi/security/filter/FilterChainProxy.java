@@ -11,6 +11,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
@@ -27,6 +28,8 @@ public class FilterChainProxy extends GenericFilterBean {
 	private static Trace log=Trace.register(FilterChainProxy.class);
 	@Resource(name="LoginFilter")
 	private Filter loginFilter;
+	@Resource(name="StudentLoginFilter")
+	private StudentLoginFilter studentLoginFilter;
 	/* (non-Javadoc)
 	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
@@ -34,7 +37,15 @@ public class FilterChainProxy extends GenericFilterBean {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		loginFilter.doFilter(request, response, chain);
-//		chain.doFilter(request, response);
+		studentLoginFilter.doFilter(request, response, chain);
+		HttpServletResponse httpServletResponse=(HttpServletResponse)response;
+		httpServletResponse.addHeader("Access-Control-Allow-Origin", "*");
+		httpServletResponse.addHeader("Access-Control-Request-Method", "*");
+		httpServletResponse.addHeader("Access-Control-Allow-Headers", "*");
+		httpServletResponse.addHeader("Access-Control-Allow-Credentials","true");
+
+//		corsFilter.doFilter(request, response, chain);
+		chain.doFilter(request, response);
 	}
 
 }

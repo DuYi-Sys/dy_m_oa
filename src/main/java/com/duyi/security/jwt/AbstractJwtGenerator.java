@@ -3,11 +3,6 @@
  */
 package com.duyi.security.jwt;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Value;
-
 import com.duyi.security.jwt.model.JwtUser;
 import com.duyi.security.model.UserDetails;
 

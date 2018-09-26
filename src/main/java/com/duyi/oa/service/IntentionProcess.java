@@ -1,16 +1,17 @@
 package com.duyi.oa.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.RowBounds;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.commons.page.PageableExecutionUtils;
 import com.duyi.oa.dao.IntentionDao;
 import com.duyi.oa.domain.IntentionBody;
-import org.apache.ibatis.session.RowBounds;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class IntentionProcess {

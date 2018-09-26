@@ -1,12 +1,15 @@
 package com.duyi.oa.dao;
 
-import com.duyi.oa.domain.IntentionBody;
-import com.duyi.oa.domain.QuestionBody;
-import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.session.RowBounds;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.session.RowBounds;
+
+import com.duyi.oa.domain.IntentionBody;
 
 public interface IntentionDao {
     @Insert("insert into intention(weixin,`group`,weixin_name,platform,identity,age,progress,have_train,have_open,requirements,communicate_num," +

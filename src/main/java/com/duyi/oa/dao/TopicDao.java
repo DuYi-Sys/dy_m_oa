@@ -1,11 +1,12 @@
 package com.duyi.oa.dao;
 
-import com.duyi.oa.domain.TopicBody;
+import java.util.ArrayList;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.session.RowBounds;
 
-import java.util.ArrayList;
+import com.duyi.oa.domain.TopicBody;
 
 public interface TopicDao {
     @Select("select id, name, level, important,parent_id from topic where level=#{level}")

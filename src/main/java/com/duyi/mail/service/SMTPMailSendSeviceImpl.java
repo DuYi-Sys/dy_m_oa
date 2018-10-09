@@ -38,7 +38,7 @@ public class SMTPMailSendSeviceImpl {
 
 	private String host="smtp.qiye.aliyun.com";
 	private String username="yan.wang@duyi-inc.com";
-	private String password="Wangyan0122";
+	private String password="";
 	private String protocol="smtp";
 	private int port = -1;
 

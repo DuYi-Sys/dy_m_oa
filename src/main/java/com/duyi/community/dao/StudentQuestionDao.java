@@ -29,13 +29,13 @@ public interface StudentQuestionDao {
   		"WHERE ID=#{id}")
   int updateQuestion(StudentQuestionInfo question);
   @Select("SELECT q.ID, TITLE, CONTENT, TYPE_ID, OWNER_ID,CREATED, u.NICKNAME as OWNER_NAME " + 
-  		"FROM student_question q LEFT  JOIN student_user_info u ON OWNER_ID=u.ID")
+  		"FROM student_question q LEFT  JOIN student_user_info u ON OWNER_ID=u.ID order by CREATED desc")
   List<StudentQuestionInfo> findPageAll(RowBounds bounds);
   @Select("SELECT q.ID, TITLE, CONTENT, TYPE_ID, OWNER_ID,CREATED,u.NICKNAME as OWNER_NAME  " + 
-	  		"FROM student_question q LEFT  JOIN student_user_info u ON OWNER_ID=u.ID where TYPE_ID=#{typeId}")
+	  		"FROM student_question q LEFT  JOIN student_user_info u ON OWNER_ID=u.ID where TYPE_ID=#{typeId} order by CREATED desc")
 	  List<StudentQuestionInfo> findPageByTypeId(@Param("typeId") Long typeId,RowBounds bounds);
   @Select("SELECT q.ID, TITLE, CONTENT, TYPE_ID, OWNER_ID,CREATED,u.NICKNAME as OWNER_NAME  " + 
-	  		"FROM student_question q LEFT  JOIN student_user_info u ON OWNER_ID=u.ID")
+	  		"FROM student_question q LEFT  JOIN student_user_info u ON OWNER_ID=u.ID order by CREATED desc")
 	  List<StudentQuestionInfo> findAll();
   @Select("SELECT q.ID, TITLE, CONTENT, TYPE_ID, OWNER_ID,CREATED,u.NICKNAME as OWNER_NAME  " + 
 	  		"FROM student_question q LEFT  JOIN student_user_info u ON OWNER_ID=u.ID where id=#{id}")

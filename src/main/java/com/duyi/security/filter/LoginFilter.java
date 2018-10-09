@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.filter.GenericFilterBean;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.duyi.admin.domain.AdminOperationInfo;
 import com.duyi.admin.service.IAdminOperationService;
@@ -36,7 +36,7 @@ import com.google.common.base.Strings;
  *
  */
 @Component("LoginFilter")
-public class LoginFilter extends GenericFilterBean {
+public class LoginFilter {
 
 	private String secPathPrefix="/api/s/";
 	private String loginPath="/api/adminlogin";
@@ -54,11 +54,8 @@ public class LoginFilter extends GenericFilterBean {
 	private IAdminOperationService operationService;
 	@Autowired
 	private IPermissionService permissionService;
-	/* (non-Javadoc)
-	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
-	 */
-	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+
+	public boolean doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		HttpServletRequest servletRequest=(HttpServletRequest)request;
 		HttpServletResponse servletResponse=(HttpServletResponse)response;
@@ -72,18 +69,18 @@ public class LoginFilter extends GenericFilterBean {
 			log.info("username:"+username);
 			if(Strings.isNullOrEmpty(username) || Strings.isNullOrEmpty(password)) {
 				servletResponse.sendRedirect(unauthorizedPath);
-				return ;
+				return false;
 			}
 			UserDetails user=userService.loadUserByUsername(username);
 			if(user==null) {
 				servletResponse.sendRedirect(unauthorizedPath);
-				return ;
+				return false;
 			}else {
 				if(!encoder.matches(password, user.getPassword())) {
 //					servletResponse.sendRedirect(unauthorizedPath);
 					request.getRequestDispatcher(unauthorizedPath).forward(request, response);
 
-					return ;
+					return false;
 				}else {
 					String token=jwtGenerator.generateToken(user);
 					servletResponse.setHeader("token", token);
@@ -104,7 +101,7 @@ public class LoginFilter extends GenericFilterBean {
 		
 			if (jwtUser == null) {
 				request.getRequestDispatcher(unauthorizedPath).forward(request, response);
-				return;
+				return false;
 			}
 			
 			//是否有权限
@@ -112,7 +109,7 @@ public class LoginFilter extends GenericFilterBean {
 //				servletResponse.sendRedirect(forbiddenPath);
 				request.getRequestDispatcher(forbiddenPath).forward(request, response);
 
-				return;
+				return false;
 
 			} 
 			String token = jwtGenerator.generateToken(jwtUser);
@@ -122,7 +119,7 @@ public class LoginFilter extends GenericFilterBean {
 			SecurityContextHolder.setContext(context);
 		}
 		log.info("path:"+servletRequest.getRequestURI());
-
+		return true;
 //		chain.doFilter(request, response);
 	}
 	/**
@@ -148,5 +145,6 @@ public class LoginFilter extends GenericFilterBean {
 		}
 		return false;
 	}
+
 
 }

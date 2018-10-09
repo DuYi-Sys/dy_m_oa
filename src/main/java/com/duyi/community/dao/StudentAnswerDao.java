@@ -24,7 +24,7 @@ public interface StudentAnswerDao {
 	@Update("UPDATE student_answer SET CONTENT=#{content}, QUESTION_ID=#{questionId}, OWNER_ID=#{ownerId} " + 
 			"WHERE ID=#{id}")
 	int updateAnswer(StudentAnswerInfo answer);
-	@Select("SELECT a.ID, CONTENT, QUESTION_ID, OWNER_ID,CREATED,u.NICKNAME as OWNER_NAME FROM student_answer a LEFT  JOIN student_user_info u ON OWNER_ID=u.ID where a.ID=#{questionId}")
+	@Select("SELECT a.ID, CONTENT, QUESTION_ID, OWNER_ID,CREATED,u.NICKNAME as OWNER_NAME FROM student_answer a LEFT  JOIN student_user_info u ON OWNER_ID=u.ID where a.QUESTION_ID=#{questionId}")
 	List<StudentAnswerInfo> findPageByQuestionId(@Param("questionId")Long questionId,RowBounds brounds);
 	@Select("SELECT count(ID)  FROM student_answer where ID=#{questionId}")
 	int getCountByQuestionId(@Param("questionId") Long questionId);

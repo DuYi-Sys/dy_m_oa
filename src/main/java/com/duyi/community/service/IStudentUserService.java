@@ -20,7 +20,9 @@ public interface IStudentUserService {
 	StudentUserInfo getByNickName(String nickName);
 
 	StudentUserInfo addStudent(StudentUserInfo studentInfo);
+	StudentUserInfo modifyStudent(StudentUserInfo studentInfo,String oldPassword);
 	StudentUserInfo modifyStudent(StudentUserInfo studentInfo);
+
 	Page<StudentUserInfo> findStudents(Pageable pageable);
 	List<StudentUserInfo> findStudentsByNickName(String nickName);
 	

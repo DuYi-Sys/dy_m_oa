@@ -27,7 +27,7 @@ public class FilterChainProxy extends GenericFilterBean {
 
 	private static Trace log=Trace.register(FilterChainProxy.class);
 	@Resource(name="LoginFilter")
-	private Filter loginFilter;
+	private LoginFilter loginFilter;
 	@Resource(name="StudentLoginFilter")
 	private StudentLoginFilter studentLoginFilter;
 	/* (non-Javadoc)
@@ -36,16 +36,19 @@ public class FilterChainProxy extends GenericFilterBean {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		loginFilter.doFilter(request, response, chain);
-		studentLoginFilter.doFilter(request, response, chain);
 		HttpServletResponse httpServletResponse=(HttpServletResponse)response;
 		httpServletResponse.addHeader("Access-Control-Allow-Origin", "*");
 		httpServletResponse.addHeader("Access-Control-Request-Method", "*");
 		httpServletResponse.addHeader("Access-Control-Allow-Headers", "*");
 		httpServletResponse.addHeader("Access-Control-Allow-Credentials","true");
+		if(loginFilter.doFilter(request, response, chain)) {
+			if(studentLoginFilter.doFilter(request, response, chain)) {
+				chain.doFilter(request, response);
+			}
 
-//		corsFilter.doFilter(request, response, chain);
-		chain.doFilter(request, response);
+		}
+
+
 	}
 
 }

@@ -14,6 +14,7 @@ import com.duyi.commons.page.Page;
 import com.duyi.commons.page.Pageable;
 import com.duyi.commons.page.PageableExecutionUtils;
 import com.duyi.commons.page.PageableExecutionUtils.TotalSupplier;
+import com.duyi.commons.validate.WebException;
 import com.duyi.community.dao.StudentUserDao;
 import com.duyi.community.domain.StudentUserInfo;
 import com.duyi.security.PasswordEncoder;
@@ -47,13 +48,24 @@ public class StudentUserServiceImpl implements IStudentUserService {
 	 * @see com.duyi.community.service.IStudentService#updateStudent(com.duyi.community.domain.StudentInfo)
 	 */
 	@Override
-	public StudentUserInfo modifyStudent(StudentUserInfo studentInfo) {
+	public StudentUserInfo modifyStudent(StudentUserInfo studentInfo,String oldPassword) {
+		StudentUserInfo old=dao.getByUsername(studentInfo.getUsername());
 		Assert.notNull(studentInfo);
-		if(!Strings.isNullOrEmpty(studentInfo.getUnencodePassword()) ) {
-			studentInfo.setCredential(passwordEncoder.encode(studentInfo.getUnencodePassword()));
+		if(passwordEncoder.matches(oldPassword, old.getCredential())) {
+			old.setNickName(studentInfo.getNickName());
+			old.setQq(studentInfo.getQq());
+			old.setWeixin(studentInfo.getWeixin());
+			old.setUnencodePassword(studentInfo.getUnencodePassword());
+		
+			if(!Strings.isNullOrEmpty(studentInfo.getUnencodePassword()) ) {
+				studentInfo.setCredential(passwordEncoder.encode(studentInfo.getUnencodePassword()));
+			}
+			dao.update(studentInfo);
+			return studentInfo;
 		}
-		dao.update(studentInfo);
-		return studentInfo;
+		
+		throw new WebException(1, "旧密码不匹配");
+
 	}
 
 
@@ -107,6 +119,24 @@ public class StudentUserServiceImpl implements IStudentUserService {
 	@Override
 	public StudentUserInfo getById(Long id) {
 		return dao.getById(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.duyi.community.service.IStudentUserService#modifyStudent(com.duyi.community.domain.StudentUserInfo)
+	 */
+	@Override
+	public StudentUserInfo modifyStudent(StudentUserInfo studentInfo) {
+		StudentUserInfo old=dao.getByUsername(studentInfo.getUsername());
+		old.setNickName(studentInfo.getNickName());
+		old.setQq(studentInfo.getQq());
+		old.setWeixin(studentInfo.getWeixin());
+		old.setUnencodePassword(studentInfo.getUnencodePassword());
+	
+		if(!Strings.isNullOrEmpty(studentInfo.getUnencodePassword()) ) {
+			studentInfo.setCredential(passwordEncoder.encode(studentInfo.getUnencodePassword()));
+		}
+		dao.update(studentInfo);
+		return studentInfo;
 	}
 
 }

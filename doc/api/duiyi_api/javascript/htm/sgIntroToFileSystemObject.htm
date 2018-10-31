@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+
+<HEAD><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<TITLE>Microsoft(R) Scripting 库 - FileSystemObject 和 Scripting 运行时库参考的介绍</TITLE> 
+
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+
+<META NAME=MS-HAID CONTENT="sgIntroToFileSystemObject">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META NAME="PRODUCT" CONTENT="Scripting Library">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="FileSystemObject">
+<META NAME="Description" CONTENT="Introduction to the FileSystemObject and the Scripting Run-Time Library Reference">
+<META NAME="Keywords" CONTENT="FileSystemObject object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) Scripting 库 - FileSystemObject</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>FileSystemObject 和 <br> Scripting 运行时库参考的介绍</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;
+<a href="sgUsingFileSystemObject.htm">上一页</A><br>
+<a href="sgFileSystemObjects.htm">下一页</A><P></FONT>
+</TD></TR>
+</TABLE><p>
+
+<hr noshade class='9v' >
+<blockquote>
+<b>FileSystemObject</b> (FSO) 对象模式，允许对大量的属性、方法和事件，使用较熟悉的 <i>object.method</i> 语法，来处理文件夹和文件。<p>
+
+使用这个基于对象的工具和：
+
+<ul>
+<li><A>HTML 来创建 Web 页</a><p>
+<li><A>Windows Scripting Host 来为 Microsoft Windows 创建批文件</a><p>
+<li><A>Script Control 来对用其他语言开发的应用程序提供编辑脚本的能力</a><p>
+</ul>
+
+因为在客户端使用 FSO 而引起重要的安全性问题，提供潜在地不受欢迎的对客户端本地文件系统的访问，假定本文档使用 FSO 对象模式，来创建由服务器端的 Internet Web 页执行的脚本。因为使用了服务器端，Internet Explorer 默认安全设置不允许客户端使用 <B>FileSystemObject</B> 对象。覆盖那些默认值可能会引起在本地计算机上不受欢迎的对其文件系统的访问，从而导致文件系统完整性的全部破坏，同时引起数据遗失或更糟的情况。<P>
+
+FSO 对象模式使服务器端的应用程序能创建、改变、移动和删除文件夹，或探测特定的文件夹是否存在，若存在，还可以找出有关文件夹的信息，如名称、被创建或最后一次修改的日期，等等。<P>
+
+FSO 对象模式还使文件处理变得很容易。在处理文件时，主要的目标是以易于访问的格式把数据存储在有效的空间和资源中。这就要求能够创建文件，插入和改变数据，以及输出（读取）数据。因为把数据存储在数据库中，如 Access 或 SQL 服务器，会给应用程序增加很大的开销，所以把数据存储在二进制或文本文件中可能是最有效的解决方案。可能不希望有该开销，或者数据访问要求可能不需要与功能完备的数据库相关联的所有额外功能。<p>
+
+包含在 Scripting <a href="fsoglossary.htm#defTypeLibrary">类型库</A> (Scrrun.dll) 中的 FSO 对象模式，支持通过 <b>TextStream</b> 对象来创建和操作文本文件。虽然还不支持二进制文件的创建或操作，但计划将来要支持二进制文件。<P>
+</blockquote>
+
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>function 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="function 语句">
+<META NAME="MS-HKWD" CONTENT="function">
+<META NAME="MS-HKWD" CONTENT="函数声明">
+<META NAME="MS-HKWD" CONTENT="new 运算符">                
+
+<META NAME=MS-HAID CONTENT="jsstmfunction">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="function Statement">
+<META NAME="Keywords" CONTENT="function statement; function; declaring functions; new operator">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>function 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmfunctionC.htm">请参阅</a></font>
+<HR NOSHADE class='9v' >
+
+
+<h5>描述</h5>
+<Blockquote>
+声明一个新的函数。
+</blockquote>
+
+<h5>语法</h5>
+<blockquote>
+<b>function</b> <i>functionname</i>([<i>argument1</i> [,  <i>argument2</i> [, ...<i>argumentn</i>]]])<br>
+{<br>
+&nbsp;&nbsp;&nbsp;<i>statements</i><br>
+}
+
+<p><b>function</b> 语句的语法组成如下：
+
+<p><TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>functionname</i></FONT></TD>
+		<TD><FONT class='9v' >函数名。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>argument1...argumentn</i></FONT></TD>
+		<TD><FONT class='9v' >可选的、函数理解的参数列表、各个参数之间用逗号分开。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>statements</i></FONT></TD>
+		<TD><FONT class='9v' >一个或多个 JScript 语句。</FONT></TD></TR>
+</TABLE>
+</blockquote>
+<h5>说明</h5>
+<Blockquote>
+使用 <b>function</b> 语句来声明一个稍后要使用的函数。在脚本的其他地方调用该函数前，<i>statements</i> 中包含的代码不被执行。<P>
+
+下面示例说明了 <B>function</B> 语句的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' ><font color="#FF0000">function</FONT> myfunction<font color="#FF0000">(</FONT>arg1, arg2<font color="#FF0000">)</FONT>
+<font color="#FF0000">{</FONT>
+  var r;
+  r = arg1 * arg2;
+  return(r);
+<font color="#FF0000">}</FONT></FONT></PRE></BLOCKQUOTE>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR>
+<TR><TD VALIGN=TOP>
+<FONT class='9v' ><b>注意</b>&nbsp;&nbsp;在调用函数时，确保总是包括了圆括号以及任何需要的参数。不带圆括号调用函数将导致返回函数的文本，而不是函数的结果。
+</FONT></TD></TR><TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE>
+
+</blockquote>
+<hr noshade class='9v' >
+ 
+</font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>Add 方法 (Folders)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Add 方法">
+<META NAME="MS-HKWD" CONTENT="Add">
+<META NAME="MS-HKWD" CONTENT="文件夹添加">
+<META NAME="MS-HKWD" CONTENT="folders">
+<META NAME="MS-HKWD" CONTENT="Folders 集合">          
+
+<META NAME=MS-HAID CONTENT="jsFolderAddFolders"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Add method; Add; adding folders; folders; Folders collection">
+
+<META NAME="Description" CONTENT="Add Method">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Add 方法 (Folders)</B></FONT><!>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE>
+
+<FONT class='9v' ><P>
+<!><a href="jsFolderAddFoldersC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsFolderAddFoldersA.htm">应用于</A></FONT><!>
+
+<HR noshade class='9v' >
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>向 <b>Folders</b> 集合中添加新的 <b>Folder</b> 。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i><b>.</b><b>Add (</b><i>folderName</i><b>)</b><!>
+<p><!><b>Add</b> 方法包括了以下部分：<!><p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+		<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>object<!></FONT></TD>
+		<TD><FONT class='9v' ><!>必选项。<!> <!>应为 <b>Folders</b> 集合的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>folderName<!></FONT></TD>
+		<TD><FONT class='9v' ><!>必选项。<!> <!>要添加的新 <b>Folder</b> 的名称。<!></FONT></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的例子说明了使用 <b>Add</b> 方法创建新文件夹的方法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function AddNewFolder(path,folderName)
+{
+  var fso, f, fc, nf;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.GetFolder(path);
+  fc = f.SubFolders;
+  if (folderName != "" )
+    nf = <font color="#FF0000">fc.Add(</font>folderName<font color="#FF0000">)</font>;
+  else
+    nf = <font color="#FF0000">fc.Add(</font>"New Folder"<font color="#FF0000">)</font>;
+}</font></pre></BLOCKQUOTE>
+
+<!>如果 <i>folderName</i> 已经存在了，则会出错。<!>
+
+
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

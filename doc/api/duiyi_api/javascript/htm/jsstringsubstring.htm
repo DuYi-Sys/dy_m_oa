@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>substring 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="substring 方法">
+<META NAME="MS-HKWD" CONTENT="substring">                                                                    
+
+
+<META NAME=MS-HAID CONTENT="jsstringsubstring">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="substring Method">
+
+<META NAME="Keywords" CONTENT="substring Method; substring">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>
+substring 方法
+</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsstringsubstringC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringsubstringA.htm">应用于</a></font><hr noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回位于 <b>String</b> 对象中指定位置的子字符串。
+</BLOCKQUOTE>
+<h5>语法</h5>
+<BLOCKQUOTE><i>strVariable</i>.<b>substring(</b><i>start</i>, <i>end</i><b>)</b><br>
+"String Literal".<b>substring(</b><i>start</i>, <i>end</i><b>)</b>
+<p><b>substring</b> 方法的语法包括下述参数：
+<p>
+<table WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD>
+</TR>
+<tr VALIGN=TOP>
+ <td><FONT class='9v' ><i>start</i></FONT></td>
+ <td><FONT class='9v' >指明子字符串的起始位置，该索引从 0 开始起算。</FONT></td>
+</tr>
+<tr VALIGN=TOP>
+ <td><FONT class='9v' ><i>end</i></FONT></td>
+ <td><FONT class='9v' >指明子字符串的结束位置，该索引从 0 开始起算。</FONT></td>
+</tr>
+</table>
+</BLOCKQUOTE>
+<h5>说明</h5>
+<BLOCKQUOTE><b>substring</b> 方法将返回一个包含从原始对象中获得的子字符串的 <b>String</b> 对象。
+<p> <b>substring</b> 方法使用 <i>start</i> 和 <i>end</i> 两者的较小值作为子字符串的起始点。例如， <i>strvar</i>.<b>substring(</b>0, 3<b>)</b> 和 <i>strvar</i>.<b>substring(</b>3, 0<b>)</b> 将返回相同的子字符串。
+
+<p>唯一的例外是对负参数的处理。如果第一个参数小于 0，则将作为 0 来处理。而如果第二个参数是负数，则将设置为第一个参数的值。
+
+<p>该子字符串的长度等于 <i>start</i> 和 <i>end</i> 差的绝对值。例如，在 <i>strvar</i>.<b>substring(</b>0, 3<b>)</b> 和 <i>strvar</i>.<b>substring(</b>3, 0<b>)</b> 返回的子字符串的的长度是 3。
+
+<p>最后，<i>start</i> 和 <i>end</i> 可以是字符串。在这种情况下，如果可能这些字符串将被强制转换为整数。如果不可能，参数的值将作为 0 进行处理。<P>
+
+下面的示例演示了 <B>substring</B> 方法的用法：<p>
+
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function SubstringDemo()
+{
+  var s, ss;
+  var s = "The quick brown fox jumped over the lazy yellow dog.";
+  ss = <font color="#FF0000">s.substring(</FONT>16<font color="#FF0000">,</FONT> 19<font color="#FF0000">)</FONT>;
+  return(ss);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</FONT>
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

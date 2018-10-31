@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>if...else 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="if...else 语句">
+<META NAME="MS-HKWD" CONTENT="if...else">
+<META NAME="MS-HKWD" CONTENT="语句执行">
+<META NAME="MS-HKWD" CONTENT="条件执行">
+<META NAME="MS-HKWD" CONTENT="if 语句">
+<META NAME="MS-HKWD" CONTENT="else">                                 
+
+<META NAME=MS-HAID CONTENT="jsstmif">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="if...else Statement">
+<META NAME="Keywords" CONTENT="if...else statement; if...else; executing statements; conditional execution; if statement; else">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>if...else 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE>
+<p> 
+<FONT class='9v' ><a href="jsstmifC.htm">请参阅</a> </font>
+
+<hr noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>根据一个表达式的值，有条件地执行一组语句。</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><b>if</b> (<i>condition</i>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>statement1</i><br>
+[<b>else</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>statement2</i>]
+
+<p>
+<b>if...else</b> 语句的语法组成如下：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0><TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>condition</i></FONT></TD>
+<TD><FONT class='9v' >一个
+<a href="glossary.htm#defBoolean"> Boolean 表达式</A>。如果 <i>condition</i> 是
+<a href="glossary.htm#defnull"><B>null</B> </A>或<a href="glossary.htm#defundefined">undefined</a>，则 <i>condition</i> 被当作 <b>false</b>。
+</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement1</i></FONT></TD>
+<TD><FONT class='9v' > <i>condition</i> 是 <b>true</b> 时要执行的语句。可以是<a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement2</i></FONT></TD>
+<TD><FONT class='9v' > <i>condition</i> 是 <b>false</b> 时要被执行的语句。可以是复合语句。</FONT></TD></TR>
+</TABLE></BLOCKQUOTE>
+<H5>说明</H5>
+<BLOCKQUOTE>
+把 <i>statement1</i> 和 <i>statement2</i> 括在大括号 ({}) 内通常是一个好习惯，这样就更清楚，并可以避免无意中造成错误。在下面示中，您可能打算把 <b>else</b> 和第一个 <b>if</b> 语句匹配，但它实际上却是和第二个相匹配的。
+<blockquote><pre><FONT face=" 宋体" class='9v' ><FONT COLOR="#FF0000">if</font> (x == 5)
+  <FONT COLOR="#FF0000">if</font> (y == 6)
+     z = 17;
+<FONT COLOR="#FF0000">else</font>
+  z = 20;
+</font></pre></blockquote>
+按如下方法改写代码可以消除任何含混不清：
+<blockquote><pre><FONT face=" 宋体" class='9v' ><FONT COLOR="#FF0000">if</font> (x == 5)
+  {
+  <FONT COLOR="#FF0000">if</font> (y == 6)
+     z = 17;
+  }
+<FONT COLOR="#FF0000">else</font>
+  z = 20;
+</font></pre></blockquote>
+
+同样，如果希望添加一个语句到 <i>statement1</i>，同时不使用大括号，则可能会产生错误：
+<blockquote><pre><FONT face=" 宋体" class='9v' ><FONT COLOR="#FF0000">if </font>(x == 5)
+  z = 7;
+  q = 42;
+<FONT COLOR="#FF0000">else</font>
+  z = 19;
+</font></pre></blockquote>
+在这种情况下，有一个语法错误，因为在 <b>if</b> 和 <b>else</b> 语句之间有多条语句。在 <b>if</b> 和 <b>else</b> 之间的语句需要大括号。
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

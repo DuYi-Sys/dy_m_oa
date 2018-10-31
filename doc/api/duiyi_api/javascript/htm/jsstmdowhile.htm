@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>do...while 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="do...while 语句">
+<META NAME="MS-HKWD" CONTENT="do...while">
+<META NAME="MS-HKWD" CONTENT="语句执行">
+<META NAME="MS-HKWD" CONTENT="循环执行">
+<META NAME="MS-HKWD" CONTENT="循环语句">
+<META NAME="MS-HKWD" CONTENT="终止循环">
+<META NAME="MS-HKWD" CONTENT="条件">                                               
+
+<META NAME=MS-HAID CONTENT="jsstmdowhile">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="do...while Statement">
+<META NAME="Keywords" CONTENT="do...while statement; do...while; executing statements; executing loops; looping statements; conditions; terminating loops; conditions">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>do...while 语句</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstmdowhileC.htm">请参阅</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>第一次执行一个语句块，然后重复循环的执行该语句块，直到条件表达式等于 <b>false</b>。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><b>do</b><br>
+&nbsp;&nbsp;&nbsp;<i>statement</i><br>
+<b>while </b>(<i>expression</i>) ;
+ 
+
+<P><b>do...while</b> 语句的语法组成如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement</i></FONT></TD>
+<TD><FONT class='9v' > <i>expression</i> 是 <b>true</b> 时要执行的语句。可以是 <a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>expression</i></FONT></TD>
+<TD><FONT class='9v' >一个可以强制转换为 Boolean  <b>true</b> 或 <b>false</b> 的 <a href="glossary.htm#defExpression">表达式</a>。如果 <i>expression</i> 是 <b>true</b>，则再执行一次循环。如果 <i>expression</i> 是 <b>false</b>，则结束循环。
+</FONT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+在循环的第一次重复执行完成前，不检查 <i>expression</i> 的值，保证至少执行循环一次。此后，循环每成功重复一次后都要检查表达式。
+<p>下面的代码使用 <b>do...while</b> 语句来重复 <b>Drives</b> 集合：
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function GetDriveList()
+{
+  var fso, s, n, e, x;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  e = new Enumerator(fso.Drives);
+  s = "";
+  <font color="#FF0000">do</font>
+  {
+    x = e.item();
+    s = s + x.DriveLetter;
+    s += " - ";
+    if (x.DriveType == 3)
+      n = x.ShareName;
+    else if (x.IsReady)
+      n = x.VolumeName;
+    else
+      n = "[Drive not ready]";
+    s +=  n + "&lt;br&gt";
+    e.moveNext();
+  }
+  <font color="#FF0000">while (</font>!e.atEnd()<font color="#FF0000">)</font>;
+  return(s);
+}
+</font></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

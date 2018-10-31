@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD>
+<TITLE>JScript 的运算符</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="算术运算符">
+<META NAME="MS-HKWD" CONTENT="逻辑运算符">
+<META NAME="MS-HKWD" CONTENT="按位运算符">
+<META NAME="MS-HKWD" CONTENT="赋值运算符">
+<META NAME="MS-HKWD" CONTENT="运算符优先级">                                              
+
+<META NAME=MS-HAID CONTENT="jsoperators">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="JScript Operators">
+<META NAME="Keywords" CONTENT="JScript tutorial; operators; arithmetic operators; logical operators; bitwise operators; assignment operators; operator precedence">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=300>
+
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>JScript 的运算符</B></FONT>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><br><a href="datatype.htm">上一页</A><br><a href="conditionals.htm">下一页</A><P></FONT>
+</TD></TR>
+</TABLE>
+<p>
+<hr noshade class='9v' >
+
+
+<BLOCKQUOTE>
+JScript 具有全范围的运算符,包括算术、逻辑、位以及赋值运算符。此外还有其他一些运算符。<P>
+
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR BGCOLOR=#DDDDDD VALIGN=TOP ALIGN=CENTER>
+	<TD COLSPAN=2><FONT class='9v' ><B>计算</B></FONT></TD>
+	<TD COLSPAN=2><FONT class='9v' ><B>逻辑</B></FONT></TD>
+	<TD COLSPAN=2><FONT class='9v' ><B>位运算</B></FONT></TD>
+	<TD COLSPAN=2><FONT class='9v' ><B>赋值</B></FONT></TD>
+	<TD COLSPAN=2><FONT class='9v' ><B>杂项</B></FONT></TD></TR>
+
+<TR  BGCOLOR=#DDDDDD VALIGN=TOP>
+	<TD><FONT class='9v' ><B>描述</B></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' ><B>符号</B></FONT></TD>
+  	<TD><FONT class='9v' ><B>描述</B></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' ><B>符号</B></FONT></TD>
+	<TD><FONT class='9v' ><B>描述</B></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' ><B>符号</B></FONT></TD>
+	<TD><FONT class='9v' ><B>描述</B></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' ><B>符号</B></FONT></TD>
+	<TD><FONT class='9v' ><B>描述</B></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' ><B>符号</B></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><a href="jsoprSubtract.htm">负值</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >-</FONT></TD>
+	<TD><FONT class='9v' ><a href="jsoprNot.htm">逻辑非</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >!</FONT></TD>
+      <TD><font class='9v' ><a href="jsoprbitwisenot.htm">按位取反</A></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >~</FONT></TD>    
+      <TD><font class='9v' ><a href="jsoprassign.htm">赋值</a></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >=</FONT></TD>
+       <TD><font class='9v' ><a href="jsoprdelete.htm"><b>删除</b></a></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >delete</FONT></TD>
+	
+	
+</TR>
+
+<TR VALIGN=TOP>
+      <TD><font class='9v' ><a href="jsoprincdec.htm">递增</A></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >++ </FONT></TD>    
+	<TD><FONT class='9v' ><a href="jsgrpComparison.htm">小于</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&lt;</FONT></TD>
+      <TD><font class='9v' ><a href="jsoprlshift.htm">按位左移</A></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&lt;&lt; </FONT></TD>    
+      <TD><font class='9v' ><a href="jsopraggassign.htm">运算赋值</A></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' ><i>oP</i>= </FONT></TD>    
+<TD><font class='9v' ><a href="jsoprtypeof.htm"><b>typeof 运算符</b></a></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >typeof</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+      <TD><font class='9v' ><a href="jsoprincdec.htm">递减</A></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >-- </FONT></TD>    
+	<TD><FONT class='9v' ><a href="jsgrpComparison.htm">大于</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&gt;</FONT></TD>
+      <TD><font class='9v' ><a href="jsoprrshift.htm">按位右移</A></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&gt;&gt; </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+<TD><font class='9v' ><a href="jsoprvoid.htm"><b>void 运算符</b></a></FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >void</FONT></TD>    
+</TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><a href="jsoprMultiply.htm"> 乘法</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >*</FONT></TD>
+	<TD><FONT class='9v' ><a href="jsgrpComparison.htm">小于等于</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&lt;=</FONT></TD>
+      <TD><font class='9v' ><a href="jsoprurshift.htm">无符号右移</A> </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&gt;&gt;&gt; </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><a href="jsoprDivide.htm">除法</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >/</FONT></TD>
+	<TD><FONT class='9v' ><a href="jsgrpComparison.htm">大于等于</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&gt;=</FONT></TD>
+      <TD><font class='9v' ><a href="jsoprbitwiseand.htm">按位与</A> </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >& </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+</TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><a href="jsoprMod.htm" TARGET="_top">取模运算</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >%</FONT></TD>
+  	<TD><FONT class='9v' ><a href="jsgrpComparison.htm">等于</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >==</FONT></TD>
+      <TD><font class='9v' ><a href="jsoprxor.htm">按位异或</A> </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >^ </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+</TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><a href="jsoprAdd.htm">加法</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >+</FONT></TD>
+  	<TD><FONT class='9v' ><a href="jsgrpComparison.htm">不等于</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >!=</FONT></TD>
+      <TD><font class='9v' ><a href="jsoprbitwiseor.htm">按位或</A> </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >| </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD> 
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>   
+</TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><a href="jsoprSubtract.htm">减法</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >-</FONT></TD>
+	<TD><FONT class='9v' ><a href="jsoprAnd.htm">逻辑与</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&&</FONT></TD>
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD> 
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>   
+</TR>
+<TR VALIGN=TOP>
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+	<TD><FONT class='9v' ><a href="jsoprOr.htm">逻辑或</A></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >||</FONT></TD>
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD> 
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>   
+</TR>
+<TR VALIGN=TOP>
+
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+	<TD><FONT class='9v' ><a href="jsoprconditional.htm">条件（三元运算符）</a></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >?: </FONT></TD>
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </TD></FONT>
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+</TR>
+<tr valign=top>
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+  	<TD><FONT class='9v' ><a href="jsoprcomma.htm">逗号</a></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >,</FONT></TD>
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+      <TD><font class='9v' >&nbsp </FONT></td>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>    
+
+</TR>
+<TR VALIGN=TOP>
+
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+	<TD><FONT class='9v' ><a href="jsgrpcomparison.htm">恒等</a></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >===</FONT></TD>
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </TD></FONT>
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+
+</TR>
+<TR VALIGN=TOP>
+
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+	<TD><FONT class='9v' ><a href="jsgrpcomparison.htm">不恒等</a></FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >!== </FONT></TD>
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </TD></FONT>
+	<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+<TD><FONT class='9v' >&nbsp </FONT></TD>
+	<TD ALIGN=CENTER><FONT class='9v' >&nbsp </FONT></TD>
+</TR>
+</TABLE>
+
+<P>
+</blockquote>
+<FONT class='9v' >
+<h5>运算符优先极</h5>
+<blockquote>
+JScript 中的运算符是按照一个特定的顺序来求值的。这个顺序就是运算符的优先级。下表按从最高到最低的优先级列出了这些运算符。处于同一行中的运算符按从左至右的顺序求值。
+<p>
+
+<table border=1 width=87% CELLPADDING=5 CELLSPACING=0>
+<tr bgcolor="#DDDDDD"><td align=left><Font class='9v' ><b>运算符</b></Font></td><td align=left><Font class='9v' ><b>描述</b></Font></td>
+<tr><td><Font class='9v' >. [] ()</Font></td><td><Font class='9v' >字段访问、数组下标以及函数调用</Font></td></tr>
+<tr><td><Font class='9v' >++ -- - ~ ! typeof new void delete</Font></td><td><Font class='9v' >一元运算符、返回数据类型、对象创建、未定义值</Font></td></tr>
+<tr><td><Font class='9v' >* / %</Font></td><td><Font class='9v' >乘法、除法、取模</Font></td></tr>
+<tr><td><Font class='9v' >+ - +</Font></td><td><Font class='9v' >加法、减法、字符串连接</Font></td></tr>
+<tr><td><Font class='9v' >&lt;&lt; &gt;&gt; &gt;&gt;&gt;</Font></td><td><Font class='9v' >移位</Font></td></tr>
+<tr><td><Font class='9v' >&lt; &lt;= &gt; &gt;=</font></td><td><Font class='9v' >小于、小于等于、大于、大于等于</Font></td></tr>
+<tr><td><Font class='9v' >== != === !==</Font></td><td><Font class='9v' >等于、不等于、恒等、不恒等</Font></td></tr>
+<tr><td><Font class='9v' >&</Font></td><td><Font class='9v' >按位与</Font></td></tr>
+<tr><td><Font class='9v' >^</Font></td><td><Font class='9v' >按位异或</Font></td></tr>
+<tr><td><Font class='9v' >|</Font></td><td><Font class='9v' >按位或</Font></td></tr>
+<tr><td><Font class='9v' >&&</Font></td><td><Font class='9v' >逻辑与</Font></td></tr>
+<tr><td><Font class='9v' >||</Font></td><td><Font class='9v' >逻辑或</Font></td></tr>
+<tr><td><Font class='9v' >?:</Font></td><td><Font class='9v' >条件</Font></td></tr>
+<tr><td><Font class='9v' >= <i>oP</i>=</Font></td><td><Font class='9v' >赋值、运算赋值</Font></td></tr>
+<tr><td><Font class='9v' >,</Font></td><td><Font class='9v' >多重求值</Font></td></tr>
+</table>
+
+<p>圆括号可用来改变求值顺序。圆括号中的表达式应在其用于语句的其余部分之前全部被求值。
+
+<p>具有较高优先级的运算符将在具有较低优先级的运算符之前被求值。例如：
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >z = 78 * (96 + 3 + 45)
+</FONT></pre></BLOCKQUOTE>
+在该表达式中有五个运算符： =, *, (), +, 以及 +。根据优先级，它们将按下面的顺序求值： (), *, +, +, =。  
+
+<ol>
+<li>首先对圆括号内的表达式求值：其中有两个加法运算符，它们具有相同的优先级：96 和 3 相加，然后再将它们的和与 45 相加，得到的结果为 144。
+<li>然后是乘法运算： 78 和 144 相乘，得到结果为 11232。
+<li>最后是赋值运算：将 11232 赋给 z。
+</ol>
+
+
+
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</font>
+
+
+
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

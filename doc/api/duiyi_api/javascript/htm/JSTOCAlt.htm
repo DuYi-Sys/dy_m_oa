@@ -1,0 +1,718 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>Microsoft(R) JScript 语言参考</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 语言参考">        
+
+<META NAME=MS-HAID CONTENT="jstocalt">
+ 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="JScript Language Reference">
+<META NAME="Keywords" CONTENT="JScript Language Reference">
+
+<Script Language="JavaScript">
+<!--
+function DisplayTopic(URL)
+{
+    window.open(URL, "_self");
+}
+// -->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=300>
+
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>JScript 语言参考</B></FONT>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="Jstutor.htm">JScript&nbsp;教程</A>&nbsp;<BR>
+<a href="jsversion.htm">版本信息</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+<p>
+<hr noshade class='9v' >
+
+&nbsp;<BR>
+
+<!-- TABLE G -->
+<TABLE CELLPADDING=3 BORDER=0 CELLSPACING=0>
+
+<TR VALIGN=TOP>
+<TD WIDTH=120 HEIGHT=40>
+<FONT class='9v' ><B>特性信息</B></FONT></TD>
+	<TD VALIGN=TOP>
+	<FORM NAME="Form1" ACTION="">
+	<SELECT NAME="Target1">
+
+<OPTION VALUE="jsversion.htm">版本信息
+<OPTION VALUE="jsgrpecmafeatures.htm">JScript 特性 - ECMA
+<OPTION VALUE="jsgrpnonecmafeatures.htm">JScript 特性 - 非-ECMA
+<OPTION VALUE="jsgrpruntimeobjectfeatures.htm">Microsoft Scripting 运行时特性
+<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" LANGUAGE="JavaScript" onClick="DisplayTopic(  document.Form1.Target1.options[document.Form1.Target1.selectedIndex].value)"  Value="  转到  ">
+</FORM>
+</TR>
+
+<TR VALIGN=TOP>
+<TD WIDTH=120 HEIGHT=40>
+<FONT class='9v' ><B>字母顺序关键字列表</B></FONT></TD>
+	<TD VALIGN=TOP>
+	<FORM NAME="Form2" ACTION="">
+	<SELECT NAME="Target2">
+<OPTION VALUE="jsregexpmatches.htm">$1...$9 属性
+<OPTION VALUE="jsmathabs.htm">abs 方法
+<OPTION VALUE="jsmathacos.htm">acos 方法
+<OPTION VALUE="jsobjActiveXObject.htm">ActiveXObject 对象
+<OPTION VALUE="jsoprAdd.htm" >加法运算符 (+)
+<OPTION VALUE="jsstringanchor.htm">anchor 方法
+<OPTION VALUE="jsfunarguments.htm">arguments 属性
+<OPTION VALUE="jsobjarray.htm">Array 对象
+<OPTION VALUE="jsmathasin.htm">asin 方法
+<OPTION VALUE="jsoprassign.htm">赋值运算符 (=)     
+<OPTION VALUE="jsmathatan.htm">atan 方法
+<OPTION VALUE="jsmathatan2.htm">atan2 方法
+<OPTION VALUE="jsenumatEnd.htm">atEnd 方法
+
+<OPTION VALUE="jsstringbig.htm">big 方法
+<OPTION VALUE="jsoprbitwiseand.htm">按位与运算符 (&)     
+<OPTION VALUE="jsoprlshift.htm">按位左移运算符 (&lt;&lt;) 
+<OPTION VALUE="jsoprbitwisenot.htm">按位取非运算符 (~)     
+<OPTION VALUE="jsoprbitwiseor.htm">按位或运算符 (|)     
+<OPTION VALUE="jsoprrshift.htm">按位右移运算符 (&gt;&gt;)   
+<OPTION VALUE="jsoprxor.htm">按位异或运算符 (^)  
+<OPTION VALUE="jsstringblink.htm">blink 方法
+<OPTION VALUE="jsstringbold.htm">bold 方法
+<OPTION VALUE="jsobjBoolean.htm">Boolean 对象
+<OPTION VALUE="jsstmbreak.htm">break 语句
+
+<OPTION VALUE="jsfuncaller.htm">caller 属性
+<OPTION VALUE="jsstmtrycatch.htm">catch 语句
+<OPTION VALUE="jsstmccon.htm">@cc_on 语句
+<OPTION VALUE="jsmathceil.htm">ceil 方法
+<OPTION VALUE="jsstringcharat.htm">charAt 方法
+<OPTION VALUE="jsstringcharCodeAt.htm">charCodeAt 方法
+<OPTION VALUE="jsoprcomma.htm">逗号运算符 (,)
+<OPTION VALUE="jsstmcomment.htm">// (单行注释语句)
+<OPTION VALUE="jsstmcomment.htm">/*..*/ (多行注释语句)
+<OPTION VALUE="jsgrpComparison.htm">比较运算符     
+<OPTION VALUE="jsregexpresscompile.htm">compile 方法
+<OPTION VALUE="jsopraggassign.htm">运算赋值运算符     
+<OPTION VALUE="jsarrayconcat.htm">concat 方法 (Array)
+<OPTION VALUE="jsstringconcat.htm">concat 方法 (String)
+<OPTION VALUE="jsconditionalcomp.htm">条件编译
+<OPTION VALUE="jsconditionalvars.htm">条件编译变量
+<OPTION VALUE="jsoprconditional.htm">条件（三元）运算符 (?:)
+<OPTION VALUE="jsobjectconstructor.htm">constructor 属性
+<OPTION VALUE="jsstmcontinue.htm">continue 语句
+<OPTION VALUE="jsmathcos.htm">cos 方法
+<OPTION VALUE="jsdiccount.htm">Count 属性
+<OPTION VALUE="jstypeconversion.htm">数据类型转换
+<OPTION VALUE="jsobjdate.htm">Date 对象
+<OPTION VALUE="jsoprincdec.htm">递减运算符 (--)  
+<OPTION VALUE="jsoprDelete.htm">delete 运算符
+<OPTION VALUE="jsproDescription.htm">description 属性
+<OPTION VALUE="jsfsotocalt.htm">Dictionary 对象
+<OPTION VALUE="jsVBAdimensions.htm">dimensions 方法
+<OPTION VALUE="jsoprDivide.htm">除法运算符 (/)
+<OPTION VALUE="jsstmdowhile.htm">do...while 语句
+
+<OPTION VALUE="jsmathe.htm">E 属性
+<OPTION VALUE="jsobjEnumerator.htm">Enumerator 对象
+<OPTION VALUE="jsgrpComparison.htm">相等运算符 (==)
+<OPTION VALUE="jsobjError.htm">Error 对象
+<OPTION VALUE="jsglobalescape.htm">escape 方法
+<OPTION VALUE="jsglobaleval.htm">eval 方法
+<OPTION VALUE="jsregexpressexec.htm">exec 方法
+<OPTION VALUE="jsmathexp.htm">exp 方法
+
+<OPTION VALUE="jsfsotocalt.htm">FileSystemObject 对象
+<OPTION VALUE="jsstringfixed.htm">fixed 方法
+<OPTION VALUE="jsmathfloor.htm">floor 方法
+<OPTION VALUE="jsstringfontcolor.htm">fontcolor 方法
+<OPTION VALUE="jsstringfontsize.htm">fontsize 方法
+<OPTION VALUE="jsstmfor.htm">for 语句
+<OPTION VALUE="jsstmforin.htm">for...in 语句
+<OPTION VALUE="jsstringfromCharCode.htm">fromCharCode 方法
+<OPTION VALUE="jsobjFunction.htm">Function 对象
+<OPTION VALUE="jsstmFunction.htm">function 语句
+
+<OPTION VALUE="jsDategetDate.htm">getDate 方法
+<OPTION VALUE="jsDategetDay.htm">getDay 方法
+<OPTION VALUE="jsDategetFullYear.htm">getFullYear 方法
+<OPTION VALUE="jsDategetHours.htm">getHours 方法
+<OPTION VALUE="jsVBAgetItem.htm">getItem 方法
+<OPTION VALUE="jsDategetMilliseconds.htm">getMilliseconds 方法
+<OPTION VALUE="jsDategetMinutes.htm">getMinutes 方法
+<OPTION VALUE="jsDategetMonth.htm">getMonth 方法
+<OPTION VALUE="jsfncGetObject.htm">GetObject 函数
+<OPTION VALUE="jsDategetSeconds.htm">getSeconds 方法
+<OPTION VALUE="jsDategetTime.htm">getTime 方法
+<OPTION VALUE="jsDategetTimeZone.htm">getTimezoneOffset 方法
+<OPTION VALUE="jsDategetUTCDate.htm">getUTCDate 方法
+<OPTION VALUE="jsDategetUTCDay.htm">getUTCDay 方法
+<OPTION VALUE="jsDategetUTCFullYear.htm">getUTCFullYear 方法
+<OPTION VALUE="jsDategetUTCHours.htm">getUTCHours 方法
+<OPTION VALUE="jsDategetUTCMilliseconds.htm">getUTCMilliseconds 方法
+<OPTION VALUE="jsDategetUTCMinutes.htm">getUTCMinutes 方法
+<OPTION VALUE="jsDategetUTCMonth.htm">getUTCMonth 方法
+<OPTION VALUE="jsDategetUTCSeconds.htm">getUTCSeconds 方法
+<OPTION VALUE="jsDategetVarDate.htm">getVarDate 方法
+<OPTION VALUE="jsDategetYear.htm">getYear 方法
+<OPTION VALUE="jsobjGlobal.htm">Global 对象
+<OPTION VALUE="jsgrpComparison.htm" >大于运算符 (&gt;)
+<OPTION VALUE="jsgrpComparison.htm" >大于相等运算符 (&gt;=)
+
+<OPTION VALUE="jsgrpComparison.htm" >恒等运算符 (===)
+<OPTION VALUE="jsstmconditionalif.htm">@if 语句
+<OPTION VALUE="jsstmif.htm">if...else 语句
+<!--OPTION VALUE="jsregexpressignoreCase.htm">ignoreCase Property-->
+<OPTION VALUE="jsoprincdec.htm">递增运算符 (++)
+<OPTION VALUE="jsregexpindex.htm">index 属性
+<OPTION VALUE="jsstringindexof.htm">indexOf 方法
+<OPTION VALUE="jsgrpComparison.htm" >不相等运算符 (!=)
+<OPTION VALUE="jsglobalinfinity.htm">Infinity 属性
+<OPTION VALUE="jsregexpinput.htm">input 属性
+<OPTION VALUE="jsoprinstanceof.htm">instanceof 运算符
+<OPTION VALUE="jsglobalIsFinite.htm">isFinite 方法
+<OPTION VALUE="jsglobalisNaN.htm">isNaN 方法
+<OPTION VALUE="jsstringitalics.htm">italics 方法
+<OPTION VALUE="jsenumitem.htm">item 方法
+
+<OPTION VALUE="jsarrayjoin.htm">join 方法
+
+<OPTION VALUE="jsstmlabeled.htm">Labeled 语句
+<OPTION VALUE="jsregexplastIndex.htm">lastIndex 属性 
+<OPTION VALUE="jsstringlastindexof.htm">lastIndexOf 方法
+<!--OPTION VALUE="jsregexplastMatch.htm">lastMatch Property-->
+<!--OPTION VALUE="jsregexplastParen.htm">lastParen Property-->
+<OPTION VALUE="jsVBAlbound.htm">lbound 方法
+<!--OPTION VALUE="jsregexpleftContext.htm">leftContext Property-->
+<OPTION VALUE="jsarraylength.htm">length 属性 (Array)
+<OPTION VALUE="jsfunlength.htm">length 属性 (Function)
+<OPTION VALUE="jsstringlength.htm">length 属性 (String)
+<OPTION VALUE="jsgrpComparison.htm">小于运算符 (&lt;)
+<OPTION VALUE="jsgrpComparison.htm">小于相等运算符 (&lt;=)
+<OPTION VALUE="jsstringlink.htm">link 方法
+<OPTION VALUE="jsmathln2.htm">LN2 属性
+<OPTION VALUE="jsmathln10.htm">LN10 属性
+<OPTION VALUE="jsmathlog.htm">log 方法
+<OPTION VALUE="jsmathlog2e.htm">LOG2E 属性
+<OPTION VALUE="jsmathlog10e.htm">LOG10E 属性
+<OPTION VALUE="jsoprAnd.htm">逻辑与运算符 (&&)
+<OPTION VALUE="jsoprNot.htm">逻辑非运算符 (!)
+<OPTION VALUE="jsoprOr.htm" >逻辑或运算符 (||)
+
+<OPTION VALUE="jsstringMatch.htm">match 方法
+<OPTION VALUE="jsobjmath.htm">Math 对象
+<OPTION VALUE="jsmathmax.htm">max 方法
+<OPTION VALUE="jsnummaxvalue.htm">MAX_VALUE 属性
+<OPTION VALUE="jsmathmin.htm">min 方法
+<OPTION VALUE="jsnumminvalue.htm">MIN_VALUE 属性
+<OPTION VALUE="jsoprMod.htm" >取模运算符 (%)
+<OPTION VALUE="jsenummoveFirst.htm">moveFirst 方法
+<OPTION VALUE="jsenummoveNext.htm">moveNext 方法
+<!--OPTION VALUE="jsregexpmultiline.htm">multiline Property-->
+<OPTION VALUE="jsoprMultiply.htm" >乘法运算符 (*)
+
+<OPTION VALUE="jsglobalNan.htm">NaN 属性 (Global)
+<OPTION VALUE="jsnumNaN.htm">NaN 属性 (Number)
+<OPTION VALUE="jsnumnegativeInf.htm">NEGATIVE_INFINITY 属性
+<OPTION VALUE="jsoprnew.htm">new 运算符
+<OPTION VALUE="jsgrpComparison.htm" >不恒等运算符 (!==)
+<OPTION VALUE="jsobjNumber.htm">Number 对象
+<OPTION VALUE="jsproNumber.htm">number 属性
+
+<OPTION VALUE="jsobjObject.htm">Object 对象
+<OPTION VALUE="jsoperatorpre.htm">运算符优先级
+
+<OPTION VALUE="jsDateparse.htm">parse 方法
+<OPTION VALUE="jsglobalparseFloat.htm">parseFloat 方法
+<OPTION VALUE="jsglobalparseInt.htm">parseInt 方法
+<OPTION VALUE="jsmathpi.htm">PI 属性
+<OPTION VALUE="jsnumpositiveInf.htm">POSITIVE_INFINITY 属性
+<OPTION VALUE="jsmathpow.htm">pow 方法
+<OPTION VALUE="jsobjectprototype.htm">prototype 属性
+
+<OPTION VALUE="jsmathrandom.htm">random 方法
+<OPTION VALUE="jsobjRegExp.htm">RegExp 对象
+<OPTION VALUE="jsobjregexpression.htm">Regular Expression 对象
+<OPTION VALUE="jsregexpsyntax.htm">正则表达式语法
+<OPTION VALUE="jsstringReplace.htm">replace 方法
+<OPTION VALUE="jsstmreturn.htm">return 语句
+<OPTION VALUE="jsarrayreverse.htm">reverse 方法
+<!--OPTION VALUE="jsregexprightContext.htm">rightContext Property-->
+
+<OPTION VALUE="jsmathround.htm">round 方法
+
+<OPTION VALUE="jsmscRunTimeErrors.htm">运行时错误<OPTION VALUE="jsfncScriptEngine.htm">ScriptEngine 函数
+<OPTION VALUE="jsfncScriptEngineBuildVersion.htm">ScriptEngineBuildVersion 函数
+<OPTION VALUE="jsfncScriptEngineMajorVersion.htm">ScriptEngineMajorVersion 函数
+<OPTION VALUE="jsfncScriptEngineMinorVersion.htm">ScriptEngineMinorVersion 函数
+<OPTION VALUE="jsstringSearch.htm">search 方法
+<OPTION VALUE="jsstmset.htm">@set 语句
+<OPTION VALUE="jsDatesetDate.htm">setDate 方法
+<OPTION VALUE="jsDatesetFullYear.htm">setFullYear 方法
+<OPTION VALUE="jsDatesetHours.htm">setHours 方法
+<OPTION VALUE="jsDatesetMilliseconds.htm">setMilliseconds 方法
+<OPTION VALUE="jsDatesetMinutes.htm">setMinutes 方法
+<OPTION VALUE="jsDatesetMonth.htm">setMonth 方法
+<OPTION VALUE="jsDatesetSeconds.htm">setSeconds 方法
+<OPTION VALUE="jsDatesetTime.htm">setTime 方法
+<OPTION VALUE="jsDatesetUTCDate.htm">setUTCDate 方法
+<OPTION VALUE="jsDatesetUTCFullYear.htm">setUTCFullYear 方法
+<OPTION VALUE="jsDatesetUTCHours.htm">setUTCHours 方法
+<OPTION VALUE="jsDatesetUTCMilliseconds.htm">setUTCMilliseconds 方法
+<OPTION VALUE="jsDatesetUTCMinutes.htm">setUTCMinutes 方法
+<OPTION VALUE="jsDatesetUTCMonth.htm">setUTCMonth 方法
+<OPTION VALUE="jsDatesetUTCSeconds.htm">setUTCSeconds 方法
+<OPTION VALUE="jsDatesetYear.htm">setYear 方法
+<OPTION VALUE="jsmathsin.htm">sin 方法
+<OPTION VALUE="jsarrayslice.htm">slice 方法 (Array)
+<OPTION VALUE="jsstringslice.htm">slice 方法 (String)
+<OPTION VALUE="jsstringsmall.htm">small 方法
+<OPTION VALUE="jsarraysort.htm">sort 方法
+<OPTION VALUE="jsregexpresssource.htm">source 属性
+<OPTION VALUE="jsstringSplit.htm">split 方法
+<OPTION VALUE="jsmathsqrt.htm">sqrt 方法
+<OPTION VALUE="jsmathsqrt1_2.htm">SQRT1_2 属性
+<OPTION VALUE="jsmathsqrt2.htm">SQRT2 属性
+<OPTION VALUE="jsstringstrike.htm">strike 方法
+<OPTION VALUE="jsobjstring.htm">String 对象
+<OPTION VALUE="jsstringsub.htm">sub 方法
+<OPTION VALUE="jsstringsubstr.htm">substr 方法
+<OPTION VALUE="jsstringsubstring.htm">substring 方法
+<OPTION VALUE="jsoprSubtract.htm" >减法运算符 (-)
+<OPTION VALUE="`">sup 方法
+<OPTION VALUE="jsstmswitch.htm">switch 语句
+
+<OPTION VALUE="jsmscSyntaxErrors.htm">语法错误<OPTION VALUE="jsmathtan.htm">tan 方法
+<OPTION VALUE="jsregexpresstest.htm">test 方法
+<OPTION VALUE="jsstmthis.htm">this 语句
+<OPTION VALUE="jsstmthrow.htm">throw 语句
+<OPTION VALUE="jsVBAtoArray.htm">toArray 方法
+<OPTION VALUE="jsDatetoGMTString.htm">toGMTString 方法
+<OPTION VALUE="jsDatetoLocaleString.htm">toLocaleString 方法
+<OPTION VALUE="jsstringtolowercase.htm">toLowerCase 方法
+<OPTION VALUE="jsobjecttoString.htm">toString 方法
+<OPTION VALUE="jsstringtouppercase.htm">toUpperCase 方法
+<OPTION VALUE="jsDatetoUTCString.htm">toUTCString 方法
+<OPTION VALUE="jsstmTryCatch.htm">try 语句
+<OPTION VALUE="jsoprtypeof.htm">typeof 运算符
+
+<OPTION VALUE="jsVBAubound.htm">ubound 方法
+<OPTION VALUE="jsoprSubtract.htm">取相反数运算符 (-)
+<OPTION VALUE="jsglobalunescape.htm">unescape 方法
+<OPTION VALUE="jsoprurshift.htm">无符号右移运算符 (&gt;&gt;&gt;)      
+<OPTION VALUE="jsDateUTC.htm">UTC 方法
+
+<OPTION VALUE="jsobjectvalueOf.htm">valueOf 方法
+<OPTION VALUE="jsstmvar.htm">var 语句
+<OPTION VALUE="jsobjVBArray.htm">VBArray 对象
+<OPTION VALUE="jsoprvoid.htm">void 运算符
+
+<OPTION VALUE="jsstmwhile.htm">while 语句
+<OPTION VALUE="jsstmwith.htm">with 语句
+<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; wkr
+</SELECT>
+</TD>
+
+<TD VALIGN=TOP>
+<INPUT TYPE="button" LANGUAGE="JavaScript" onClick="DisplayTopic(  document.Form2.Target2.options[document.Form2.Target2.selectedIndex].value)"  Value="  转到  ">
+</FORM>
+</TR>
+
+
+<TR VALIGN=TOP>
+<TD WIDTH=120 HEIGHT=40>
+<FONT class='9v'><B>错误</B></FONT></TD>
+	<TD VALIGN=TOP>
+	<FORM NAME="Form10" ACTION="">
+	<SELECT NAME="Target10">
+
+
+<OPTION VALUE="jsmscRunTimeErrors.htm">运行时错误<OPTION VALUE="jsmscSyntaxErrors.htm">语法错误<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" LANGUAGE="JavaScript" onClick="DisplayTopic(  document.Form10.Target10.options[document.Form10.Target10.selectedIndex].value)"  Value="  转到  ">
+</FORM>
+</TR>
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B>函数</B></FONT></TD>
+	<TD>			
+	<FORM Name="Form4" ACTION="">
+	<SELECT NAME="Target4">
+<OPTION VALUE="jsfncGetObject.htm">GetObject 函数
+<OPTION VALUE="jsfncScriptEngine.htm">ScriptEngine 函数
+<OPTION VALUE="jsfncScriptEngineBuildVersion.htm">ScriptEngineBuildVersion 函数
+<OPTION VALUE="jsfncScriptEngineMajorVersion.htm">ScriptEngineMajorVersion 函数
+<OPTION VALUE="jsfncScriptEngineMinorVersion.htm">ScriptEngineMinorVersion 函数
+
+<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic ( document.Form4.Target4.options[document.Form4.Target4.selectedIndex].value)" Value="  转到  ">
+
+</FORM>
+</TR>
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B>方法</B></FONT></TD>
+	<TD>	
+	<FORM NAME="Form5" ACTION="">
+	<SELECT NAME="Target5">
+<OPTION VALUE="jsmathabs.htm">abs 方法
+<OPTION VALUE="jsmathacos.htm">acos 方法
+<OPTION VALUE="jsstringanchor.htm">anchor 方法
+<OPTION VALUE="jsmathasin.htm">asin 方法
+<OPTION VALUE="jsmathatan.htm">atan 方法
+<OPTION VALUE="jsmathatan2.htm">atan2 方法
+<OPTION VALUE="jsenumatEnd.htm">AtEnd 方法
+
+<OPTION VALUE="jsstringbig.htm">big 方法
+<OPTION VALUE="jsstringblink.htm">blink 方法
+<OPTION VALUE="jsstringbold.htm">bold 方法
+
+<OPTION VALUE="jsmathceil.htm">ceil 方法
+<OPTION VALUE="jsstringcharat.htm">charAt 方法
+<OPTION VALUE="jsstringcharCodeAt.htm">charCodeAt 方法
+<OPTION VALUE="jsregexpresscompile.htm">compile 方法
+<OPTION VALUE="jsarrayconcat.htm">concat 方法 (Array)
+<OPTION VALUE="jsstringconcat.htm">concat 方法 (String)
+<OPTION VALUE="jsmathcos.htm">cos 方法
+
+<OPTION VALUE="jsVBAdimensions.htm">dimensions 方法
+<OPTION VALUE="jsglobalescape.htm">escape 方法
+<OPTION VALUE="jsglobaleval.htm">eval 方法
+<OPTION VALUE="jsregexpressexec.htm">exec 方法
+<OPTION VALUE="jsmathexp.htm">exp 方法
+
+<OPTION VALUE="jsstringfixed.htm">fixed 方法
+<OPTION VALUE="jsmathfloor.htm">floor 方法
+<OPTION VALUE="jsstringfontcolor.htm">fontcolor 方法
+<OPTION VALUE="jsstringfontsize.htm">fontsize 方法
+<OPTION VALUE="jsstringfromCharCode.htm">fromCharCode 方法
+
+<OPTION VALUE="jsDategetDate.htm">getDate 方法
+<OPTION VALUE="jsDategetDay.htm">getDay 方法
+<OPTION VALUE="jsDategetFullYear.htm">getFullYear 方法
+<OPTION VALUE="jsDategetHours.htm">getHours 方法
+<OPTION VALUE="jsVBAgetItem.htm">getItem 方法
+<OPTION VALUE="jsDategetMilliseconds.htm">getMilliseconds 方法
+<OPTION VALUE="jsDategetMinutes.htm">getMinutes 方法
+<OPTION VALUE="jsDategetMonth.htm">getMonth 方法
+<OPTION VALUE="jsDategetSeconds.htm">getSeconds 方法
+<OPTION VALUE="jsDategetTime.htm">getTime 方法
+<OPTION VALUE="jsDategetTimeZone.htm">getTimezoneOffset 方法
+<OPTION VALUE="jsDategetUTCDate.htm">getUTCDate 方法
+<OPTION VALUE="jsDategetUTCDay.htm">getUTCDay 方法
+<OPTION VALUE="jsDategetUTCFullYear.htm">getUTCFullYear 方法
+<OPTION VALUE="jsDategetUTCHours.htm">getUTCHours 方法
+<OPTION VALUE="jsDategetUTCMilliseconds.htm">getUTCMilliseconds 方法
+<OPTION VALUE="jsDategetUTCMinutes.htm">getUTCMinutes 方法
+<OPTION VALUE="jsDategetUTCMonth.htm">getUTCMonth 方法
+<OPTION VALUE="jsDategetUTCSeconds.htm">getUTCSeconds 方法
+<OPTION VALUE="jsDategetVarDate.htm">getVarDate 方法
+<OPTION VALUE="jsDategetYear.htm">getYear 方法
+
+<OPTION VALUE="jsstringindexof.htm">indexOf 方法
+<OPTION VALUE="jsglobalisFinite.htm">isFinite 方法
+<OPTION VALUE="jsglobalisNaN.htm">isNaN 方法
+<OPTION VALUE="jsstringitalics.htm">italics 方法
+<OPTION VALUE="jsenumitem.htm">item 方法
+<OPTION VALUE="jsarrayjoin.htm">join 方法
+
+<OPTION VALUE="jsstringlastindexof.htm">lastIndexOf 方法
+<OPTION VALUE="jsVBAlbound.htm">lbound 方法
+<OPTION VALUE="jsstringlink.htm">link 方法
+<OPTION VALUE="jsmathlog.htm">log 方法
+
+<OPTION VALUE="jsstringMatch.htm">match 方法
+<OPTION VALUE="jsmathmax.htm">max 方法
+<OPTION VALUE="jsmathmin.htm">min 方法
+<OPTION VALUE="jsenummoveFirst.htm">moveFirst 方法
+<OPTION VALUE="jsenummoveNext.htm">moveNext 方法
+
+<OPTION VALUE="jsDateparse.htm">parse 方法
+<OPTION VALUE="jsglobalparseFloat.htm">parseFloat 方法
+<OPTION VALUE="jsglobalparseInt.htm">parseInt 方法
+<OPTION VALUE="jsmathpow.htm">pow 方法
+
+<OPTION VALUE="jsmathrandom.htm">random 方法
+<OPTION VALUE="jsstringReplace.htm">replace 方法
+<OPTION VALUE="jsarrayreverse.htm">reverse 方法
+<OPTION VALUE="jsmathround.htm">round 方法
+
+<OPTION VALUE="jsstringSearch.htm">search 方法
+<OPTION VALUE="jsDatesetDate.htm">setDate 方法
+<OPTION VALUE="jsDatesetFullYear.htm">setFullYear 方法
+<OPTION VALUE="jsDatesetHours.htm">setHours 方法
+<OPTION VALUE="jsDatesetMilliseconds.htm">setMilliseconds 方法
+<OPTION VALUE="jsDatesetMinutes.htm">setMinutes 方法
+<OPTION VALUE="jsDatesetMonth.htm">setMonth 方法
+<OPTION VALUE="jsDatesetSeconds.htm">setSeconds 方法
+<OPTION VALUE="jsDatesetTime.htm">setTime 方法
+<OPTION VALUE="jsDatesetUTCDate.htm">setUTCDate 方法
+<OPTION VALUE="jsDatesetUTCFullYear.htm">setUTCFullYear 方法
+<OPTION VALUE="jsDatesetUTCHours.htm">setUTCHours 方法
+<OPTION VALUE="jsDatesetUTCMilliseconds.htm">setUTCMilliseconds 方法
+<OPTION VALUE="jsDatesetUTCMinutes.htm">setUTCMinutes 方法
+<OPTION VALUE="jsDatesetUTCMonth.htm">setUTCMonth 方法
+<OPTION VALUE="jsDatesetUTCSeconds.htm">setUTCSeconds 方法
+<OPTION VALUE="jsDatesetYear.htm">setYear 方法
+<OPTION VALUE="jsmathsin.htm">sin 方法
+<OPTION VALUE="jsarrayslice.htm">slice 方法 (Array)
+<OPTION VALUE="jsstringslice.htm">slice 方法 (String)
+<OPTION VALUE="jsstringsmall.htm">small 方法
+<OPTION VALUE="jsarraysort.htm">sort 方法
+<OPTION VALUE="jsstringSplit.htm">split 方法
+<OPTION VALUE="jsmathsqrt.htm">sqrt 方法
+<OPTION VALUE="jsstringstrike.htm">strike 方法
+<OPTION VALUE="jsstringsub.htm">sub 方法
+<OPTION VALUE="jsstringsubstr.htm">substr 方法
+<OPTION VALUE="jsstringsubstring.htm">substring 方法
+<OPTION VALUE="jsstringsup.htm">sup 方法
+
+<OPTION VALUE="jsmathtan.htm">tan 方法
+<OPTION VALUE="jsregexpresstest.htm">test 方法
+<OPTION VALUE="jsVBAtoArray.htm">toArray 方法
+<OPTION VALUE="jsDatetoGMTString.htm">toGMTString 方法
+<OPTION VALUE="jsDatetoLocaleString.htm">toLocaleString 方法
+<OPTION VALUE="jsstringtolowercase.htm">toLowerCase 方法
+<OPTION VALUE="jsobjecttoString.htm">toString 方法
+<OPTION VALUE="jsstringtouppercase.htm">toUpperCase 方法
+<OPTION VALUE="jsDatetoUTCString.htm">toUTCString 方法
+
+<OPTION VALUE="jsVBAubound.htm">ubound 方法
+<OPTION VALUE="jsglobalunescape.htm">unescape 方法
+<OPTION VALUE="jsDateUTC.htm">UTC 方法
+
+<OPTION VALUE="jsobjectvalueOf.htm">valueOf 方法
+<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+	</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic (  document.Form5.Target5.options[document.Form5.Target5.selectedIndex].value)" Value="  转到  ">
+
+</FORM>                                        
+</TR>
+
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B>对象</B></FONT></TD>
+	<TD>		
+	<FORM NAME="Form6" ACTION="">
+	<SELECT NAME="Target6">
+		<OPTION VALUE="jsobjActiveXObject.htm">ActiveXObject 对象
+		<OPTION VALUE="jsobjArray.htm">Array 对象
+		<OPTION VALUE="jsobjBoolean.htm">Boolean 对象
+		<OPTION VALUE="jsobjDate.htm">Date 对象
+		<OPTION VALUE="jsfsotocalt.htm">Dictionary 对象
+		<OPTION VALUE="jsobjEnumerator.htm">Enumerator 对象
+		<OPTION VALUE="jsobjError.htm">Error 对象
+		<OPTION VALUE="jsfsotocalt.htm">FileSystemObject 对象
+		<OPTION VALUE="jsobjFunction.htm">Function 对象
+		<OPTION VALUE="jsobjGlobal.htm">Global 对象
+		<OPTION VALUE="jsobjMath.htm">Math 对象
+		<OPTION VALUE="jsobjNumber.htm">Number 对象
+		<OPTION VALUE="jsobjObject.htm">Object 对象
+		<OPTION VALUE="`">RegExp 对象
+		<OPTION VALUE="jsobjregexpression.htm">Regular Expression 对象
+		<OPTION VALUE="`">String 对象
+		<OPTION VALUE="jsobjVBArray.htm">VBArray 对象
+<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	</SELECT>
+</TD>
+<TD WIDTH=80 VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic(   document.Form6.Target6.options[document.Form6.Target6.selectedIndex].value)" Value="  转到  ">
+
+</FORM>
+</TR>
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B>运算符</B></FONT></TD>
+	<TD>			
+	<FORM NAME="Form7" ACTION="">
+	<SELECT NAME="Target7">
+
+	<OPTION VALUE="jsoprAdd.htm" >加法运算符 (+)
+        	<OPTION VALUE="jsoprassign.htm">赋值运算符 (=)
+
+	<OPTION VALUE="jsoprbitwiseand.htm">按位与运算符 (&)
+	<OPTION VALUE="jsoprlshift.htm">按位左移运算符 (&lt;&lt;)     
+	<OPTION VALUE="jsoprbitwisenot.htm">按位取非运算符 (~) 
+	<OPTION VALUE="jsoprbitwiseor.htm">按位或运算符 (|)
+        	<OPTION VALUE="jsoprrshift.htm">按位右移运算符 (&gt;&gt;)
+        	<OPTION VALUE="jsoprxor.htm">按位异或运算符 (^)
+
+    	<OPTION VALUE="jsoprcomma.htm">逗号运算符 (,)
+	<OPTION VALUE="jsgrpComparison.htm">比较运算符     
+	<OPTION VALUE="jsopraggassign.htm">运算赋值运算符
+	<OPTION VALUE="jsoprconditional.htm">条件（三元）运算符 (?:)
+
+	<OPTION VALUE="jsoprdelete.htm">delete 运算符
+        	<OPTION VALUE="jsoprincdec.htm">减量运算符 (--)
+	<OPTION VALUE="jsoprDivide.htm">除法运算符 (/)
+
+	<OPTION VALUE="jsgrpComparison.htm" >相等运算符 (==)
+ 	<OPTION VALUE="jsgrpComparison.htm">大于运算符 (&gt;)
+	<OPTION VALUE="jsgrpComparison.htm" >大于相等运算符 (&gt;=)
+
+	<OPTION VALUE="jsgrpComparison.htm" >恒等运算符 (===)
+        	<OPTION VALUE="jsoprincdec.htm">递增运算符 (++)
+	<OPTION VALUE="jsgrpComparison.htm" >不相等运算符 (!=)
+	<OPTION VALUE="jsoprinstanceof.htm">instanceof 运算符
+	<OPTION VALUE="jsgrpComparison.htm">小于运算符(&lt;)
+	<OPTION VALUE="jsgrpComparison.htm">小于相等运算符 (&lt;=)
+	<OPTION VALUE="jsoprAnd.htm" >逻辑与运算符 (&&)
+	<OPTION VALUE="jsoprNot.htm">逻辑非运算符 (!)
+	<OPTION VALUE="jsoprOr.htm" >逻辑或运算符 (||)
+
+	<OPTION VALUE="jsoprMod.htm">取模运算符 (%)
+	<OPTION VALUE="jsoprMultiply.htm">乘法运算符 (*)
+	<OPTION VALUE="jsoprnew.htm">new 运算符
+	<OPTION VALUE="jsgrpComparison.htm" >不恒等(!==)
+
+
+	<OPTION VALUE="jsoprSubtract.htm" >减法运算符 (-) 
+	<OPTION VALUE="jsoprtypeof.htm">typeof 运算符
+	<OPTION VALUE="jsoprSubtract.htm">取相反数运算符 (-)
+	<OPTION VALUE="jsoprurshift.htm">无符号右移运算符 (&gt;&gt;&gt;)
+	<OPTION VALUE="jsoprvoid.htm">void 运算符      
+        
+        
+	<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic(  document.Form7.Target7.options[document.Form7.Target7.selectedIndex].value)" Value="  转到  ">
+
+</FORM>                                        
+</TR>
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B>属性</B></FONT></TD>
+	<TD>			
+	<FORM NAME="Form8" ACTION="">
+	<SELECT NAME="Target8">
+<OPTION VALUE="jsregexpmatches.htm">$1...$9 属性
+<OPTION VALUE="jsfunarguments.htm">arguments 属性
+<OPTION VALUE="jsfuncaller.htm">caller 属性
+<OPTION VALUE="jsobjectconstructor.htm">constructor 属性
+<OPTION VALUE="jsdiccount.htm">Count 属性
+<OPTION VALUE="jsproDescription.htm">description 属性
+<OPTION VALUE="jsmathe.htm">E 属性
+<!--OPTION VALUE="jsregexpressignoreCase.htm">ignoreCase Property-->
+<OPTION VALUE="jsregexpindex.htm">index 属性
+<OPTION VALUE="jsglobalinfinity.htm">Infinity 属性
+<OPTION VALUE="jsregexpinput.htm">input 属性
+<OPTION VALUE="jsregexplastIndex.htm">lastIndex 属性
+<!--OPTION VALUE="jsregexpresslastIndex.htm">lastIndex Property (Regular Expression)-->
+<!--OPTION VALUE="jsregexplastMatch.htm">lastMatch Property-->
+<!--OPTION VALUE="jsregexplastParen.htm">lastParen Property-->
+<!--OPTION VALUE="jsregexpleftContext.htm">leftContext Property-->
+<OPTION VALUE="jsarraylength.htm">length 属性 (Array)
+<OPTION VALUE="jsfunlength.htm">length 属性 (Function)
+<OPTION VALUE="jsstringlength.htm">length 属性 (String)
+<OPTION VALUE="jsmathln2.htm">LN2 属性
+<OPTION VALUE="jsmathln10.htm">LN10 属性
+<OPTION VALUE="jsmathlog2e.htm">LOG2E 属性
+<OPTION VALUE="jsmathlog10e.htm">LOG10E 属性
+<OPTION VALUE="jsnummaxvalue.htm">MAX_VALUE 属性
+<OPTION VALUE="jsnumminvalue.htm">MIN_VALUE 属性
+<!--OPTION VALUE="jsregexpmultiline.htm">multiline Property-->
+<OPTION VALUE="jsproNumber.htm">number 属性
+<OPTION VALUE="jsglobalNan.htm">NaN 属性 (Global)
+<OPTION VALUE="jsnumNaN.htm">NaN 属性 (Number)
+<OPTION VALUE="jsnumnegativeInf.htm">NEGATIVE_INFINITY 属性
+<OPTION VALUE="jsmathpi.htm">PI 属性
+<OPTION VALUE="jsnumpositiveInf.htm">POSITIVE_INFINITY 属性
+<OPTION VALUE="jsobjectprototype.htm">prototype 属性
+<!--OPTION VALUE="jsregexprightContext.htm">rightContext Property-->
+<OPTION VALUE="jsregexpresssource.htm">source 属性
+<OPTION VALUE="jsmathsqrt1_2.htm">SQRT1_2 属性
+<OPTION VALUE="jsmathsqrt2.htm">SQRT2 属性
+<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+	</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic(  document.Form8.Target8.options[document.Form8.Target8.selectedIndex].value)" Value="  转到  ">
+</FORM>
+</TR>
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B>语句</B></FONT></TD>
+	<TD>			
+	<FORM NAME="Form9" ACTION="">
+	<SELECT NAME="Target9">
+ 	<OPTION VALUE="jsstmbreak.htm">break 语句
+    <OPTION VALUE="jsstmtrycatch.htm">catch 语句
+    <OPTION VALUE="jsstmccon.htm">@cc_on 语句
+	<OPTION VALUE="jsstmcomment.htm">注释语句
+	<OPTION VALUE="jsstmcontinue.htm">continue 语句
+	<OPTION VALUE="jsstmdowhile.htm">do...while 语句
+	<OPTION VALUE="jsstmfor.htm">for 语句
+	<OPTION VALUE="jsstmforin.htm">for...in 语句
+	<OPTION VALUE="jsstmFunction.htm">function 语句
+<OPTION VALUE="jsstmconditionalif.htm">@if 语句
+	<OPTION VALUE="jsstmif.htm">if...else 语句
+	<OPTION VALUE="jsstmlabeled.htm">标签语句
+	<OPTION VALUE="jsstmreturn.htm">return 语句
+<OPTION VALUE="jsstmset.htm">@set 语句
+	<OPTION VALUE="jsstmswitch.htm">switch 语句
+	<OPTION VALUE="jsstmthis.htm">this 语句
+	<OPTION VALUE="jsstmthrow.htm">throw 语句
+	<OPTION VALUE="jsstmtrycatch.htm">try 语句
+	<OPTION VALUE="jsstmvar.htm">var 语句
+	<OPTION VALUE="jsstmwhile.htm">while 语句
+	<OPTION VALUE="jsstmwith.htm">with 语句
+	<OPTION VALUE="jstoc.htm">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic(   document.Form9.Target9.options[document.Form9.Target9.selectedIndex].value)" Value="  转到  ">
+
+</FORM>
+</TR>
+</TABLE><!-- TABLE G - Close -->
+
+
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN-->
+<a href="jscopy.htm">(C) 2000 Microsoft Corporation. All Rights Reserved!</A> 
+<!--COPYRIGHT END--> </FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

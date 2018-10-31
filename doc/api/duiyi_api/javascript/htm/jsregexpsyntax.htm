@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>正则表达式的语法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="正则表达式语法">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="RegExp 对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="MS-HKWD" CONTENT="模式">
+<META NAME="MS-HKWD" CONTENT="字符串匹配">
+<META NAME="MS-HKWD" CONTENT="字符串">                                                  
+
+<META NAME=MS-HAID CONTENT="jsregexpsyntax">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="Regular Expression Syntax">
+<META NAME="Keywords" CONTENT="Regular Expression syntax; Regular Expression; Regular Expression object; RegExp object; regular expressions; patterns; mathcing strings; strings">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>正则表达式的语法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsRegexpsyntaxC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsregexpsyntaxA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>用特殊字符和序列，来为正则表达式书写模式。下面的表描述了这些字符，并包括了简短的例子，来说明如何使用这些字符。
+<p>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>字符</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><font class='9v' ><b>\</b> </font></td>
+<td><font class='9v' >标记下一个字符是特殊字符或文字。例如，"n" 和字符 "n" 匹配。"\n" 则和换行字符匹配。序列 "\\" 和 "\" 匹配，而 "\(" 则和 "(" 匹配。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>^</b> </font></td>
+<td><font class='9v' >匹配输入的开头。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>$</b> </font></td>
+<td><font class='9v' >匹配输入的末尾。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>*</b> </font></td>
+<td><font class='9v' >匹配前一个字符零或多次。例如，"zo*" 与 "z" 或 "zoo" 匹配。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>+</b> </font></td>
+<td><font class='9v' >匹配前一个字符一次或多次。例如，"zo+" 与 "zoo" 匹配，但和 "z" 不匹配。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>?</b> </font></td>
+<td><font class='9v' >匹配前一个字符零或一次。例如，"a?ve?" 和 "never" 中的 "ve" 匹配。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>.</b></font></td>
+<td><font class='9v' >匹配除换行字符外的任何单个字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>(</b><i>pattern</i><b>)</b> </font></td>
+<td><font class='9v' >匹配 <i>pattern</i> 并记住该匹配。匹配上的子字符串，可以使用 Item <b>[0]...[n]</b>，来从生成的 <b>Matches</b> 集合中取回。要匹配圆括号字符 ( )，则需使用 "\(" 或 "\)"。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><i>x</i><b>|</b><i>y</i></font></td>
+<td><font class='9v' >匹配 <i>x</i> 或 </td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>{</b><i>n</i><b>}</b></font></td>
+<td><font class='9v' ><i>n</i> 是非负整数。共匹配 n</td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>{</b><i>n<b>,}</b> </font></td>
+<td><font class='9v' >n</i> 是一个非负整数。至少匹配 n 次。例如，"o{2,}" 和 "Bob" 中的 "o" 不匹配，但和 "foooood" 中的所有 o 匹配。"o{1,}" 与 "o+" 等效。"o{0,}" 和 "o*" 等效。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>{</b>n</i><b>,</b><i>m</i><b>}</b> </font></td>
+<td><font class='9v' > m 和 n 是非负整数。至少匹配 n 次而至多匹配 m 次。例如，"o{1,3}" 和 "fooooood" 中的前三个 o 匹配。"o{0,1}" 和 "o?" 等效。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>[</b></td>
+<td><font class='9v' >字符集合。匹配括号内的任一字符。例如，"[abc]" 和 "plain" 中的 "a" 匹配。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>[^</b>xyz</td>
+<td><font class='9v' >否定字符集合。匹配非括号内的任何字符。例如，"[^abc]" 和 "plain" 中的 "p" 匹配。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>[</b><i>a-z</i><b>]</b> </font></td>
+<td><font class='9v' >字符范围。和指定范围内的任一字符匹配。例如，"[a-z]" 匹配 "a" 到 "z"范围内的任一小写的字母表字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>[^</b><i>m-z</i><b>]</b> </font></td>
+<td><font class='9v' >否定字符范围。匹配不在指定范围内的任何字符。例如，"[m-z]" 匹配不在 "m" 到 "z"范围内的任何字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\b</b> </font></td>
+<td><font class='9v' >匹配字的边界，也就是说，在字和空格之间的位置。例如，"er\b" 和 "never" 中的 "er" 匹配，但和 "verb" 中的 "er" 不匹配。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\B</b> </font></td>
+<td><font class='9v' >匹配非字边界。"ea*r\B" 和 "never early" 中的 "ear" 匹配。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\d</b> </font></td>
+<td><font class='9v' >匹配数字字符。等价于 [0-9]。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\D</b> </font></td>
+<td><font class='9v' >匹配非数字字符。等价于 [^0-9]。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\f</b> </font></td>
+<td><font class='9v' >匹配换页字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\n</b> </font></td>
+<td><font class='9v' >匹配换行字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\r</b> </font></td>
+<td><font class='9v' >匹配回车符字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\s</b> </font></td>
+<td><font class='9v' >匹配任何空白，包括空格、制表、换页等。与 "[&nbsp;\f\n\r\t\v]" 等效。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\S</b> </font></td>
+<td><font class='9v' >匹配任何非空白字符。与 "[^&nbsp;\f\n\r\t\v]" 等效。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\t</b> </font></td>
+<td><font class='9v' >匹配制表字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\v</b> </font></td>
+<td><font class='9v' >匹配垂直制表符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\w</b> </font></td>
+<td><font class='9v' >匹配包括下划线在内的任何字字符。与 "[A-Za-z0-9_]" 等效。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\W</b> </font></td>
+<td><font class='9v' > 匹配任何非字字符。与 "[^A-Za-z0-9_]" 等效。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\</b><i>num</i> </font></td>
+<td><font class='9v' >匹配 <i>num</i>，其中 <i>num</i> 是一个正整数。返回记住的匹配的引用。例如，"(.)\1" 匹配两个连续的同一字符。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\</b><i>n</font></td>
+<td><font class='9v' >匹配 n</i>，其中 n 是八进制换码值。八进制换码值必须是 1、2、或 3 位长。例如，"\11" 和 "\011" 都匹配制表字符。"\0011" 和 "\001" & "1" 是等效的。八进制换码值必须不超过 256。如果超过了，则只有前两位组成表达式。允许在正则表达式中使用 ASCII 码。</font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><b>\x</b>n</i></font></td>
+<td><font class='9v' >匹配 n，其中 <i>n</i> 是十六进制换码值。十六进制换码值必须正好是两位长。例如，"\x41" 与 "A" 匹配。"\x041" 和 "\x04" & "1" 是等效的。允许在正则表达式中使用 ASCII 码。</font></td>
+</tr>
+
+</TABLE>
+
+</BLOCKQUOTE><P>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

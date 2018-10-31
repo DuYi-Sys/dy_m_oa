@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>Item 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Item 属性">
+<META NAME="MS-HKWD" CONTENT="Item">
+<META NAME="MS-HKWD" CONTENT="主键和条目">
+<META NAME="MS-HKWD" CONTENT="条目">
+<META NAME="MS-HKWD" CONTENT="主键">
+<META NAME="MS-HKWD" CONTENT="Dictionary 对象">
+<META NAME="MS-HKWD" CONTENT="Drives 集合">
+<META NAME="MS-HKWD" CONTENT="Files 集合">
+<META NAME="MS-HKWD" CONTENT="Folders 集合">                               
+
+<META NAME=MS-HAID CONTENT="jsdicItem">
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="Item Property">
+<META NAME="Keywords" CONTENT="Item property; Item; item and key pairs; items; keys; Dictionary object; Drives collection; Files collection; Folders collection">
+
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Item 属性</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2 </A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsdicItemC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdicitemA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>在一个 <b>Dictionary</b> 对象中设置或者返回所指定 <i>key</i> 的 <i>item</i>。对于集合则根据所指定的 <i>key</i> 返回一个 <i>item</i>。读/写。
+</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><i>object</i><b>.</b><b>Item(</b><i>key</i><b>)</b>[ = <i>newitem</i>]<p>
+
+<b>Item</b> 属性包括下面这些部分：<p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>object</i></FONT></TD>
+<TD><FONT class='9v' >必选项。总是一个集合的名称或 <b>Dictionary</b> 对象的名称。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>key</i></FONT></TD>
+<TD><FONT class='9v' >必选项。与要被查找或添加的 <i>item</i> 相关联的 <i>key</i>。</FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>newitem</i></FONT></TD>
+<TD><FONT class='9v' >可选项。仅适用于 <b>Dictionary</b> 对象；对于集合不可使用此项。如果提供了此项，<i>newitem</i> 就是与所指定的 <i>key</i> 相关联的新值。</FONT></TD></TR>
+</TABLE>
+</BLOCKQUOTE><P>
+
+<H5>说明</H5>
+<BLOCKQUOTE>如果在改变一个 <i>key</i> 的时候没有找到该 <i>item</i>，那么将利用所指定的 <i>newitem</i> 创建一个新的 <i>key</i>。如果在试图返回一个已有条目的时候没有找到 <i>key</i>，那么将创建一个新的 <i>key</i> 且其相关的条目被设置为空。<P>
+
+下面这个例子说明了 <B>Item</B> 属性的用法。
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function DicTest(keyword)
+{
+  var a, d; 
+  d = new ActiveXObject("Scripting.Dictionary");
+  d.Add("a", "Athens");
+  d.Add("b", "Belgrade");
+  d.Add("c", "Cairo");
+  a = <font color="#FF0000">d.Item(</FONT>keyword<font color="#FF0000">)</FONT>;
+  return(a);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

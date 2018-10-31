@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>moveFirst 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="moveFirst 方法">
+<META NAME="MS-HKWD" CONTENT="moveFirst">
+<META NAME="MS-HKWD" CONTENT="Enumerator 对象">
+<META NAME="MS-HKWD" CONTENT="集合">
+<META NAME="MS-HKWD" CONTENT="未定义">            
+
+<META NAME=MS-HAID CONTENT="jsenummoveFirst">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="moveFirst Method">
+<META NAME="Keywords" CONTENT="moveFirst method; moveFirst; Enumerator object; collections; undefined">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>moveFirst 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsenummoveFirstC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsenummoveFirstA.htm">应用于</A><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>重新将集合中的当前项设置为第一项。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>myEnum</i>.<b>moveFirst( )</b><!>
+
+<P><!><i>myEnum</i> 参数是任意 <b>Enumerator</b> 对象。<!>
+
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>如果集合中没有项，那么当前项将被设置为 <a href="glossary.htm#defundefined"><b>undefined</b></a> 。<!>
+<p>
+<!>在下面的例子中，使用了 <b>moveFirst</b> 方法从列表的开始处对 <b>Drives</b> 集合的成员进行计算：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowFirstAvailableDrive()
+{
+  var fso, s, e, x;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  e = new Enumerator(fso.Drives);
+  <font color="#FF0000">e.moveFirst()</font>;
+  s = "";
+  do 
+  {
+     x = e.item();
+     if (x.IsReady)
+     {
+       s = x.DriveLetter + ":";
+       break;
+     }
+     else
+       if (e.atEnd())
+       {
+         s = "No drives are available";
+         break;
+       }
+     e.moveNext();
+  }
+  while (!e.atEnd());
+  return(s); 
+}</font></pre></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

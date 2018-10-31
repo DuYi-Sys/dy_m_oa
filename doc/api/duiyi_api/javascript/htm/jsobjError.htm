@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>Error 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Error 对象">
+<META NAME="MS-HKWD" CONTENT="Error">
+<META NAME="MS-HKWD" CONTENT="错误">
+<META NAME="MS-HKWD" CONTENT="运行时间错误">
+<META NAME="MS-HKWD" CONTENT="错误模拟">
+<META NAME="MS-HKWD" CONTENT="错误处理">
+<META NAME="MS-HKWD" CONTENT="错误处理">
+<META NAME="MS-HKWD" CONTENT="JScript 错误信息">                                 
+
+<META NAME=MS-HAID CONTENT="jsobjError">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="CHARSET" CONTENT="GB2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="Error Object">
+<META NAME="Keywords" CONTENT="Error object; Error; errors; run-time errors; simulating errors; error handling; handling errors; JScript error messages">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Error 对象</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' >
+
+<a href="jsobjErrorC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjErrorP.htm">属性</A></FONT>
+
+
+<HR noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>保存有关错误的信息。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE>
+<b>var</b> newErrorObj = <b>new Error()</b><br>
+<b>var</b> newErrorObj = <b>new Error(</b><i>number</i><b>)</b><br>
+<b>var</b> newErrorObj = <b>new Error(</b><i>number</i><B>,</B> <i>description</i><B>)</b><br>
+<P><b>Error</b> 对象的<a href="glossary.htm#defConstructor">构造函数</a>语法有以下部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><font class='9v' ><i>number</i></font></td>
+<td><font class='9v' >与错误相联的数字值。如果省略则为零。</font></td></tr>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>description</i></FONT></TD>
+		<TD><FONT class='9v' >描述错误的简短字符串。如果省略则为空字符串。</FONT></TD></TR>
+</table>
+</blockquote>
+<h5>说明</h5>
+
+<blockquote>
+
+每当产生<a href="glossary.htm#defRTErr">运行时错误</A>，就产生 <B>Error</B> 对象的一个实例以描述错误。该实例有两个固有属性保存错误的描述（<B>description</B> 属性）和错误号（<B>number</B> 属性）。<P>
+
+错误号是 32 位的值。高 16 位字是设备代码，而低字是实际的错误代码。<p>
+
+<B>Error</B> 对象也可以用如上所示的语法显式创建，或用 <B>throw</B> 语句抛掉。在两种情况下，都可以添加选择的任何属性，以拓展 <B>Error</B> 对象的能力。<P>
+
+典型地，在 <B>try...catch</B> 语句中创建的局部<a href="glossary.htm#defVariable">变量</a>引用隐式创建的 <B>Error</B> 对象。因此，可以按选择的任何方法使用错误号和描述。<P>
+
+下面的例子演示了隐式创建 <B>Error</B> 对象的使用：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >try
+ { x = y                		     // 产生错误。
+}catch(e){              		     // 创建局部变量 e。
+  response.write(<font color="#FF0000">e</FONT>)                  // 打印 &quot;[object Error]&quot;.
+  response.write(<font color="#FF0000">e</FONT>.number & 0xFFFF)  // 打印 5009。
+  response.write(<font color="#FF0000">e</FONT>.description)      // 打印 &quot;'y' is undefined&quot;.
+}
+</PRE></FONT></BLOCKQUOTE>
+</blockquote>
+
+<hr noshade class='9v' > </FONT>
+</BODY>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

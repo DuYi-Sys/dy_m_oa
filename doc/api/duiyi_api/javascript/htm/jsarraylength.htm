@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>length 属性 (Array)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="length 属性">
+<META NAME="MS-HKWD" CONTENT="length">
+<META NAME="MS-HKWD" CONTENT="Array 对象">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="整数值">
+<META NAME="MS-HKWD" CONTENT="数组截断">
+<META NAME="MS-HKWD" CONTENT="大小">
+<META NAME="MS-HKWD" CONTENT="未定义值">                           
+
+<META NAME=MS-HAID CONTENT="jsarraylength">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="length Property (Array)">
+<META NAME="Keywords" CONTENT="length property; length; Array object; arrays; integer values; truncating arrays; size; undefined values">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>length 属性 (数组)</B></FONT>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsarraylengthC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsarraylengthA.htm">应用于</a></font>
+
+
+<hr noshade class='9v' >
+<h5>描述</h5>
+<blockquote>返回一个整数值，这个整数比数组中所定义的最高位元素的下标大 1。</blockquote>
+<h5>语法</h5>
+<blockquote><p>
+
+<i>numVar</i> = <i>arrayObj</i>.<b>length</b>
+</blockquote>
+<h5>说明</h5>
+<blockquote>
+因为一个数组中的元素并不一定是连续的，所以 <b>length</b> 属性也并不一定就等于数组中的元素个数。例如，在下面的数组定义中，<FONT face=" 宋体" class='9v' >my_array.length</font> 中就包含 7，而不是 2：
+<blockquote><pre><FONT face=" 宋体" class='9v' >var my_array = new Array( );
+my_array[0] = "Test";
+my_array[6] = "Another Test";
+</font></pre></blockquote>
+
+如果 <b>length </b>属性被赋予了一个比原先值小的数值，那么数组就被截断，所有数组下标等于或者大于 <b>length</b> 属性的新值的元素都会被丢失。
+<p>如果 <b>length</b> 属性被赋予了一个比原先值大的数值，那么数组就被扩展，且所有新建元素都被赋值为 <a href="glossary.htm#defundefined">undefined</a>。<P>
+下面这个例子说明了 <B>length</B> 属性的用法:<P>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function LengthDemo()
+{
+  var a, l;
+  a = new Array(0,1,2,3,4);
+  l = <font color="#FF0000">a.length</FONT>;
+  return(l);
+}</PRE></FONT></BLOCKQUOTE>
+
+</blockquote>
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

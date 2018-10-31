@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk--><TITLE>JScript 运行时错误</title><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="运行时错误">
+<META NAME="MS-HKWD" CONTENT="错误信息">
+<META NAME="MS-HKWD" CONTENT="错误">
+<META NAME="MS-HKWD" CONTENT="错误, 运行时">
+<META NAME=MS-HAID CONTENT="jsmscRunTimeErrors.htm"> 
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="run-time errors;error messages;errors;errors, run-time" >
+
+<META NAME="Description" CONTENT="JScript Run-time Errors">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE="宋体" class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v'  COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>JScript 运行时错误</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v'>&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR>
+<a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE>
+
+
+<FONT class='9v'><P>
+<a href="jsmscSyntaxErrors.htm">JScript 语法错误</A></FONT>
+<HR NOSHADE class='9v' >
+
+<BLOCKQUOTE><TABLE BORDER=1 WIDTH=87% CELLPADDING=3 CELLSPACING=1>
+<TR BGCOLOR="#DDDDDD">
+<TH WIDTH=20% ALIGN=CENTER><FONT class='9v'><B>错误编号</B></FONT></TH>	
+<TH WIDTH=80% ALIGN=LEFT><FONT class='9v'><B>描述</B></FONT></TH>	
+
+<TR ALIGN=CENTER VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>无效的过程调用或参数</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>6<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>溢出</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>7<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>内存不足</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>9<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>下标越界</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>10<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>该数组为定长的或临时被锁定</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>11<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>被零除</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>13<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>类型不匹配</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>14<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>字符串空间不够</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>17<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>不能执行所需的操作</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>28<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>堆栈溢出</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>35<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>未定义过程或函数</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>48<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>加载 DLL 时出错</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>51<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>内部错误</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>52<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>错误的文件名或号码</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>53<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>文件未找到</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>54<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>错误的文件模式</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>55<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>文件已经打开</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>57<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>设备 I/O 错误</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>58<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>文件已存在</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>61<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>磁盘已满</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>62<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>输入超出了文件尾</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>67<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>文件过多</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>68<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>设备不可用</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>70<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>没有权限</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>71<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>磁盘没有准备好</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>74<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>重命名时不能带有其他驱动器符号</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>75<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>路径/文件访问错误</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>76<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>路径未找到</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>91<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象变量或 With 块变量未设置</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>92<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>For 循环未初始化</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>94<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>无效使用 Null</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>322<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>不能创建所需的临时文件</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>424<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>429<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>Automation 服务器不能创建对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>430<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>类不能支持 Automation 操作</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>432<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>Automation 操作中文件名或类名未找到</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>438<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不支持此属性或方法</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>440<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>Automation 错误</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>445<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不支持此操作</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>446<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不支持已命名参数</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>447<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不支持当前区域设置</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>448<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>未找到已命名参数</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>449<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>参数是必选项</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>450<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>错误的参数个数或无效的参数属性值</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>451<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不是一个集合</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>453<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>未找到指定的 DLL 函数</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>458<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>变量使用了一个 JScript 中不支持的 Automation 类型</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>462<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>远程服务器不存在或不可用</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>501<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>不能给变量赋值</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>502<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不能安全地使用 Script 编程</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>503<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不能安全初始化</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>504<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>对象不能安全创建</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>507<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>出现一个意外错误</TD>
+</TR>
+
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5000<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>不能给 'this' 赋值</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5001<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少数字</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5002<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少函数</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5003<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>不能给函数返回值赋值</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5004<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>不能检索对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5005<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少字符串</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5006<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少日期对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5007<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5008<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>非法赋值</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5009<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>未定义标识符</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5010<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少布尔变量</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5011<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>不能执行已释放 Script 的代码</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5012<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少对象成员</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5013<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少 VBArray</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5014<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少 JScript 对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5015<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少枚举算子对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5016<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>缺少常规表达式对象</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5017<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>常规表达式语法错误</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5018<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>错误的数量词</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5019<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>常规表达式中缺少 ']'</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5020<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>常规表达式中缺少 ')'
+</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5021<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>字符集越界</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5022<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>例外被抛出且未被接住</TD>
+</TR>
+<TR  VALIGN=TOP>
+<TD  ALIGN=CENTER><FONT class='9v'><!>5023<!></TD>
+<TD  ALIGN=LEFT><FONT class='9v'>函数没有有效的原型对象</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

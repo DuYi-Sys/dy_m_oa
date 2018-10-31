@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>toGMTString 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="toGMTString 方法">
+<META NAME="MS-HKWD" CONTENT="toGMTString">
+<META NAME="MS-HKWD" CONTENT="日期">
+<META NAME="MS-HKWD" CONTENT="数据转换">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="GMT">
+<META NAME="MS-HKWD" CONTENT="格林威治标准时间">
+<META NAME="MS-HKWD" CONTENT="toUTCString 方法">                  
+
+<META NAME=MS-HAID CONTENT="jsdatetogmtstring">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="toGMTString Method">
+<META NAME="Keywords" CONTENT="toGMTString method; toGMTString; dates; converting dates; strings; String object; GMT; Greenwich Mean Time; toUTCString method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>toGMTString 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdatetogmtstringC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdatetogmtstringA.htm">应用于</a></font>
+<hr noshade class='9v' ><FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个日期，该日期用格林威治标准时间 (GMT) 表示并已被转换为字符串。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE>
+<i>objDate</i>.<b>toGMTString()</b>
+
+</blockquote>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>toGMTString</b> 方法已经过时，之所以仍然提供这个方法，只是为了提供向后的兼容性。推荐改用 <b>toUTCString</b> 方法。
+<p><b>toGMTString</b> 方法返回一个 <b>String</b> 对象，此对象中包含了按照 GMT 惯例进行格式化的日期。返回值的格式如下："05 Jan 1996 00:00:00 GMT."<P>
+
+下面这个例子说明了 <B>toGMTString</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function toGMTStrDemo()
+{  
+  var d, s;
+  d = new Date();
+  s = "Current setting is ";
+  s += <font color="#FF0000">d.toGMTString()</FONT>; 
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

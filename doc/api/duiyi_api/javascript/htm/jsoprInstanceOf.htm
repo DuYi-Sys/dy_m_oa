@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css"><TITLE>instanceof 运算符</TITLE>
+<META NAME="MS-HKWD" CONTENT="instanceof 运算符">
+<META NAME="MS-HKWD" CONTENT="instanceof">
+<META NAME="MS-HKWD" CONTENT="运算符">   
+
+<META NAME=MS-HAID CONTENT="jsoprInstanceOf">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="instanceof Operator">
+<META NAME="Keywords" CONTENT="instanceof operator; instanceof; operators">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>instanceof 运算符</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+<p>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsoprInstanceOfC.htm">请参阅</a></font>
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个 Boolean 值，指出对象是否是特定<a href="glossary.htm#defClass">类</a>的一个实例。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>result</i> = <i>object</i> <b>instanceof</b> <i>class</i><P>
+
+<b>instanceof</b> 运算符的语法组成部分如下：
+<p>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+		<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>result</i></FONT></TD>
+		<TD><FONT class='9v' >任何<a href="glossary.htm#defVariable">变量</a>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>object</i></FONT></TD>
+		<TD><FONT class='9v' >任何对象<a href="glossary.htm#defExpression">表达式</A></a>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>class</i></FONT></TD>
+		<TD><FONT class='9v' >任何已定义的对象类</a>。</FONT></TD></TR></TABLE>
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+如果 <i>object</i> 是 <i>class</i> 的一个实例，则 <B>instanceof</B> 运算符返回 <B>true</B>。如果 <i>object</i> 不是指定类的一个实例，或者 <i>object</i> 是 <B>null</B>，则返回 <B>false</B>。<P>
+
+下面的例子举例说明了 <B>instanceof</B> 运算符的用法：<P>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function objTest(obj)
+{
+  var i, t, s = "";            // 创建变量。
+  t = new Array();             // 创建一个数组。
+  t["Date"] = Date;            // 充填数组。
+  t["Object"] = Object;
+  t["Array"] = Array;
+    for (i in t)
+    {
+      if (obj <font color="#FF0000">instanceof</FONT> t[i]) // 检查 obj 的类。
+      {
+        s += "obj is an instance of " + i + "\n";
+      }
+      else 
+      {
+        s += "obj is not an instance of " + i + "\n";
+      }
+  }
+  return(s);                   // 返回字符串。
+}  
+
+var obj = new Date();
+response.write(objTest(obj));</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+  </FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

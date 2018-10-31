@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD>
+<TITLE>运算符优先级</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="运算符优先级">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="表达式求值">                      
+
+<META NAME=MS-HAID CONTENT="jsoperatorpre">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="JScript Operator Precedence">
+<META NAME="Keywords" CONTENT="operator precedence; operator; operators; evaluating expressions">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=300>
+
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>运算符优先级</B></FONT>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<p></FONT>
+</TD></TR>
+</TABLE>
+<p>
+<hr noshade class='9v' >
+
+
+
+
+<blockquote>
+JScript 中的运算符按特定顺序求值。该顺序被称作运算符优先级。下表按最高到最低优先级顺序列出了所有运算符。在表达式中具有相同优先级的运算符按从左到右顺序求值。
+<p>
+
+<table border=1 width=87% CELLPADDING=5 CELLSPACING=0>
+<tr bgcolor="#DDDDDD"><td align=left><Font class='9v' ><b>运算符</b></Font></td><td align=left><Font class='9v' ><b>描述</b></Font></td>
+<tr><td><Font class='9v' >. [] ()</Font></td><td><Font class='9v' >域访问、数组下标和函数调用</Font></td></tr>
+<tr><td><Font class='9v' >++ -- - ~ ! delete new typeof void</Font></td><td><Font class='9v' >一元运算符、返回数据类型、对象创建、未定义的值</Font></td></tr>
+<tr><td><Font class='9v' >* / %</Font></td><td><Font class='9v' >乘、除、取模</Font></td></tr>
+<tr><td><Font class='9v' >+ - +</Font></td><td><Font class='9v' >加、减、字符串连接</Font></td></tr>
+<tr><td><Font class='9v' >&lt;&lt; &gt;&gt; &gt;&gt;&gt;</Font></td><td><Font class='9v' >位移动</Font></td></tr>
+<tr><td><Font class='9v' >&lt; &lt;= &gt; &gt;= instanceof</font></td><td><Font class='9v' >小于、小于等于、大于、大于等于、instanceof</Font></td></tr>
+<tr><td><Font class='9v' >== != === !==</Font></td><td><Font class='9v' >相等、不相等、恒等、不恒等</Font></td></tr>
+<tr><td><Font class='9v' >&</Font></td><td><Font class='9v' >按位“与”</Font></td></tr>
+<tr><td><Font class='9v' >^</Font></td><td><Font class='9v' >按位“异或”</Font></td></tr>
+<tr><td><Font class='9v' >|</Font></td><td><Font class='9v' >按位“或”</Font></td></tr>
+<tr><td><Font class='9v' >&&</Font></td><td><Font class='9v' >逻辑“与”</Font></td></tr>
+<tr><td><Font class='9v' >||</Font></td><td><Font class='9v' >逻辑“或”</Font></td></tr>
+<tr><td><Font class='9v' >?:</Font></td><td><Font class='9v' >条件</Font></td></tr>
+<tr><td><Font class='9v' >= <i>oP</i>=</Font></td><td><Font class='9v' >赋值、带操作的赋值</Font></td></tr>
+<tr><td><Font class='9v' >,</Font></td><td><Font class='9v' >多重求值</Font></td></tr>
+</table>
+
+<p>括号可用于改变求值的顺序。括号中的表达式在语句的剩余部分用到其值之前被完全求值。
+
+
+<p>具有较高优先级的运算符在较低优先级的之前被求值。例如：
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >z = 78 * (96 + 3 + 45)
+</FONT></pre></BLOCKQUOTE>
+<p>该表达式中有五个运算符：=、*、()、+ 和 +。按优先级，它们按如下顺序被求值：()、*、+、+、=。  
+
+<ol>
+<li>括号中的表达式首先被求值：
+其中有两个加法运算符，它们具有相同的优先级：96 和 3 被加在一起，然后 45 被加到总和中，得到值为 144 的结果。
+<li>随后是乘法：78 乘以 144 ，得到值为 10998 的结果。
+<li>最后是赋值：11232 被赋给 z。
+</ol>
+
+
+
+</BLOCKQUOTE>
+
+
+
+<hr noshade class='9v' >
+
+</FONT>
+
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

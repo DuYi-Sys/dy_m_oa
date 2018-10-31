@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>JScript 比较运算符</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="比较运算符">
+<META NAME="MS-HKWD" CONTENT="比较">
+<META NAME="MS-HKWD" CONTENT="数值比较">
+<META NAME="MS-HKWD" CONTENT="字符串比较">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="equality 运算符">
+<META NAME="MS-HKWD" CONTENT="!= 运算符">
+<META NAME="MS-HKWD" CONTENT="inequality 运算符">
+<META NAME="MS-HKWD" CONTENT="&lt">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="小于运算符">
+<META NAME="MS-HKWD" CONTENT="小于或等于运算符">
+<META NAME="MS-HKWD" CONTENT="大于或等于运算符">
+<META NAME="MS-HKWD" CONTENT="&gt">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="大于运算符">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="恒等运算符">
+<META NAME="MS-HKWD" CONTENT="!== 运算符">
+<META NAME="MS-HKWD" CONTENT="不恒等运算符">                                                                                                                                                                  
+
+<META NAME=MS-HAID CONTENT="jsgrpComparison"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="JScript Comparison Operators">
+<META NAME="Keywords" CONTENT="comparison operators; Comparison; numeric comparisons; string comparisons; == operator; equality operator; != operator; inequality operator; &lt; operator; less than operator; &lt;= operator; less than or equal to operator; &gt;= operator; greater than or equal to operator; &gt; operator; greater than operator; === operator; identity operator; !== operator; nonidentity operator">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>比较运算符</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p>
+<FONT class='9v' >
+<a href="jsgrpcomparisonC.htm">请参阅</a></font>
+<hr noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回表示比较结果的 Boolean 值。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>expression1</i> <b>comparisonoperator</b> <i>expression2</i><P>
+比较运算符语法有以下部分：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>expression1</i></FONT></TD>
+<TD><FONT class='9v' >任何<a href="glossary.htm#defExpression">表达式</A>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><b>comparisonoperator</b></FONT></TD>
+<TD><FONT class='9v' >任何<a href="glossary.htm#defComparisonOperator">比较运算符</A>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>expression2</i></FONT></TD>
+<TD><FONT class='9v' >任何表达式。</FONT></TD></TR>
+</TABLE>
+
+</BLOCKQUOTE>
+<h5>说明</h5>
+<BLOCKQUOTE>比较字符串时，JScript 使用字符串表达式的 Unicode 字符值。
+<p>下面说明根据 <i>expression1</i> 和 <i>expression2</i> 的类型和值，不同组的运算符是如何作用的：<p>
+<b>关系运算符</b>（&lt;、&gt;、&lt;=、&gt;=）
+<ul>
+<li>试图将 <i>expression1</i> 和 <i>expression2</i> 都转换为数字。 
+<li>如果两表达式均为字符串，则按字典序进行字符串比较。
+<li>如果其中一个表达式为 <b>NaN</b>，返回 <b>false</b>。
+<li>负零等于正零。
+<li>负无穷小于包括其本身在内的任何数。
+<li>正无穷大于包括其本身在内的任何数。
+</ul>
+<b>相等运算符</b> （==、!=）
+<ul>
+<li>如果两表达式的类型不同，则试图将它们转换为字符串、数字或 Boolean 量。 
+<li><b>NaN</b> 与包括其本身在内的任何值都不相等。
+<li>负零等于正零。
+<li><b>null</b> 与 <b>null</b> 和 <b>undefined</b> 相等。
+<li>相同的字符串、数值上相等的数字、相同的对象、相同的 Boolean 值或者（当类型不同时）能被强制转化为上述情况之一，均被认为是相等的。
+<li>其他比较均被认为是不相等的。
+</ul>
+<b>恒等运算符</b> （===、!==）
+<BLOCKQUOTE>
+除了不进行类型转换，并且类型必须相同以外，这些运算符与相等运算符的作用是一样的。
+</BLOCKQUOTE></BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

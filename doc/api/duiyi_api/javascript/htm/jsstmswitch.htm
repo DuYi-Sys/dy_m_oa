@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>switch 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="switch 语句">
+<META NAME="MS-HKWD" CONTENT="switch">
+<META NAME="MS-HKWD" CONTENT="标识">
+<META NAME="MS-HKWD" CONTENT="语句执行">
+<META NAME="MS-HKWD" CONTENT="标识符">
+<META NAME="MS-HKWD" CONTENT="case">
+<META NAME="MS-HKWD" CONTENT="default">
+<META NAME="MS-HKWD" CONTENT="break 语句">
+<META NAME="MS-HKWD" CONTENT="语句求值">                                        
+
+<META NAME=MS-HAID CONTENT="jsstmswitch">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="switch Statement">
+<META NAME="Keywords" CONTENT="switch statement; switch; labels; executing statements; identifiers; case; default; break statement; evaluating statements">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>switch 语句</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstmswitchC.htm">请参阅</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>当指定的表达式的值与某个标签匹配时，即执行相应的一个或多个语句。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE>
+<b>switch (</b><i>expression</i><b>) {</b><br>
+&nbsp;&nbsp;&nbsp;<b>case</b> <i>label</i> <b>:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>statementlist</i><br>
+&nbsp;&nbsp;&nbsp;<b>case</b> <i>label</i> <b>:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>statementlist</i><br>
+&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;<b>default</b> <b>:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>statementlist</i><br>
+<b>}</b>
+
+<P><b>switch</b> 语句的语法组成如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><font class='9v' ><i>expression</i></font></td>
+<td><font class='9v' >要求值的表达式。</font></td></tr>
+<tr valign=top>
+<td><font class='9v' ><i>label</i></font></td>
+<td><font class='9v' >根据 <i>expression</i> 来匹配的标识符。如果 <i>label</i> === <i>expression</i>，则立即从冒号后的 <i>statementlist</i> 处开始执行，直到遇到一个可选的 <b>break</b> 语句，或到达 <b>switch </b>语句的最后。</font></td></tr>
+<tr valign=top>
+<td><font class='9v' ><i>statementlist</i></font></td>
+<td><font class='9v' >要被执行的一个或多个语句。</font></td></tr>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+使用 <b>default</b> 子句来提供一个语句，该语句只在没有任何一个标签值与 <i>expression</i> 相匹配时才被执行。它可以出现在 <b>switch</b> 代码块内的任何地方。
+<p>
+可以指定零或多个 <i>label</i> 块。如果没有 <i>label</i> 和 <i>expression</i> 的值匹配，并且没有提供 <b>default</b> 情况，则不执行任何语句。<p>
+通过 switch 语句执行流程如下：
+<ol>
+<li>求 <i>expression</i> 的值并依次序查看 <i>label</i>，直到找到一个匹配。
+<li>如果 <i>label</i> 的值等于 <i>expression</i> 的值，则执行它相应的 <i>statementlist</i>。
+<BR>继续执行，直到遇到一个 <b>break</b> 语句，或者 <b>switch</b> 语句结束。这意味着如果没有使用一个 <b>break</b>  语句，则多个 <i>label</i> 块被执行。
+<li>如果没有 <i>label</i> 等于 <i>expression</i> 的值，则跳转到 <b>default</b> 情况。
+如果没有 <b>default</b> 情况，则跳转到最后一步。
+<li>继续执行紧接 <b>switch</b> 代码块末尾的语句。
+</ol>
+下面示例测试一个对象的类型：
+<blockquote><pre><Font face=" 宋体" class='9v' >function MyObject() {
+...}
+<font color="#FF0000">switch (</font>object.constructor<font color="#FF0000">){</font>
+	<font color="#FF0000">case</font> Date<font color="#FF0000">:</font>
+	...
+	<font color="#FF0000">case</font> Number<font color="#FF0000">:</font>
+	...
+	<font color="#FF0000">case</font> String<font color="#FF0000">:</font>
+	...
+	<font color="#FF0000">case</font> MyObject<font color="#FF0000">:</font>
+	...
+	<font color="#FF0000">default: </font>
+	...
+<font color="#FF0000">}</font>
+</font></pre></BLOCKQUOTE>
+</blockquote>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

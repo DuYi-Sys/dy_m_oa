@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>with 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="with 语句">
+<META NAME="MS-HKWD" CONTENT="with">
+<META NAME="MS-HKWD" CONTENT="设定缺省对象">                   
+
+<META NAME=MS-HAID CONTENT="jsstmwith">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="with Statement">
+<META NAME="Keywords" CONTENT="with statement; with; establishing default objects">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>with 语句</B></FONT><br>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE>
+<p> 
+<FONT class='9v' ><a href="jsstmwithC.htm">请参阅</a></font>
+
+
+<hr noshade class='9v' >
+<h5>描述</h5>
+<Blockquote>
+为语句设定默认对象。
+</blockquote>
+
+<h5>语法</h5>
+<Blockquote>
+<b>with</b> (<i>object</i>)<br> &nbsp;&nbsp;&nbsp;<i>statement</i>
+
+
+<p><b>with</b> 语句的语法组成如下：
+<P>
+
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>object</i></FONT></TD>
+<TD><FONT class='9v' ><p>新的默认对象。</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement</i></FONT></TD>
+<TD><FONT class='9v' >一个语句，<i>object</i> 是该语句的默认对象。可以是<a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD>
+</TR>
+</TABLE>
+
+</blockquote>
+
+<h5>说明</h5>
+<Blockquote>
+
+<b>with</b> 语句通常用来缩短特定情形下必须写的代码量。在下面的例子中，请注意 <b>Math</b> 的重复使用：
+<blockquote><pre><FONT face=" 宋体" class='9v' >x = Math.cos(3 * Math.PI) + Math.sin(Math.LN10) 
+y = Math.tan(14 * Math.E)
+</font></pre></blockquote>
+
+当使用 <b>with</b> 语句时，代码变得更短且更易读：
+
+<blockquote><pre><FONT face=" 宋体" class='9v' ><FONT COLOR="#FF0000">with</font> (Math)
+{
+  x = cos(3 * PI) + sin (LN10)  
+  y = tan(14 * E)
+}
+</font></pre></blockquote>
+
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

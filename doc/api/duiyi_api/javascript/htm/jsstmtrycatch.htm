@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>try...catch 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="try...catch 语句">
+<META NAME="MS-HKWD" CONTENT="try...catch">
+<META NAME="MS-HKWD" CONTENT="错误信息">
+<META NAME="MS-HKWD" CONTENT="错误信息">
+<META NAME="MS-HKWD" CONTENT="错误">
+<META NAME="MS-HKWD" CONTENT="JScript 错误信息">                        
+
+<META NAME=MS-HAID CONTENT="jsstmtrycatch">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="try...catch Statement">
+<META NAME="Keywords" CONTENT="try...catch statement; try...catch; error handling; handling errors; errors; JScript error messages">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>try...catch 语句</B></FONT><br>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmtrycatchC.htm">请参阅</a></font>
+
+<hr noshade class='9v' >
+
+<h5>描述</h5>
+<Blockquote>
+为 JScript 实现错误处理。
+
+</blockquote>
+
+<h5>语法</h5>
+<blockquote>
+<b>try</b><BR>
+&nbsp;&nbsp;<i>tryStatement</i><BR>
+<B>catch(</b><i>exception</i><B>)</B><BR>
+&nbsp;&nbsp;<i>catchStatement</i><BR>
+<P>
+
+<B>try...catch</B> 语句的语法组成部分如下：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>tryStatement</i></FONT></TD>
+		<TD><FONT class='9v' >可能发生错误的语句。可以是<a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>exception</i></FONT></TD>
+		<TD><FONT class='9v' >任何<a href="glossary.htm#defVariable">变量</a>名。<i>exception</i> 的初始化值是扔出的错误的值。</FONT></TD></TR><TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>catchStatement</i></FONT></TD>
+		<TD><FONT class='9v' >处理在相关联的 <i>tryStatement</i> 中发生的错误的语句。可以是复合语句。</FONT></TD></TR>
+</TABLE>
+
+</blockquote>
+<h5>说明</h5>
+<Blockquote>
+<B>try...catch</B> 语句提供了一种方法来处理可能发生在给定代码块中的某些或全部错误，同时仍保持代码的运行。如果发生了程序员没有处理的错误，JScript 只给用户提供它的普通错误消息，就好象没有错误处理一样。<P>
+
+<i>tryStatement</i> 参数包含可能发生错误的代码，而 <i>catchStatement</i> 则包含处理任何发生了的错误的代码。如果在 <i>tryStatement</i> 中发生了一个错误，则程序控制被传给 <i>catchStatement</i> 来安排。<i>exception</i> 的初始化值是发生在 <i>tryStatement</i> 中的错误的值。<P>
+
+如果在与发生错误的 <i>tryStatement</i> 相关联的 <i>catchStatement</i> 中不能处理该错误，则使用 <B>throw</B> 语句来传播、或重新扔出这个错误给更高级的错误处理程序。<P>
+
+下面的例子根据传递进来的值扔出一个错误。然后它举例说明了那个错误如何在 <B> try</B>...<B>catch</B> 语句的层次中被处理：
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function TryCatchDemo(x)
+{
+  <font color="#FF0000">try {</FONT>
+    <font color="#FF0000">try {</FONT>
+    if (x == 0)					// 估参数的值。
+      throw "x equals zero";			// 扔出一个错误。
+    else
+      throw "x does not equal zero";		// 扔出另一个不同的错误。
+    <font color="#FF0000">}</FONT>
+    <font color="#FF0000">catch(</FONT>e<font color="#FF0000">) {</FONT>					// 在此处理 "x = 0" 的错误。
+      if (e == "x equals zero")			// 检查一个错误是否该在此处理。
+        return(e + " handled locally.");	// 返回对象错误消息。
+      else					// 不能在此处理错误。
+        throw e;					// 重新扔出该错误给下一个
+    <font color="#FF0000">}</FONT>							// 错误处理程序。
+  <font color="#FF0000">}
+  catch(</FONT>e<font color="#FF0000">) {</FONT>						// 在此处理其他错误。
+    return(e + " handled higher up.");		// 返回错误信息。
+  <font color="#FF0000">}</FONT>
+}
+document.write(TryCatchDemo(0));
+document.write(TryCatchDemo(1));</PRE></FONT></BLOCKQUOTE>
+
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

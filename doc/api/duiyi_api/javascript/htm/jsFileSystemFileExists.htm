@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>FileExists 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="FileExists 方法">
+<META NAME="MS-HKWD" CONTENT="FileExists">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="文件存在">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">        
+
+<META NAME=MS-HAID CONTENT="jsFileSystemFileExists"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="FileExists method; FileExists; files; existing files; FileSystemObject object">
+
+<META NAME="Description" CONTENT="FileExists Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>FileExists 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemFileExistsC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemFileExistsA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>如果指定文件存在返回 <b>True</b> ;否则返回 <b>False</b> 。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>FileExists(</b><i>filespec</i><b>)</b><!> 
+
+<P><!><b>FileExists</b> 方法的语法包括了以下部分:<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<tr valign=top><td><font class='9v' ><!>object<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>filespec<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>需要判定是否存在的文件的名称.<!> <!>如果文件可能不在当前文件夹中,那么必须提供完整的路径说明（可以是绝对的或相对的）。<!></FONT></TD></TR>
+</TABLE><P>
+<!>下面的例子说明了 <B>FileExists</B> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function ReportFileStatus(filespec)
+{
+  var fso, s = filespec;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  if (<font color="#FF0000">fso.FileExists(</FONT>filespec<font color="#FF0000">)</FONT>)
+    s += " exists.";
+  else 
+    s += " doesn't exist.";
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE><P>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

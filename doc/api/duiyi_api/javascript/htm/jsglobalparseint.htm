@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>parseInt 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="parseInt 方法">
+<META NAME="MS-HKWD" CONTENT="parseInt">
+<META NAME="MS-HKWD" CONTENT="字符串转换">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="字符串转换">
+<META NAME="MS-HKWD" CONTENT="返回整数">
+<META NAME="MS-HKWD" CONTENT="radix">
+<META NAME="MS-HKWD" CONTENT="十六进制">
+<META NAME="MS-HKWD" CONTENT="八进制">
+<META NAME="MS-HKWD" CONTENT="isNaN 方法">                            
+
+<META NAME=MS-HAID CONTENT="jsglobalparseint"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="parseInt Method">
+<META NAME="Keywords" CONTENT="parseInt method; parseInt; converting strings; strings; parsing strings; returning integers; radix; hexadecimal; octal; isNaN method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>parseInt 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsglobalparseIntC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsglobalparseIntA.htm">应用于</A></font>
+<hr noshade class='9v' >
+<h5>描述</h5>
+<blockquote>返回由字符串转换得到的整数。</blockquote>
+<h5>语法</h5>
+<blockquote>
+<b>parseInt</b>(<i>numstring</i>, [<i>radix</i>])
+<P><b>parseInt</b> 方法的语法有如下部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>numstring</i></FONT></TD>
+<TD><FONT class='9v' >必选项。要转换为数字的字符串。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>radix</i></FONT></TD>
+<TD><FONT class='9v' >可选项。在 2 和 36 之间的表示 <i>numstring</i> 所保存数字的进制的值。如果没有提供，则前缀为 '0x' 的字符串被当作十六进制，前缀为 '0' 的字符串被当作八进制。所有其它字符串都被当作是十进制的。</FONT></TD></TR>
+
+</table>
+
+
+</blockquote>
+
+<h5>说明</h5>
+<blockquote>
+<b>parseInt</b> 方法返回与保存在 <i>numstring</i> 中的数字值相等的整数。如果 <i>numstring</i> 的前缀不能解释为整数，则返回 <b>NaN</b>（而不是数字）。
+<blockquote><pre><Font face=" 宋体" class='9v' ><Font Color=#FF0000>parseInt(</font>"abc"<Font Color=#FF0000>)</font>    // 返回 NaN.
+<Font Color=#FF0000>parseInt(</font>"12abc"<Font Color=#FF0000>)</font>  // 返回 12.</font></pre></Blockquote>
+可以用 <b>isNaN</b> 方法检测 <b>NaN</b>。
+</blockquote>
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>charCodeAt 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="charCodeAt 方法">
+<META NAME="MS-HKWD" CONTENT="charCodeAt">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="字符">
+<META NAME="MS-HKWD" CONTENT="index">         
+
+<META NAME=MS-HAID CONTENT="jsstringcharCodeAt">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="charCodeAt Method">
+<META NAME="Keywords" CONTENT="charCodeAt method; charCodeAt; String object; characters; index">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>charCodeAt 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstringcharCodeAtC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringcharCodeAtA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回指定字符的 Unicode 编码。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>stringObj</i>.<b>charCodeAt(</b><i>index</i><b>)</b> <br>
+
+<P><b>charCodeAt</b> 方法的语法组成如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP >
+<TD><FONT class='9v' ><i>stringObj</i></FONT></TD>
+<TD><FONT class='9v' >必选项。一个 <b>String</b> 对象或文字。 </FONT></TD></TR>
+<TR VALIGN=TOP >
+<TD><FONT class='9v' ><i>index</i> </FONT></TD>
+<TD><FONT class='9v' >必选项。指定字符基于零的索引。</FONT></TD></TR>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+如果在指定 <i>index</i> 处没有字符，则返回 <b>NaN</b>。<P>
+
+下面的示例说明了 <B>charCodeAt</B> 方法的用法：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function charCodeAtTest(n)
+{
+  var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var s;
+  s = <font color="#FF0000">str.charCodeAt(</FONT>n - 1<font color="#FF0000">)</FONT>;
+  // 返回 Unicode 字符编码。
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

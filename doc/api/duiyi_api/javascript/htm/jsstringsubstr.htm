@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>substr 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="substr 方法">
+<META NAME="MS-HKWD" CONTENT="substr">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="返回字符串">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="index">           
+
+<META NAME=MS-HAID CONTENT="jsstringsubstr">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="substr Method">
+<META NAME="Keywords" CONTENT="substr method; substr; String object; returning strings; strings; index">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>substr 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstringsubstrC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringsubstrA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个从指定位置开始的指定长度的子字符串。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>stringvar</i>.<b>substr(</b><i>start</i> [<b>,</b> <i>length </i>]<b>) </b>
+
+<P><b>substr</b> 方法的语法包括下述部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><FONT class='9v' ><i>stringvar</i></font></td>
+<td><FONT class='9v' >必选项。要提取子字符串的字符串文字或 <b>String</b> 对象。</font></td></TR>
+<tr valign=top>
+<td><FONT class='9v' ><i>start</i></font></td>
+<td><FONT class='9v' >必选项。所需的子字符串的起始位置。字符串中的第一个字符的索引为 0。</TR>
+<tr valign=top>
+<td><FONT class='9v' ><i>length</i></font></td>
+<td><FONT class='9v' >可选项。在返回的子字符串中应包括的字符个数。</FONT></TD></TR>
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+如果 <i>length</i> 为 0 或负数，将返回一个空字符串。如果没有指定该参数，则子字符串将延续到 <i>stringvar</i> 的最后。<P>
+
+下面的示例演示了<B>substr</B> 方法的用法：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function SubstrDemo()
+{
+  var s, ss;
+  var s = "The quick brown fox jumped over the lazy yellow dog.";
+  ss = <font color="#FF0000">s.substr(</FONT>16<font color="#FF0000">,</FONT> 3<font color="#FF0000">)</FONT>;
+  // Returns "fox".
+  return(ss);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

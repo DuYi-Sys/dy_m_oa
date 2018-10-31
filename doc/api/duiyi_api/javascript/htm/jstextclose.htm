@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML><HEAD><TITLE>Close 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Close 方法">
+<META NAME="MS-HKWD" CONTENT="Close">
+<META NAME="MS-HKWD" CONTENT="文件关闭">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">       
+
+
+<META NAME=MS-HAID CONTENT="jstextclose">
+ 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="Close Method; Close; closing files; files; TextStream object">
+
+<META NAME="Description" CONTENT="Close Method">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Close 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jstextcloseC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jstextcloseA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>关闭打开的 <b>TextStream</b> 文件。</BLOCKQUOTE><P>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><i>object</i><b>.Close( );</b><P>
+<i>object</i> 总是 <b>TextStream</b> 对象的名称。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+下面的示例演示了<B>Close</B> 方法的用法:<P>
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >var fso;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+a = fso.CreateTextFile("c:\\testfile.txt", true);
+a.WriteLine("This is a test.");
+<font color="#FF0000">a.Close()</FONT>;</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

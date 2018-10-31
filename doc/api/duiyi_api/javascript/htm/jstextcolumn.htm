@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>Column 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="Column 属性">
+<META NAME="MS-HKWD" CONTENT="Column">
+<META NAME="MS-HKWD" CONTENT="列号">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">              
+
+
+<META NAME=MS-HAID CONTENT="jstextcolumn">
+
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="Column property; column numbers; TextStream object">
+
+<META NAME="Description" CONTENT="Column Property">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Column 属性</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jstextcolumnC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jstextcolumnA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>为只读属性，返回当前字符在 <b>TextStream</b> 文件中的列号。</BLOCKQUOTE><P>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><i>object</i><b>.Column</b><p>
+<i>object</i> 总是 <b>TextStream</b> 对象的名称。
+</BLOCKQUOTE><P>
+
+<H5>说明</H5>
+<BLOCKQUOTE> 如果在已换行符之后，但在其他任何字符之前，<b>Column</b> 将等于 1。<P>
+
+下面的示例演示了<b>Column</b> 属性的用法：
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function GetColumn()
+{
+  var fso, f, m;
+  var ForReading = 1, ForWriting = 2;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.OpenTextFile("c:\\testfile.txt", ForWriting, true);
+  f.Write("Hello World!");
+  f.Close();
+  f = fso.OpenTextFile("c:\\testfile.txt", ForReading);
+  m = f.ReadLine();
+  return(<font color="#FF0000">f.Column</FONT>);
+}</PRE></FONT></BLOCKQUOTE>
+
+
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML><HEAD><TITLE>WriteBlankLines 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="WriteBlankLines 方法">
+<META NAME="MS-HKWD" CONTENT="WriteBlankLines">
+<META NAME="MS-HKWD" CONTENT="写入换行符">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">                  
+
+
+<META NAME=MS-HAID CONTENT="jstextwriteBlankLines">
+ 
+
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+
+<META NAME="Keywords" CONTENT="WriteBlankLines method; WriteBlankLines; writing newline characters; TextStream object">
+
+<META NAME="Description" CONTENT="WriteBlankLines Method">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>WriteBlankLines 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jstextwriteBlankLinesC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jstextwriteBlankLinesA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>将指定数量的换行符写入到一个 <b>TextStream</b> 文件。</BLOCKQUOTE><P>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><i>object</i><b>.WriteBlankLines(</b><i>lines</i><b>)</b><P>
+<b>WriteBlankLines</b> 方法的语法包括下述部分：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>object</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。总是一个 <b>TextStream</b> 对象的名称。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>lines</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。要写入该文件的换行符的个数。</FONT></TD></TR>
+</TABLE></BLOCKQUOTE>
+<H5>说明</H5>
+<BLOCKQUOTE>
+下面的示例演示了<B>WriteBlankLines</B> 方法的用法：<P>
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function WriteBlanksDemo()
+{
+  var fso, f, r;
+  var ForReading = 1, ForWriting = 2;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.OpenTextFile("c:\\testfile.txt", ForWriting, true);
+  f.Write("Hello world!");
+  <font color="#FF0000">f.WriteBlankLines(</FONT>2<font color="#FF0000">)</FONT>;
+  f.Write("JScript is fun!");
+  f.Close();
+  f = fso.OpenTextFile("c:\\testfile.txt", ForReading);
+  r = f.ReadAll();
+  return(r);
+}</PRE></FONT></BLOCKQUOTE></BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

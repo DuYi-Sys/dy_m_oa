@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>Array 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Array 对象">
+<META NAME="MS-HKWD" CONTENT="Array">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="创建数组">
+<META NAME="MS-HKWD" CONTENT="constructor 属性">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="固有对象">                              
+
+<META NAME=MS-HAID CONTENT="jsobjarray">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="Array Object">
+<META NAME="Keywords" CONTENT="Array object; Array; arrays; creating arrays; constructor property; intrinsic objects; built-in objects">
+
+</HEAD>
+
+
+
+<body bgcolor="#FFFFFF" link="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Array 对象</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' >
+<a href="jsobjArrayC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjArrayM.htm">方法</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjArrayP.htm">属性</a></FONT>
+
+<HR noshade class='9v' >
+<h5>描述</h5>
+
+<blockquote>提供对创建任何数据类型的数组的支持。</blockquote>
+<h5>语法</h5>
+<blockquote>
+<b>new Array()<br>
+   new Array(</b><i>size</i><b>)</b><br>
+<b>new Array(</b><i>element0</i>, <i>element1</i>, ..., <i>elementn</i><b>)</b>
+<p>创建 <b>Array</b> 对象的语法有以下部分：
+
+<p>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>size</i></FONT></TD>
+		<TD><FONT class='9v' >数组的大小。由于数组的下标是从零开始，创建的元素的下标将从零到 <i>size</i> -1。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>element0,...,elementn</i></FONT></TD>
+		<TD><FONT class='9v' >要放到数组中的元素。这将创建具有 <i>n</i> + 1 个元素的<b>长度</b>为 n 的数组。</FONT></TD></TR>
+</TABLE>
+
+
+</blockquote>
+<h5>说明</h5>
+<blockquote>
+创建数组后，能够用 [ ] 符号访问数组单个元素，例如：
+<blockquote><pre><FONT face=" 宋体" class='9v' >var my_array = <FONT COLOR="#FF0000">new Array()</FONT>;
+for (i = 0; i &lt; 10; i++)
+    {
+    my_array[i] = i;
+    }
+x = my_array[4];
+</font></pre></blockquote>
+由于 Microsoft JScript 中的数组的下标是从零开始的，前面例子中最后一条语句访问数组的第五个元素。该元素中保存的值是 4。
+<p>如果只向 <b>Array</b> 的构造函数传递了一个参数，而该参数是数字，则它被强制转为无符号整数，并且该值被用作数组的大小。否则，传入的参数被作为数组中唯一的元素。
+
+</blockquote>
+<hr noshade class='9v' >
+ </font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

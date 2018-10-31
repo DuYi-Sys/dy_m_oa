@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>link 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="link 方法">
+<META NAME="MS-HKWD" CONTENT="link">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="HTML 锚">
+<META NAME="MS-HKWD" CONTENT="HREF 属性">
+<META NAME="MS-HKWD" CONTENT="超连接">                
+
+<META NAME=MS-HAID CONTENT="jsstringlink">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="link Method">
+<META NAME="Keywords" CONTENT="link method; link; String object; HTML anchor; HREF attribute; hyperlinks">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>link 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsstringlinkC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringlinkA.htm">应用于</a></font>
+<hr noshade class='9v' >
+
+
+<H5>描述</H5>
+<BLOCKQUOTE>把一个有 HREF 属性的 HTML 锚点放置在 <b>String</b> 对象中的文本两端。
+</BLOCKQUOTE>
+<h5>语法</h5>
+<BLOCKQUOTE><i>strVariable</i>.<b>link(</b><i>linkstring</i><b>)</b><br>
+"String Literal".<b>link(</b><i>linkstring</i><b>)</b>
+<p><i>linkstring</i> 参数是想要放置在 HTML 锚点的 HREF 属性中的文本。
+</blockquote>
+
+
+<h5>说明</h5>
+<BLOCKQUOTE>调用 <b>link</b> 方法来创建 <b>String</b> 对象外部的超链接。下面就是该方法如何实现这种功能的一个例子：
+<blockquote><pre><FONT face=" 宋体" class='9v' >var strVariable = "This is a hyperlink";
+strVariable = strVariable.<FONT COLOR="#FF0000">link(</font>"http://www.microsoft.com"<FONT COLOR="#FF0000">)</font>;
+</font></pre></blockquote>
+最后一条语句执行完后，<i>strVariable</i> 的值是：
+<blockquote><pre><FONT face=" 宋体" class='9v' >&lt;a href="http://www.microsoft.com"&gt;This is a hyperlink&lt;/A&gt;
+</font></pre>
+</blockquote>
+不检查该标记是否已经被应用于该字符串了。
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ </FONT>
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

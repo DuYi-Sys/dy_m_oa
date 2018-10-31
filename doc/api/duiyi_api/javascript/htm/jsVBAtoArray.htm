@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>toArray 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+
+<META NAME="MS-HKWD" CONTENT="toArray 方法">
+<META NAME="MS-HKWD" CONTENT="toArray">
+<META NAME="MS-HKWD" CONTENT="VBArray 对象">
+<META NAME="MS-HKWD" CONTENT="Array 对象">
+<META NAME="MS-HKWD" CONTENT="VBArray 转换">
+<META NAME="MS-HKWD" CONTENT="数组">            
+
+
+<META NAME=MS-HAID CONTENT="jsVBAtoArray">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="toArray Method">
+<META NAME="Keywords" CONTENT="toArray method; toArray; VBArray object; Array object; converting VBArray; arrays">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>toArray 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsVBAtoArrayC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsVBAtoArrayA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个由 VBArray 转换而来的标准 JScript 数组。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>safeArray</i>.<b>toArray( )</b> 
+<p><i>safeArray</i> 参数是一个 <b>VBArray</b> 对象。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+该转换将多维的 VBArray 翻译成一个一维的 JScript 数组。每个后续维被添加到前一维的结尾。例如，一个三维的且每一维有三个元素的 VBArray 将被转换为如下所示的 JScript 数组：<p>
+假定该 VBArray 包含：(1, 2, 3), (4, 5, 6), (7, 8, 9)。在转换后，JScript 数组将包含：1, 2, 3, 4, 5, 6, 7, 8, 9。
+<p>
+现在没有将 JScript 数组转换为 VBArray 的方法。<P>
+
+下面的示例包括三个部分。第一部分是用来创建一个 Visual Basic 安全数组的 VBScript 代码。第二部分是 JScript 代码，将这个 VB 安全数组转换为一个 JScript 数组。这两部分都放在 HTML 页中的 &lt;HEAD&gt; 部分。第三部分是位于 &lt;BODY&gt; 部分的 JScript 代码，用来运行其他两个部分。
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >&lt;HEAD&gt;
+&lt;SCRIPT LANGUAGE="VBScript"&gt;
+&lt;!--
+Function CreateVBArray()
+  Dim i, j, k
+  Dim a(2, 2)
+  k = 1
+  For i = 0 To 2
+    For j = 0 To 2
+      a(j, i) = k
+      document.writeln(k)
+      k = k + 1
+    Next
+    document.writeln("&lt;BR&gt;")
+  Next
+  CreateVBArray = a
+End Function
+--&gt;
+&lt;/SCRIPT&gt;
+&lt;SCRIPT LANGUAGE="JScript"&gt;
+&lt;!--
+function VBArrayTest(vbarray)
+{
+  var a = new VBArray(vbarray);
+  var b = <font color="#FF0000">a.toArray()</FONT>;
+  var i;
+  for (i = 0; i &lt 9; i++) 
+  {
+    document.writeln(b[i]);
+  }
+}
+--&gt;
+&lt;/SCRIPT&gt;
+&lt/HEAD&gt;
+&ltBODY&gt;
+&lt;SCRIPT LANGUAGE="JScript"&gt;
+&lt;!--
+  VBArrayTest(CreateVBArray());
+--&gt;
+&lt;/SCRIPT&gt;
+&lt/BODY&gt;
+</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

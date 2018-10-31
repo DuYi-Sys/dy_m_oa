@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="utf-8" />
+<meta name="robots" content="all" />
+<meta name="author" content="Tencent-ISRD" />
+<meta name="Copyright" content="Tencent" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<style type="text/css">
+* {  margin:0; padding:0;}
+body { font:12px/180% georgia,serif,sans-serif, simsun; color:#666; background:#FFF;margin:0;border:0; height:100%;_overflow-y:auto;}
+h2, h3, h4, h5, h6 { font-size:100%;}
+table, th, td { border-collapse:collapse; font-weight:normal;}
+a:link, a:visited { color:#008000; text-decoration:underline;}
+a:hover, a:active { color:#E01F20; text-decoration:underline;}
+.mark{ color:#FF5A15;}
+#header { clear:both; margin-bottom:10px;}
+h1 {color:#4E6B33;font-size:21px;padding-left:7px;font-family:"微软雅黑" ;}
+#header .tit{ height:55px; line-height:64px; overflow:hidden;}
+#header .attribute { line-height:25px; height:25px; overflow:hidden; color:#4E6B33; background-color:#EAF1D7; border-top:1px solid #4E6B33;}
+#header .attribute p {  padding-left:9px; display:inline;}
+#content { clear:both;height:100%;}
+.mode .tit { clear:both; background:#F3F3F3; padding:2px 0; *padding-top:4px; text-indent:8px; overflow:hidden; font:bold 14px/25px auto "微软雅黑";}
+.content { padding:10px 75px 10px 12px; clear:both; font-family:georgia,serif;}
+.content p { padding:5px 0;}
+#values.mode dl { list-style:none;}
+#values.mode dl dt { float:left;font-weight:bold; font-family:georgia,serif ;}
+#explain.mode ol { list-style:none; font-family:Simsun ;}
+table{ border:1px solid #ccc;white-space:normal;word-break:break-all;margin-top:5px;font-family:"微软雅黑";}
+th{ border:1px solid #ccc;font-weight:bold;text-align:center;background-color:#F3F3F3;line-height:28px; font-size:12px;}
+th.type{ padding:0;background-color:#F3F3F3;color:#333333;}
+td.version{ font-weight:bold;text-align:center;font-size:12px;}
+td{ border:1px solid #ccc;height:28px;line-height:20px;padding:2px 5px;text-align:left;}
+#compatible.mode th{ width:140px;}
+#compatible.mode th.type{ width:40px;}
+#compatible.mode th img{ display:block; margin:5px auto 0; width:32px; height:32px;}
+#compatible.mode td.support span{ padding-right:4px;}
+#compatible.mode td.yes{ color:#008000;}
+#compatible.mode td.no{ color:#BBB;}
+table .on{ background-color:#f9f9f9;}
+table .col_gecko{width:120px}
+table .col_webkit{width:120px}
+table .col_presto{width:120px}
+#examplelist { margin:10px 6px; padding:10px; border:1px solid #83d13e;}
+#examplerun { margin:10px 0; font-size:14px;}
+#wrap{ margin:0 10px;;}
+#goto{ width:75px;text-align:center;border:1px solid #ccc;background:#f3f3f3;position:fixed;right:10px;_right:27px;top:91px;}
+* html #goto { position:absolute;}
+#goto h3{ background:#648741;height:21px;line-height:21px;color:#fff; font-weight:normal;}
+#goto li{ margin:0 2px;line-height:27px;;border-bottom:1px solid #999; list-style:none;}
+#goto li.goto_end{ border-bottom:none;}
+#goto li a{ font-size:14px;font-weight:bold;display:block;text-decoration:none;line-height:27px;width:100%;height:100%;color:#666666;}
+#goto li a:hover{ color:#648741;text-decoration:underline;}
+textarea{ font-family:"Courier New",Courier,monospace; border:1px solid #DDDDDD; background-color:#FBFBF9; font-size:12px; color:#000000;}
+button{ font-size:12px;cursor:pointer;}
+#footer{ border-top:1px solid #DDDDDD; background-color:#FBFBF9;}
+.copyright { padding-bottom:10px; text-align:left; padding-top:10px;;}
+.copyright p { color:#888;font-size:10px;text-indent:16px; font-family:Verdana,Helvetica;font-weight:bold;}
+.copyright p a { color:#888;font-size:10px; font-weight:bold;}
+</style>
+<!--[if lte IE 6]>
+   <style type="text/css">
+   /*<![CDATA[*/ 
+html { overflow-x:auto; overflow-y:auto;}
+   /*]]>*/
+   </style>
+<![endif]-->
+<title>column-rule-style</title>
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+	<div class="tit"><h1>column-rule-style</h1></div>
+	<div class="attribute">
+		<p><strong>版本：CSS3</strong></p>
+		<p>继承性：无</p>
+	</div>
+</div>
+<div id="content">
+<!--S 语法-->
+	<div id="syntax" class="mode">
+		<h2 class="tit">语法：</h2>
+		<div class="content">
+			<p><strong>column-rule-style</strong>：<span class="mark">none</span> | <em>hidden</em> | <em>dotted</em> | <em>dashed</em> | <em>solid</em> | <em>double</em> | <em>groove</em> | <em>ridge</em> | <em>inset</em> | <em>outset</em></p>
+			<p><strong>相关属性</strong>：<a href="column-rule-width.html" title="column-rule-width">column-rule-width</a> , <a href="column-rule-color.html" title="column-rule-color">column-rule-color</a></p>
+		</div>
+		</div>
+<!--E 语法-->
+<!--S 取值-->
+	<div id="values" class="mode">
+		<h2 class="tit">取值：</h2>
+		<div class="content">
+			<dl style="font-family:Tahoma">
+				<dt><em>none</em>：</dt>
+				<dd>默认值。无边框</dd>
+				<dt>hidden：</dt>
+				<dd>隐藏边框</dd>
+				<dt>dotted：</dt>
+				<dd>在MAC平台上IE4+与WINDOWS和UNIX平台上IE5.5+为点线。否则为实线</dd>
+				<dt>dashed：</dt>
+				<dd>在MAC平台上IE4+与WINDOWS和UNIX平台上IE5.5+为虚线。否则为实线</dd>
+				<dt>solid：</dt>
+				<dd>实线边框</dd>
+				<dt>double：</dt>
+				<dd>双线边框</dd>
+				<dt>groove：</dt>
+				<dd>根据 <a href="##" title="border-color">border-color</a> 的值画3D凹槽</dd>
+				<dt>ridge：</dt>
+				<dd>根据 <a href="##" title="border-color">border-color</a> 的值画3D凸槽</dd>
+				<dt>inset：</dt>
+				<dd>根据 <a href="##" title="border-color">border-color</a> 的值画3D凹边</dd>
+				<dt>outset：</dt>
+				<dd>根据 <a href="##" title="border-color">border-color</a> 的值画3D凸边</dd>
+			</dl>
+		</div> 
+		</div>
+<!--E 取值-->
+<!--S 说明-->
+	<div id="explain" class="mode">
+		<h2 class="tit">说明：</h2>
+		<div class="content">
+			<ol>
+				<li>定义每栏之间边框的颜色。</li>
+			</ol>
+            <table>
+            <colgroup>
+                <col class="col_type"/>
+			    <col/>
+			    <col />
+			    <col class="col_presto"/>
+		    </colgroup>
+			<thead>
+				<tr>
+				  <th class="type">引擎类型</th>
+				  <th class="type_gecko">Gecko</th>
+				  <th class="type_webkit">Webkit</th>
+				  <th class="type_presto">Presto</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr onmouseover="this.className='on'" onmouseout="this.className=''" >
+				  <td class="version">column-rule-style</td>
+				  <td>-moz-column-rule-style</td>
+				  <td>-webkit-column-rule-style</td>
+				  <td>&nbsp;</td>
+				</tr>
+              <tr onmouseover="this.className='on'" onmouseout="this.className=''" >
+				  <td class="version">&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+			  </tr>
+			</tbody>
+          </table>
+	  </div>
+		</div>
+<!--E 说明-->
+<!--S 兼容性列表-->
+	<div id="compatible" class="mode">
+		<h2 class="tit">兼容性：</h2>
+		<div class="content">
+		  <table>
+			<thead>
+				<tr>
+				  <th class="type">类型</th>
+				  <th class="type_ie"><img src="img/IE.png" alt="IE" />Internet Explorer</th>
+				  <th class="type_firefox"><img src="img/Firefox.png" alt="Firefox" />Firefox</th>
+				  <th class="type_chrome"><img src="img/Chrome.png" alt="Chrome" />Chrome</th>
+				  <th class="type_opera"><img src="img/Opera.png" alt="Opera" />Opera</th>
+				  <th class="type_safari"><img src="img/Safari.png" alt="Safari" />Safari</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				  <td rowspan="4" class="version">版本</td>
+				  <td class="support no"><span>(×)</span>IE6</td>
+				  <td class="support no"><span>(×)</span>Firefox 2.0</td>
+				  <td class="support yes"><span>(√)</span>Chrome 1.0.x</td>
+				  <td class="support no"><span>(×)</span>Opera 9.63</td>
+				  <td class="support yes"><span>(√)</span>Safari 3.1</td>
+				</tr>
+				<tr>
+				  <td class="support no"><span>(×)</span>IE7</td>
+				  <td class="support no"><span>(×)</span>Firefox 3.0</td>
+				  <td class="support yes"><span>(√)</span>Chrome 2.0.x</td>
+				  <td></td>
+				  <td class="support yes"><span>(√)</span>Safari 4</td>
+				</tr>
+				<tr>
+				  <td class="support no"><span>(x)</span>IE8</td>
+				  <td class="support yes"><span>(√)</span>Firefox 3.5</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				</tr>
+				<tr>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				</tr>
+			</tbody>
+          </table>
+		</div>
+  </div>
+<!--E 兼容性列表-->
+<!--S 示例-->
+	<div id="example" class="mode">
+		<h2 class="tit">示例：</h2>
+		<div class="content">
+         <img src="img/safari_column_rule_style.png" alt="column-rule-style Demo" />
+		 <p>例子里-webkit-column-count:2;的意思是一共两列； -webkit-column-gap:200px;的意思是每列之间的间距是200px；<br /> -webkit-column-rule-width:100px;的意思是边框的宽度为100px；<br /> -webkit-column-rule-style:solid;的意思是边框的样式是实线边框；<br /> -webkit-column-rule-color:#10427A;的意思是边框的颜色值是#10427A。</p>
+       		<div id="examplerun">
+<textarea cols="95" rows="12" id="code"  name="">
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+&lt;meta http-equiv=&quot;Content-Language&quot; content=&quot;utf-8&quot; /&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;all&quot; /&gt;
+&lt;meta name=&quot;author&quot; content=&quot;Tencent-ISRD&quot; /&gt;
+&lt;meta name=&quot;Copyright&quot; content=&quot;Tencent&quot; /&gt;
+&lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;
+&lt;!--
+.wrapper {width:703px; padding:10px; margin:40px auto 0; border:1px solid #333333;}
+.wrapper .inner { padding:5px 10px;}
+.wrapper .inner h2 {color:#333333; background:#DCDCDC; padding:5px 8px;}
+.wrapper .inner .cont {color:#333333; font-size:14px; line-height:180%; text-indent:2em;}
+.wrapper .inner .cont p {margin-bottom:15px; line-height:180%;}
+.wrapper .inner .cont .column-rule-style {-webkit-column-count:2; -webkit-column-gap:200px; -webkit-column-rule-width:100px; -webkit-column-rule-style:solid; -webkit-column-rule-color:#10427A;-moz-column-count:2; -moz-column-gap:200px; -moz-column-rule-width:100px; -moz-column-rule-style:solid; -moz-column-rule-color:#10427A;}
+--&gt;
+&lt;/style&gt;
+&lt;title&gt;column-rule-style&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;div class=&quot;inner&quot;&gt;
+		&lt;h2&gt;column-rule-style&lt;/h2&gt;
+		&lt;div class=&quot;cont&quot;&gt;
+			&lt;div class=&quot;column-rule-style&quot;&gt;
+				&lt;p&gt;&lt;strong&gt;ISD Webteam&lt;/strong&gt;是一个设计团队，即&lt;strong&gt;腾讯互联网业务系统网站组&lt;/strong&gt;。&lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;ISD Webteam&lt;/strong&gt;关注于网站产品的体验设计，包括网站的可用性、视觉风格以及网页重构。&lt;/p&gt;
+				&lt;p&gt;我们的产品类型挺丰富，有&lt;strong&gt;空间(Qzone)&lt;/strong&gt;，有&lt;strong&gt;会员(QQVIP)&lt;/strong&gt;，有&lt;strong&gt;QQ秀(QQShow)&lt;/strong&gt;，还有&lt;strong&gt;音乐(QQMusic)&lt;/strong&gt;，项目挺多，工作也挺忙，无时无刻不在体现互联网行业的特征。&lt;/p&gt;
+				&lt;p&gt;我们的成员类型挺丰富，有安静的，有狂躁的，有智勇双全的，也有身can志不坚的，总体上还算相亲相爱，偶尔也会你打我闹。&lt;/p&gt;
+				&lt;p&gt;&lt;strong&gt;“让我们的互联网服务像水和电一样融入到人们的生活当中”&lt;/strong&gt;，是我们的梦想，距离目标还有很长的路要走，至今我们仍在不懈的努力，如果你愿意，欢迎和我们一起。&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+ </textarea>
+<p><button type="button" onclick="copy_clip(document.getElementById('code').value)">复制代码</button></p>
+			</div>
+		</div>
+	</div>
+<!--E 示例-->
+</div>
+</div>
+<div id="footer"><div class="copyright"><p>Copyright © 2009 <a rel="external" href="http://webteam.tencent.com/">Tencent ISD webteam</a>. All Rights Reserved </p></div></div>
+<!--S 跳转菜单-->
+    <div id="goto">
+			<h3>快速跳转</h3>
+			<ul>
+            <li><a href="#syntax" title="跳转到“语法”">语法</a></li>
+			<li><a href="#values" title="跳转到“取值”">取值</a></li>
+			<li><a href="#explain" title="跳转到“说明”">说明</a></li>
+			<li><a href="#compatible" title="跳转到“兼容性”">兼容性</a></li>
+			<li class="goto_end"><a href="#example" title="跳转到“示例”">示例</a></li>
+            </ul>
+	</div>
+<!--E 跳转菜单-->
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+function copy_clip(copy){ 
+if (window.clipboardData){ 
+window.clipboardData.setData("Text", copy);}
+else if (window.netscape){
+netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect');
+var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+if (!clip) return;
+var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+if (!trans) return;
+trans.addDataFlavor('text/unicode');
+var str = new Object();
+var len = new Object();
+var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+var copytext=copy;
+str.data=copytext;
+trans.setTransferData("text/unicode",str,copytext.length*2);
+var clipid=Components.interfaces.nsIClipboard;
+if (!clip) return false;
+clip.setData(trans,null,clipid.kGlobalClipboard);}
+alert("已复制到剪贴板")
+return false;
+;}
+window.onload = open_new;
+// ]]>
+</script>
+</body>
+</html>
+

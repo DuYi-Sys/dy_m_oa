@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>setDate 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="setDate 方法">
+<META NAME="MS-HKWD" CONTENT="setDate">
+<META NAME="MS-HKWD" CONTENT="本地时间">
+<META NAME="MS-HKWD" CONTENT="日期">
+<META NAME="MS-HKWD" CONTENT="setUTCDate 方法">
+<META NAME="MS-HKWD" CONTENT="getDate 方法">       
+
+<META NAME=MS-HAID CONTENT="jsdatesetdate">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="setDate Method">
+<META NAME="Keywords" CONTENT="setDate method; setDate; local time; dates; setUTCDate method; getDate method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>setDate 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本第&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdatesetDateC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdatesetdateA.htm">应用于</a></font>
+<hr noshade class='9v' ><FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE>设置 <b>Date</b> 对象中用<a href="glossary.htm#deflocaltime">本地时间</a>表示的数字日期。
+</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE>
+<i>objDate</i>.<b>setDate(</b><i>numDate</i><b>)</b>
+
+<p>其中 <i>numDate</i> 参数是一个等于数字日期的数值。
+</blockquote>
+
+<H5>说明</H5>
+<BLOCKQUOTE>要设置用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的日期值，请使用 <b>setUTCDate</b> 方法。
+<p>如果 <i>numDate</i> 的值大于 <b>Date </b> 对象中所保存的月份的天数或者是负数。那么日期将被设置为由 <i>numDate</i> 减去所保存月份中天数而得到的日期。例如，如果所保存的日期是 1996 年 1 月 5 日，并且调用了方法 <b>setUTCDate(32)</b>，那么日期将被改变为 1996 年 2 月 1 日。负数的处理方法与此相似。<P>
+
+下面这个例子说明了 <B>setDate</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function SetDateDemo(newdate)
+{
+  var d, s;
+  d = new Date();
+  <font color="#FF0000">d.setDate(</FONT>newdate<font color="#FF0000">)</FONT>;
+  s = "Current setting is ";
+  s += d.toLocaleString(); 
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

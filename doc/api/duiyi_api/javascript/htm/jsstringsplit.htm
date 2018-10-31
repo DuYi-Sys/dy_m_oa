@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>split 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="split 方法">
+<META NAME="MS-HKWD" CONTENT="split">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="RegExp 对象">
+<META NAME="MS-HKWD" CONTENT="正文删除">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="正则表达式">                               
+
+<META NAME=MS-HAID CONTENT="jsstringsplit">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="split Method">
+<META NAME="Keywords" CONTENT="split method; split; String object; Regular Expression object; RegExp object; removing text; strings; regular expressions">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>split 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstringsplitC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringsplitA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>stringObj</i>.<b>split(</b><i>str</i><b>)</b><br>
+
+<P><b>split</b> 方法的语法包括下述部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+
+<tr valign=top>
+<td><font class='9v' ><i>stringObj</i> </font></td>
+<td><font class='9v' >必选项。要被分解的 <b>String</b> 对象或文字。该对象不会被 <b>split</b> 方法修改。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><i>str</i> </font></td>
+<td><font class='9v' >必选项。是一个字符串或<b>正则表达式</b>对象，描述用来定义分解位置的字符。 </font></td>
+</tr>
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE><b>split</b> 方法的结果是一个字符串数组，在 <i>stingObj</i>  中每个出现 <i>str</i> 的位置都要进行分解。<P>
+
+下面的示例演示了 <B>split</B> 方法的用法：<P>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function SplitDemo()
+{
+  var s, ss;
+  var s = "The quick brown fox jumped over the lazy yellow dog.";
+  // 在每个空格字符处进行分解。
+  ss = <font color="#FF0000">s.split(</FONT>" "<font color="#FF0000">)</FONT>;
+  return(ss);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

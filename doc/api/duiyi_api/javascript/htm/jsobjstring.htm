@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>String 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="String">
+<META NAME="MS-HKWD" CONTENT="字符串数据类型">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="字符串文字显式">
+<META NAME="MS-HKWD" CONTENT="创建字符串对象">
+<META NAME="MS-HKWD" CONTENT="new 运算符">
+<META NAME="MS-HKWD" CONTENT="字符串格式化">
+<META NAME="MS-HKWD" CONTENT="字符串查找">                             
+
+<META NAME=MS-HAID CONTENT="jsobjstring">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="String object; String; string data type; strings; string literals; creating String objects; new operator; formatting strings; searching strings">
+
+<META NAME="Description" CONTENT="String Object">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>String 对象</B></FONT>
+
+
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p>
+<FONT class='9v' >
+<a href="jsobjstringC.htm">请参阅</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjStringM.htm">方法</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjStringP.htm">属性</A>
+</FONT>
+<hr noshade class='9v' >
+
+
+<H5>描述</H5>
+<BLOCKQUOTE>可用于处理或格式化文本字符串以及确定和定位字符串中的子字符串。
+</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><b>StringObj</b>[<b>.</b><em>method</em>]<br>
+<b>"String Literal"</b>[<b>.</b><em>method</em>]</BLOCKQUOTE>
+
+<H5>说明</H5>
+
+<BLOCKQUOTE><b>String</b> 对象可用字符串文字显式创建。用这种方法创建的 <b>String</b> 对象（指以标准字符串形式）与用 <b>new</b> 运算符创建的 <b>String</b> 对象处理上不同。所有字符串文字共享公用的全局字符串对象。所以，如果为字符串文字添加属性，则它对所有标准字符串对象都是可用的：
+
+<Blockquote><pre><FONT face=" 宋体" class='9v' >var alpha, beta;
+alpha = "这是一个字符串";
+beta = "这也是一个字符串";
+
+alpha.test = 10;
+</FONT></pre></blockquote>
+
+<p>在本例中，这时为 <i>beta</i> 和所有将来的字符串定义 <i>test</i>。然而，在下面的例子中，被添加属性的处理略有不同：
+<blockquote><pre><FONT face=" 宋体" class='9v' >var gamma, delta;
+gamma = new String("这是一个字符串");
+delta = new String("这是也一个字符串");
+
+gamma.test = 10;
+</FONT></pre></BLOCKQUOTE>
+在这种情况下，不为 <i>delta</i> 定义 <i>test</i>。每个用 <b>new</b> <b>String</b> 声明的 <b>String</b> 对象有其自己的一组成员。这是对 <b>String</b> 对象和字符串文字的处理不同的唯一情况。
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+
+</FONT>
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

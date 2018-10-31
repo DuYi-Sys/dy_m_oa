@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>数据类型转换</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="数据类型转换">
+<META NAME="MS-HKWD" CONTENT="数据类型">
+<META NAME="MS-HKWD" CONTENT="数据类型">
+<META NAME="MS-HKWD" CONTENT="undefined 类型">
+<META NAME="MS-HKWD" CONTENT="Null 类型">
+<META NAME="MS-HKWD" CONTENT="Boolean 类型">
+<META NAME="MS-HKWD" CONTENT="String 类型">
+<META NAME="MS-HKWD" CONTENT="Number 类型">
+<META NAME="MS-HKWD" CONTENT="数据类型转换">                  
+
+
+<META NAME=MS-HAID CONTENT="jsTypeConversion">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="Data Type Conversion">
+<META NAME="Keywords" CONTENT="Data Type conversion; data type; data types; undefined type; null type; Boolean type; String type; Number type; converting data types">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>数据类型转换</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+<p>
+
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>Microsoft JScript 能根据上下文的需要提供自动的类型转换。这就意味着，例如，当上下文希望某个值为一个字符串时，JScript 将试图将这个值转换为一个字符串。 
+<p>该语言有六种数据类型。所有的值均为下述类型之一：<Blockquote><DL><DT><a href="glossary.htm#defundefined"><B>undefined</b></a>
+<DD>undefined 类型只有一个值，即 <B>undefined</b>。
+<DT><B>Null</B>
+<DD>null 类型只有一个值，即 <B>null</b>。
+<DT><B>Boolean</B>
+<DD>Boolean 类型代表两个逻辑值，即 <b>true</b> 和 <b>false</b>。
+<DT><B>String</B>
+<DD>Strings 用单引号或双引号指明，其中包括零个或多个 Unicode 字符。空字符串包含零个字符，其长度也为 0。
+<DT><B>Number</B>
+<dd>Number 类型可以是按照 IEEE 754 规范的整数或浮点数。另外还有一些特殊值：
+<UL>
+<LI><B>NaN</b>，即不是一个 Number 类型的值
+<LI>正无穷
+<LI>负无穷
+<LI>正数零
+<LI>负数零 </UL>
+<DT><B>Object</B>
+<DD>Object 类型是一个包括其属性集和方法集的对象定义。
+</DL></Blockquote>
+下表定义了当上下文要求 JScript 将一种数据类型转换为另一种类型时的相应情况：
+<P>
+
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=Bottom BGCOLOR="#DDDDDD">
+<TD ROWSPAN=2><FONT class='9v' ><b>输出数据类型</b></FONT></TD>
+<TD COLSPAN=7><FONT class='9v' ><b>输入数据类型</b></FONT></TD>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><b>Undefined</b></FONT></TD>
+<TD><FONT class='9v' ><b>Null&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></FONT></TD>
+<TD><FONT class='9v' ><b>Boolean</b></FONT></TD>
+<TD><FONT class='9v' ><b>Number</b></FONT></TD>
+<TD><FONT class='9v' ><b>String</b></FONT></TD>
+<TD><FONT class='9v' ><b>Object</b></FONT></TD>
+</TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><b>boolean</b></FONT></TD>
+<TD><FONT class='9v' >false</FONT></TD>
+<TD><FONT class='9v' >false</FONT></TD>
+<TD><FONT class='9v' >不用转换</FONT></TD>
+<TD><FONT class='9v' >如果输入为 +0、-0 或 <b>NaN</b> 则为 false；否则为 true</FONT></TD>
+<TD><FONT class='9v' >如果输入为空字符串("")，则为 false；否则为 true</FONT></TD>
+<TD><FONT class='9v' >true</FONT></TD>
+</TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><b>number</b></FONT></TD>
+<TD><FONT class='9v' ><b>NaN</b></FONT></TD>
+<TD><FONT class='9v' ><b>NaN</b></FONT></TD>
+<TD><FONT class='9v' >如果输入为 true，则为 1；如果输入为 false ，则为 +0 </FONT></TD>
+<TD><FONT class='9v' >不用转换</FONT></TD>
+<TD><FONT class='9v' >如果不能解释为一个数，则认为是 <b>NaN</b></FONT></TD>
+<TD><FONT class='9v' >Number 对象</FONT></TD>
+</TR>
+
+<TR VALIGN=TOP><TD><FONT class='9v' ><b>string</b></FONT></TD>
+<TD><FONT class='9v' >"undefined"</FONT></TD>
+<TD><FONT class='9v' >"null"</FONT></TD>
+<TD><FONT class='9v' >"true" 或 "false"</FONT></TD>
+<TD><FONT class='9v' >该数的绝对值加上其符号，但下面的值例外：<BR>
+<LI><B>NaN</b> 返回 "NaN"
+<LI>+0 或 -0 返回 "0"
+<LI>正无穷返回 "Infinity"
+<LI>负无穷返回 "-Infinity"
+</FONT></TD>
+<TD><FONT class='9v' >不用转换</FONT></TD>
+<TD><FONT class='9v' >String 对象</FONT></TD>
+</TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><b>object</b></FONT></TD>
+<TD><FONT class='9v' >运行时错误</FONT></TD>
+<TD><FONT class='9v' >运行时错误</FONT></TD>
+<TD><FONT class='9v' >新建 Boolean 对象</FONT></TD>
+<TD><FONT class='9v' >新建 Number 对象</FONT></TD>
+<TD><FONT class='9v' >新建 String 对象</FONT></TD>
+<TD><FONT class='9v' >不用转换</FONT></TD>
+</TR>
+
+
+
+</TABLE></BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

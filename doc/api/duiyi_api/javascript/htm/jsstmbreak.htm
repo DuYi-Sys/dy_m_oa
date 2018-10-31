@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>break 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="break 语句">
+<META NAME="MS-HKWD" CONTENT="break">
+<META NAME="MS-HKWD" CONTENT="switch 语句">
+<META NAME="MS-HKWD" CONTENT="while 语句">
+<META NAME="MS-HKWD" CONTENT="do...while 语句">
+<META NAME="MS-HKWD" CONTENT="for 语句">
+<META NAME="MS-HKWD" CONTENT="for...in 语句">
+<META NAME="MS-HKWD" CONTENT="循环终止">
+<META NAME="MS-HKWD" CONTENT="语句终止">
+<META NAME="MS-HKWD" CONTENT="标识">
+<META NAME="MS-HKWD" CONTENT="labeled 语句">                                                           
+
+<META NAME=MS-HAID CONTENT="jsstmbreak">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="break Statement">
+<META NAME="Keywords" CONTENT="break statement; break; switch statement; while statement; do...while statement; for statement; for...in statement; terminating loops; terminating statements; labels; labeled statements">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>break 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmbreakC.htm">请参阅</a></font>
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>中断当前循环，或和 <i>label</i> 一起使用，中断相关联的语句。
+</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE>
+<b>break</b> [<i>label</i>];<p>
+可选的 <i>label</i> 参数指定断点处语句的标签。  
+</BLOCKQUOTE>
+
+<h5>说明</h5>
+<blockquote>
+通常在 <b>switch</b> 语句和 <b>while</b>、<b>for</b>、<b>for...in</b>、或 <b>do...while</b> 循环中使用 <b>break</b> 语句。 最一般的是在 <b>switch</b> 语句中使用 <i>label</i> 参数，但它可在任何语句中使用，无论是简单语句还是<a href="glossary.htm#defCompoundStatement">复合</a>语句。
+<p>执行 <b>break</b> 语句会退出当前循环或语句，并开始脚本执行紧接着的语句。<P>
+
+下面的示例说明了 <B>break</B> 语句的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function BreakTest(breakpoint)
+{
+   var i = 0;
+   while (i &lt; 100)
+   {
+   if (i == breakpoint)
+     <font color="#FF0000">break</FONT>;
+     i++;
+   }
+   return(i);
+}</FONT></PRE></BLOCKQUOTE>
+
+</blockquote>
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

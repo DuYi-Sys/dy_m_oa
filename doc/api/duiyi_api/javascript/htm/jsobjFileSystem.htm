@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>FileSystemObject 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject">
+<META NAME="MS-HKWD" CONTENT="CreateTextFile 方法">
+<META NAME="MS-HKWD" CONTENT="文件系统">
+<META NAME="MS-HKWD" CONTENT="WriteLine 方法">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">
+<META NAME="MS-HKWD" CONTENT="ActiveXobject 对象">            
+
+<META NAME=MS-HAID CONTENT="jsobjFileSystem"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="FileSystemObject Object">
+<META NAME="Keywords" CONTENT="FileSystemObject object; FileSystemObject; CreateTextFile method; file systems; WriteLine method; TextStream object; ActiveXObject object">
+
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>FileSystemObject 对象</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsobjFileSystemC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjFileSystemM.htm">方法</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjFileSystemP.htm">属性</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>提供对计算机文件系统的访问。</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><b>y = new ActiveXObject("Scripting.FileSystemObject")</b> </BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+下面的代码演示了如何用 <b>FileSystemObjext</b> 返回可用于读或写的 <b>TextStream </b>对象： 
+<blockquote><PRE><FONT face=" 宋体" class='9v' >var fso = new ActiveXObject("<FONT COLOR="#FF0000">Scripting.FileSystemObject</FONT>");
+var a = fso.CreateTextFile("c:\\testfile.txt", true);
+a.WriteLine("This is a test.");
+a.Close();
+</FONT></PRE></blockquote>
+
+在该例子代码中，<b>ActiveXObject </b>对象被赋给 <b>FileSystemObject</b> (fso)。随后 <b>CreateTextFile</b> 方法创建文件 <b>TextStream</b> 对象 (a)，并用 <b>WriteLine</b> 方法将一行文本写入创建的文本文件。<b>Close</b> 方法刷新缓冲区并关闭该文件。 
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

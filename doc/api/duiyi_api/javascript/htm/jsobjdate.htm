@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>Date 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="Date">
+<META NAME="MS-HKWD" CONTENT="日期">
+<META NAME="MS-HKWD" CONTENT="数据反转">
+<META NAME="MS-HKWD" CONTENT="时间">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="UTC">
+<META NAME="MS-HKWD" CONTENT="全球标准时间">
+<META NAME="MS-HKWD" CONTENT="parse 方法">
+<META NAME="MS-HKWD" CONTENT="UTC 方法">
+<META NAME="MS-HKWD" CONTENT="static 方法">
+<META NAME="MS-HKWD" CONTENT="ActiveX 对象">                                                    
+
+<META NAME=MS-HAID CONTENT="jsobjdate">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="CHARSET" CONTENT="GB2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="Date Object">
+<META NAME="Keywords" CONTENT="Date object; Date; dates; retrieving dates; times; intrinsic objects; built-in objects; UTC; Universal Coordinated Time; parse method; UTC method; static methods; ActiveX objects">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Date 对象</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' >
+
+<a href="jsobjdateC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjDateM.htm">方法</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjDateP.htm">属性</A></FONT>
+
+
+<HR noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>启用基本存储器并取得日期和时间。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE>
+<b>var</b> newDateObj = <b>new Date()</b><br>
+<b>var</b> newDateObj = <b>new Date(</b><i>dateVal</i><b>)</b><br>
+<b>var</b> newDateObj = <b>new Date(</b><i>year</i>, month, date[<b>,</b> hours[<b>,</b> <i>minutes</i>[<b>,</b> <i>seconds</i>[<b>,</b><i>ms</i>]]]]<b>)</b>
+<P><b>Date</b> 对象的<a href="glossary.htm#defConstructor">构造函数</a>语法有以下部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><font class='9v' ><i>dateVal</i></font></td>
+<td><font class='9v' >如果是数字值，<i>dateVal</i> 表示指定日期与 1970 年 1 月 1 日午夜间<a href="glossary.htm#defUTCtime">全球标准时间 </a>的毫秒数。如果是字符串，则 <i>dateVal</i> 按照 <b>parse</b> 方法中的规则进行解析。<i>dateVal</i> 参数也可以是从某些 ActiveX(R) 对象返回的 VT_DATE 值。</font></td></tr>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>year</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。完整的年份，比如，1976（而不是 76）。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>month</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。表示的月份，是从 0 到 11 之间的整数（ 1 月至 12 月）。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>date</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。表示日期，是从 1 到 31 之间的整数。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>hours</i></FONT></TD>
+		<TD><FONT class='9v' >可选项。 如果提供了 <i>minutes</i> 则必须给出。表示小时，是从 0 到 23 的整数（午夜到 11pm）。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>minutes</i></FONT></TD>
+		<TD><FONT class='9v' >可选项。 如果提供了 <i>seconds</i> 则必须给出。表示分钟，是从 0 到 59 的整数。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>seconds</i></FONT></TD>
+		<TD><FONT class='9v' >可选项。 如果提供了 <i>milliseconds </i>则必须给出。表示秒钟，是从 0 到 59 的整数。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>ms</i></FONT></TD>
+		<TD><FONT class='9v' >可选项。 表示毫秒，是从 0 到 999 的整数。</FONT></TD></TR>
+</TABLE>
+</blockquote>
+<h5>说明</h5>
+
+<blockquote>
+<b>Date</b> 对象保存以毫秒为单位表示特定时间段。如果某个参数的值大于其范围或为负数，则存储的其他值将做相应的调整。例如，如果指定 150 秒，JScript 将该数字重新定义为 2 分 30 秒。
+
+<p>如果数字为 <b>NaN</b>，则表示该对象不代表特定的时间段。如果未向 <b>Date</b> 对象传递参数，它将被初始化为当前时间 (UTC)。在能够使用该对象前必须为其赋值。
+
+<p><b>Date</b> 对象能够表示的日期范围约等于 1970 年 1 月 1 日前后各 285,616 年。
+
+<p><b>Date</b> 对象具有两个不创建 <b>Date</b> 对象就可以调用的静态方法。它们是 <b>parse</b> 和 <b>UTC</b>。
+</blockquote>
+
+<hr noshade class='9v' > </FONT>
+</BODY>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

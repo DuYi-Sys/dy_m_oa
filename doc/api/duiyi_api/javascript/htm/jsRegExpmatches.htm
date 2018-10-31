@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>$1...$9 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="匹配属性">
+<META NAME="MS-HKWD" CONTENT="匹配">
+<META NAME="MS-HKWD" CONTENT="$1...$9 属性">
+<META NAME="MS-HKWD" CONTENT="模式匹配">
+<META NAME="MS-HKWD" CONTENT="加圆括号的子字符串">
+<META NAME="MS-HKWD" CONTENT="与加圆括号的子字符串匹配">
+<META NAME="MS-HKWD" CONTENT="子字符串匹配">
+<META NAME="MS-HKWD" CONTENT="正则表达式">                                                        
+
+<META NAME=MS-HAID CONTENT="jsRegExpmatches">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="matches Properties">
+<META NAME="Keywords" CONTENT="matches properties; matches; $1...$9 properties; pattern matching; parenthesized substrings; matching parenthesized substrings; matching substrings; regular expressions">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>$1...$9 属性</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsRegExpmatchesC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsRegExpmatchesA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回九个在模式匹配期间找到的、最近保存的部分。只读。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><b>RegExp.$</b><i>n</i>
+<p>
+参数 n 是 1 到 9 之间的数。
+</blockquote>
+<H5>说明</H5>
+<BLOCKQUOTE>
+无论何时产生一个成功的带插入语的匹配，<b>$1...$9</b> 属性的值都被修改，但是只有最近的九个可以被保存起来。<P>
+
+下面的例子举例说明了 <B>$1...$9</B> 属性的用法：
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function matchDemo()
+{
+  var s;
+  var re = new RegExp("d(b+)(d)","ig");
+  var str = "cdbBdbsbdbdz";
+  var arr = re.exec(str);
+  s = "$1 contains: " + <font color="#FF0000">RegExp.$1</FONT> + "&lt;BR&gt;";
+  s += "$2 contains: " + <font color="#FF0000">RegExp.$2</FONT> + "&lt;BR&gt;";
+  s += "$3 contains: " + <font color="#FF0000">RegExp.$3</FONT>;
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

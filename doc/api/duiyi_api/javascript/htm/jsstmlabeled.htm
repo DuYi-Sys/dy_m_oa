@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>Labeled 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Labeled 语句">
+<META NAME="MS-HKWD" CONTENT="Labeled">
+<META NAME="MS-HKWD" CONTENT="标识符">
+<META NAME="MS-HKWD" CONTENT="标识">
+<META NAME="MS-HKWD" CONTENT="break 语句">
+<META NAME="MS-HKWD" CONTENT="continue 语句">                    
+
+<META NAME=MS-HAID CONTENT="jsstmlabeled">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="">
+
+<META NAME="Description" CONTENT="Labeled Statement">
+<META NAME="Keywords" CONTENT="Labeled statement; Labeled; identifiers; labels; break statement; continue statement">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Labeled 语句</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstmlabeledC.htm">请参阅</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>为语句提供一个标识符。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>label</i> <b>:</b><br>
+&nbsp;&nbsp;&nbsp; <i>statement</i> 
+
+<P>Labeled 语句的语法组成如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>label</i></FONT></TD>
+<TD><FONT class='9v' >在引用有标签的语句时使用的一个唯一的标识符。
+</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement</i></FONT></TD>
+<TD><FONT class='9v' >与 <i>label</i> 相关联的语句。可以是<a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+标签由 <b>break</b> 和 <b>continue</b> 语句使用，用来指示 <b>break</b> 和 <b>continue</b> 应用于哪个语句。<P>
+
+在下面的语句中，<B>continue</B> 语句使用一个 <B>labeled</B> 语句来创建一个数组，在该数组中，每行的第三列包含一个未定义的值：
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function labelDemo()
+{
+    var a = new Array();
+    var i, j, s = "", s1 = "";
+  <font color="#FF0000">Outer:</FONT>
+    for (i = 0; i &lt; 5; i++)
+    {
+      <font color="#FF0000">Inner:</FONT>
+        for (j = 0; j &lt; 5; j++)
+        {  
+          if (j == 2)
+            continue <font color="#FF0000">Inner</FONT>;
+          else
+            a[i,j] = j + 1;
+        }
+    }
+
+    for (i = 0;i &lt; 5; i++)
+    {
+      s = ""
+      for (j = 0; j &lt; 5; j++)
+      {
+        s += a[i,j];
+      }
+      s1 += s + "\n";
+    }
+    return(s1)
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

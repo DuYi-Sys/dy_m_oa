@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>Files 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Files 属性">
+<META NAME="MS-HKWD" CONTENT="Files">
+<META NAME="MS-HKWD" CONTENT="file 对象">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="Files 集合">
+<META NAME="MS-HKWD" CONTENT="Folder 对象">
+<META NAME="MS-HKWD" CONTENT="Enumerator 对象">
+<META NAME="MS-HKWD" CONTENT="for 语句">                    
+
+<META NAME=MS-HAID CONTENT="jsFolderFiles"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Files property; Files; file objects; files; Files collection; Folder object; Enumerator object; for statement">
+
+<META NAME="Description" CONTENT="Files Property">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Files 属性</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+<a href="jsVersion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFolderFilesC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFolderFilesA.htm">应用于</A><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回一个 <b>Files</b> 集合，由指定文件夹中包含的所有 <b>File</b> 对象组成，包括设置了隐藏和系统文件属性的文件。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>Files</b><!> 
+
+<P><!><i>object</i> 应为 <b>Folder</b> 对象。<!>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的代码说明了 <b>Files</b> 属性的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowFolderFileList(folderspec)
+{
+  var fso, f, fc, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.GetFolder(folderspec);
+  fc = new Enumerator(<font color="#FF0000">f.files</font>);
+  s = "";
+  for (; !fc.atEnd(); fc.moveNext())
+  {
+    s += fc.item();
+    s += "&lt;br&gt;";
+  }
+  return(s);
+}</font></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

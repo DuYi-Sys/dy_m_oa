@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>逻辑“非”运算符 (!)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="! 运算符">
+<META NAME="MS-HKWD" CONTENT="逻辑 NOT 运算符">
+<META NAME="MS-HKWD" CONTENT="逻辑 NOT">
+<META NAME="MS-HKWD" CONTENT="逻辑运算符">
+<META NAME="MS-HKWD" CONTENT="“非”">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="一元运算符">
+<META NAME="MS-HKWD" CONTENT="字符串">                          
+
+<META NAME=MS-HAID CONTENT="jsoprNot">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="! Operator">
+<META NAME="Keywords" CONTENT="! operator; logical NOT operator; logical NOT; logical operators; negation; operators; unary operators; strings;">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>! 运算符</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsoprnotC.htm">请参阅</a></font>
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>对一个表达式执行逻辑非。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>result</i> <b>= !</b><i>expression</i><P>
+<b>!</b> 运算符的语法组成部分如下：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0><TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>result</i></FONT></TD>
+<TD><FONT class='9v' >任何<a href="glossary.htm#defVariable">变量</a>。</FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>expression</i></FONT></TD>
+<TD><FONT class='9v' >任何<a href="glossary.htm#defExpression">表达式</A>。</FONT></TD></TR></TABLE>
+</BLOCKQUOTE>
+<H5>说明</H5>
+<BLOCKQUOTE>下面的表举例说明了 <i>result</i> 是如何决定的。<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0><TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>如果 </b><i>expression</i><b> 是</b></FONT></TD>
+<TD><FONT class='9v' ><b>则 </b><i>result </i><b>是</b></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><b>True</b></FONT></TD>
+<TD><FONT class='9v' ><b>False</b></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><b>False</b></FONT></TD>
+<TD><FONT class='9v' ><b>True</b></FONT></TD></TR><TR VALIGN=TOP>
+</TR></TABLE>
+
+<p>
+所有一元运算符，如 <b>!</b> 运算符，按照下面的规则来求表达式的值：
+<ul>
+<li>如果应用于 <a href="glossary.htm#defundefined">undefined</A> 或 <b>null</b> 表达式，则会产生一个<a href="glossary.htm#defRTErr">运行时错误</A>。
+<li>对象被转换为字符串。
+<li>如果可能，字符串被转换为数值。否则会产生一个运行时错误。
+<li>Boolean 值被当作数值（如果是 false 则为 0，如果是 true 则为 1）。
+</ul>
+该运算符被用来产生数值。 
+<p>
+对于 <b>!</b> 运算符，如果 <i>expression</i> 是非零的，则 <i>result</i> 是零。如果 <i>expression</i> 是零，则 <i>result</i> 是 1。
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+  
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

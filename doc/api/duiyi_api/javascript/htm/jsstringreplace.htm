@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>replace 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="replace 方法">
+<META NAME="MS-HKWD" CONTENT="replace">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="RegExp 对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="MS-HKWD" CONTENT="字符串替换">                                 
+
+<META NAME=MS-HAID CONTENT="jsstringreplace">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="replace Method">
+<META NAME="Keywords" CONTENT="replace method; replace; String object; Regular Expression object; strings; RegExp object; regular expressions; replacing strings">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>replace 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstringreplaceC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringreplaceA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回根据正则表达式进行文字替换后的字符串的复制。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>stringObj</i>.<b>replace(</b><i>rgExp</i>, <i>replaceText</i><b>)</b><br>
+
+<P><b>replace</b> 方法的语法包括下述部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+
+<tr valign=top>
+<td><font class='9v' ><i>stringObj</i> </font></td>
+<td><font class='9v' >必选项。要执行该替换的 <b>String</b> 对象或文字。该对象不会被 <b>replace</b> 方法修改。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><i>rgExp</i> </font></td>
+<td><font class='9v' >必选项。描述要查找的内容的一个<b>正则表达式</b>对象。 </font></td>
+</tr>
+<tr valign=top>
+<td><font class='9v' ><i>replaceText</i> </font></td>
+<td><font class='9v' >必选项。是一个<b>String</b> 对象或文字，对于<i>stringObj</i> 中每个匹配 <i>rgExp</i> 中的位置都用该对象所包含的文字加以替换。</font></td>
+</tr>
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE><b>replace</b> 方法的结果是一个完成了所有替换的 <i>stringObj</i> 对象的复制。 <p>
+该方法将更新 <b>RegExp</b> 对象的内容。<P>
+
+下面的示例演示了 <B>replace</B> 方法的用法：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function ReplaceDemo()
+{
+  var r, re;
+  var s = "The quick brown fox jumped over the lazy yellow dog.";
+  re = /fox/i;
+  r = <font color="#FF0000">s.replace(</FONT>re<font color="#FF0000">,</FONT> "pig"<font color="#FF0000">)</FONT>;
+  return(r);
+}</PRE></FONT></BLOCKQUOTE>
+
+另外, <B>replace</B> 方法也可以替换模式中的子表达式。 下面的范例演示了交换字符串中的每一对单词：
+
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function ReplaceDemo()
+{
+  var r, re;
+  var s = "The quick brown fox jumped over the lazy yellow dog.";
+  re = /(\S+)(\s+)(\S+)/g;
+  r = <FONT COLOR="#FF0000">s.replace(</FONT>re<FONT COLOR="#FF0000">,</FONT> "$3$2$1"<FONT COLOR="#FF0000">)</FONT>;	//交换每一对单词。
+  return(r);
+}
+</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>DriveExists 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="DriveExists 方法">
+<META NAME="MS-HKWD" CONTENT="DriveExists">
+<META NAME="MS-HKWD" CONTENT="Drives">
+<META NAME="MS-HKWD" CONTENT="驱动器存在">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">       
+
+<META NAME=MS-HAID CONTENT="jsFileSystemDriveExists"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="DriveExists method; DriveExists; drives; existing drives; FileSystemObject object">
+
+<META NAME="Description" CONTENT="DriveExists Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>DriveExists 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemDriveExistsC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemDriveExistsA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>如果指定的驱动器存在则返回 <b>True</b> ；如果不存在则返回 <b>False</b> 。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>DriveExists(</b><i>drivespec</i><b>)</b><!>
+
+<P><!><b>DriveExists</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>object<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>drivespec<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>驱动器号或完整的路径说明。<!>
+</FONT></TD></TR>
+
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>对于可移动媒体的驱动器， 即使没有媒体 <b>DriveExists</b> 方法也返回 <b>true</b> 。<!> <!>可以使用 <b>Drive</b> 对象的 <b>IsReady</b> 属性来决定驱动器是否就绪。<!><P>
+
+<!>下面的例子说明了 <B>DriveExists</B> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function ReportDriveStatus(drv)
+{
+  var fso, s = "";
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  if (<font color="#FF0000">fso.DriveExists(</FONT>drv<font color="#FF0000">)</FONT>)
+    s += "Drive " + drv + " exists.";
+  else 
+    s += "Drive " + drv + " doesn't exist.";
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

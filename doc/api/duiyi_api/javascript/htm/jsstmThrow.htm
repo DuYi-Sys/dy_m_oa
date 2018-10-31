@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>throw 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="throw 语句">
+<META NAME="MS-HKWD" CONTENT="throw">
+<META NAME="MS-HKWD" CONTENT="错误处理">
+<META NAME="MS-HKWD" CONTENT="错误处理">
+<META NAME="MS-HKWD" CONTENT="错误处理">
+<META NAME="MS-HKWD" CONTENT="JScript 错误信息">                    
+
+<META NAME=MS-HAID CONTENT="jsstmthrow">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="throw Statement">
+<META NAME="Keywords" CONTENT="throw statement; throw; error handling; handling errors; errors; JScript error messages">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>throw 语句</B></FONT><br>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmthrowC.htm">请参阅</a></font>
+
+<hr noshade class='9v' >
+
+<h5>描述</h5>
+<Blockquote>
+产生一个能被 <B>try...catch</B> 语句</a>处理的错误情形。
+</blockquote>
+
+<h5>语法</h5>
+<blockquote>
+<b>throw</b> <i>exception</i>
+
+<p><i>exception</i> 参数可以是任何<a href="glossary.htm#defExpression">表达式</a>。
+<p>
+</blockquote>
+<h5>说明</h5>
+<Blockquote>
+下面的例子根据传递进来的值扔出一个错误，然后举例说明那个错误是如何在 <B> try</B>...<B>catch</B> 语句的层次中被处理的：
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function TryCatchDemo(x)
+{
+  try {
+    try {
+    if (x == 0)			// 估参数的值。
+      <font color="#FF0000">throw</FONT> "x equals zero";			// 扔出一个错误。
+    else
+      <font color="#FF0000">throw</FONT> "x does not equal zero";		// 扔出一个不同的错误。
+    }
+    catch(e) {				// 在这儿处理 "x = 0" 的错误。	
+      if (e == "x equals zero")			// 检查错误能否在这儿被处理。
+        return(e + " handled locally.");		// 返回对象错误消息。
+      else					// 不能在这儿处理这个错误。
+        <font color="#FF0000">throw</FONT> e;			// 重新扔出该错误给下一个
+    }					// 错误处理程序。
+  }
+  catch(e) {                    	   	// 在此处理其他错误。
+    return(e + " handled higher up.");		// 返回错误消息。
+  }
+}
+document.write(TryCatchDemo(0));
+document.write(TryCatchDemo(1));</PRE></FONT></BLOCKQUOTE>
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

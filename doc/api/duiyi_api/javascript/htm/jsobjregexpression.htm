@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>正则表达式对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="MS-HKWD" CONTENT="模式">
+<META NAME="MS-HKWD" CONTENT="查找字符串">
+<META NAME="MS-HKWD" CONTENT="正则表达式查找">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="字符组合">
+<META NAME="MS-HKWD" CONTENT="RegExp 对象">                                                                    
+
+<META NAME=MS-HAID CONTENT="jsobjregexpression">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Regular Expression object; Regular Expression; regular epressions; patterns; searching strings; searching regular expression; strings; character combinations; RegExp object">
+
+<META NAME="Description" CONTENT="Regular Expression Object">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>正则表达式对象</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsobjRegExpressionC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjRegExpressionM.htm">方法</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjRegExpressionP.htm">属性</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>保存正则表达式模式。</BLOCKQUOTE>
+
+<H5>语法 1</H5>
+<BLOCKQUOTE>var regularexpression = <b>/</b><i>pattern</i><b>/</b>[<i>switch</i>]</blockquote>
+<h5>语法 2</h5>
+<blockquote>
+var regularexpression = <b>new RegExp("</b><i>pattern</i><b>",</b>[<b>"</b><i>switch</i><b>"</b>]<b>)</b>
+<P>正则表达式对象语法有以下部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><font class='9v' ><i>pattern</i></font></td>
+<td><font class='9v' >必选项。要使用的正则表达式模式。如果使用语法 1，用 "/" 字符分隔模式。如果用语法 2，用引号将模式引起来。</font></td>
+</TR>
+<tr valign=top>
+<td><font class='9v' ><i>switch</i></font></td>
+<td><font class='9v' >可选项。如果使用语法 2 要用引号将 switch 引起来。可选的开关选项有：<li>i （忽略大小写）<li>g （全文查找出现的所有 <i>pattern</i>）<li>gi （全文查找、忽略大小写）<br> </font></td>
+</TR>
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>正则表达式</b>对象保存用于查找字符串中的字符组合时的模式。创建<b>正则表达式</b>对象后，或者它被传递给字符串方法，或者字符串被传递给一个正则表达式方法。有关最近进行查找的信息被保存在 <b>RegExp</b> 对象中。<p>
+当预先知道查找字符串时用语法 1。当查找字符串经常变动或不知道时用语法 2，比如由用户输入得到的字符串。<p>
+在使用前 <i>pattern</i> 参数被编译为内部格式。对语法 1 来说，<i>pattern</i> 在该脚本被装载时被编译。对语法 2 来说，<i>pattern</i> 在使用前，或调用 <b>compile</b> 方法时被编译。
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

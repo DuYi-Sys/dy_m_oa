@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML><HEAD><TITLE>Read 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="Read 方法">
+<META NAME="MS-HKWD" CONTENT="Read">
+<META NAME="MS-HKWD" CONTENT="文件">
+<META NAME="MS-HKWD" CONTENT="读取字符">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">             
+
+
+<META NAME=MS-HAID CONTENT="jstextread">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="Read method; Read; files; reading characters; TextStream object">
+
+<META NAME="Description" CONTENT="Read Method">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Read 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jstextreadC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jstextreadA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>从<b>TextStream</b> 文件中读取指定数量的字符，并返回由此得到的字符串。</BLOCKQUOTE><P>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE>	
+<i>object</i><b>.Read(</b><i>characters</i><b>)</b><P>
+
+<b>Read</b> 方法的语法包括下述部分：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>object</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。总是 <b>TextStream </b>对象的名称。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>characters</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。要从该文件读取的字符个数。</FONT></TD></TR>
+</TABLE><P>
+
+下面的示例演示类如何使用 <B>Read</B> 方法来从文件中读取六个字符 Header，并返回获得的字符串：<P>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function GetHeader()
+{
+  var fso, f;
+  var ForReading = 1, ForWriting = 2;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.OpenTextFile("c:\\testfile.txt", ForWriting, true);
+  f.Write("Header");
+  f.Write("1234567890987654321");
+  f.Close();
+  f = fso.OpenTextFile("c:\\testfile.txt", ForReading);
+  return(<font color="#FF0000">f.Read(</FONT>6<font color="#FF0000">)</FONT>);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE><P>
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

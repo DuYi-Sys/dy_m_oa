@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>getMinutes 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="getMinutes 方法">
+<META NAME="MS-HKWD" CONTENT="getMinutes">
+<META NAME="MS-HKWD" CONTENT="分钟">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="本地时间">
+<META NAME="MS-HKWD" CONTENT="getUTCMinutes 方法">          
+
+<META NAME=MS-HAID CONTENT="jsdategetminutes">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="getMinutes Method">
+<META NAME="Keywords" CONTENT="getMinutes method; getMinutes; minutes; Date object; local time; getUTCMinutes method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>getMinutes 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdategetminutesC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdategetminutesA.htm">应用于</a></font><hr noshade class='9v' ><FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回 <b>Date</b> 对象中用<a href="glossary.htm#deflocaltime">本地时间</a>表示的分钟值。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE>
+<i>objDate</i><b>.getMinutes()</b>
+</blockquote>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+要获取用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的分钟值，请使用 <b>getUTCMinutes</b> 方法。
+<p><b>getMinutes</b> 方法返回一个处于 0 到 59 之间的整数，返回值就等于保存在 <b>Date</b> 对象中的分钟值。在下面两种情况下返回值为 0：一种情况是在时钟整点之后经过的时间少于一分钟；另外一种情况是在创建 <b>Date</b> 对象的时候没有将时间值保存到该对象中。而要确定究竟是哪种情况，唯一的方法是同时检查小时和秒钟值是否也是 0。如果这两个值都是 0，那就几乎可以确定是没有将时间值保存到该 <b>Date</b> 对象中。<P>
+
+下面这个例子说明了 <B>getMinutes</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function TimeDemo()
+{
+  var d, s = "当前本地时间为: ";
+  var c = ":";
+  d = new Date();
+  s += d.getHours() + c;
+  s += <font color="#FF0000">d.getMinutes()</FONT> + c;
+  s += d.getSeconds() + c;
+  s += d.getMilliseconds();
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

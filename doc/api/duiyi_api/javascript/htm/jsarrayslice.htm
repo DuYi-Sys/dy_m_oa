@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>slice 方法 (Array)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="slice 方法">
+<META NAME="MS-HKWD" CONTENT="slice">
+<META NAME="MS-HKWD" CONTENT="Array 对象">
+<META NAME="MS-HKWD" CONTENT="从零开始的下标">
+<META NAME="MS-HKWD" CONTENT="数组">      
+
+<META NAME=MS-HAID CONTENT="jsarrayslice">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="slice Method (Array)">
+<META NAME="Keywords" CONTENT="slice method; slice; Array object; zero-based index; arrays">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>slice 方法 (Array)</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsarraysliceC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsarraysliceA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个数组的一段。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>arrayObj</i>.<b>slice(</b><i>start</i>, [<i>end</i>]<b>)</b> 
+
+<P><b>slice</b> 方法的语法包括下面这些部分：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>arrayObj</i></FONT></TD>
+<TD><FONT class='9v' >必选项。一个 <b>Array</b> 对象。 </FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>start</i> </FONT></TD>
+<TD><FONT class='9v' >必选项。<i>arrayObj</i> 中所指定的部分的开始元素是从零开始计算的下标。 </FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>end</i> </FONT></TD>
+<TD><FONT class='9v' >可选项。<i>arrayObj</i> 中所指定的部分的结束元素是从零开始计算的下标。</FONT></TD></TR>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE><b>slice</b> 方法返回一个 <b>Array</b> 对象，其中包含了 <i>arrayObj</i> 的指定部分。
+<p><b>slice</b> 方法一直复制到 <i>end</i> 所指定的元素，但是不包括该元素。如果<i>end</i> 值为负，那就说明 <i>end</i> 是从 <i>arrayObj</i> 结尾计算的偏移量。此外，它不是从零开始计数的。如果省略了这个值，那么 <b>slice</b> 方法将一直复制到 <i>arrayObj</i> 的结尾。
+<p>在下面这个例子中，除了最后一个元素之外，<i>myArray</i> 中所有的元素都被复制到 <i>newArray</i> 中：
+<Blockquote><pre><font face=" 宋体" class='9v' >newArray = myArray.<font color="#FF0000">slice(</font>0, -1<font color="#FF0000">)</font></font></pre></blockquote>
+
+如果一个对象引用被从 <i>arrayObj</i> 复制到结果中，结果中的该对象引用仍然指向同一个对象。对该对象的改变将被同时反映在两个数组上。
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>description 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="description 属性">
+<META NAME="MS-HKWD" CONTENT="description">
+<META NAME="MS-HKWD" CONTENT="错误">
+<META NAME="MS-HKWD" CONTENT="自定义错误">
+<META NAME="MS-HKWD" CONTENT="Error 对象">
+<META NAME="MS-HKWD" CONTENT="JScript 错误信息">
+<META NAME="MS-HKWD" CONTENT="错误处理">
+<META NAME="MS-HKWD" CONTENT="处理错误">                                  
+
+<META NAME=MS-HAID CONTENT="jsproDescription">
+ 
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META NAME="PRODUCT" CONTENT="Jscript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+
+<META NAME="Keywords" CONTENT="Description property; description; errors; user-defined errors; Error object; JScript error messages; error-handling; handling errors">
+
+<META NAME="Description" CONTENT="description Property">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>description 属性</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR>
+<a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE>
+<FONT class='9v' ><P><a href="jsproDescriptionC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsproDescriptionA.htm">应用于</A></FONT>
+<HR NOSHADE class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回或设置与特定错误相联系的描述字符串。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>object</i><b>.description </b>[<b>= </b><i>stringexpression</i>]<P>
+
+<b>description</b> 属性的语法组成部分如下：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>object</i></FONT></TD>
+<TD><FONT class='9v' ><b>Error</b> 对象的任意实例。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>stringexpression</i></FONT></TD>
+<TD><FONT class='9v' >包含错误描述的<a href="glossary.htm#defStringExpression">字符串表达式</A>。</FONT></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE><b>description</b> 属性包含与特定错误相联系的错误信息字符串。使用包含在这个<a href="glossary.htm#defProperty">属性</A>中的值，来警告用户发生了一个不能或不想处理的错误。<P>
+
+下面的例子举例说明了 <B>description</B> 属性的使用：
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >try
+ { x = y					// 产生错误。}
+catch(var e{				// 创建局部变量 e。
+  document.write(e)                  		// 打印 &quot;[object Error]&quot.
+  document.write((e.number & 0xFFFF))		// 打印 5009.
+  document.write(<font color="#FF0000">e.description</FONT>)      		// 打印 &quot;'y' is undefined&quot;.
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

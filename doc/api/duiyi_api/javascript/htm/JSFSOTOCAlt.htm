@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>Microsoft(R) JScript 运行时库参考</TITLE>
+<META NAME="MS-HKWD" CONTENT="运行时库参考">
+<META NAME="MS-HKWD" CONTENT="运行时库">                    
+
+<META NAME=MS-HAID CONTENT="jsfsotocalt">
+ 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="JScript Run-Time Library Reference">
+<META NAME="Keywords" CONTENT="Run-Time Library reference; Run-Time Library">
+
+<Script Language="JavaScript">
+<!--
+function DisplayTopic(URL)
+{
+    window.open(URL, "_self");
+}
+// -->
+</script>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=300>
+
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Scripting<br> 运行时库参考</B></FONT><!>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="Jstocalt.htm">语言参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本信息</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+<p>
+<hr noshade class='9v' >
+
+<!>&nbsp;<!><BR>
+
+<!-- TABLE G -->
+<TABLE CELLPADDING=3 BORDER=0 CELLSPACING=0>
+
+<TR VALIGN=TOP>
+<TD HEIGHT=40>
+<FONT class='9v' ><B><!>特性<BR>信息<!></B></FONT></TD>
+	<TD VALIGN=TOP>
+	<FORM NAME="Form1" ACTION="">
+	<SELECT NAME="Target1">
+<OPTION VALUE="jsgrpruntimeobjectfeatures.htm"><!>Microsoft Scripting 运行时特性<!>
+<OPTION VALUE="jsfsotocalt.htm"><!>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<!> 
+</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" LANGUAGE="JavaScript" onClick="DisplayTopic(  document.Form1.Target1.options[document.Form1.Target1.selectedIndex].value)"  Value="  转到！  ">
+</FORM>
+</TR>
+
+<TR VALIGN=TOP>
+<TD HEIGHT=40>
+<FONT class='9v' ><B><!>字母顺序的<BR>关键字列表<!></B></FONT></TD>
+	<TD VALIGN=TOP>
+	<FORM NAME="Form2" ACTION="">
+	<SELECT NAME="Target2">
+<OPTION VALUE="jsdicadd.htm"><!>Add 方法 (Dictionary)<!>
+<OPTION VALUE="jsFolderAddFolders.htm"><!>Add 方法 (Folders)<!>
+<OPTION VALUE="jstextatEndOfLine.htm"><!>AtEndOfLine 属性<!>
+<OPTION VALUE="jstextatEndOfStream.htm"><!>AtEndOfStream 属性<!>
+<OPTION VALUE="jsFileAttributes.htm"><!>Attributes 属性<!>
+<OPTION VALUE="jsDriveAvailableSpace.htm"><!>AvailableSpace 属性<!>
+
+<OPTION VALUE="jsFileSystemBuildPath.htm"><!>BuildPath 方法<!>
+
+<OPTION VALUE="jstextclose.htm"><!>Close 方法<!>
+<OPTION VALUE="jstextcolumn.htm"><!>Column 属性<!>
+<OPTION VALUE="jsdiccomparemode.htm"><!>CompareMode 属性<!>
+<OPTION VALUE="jsFileCopy.htm"><!>Copy 方法<!>
+<OPTION VALUE="jsFileSystemCopyFile.htm"><!>CopyFile 方法<!>
+<OPTION VALUE="jsFileSystemCopyFolder.htm"><!>CopyFolder 方法<!>
+
+<OPTION VALUE="jsdiccount.htm"><!>Count 属性<!>
+
+<OPTION VALUE="jsFileSystemCreateFolder.htm"><!>CreateFolder 方法<!>
+<OPTION VALUE="jsfilecreateTextFile.htm"><!>CreateTextFile 方法<!>
+
+<OPTION VALUE="jsFileDateCreated.htm"><!>DateCreated 属性<!>
+<OPTION VALUE="jsFileDateLastAccessed.htm"><!>DateLastAccessed 属性<!>
+<OPTION VALUE="jsFileDateLastModified.htm"><!>DateLastModified 属性<!>
+<OPTION VALUE="jsFileDelete.htm"><!>Delete 方法<!>
+<OPTION VALUE="jsFileSystemDeleteFile.htm"><!>DeleteFile 方法<!>
+<OPTION VALUE="jsFileSystemDeleteFolder.htm"><!>DeleteFolder 方法<!>
+<OPTION VALUE="jsobjDictionary.htm"><!>Dictionary 对象<!>
+<OPTION VALUE="jsobjDrive.htm"><!>Drive 对象<!>
+<OPTION VALUE="jsFileDrive.htm"><!>Drive 属性<!>
+<OPTION VALUE="jsFileSystemDriveExists.htm"><!>DriveExists 方法<!>
+<OPTION VALUE="jsDriveDriveLetter.htm"><!>DriveLetter 属性<!>
+<OPTION VALUE="jscolDrives.htm"><!>Drives 集合<!>
+<OPTION VALUE="jsFileSystemDrives.htm"><!>Drives 属性<!>
+<OPTION VALUE="jsDriveDriveType.htm"><!>DriveType 属性<!>
+
+<OPTION VALUE="jsdicexists.htm"><!>Exists 方法<!>
+
+<OPTION VALUE="jsobjFile.htm"><!>File 对象<!>
+<OPTION VALUE="jsFileSystemFileExists.htm"><!>FileExists 方法<!>
+<OPTION VALUE="jscolFiles.htm"><!>Files 集合<!>
+<OPTION VALUE="jsFolderFiles.htm"><!>Files 属性<!>
+<OPTION VALUE="jsDriveFileSystem.htm"><!>FileSystem 属性<!>
+<OPTION VALUE="jsobjFileSystem.htm"><!>FileSystemObject 对象<!>
+<OPTION VALUE="jsobjFolder.htm"><!>Folder 对象<!>
+<OPTION VALUE="jsFileSystemFolderExists.htm"><!>FolderExists 方法<!>
+<OPTION VALUE="jscolFolders.htm"><!>Folders 集合<!>
+<OPTION VALUE="jsDriveFreeSpace.htm"><!>FreeSpace 属性<!>
+<OPTION VALUE="jsFileSystemGetAbsolutePathName.htm"><!>GetAbsolutePathName 方法<!>
+<OPTION VALUE="jsFileSystemGetBaseName.htm"><!>GetBaseName 方法<!>
+<OPTION VALUE="jsFileSystemGetDrive.htm"><!>GetDrive 方法<!>
+<OPTION VALUE="jsFileSystemGetDriveName.htm"><!>GetDriveName 方法<!>
+<OPTION VALUE="jsFileSystemGetExtensionName.htm"><!>GetExtensionName 方法<!>
+<OPTION VALUE="jsFileSystemGetFile.htm"><!>GetFile 方法<!>
+<OPTION VALUE="jsFileSystemGetFileName.htm"><!>GetFileName 方法<!>
+<OPTION VALUE="jsFileSystemGetFileVersion.htm"><!>GetFileVersion 方法<!>
+<OPTION VALUE="jsFileSystemGetFolder.htm"><!>GetFolder 方法<!>
+<OPTION VALUE="jsFileSystemGetParentFolderName.htm"><!>GetParentFolderName 方法<!>
+<OPTION VALUE="jsFileSystemGetSpecialFolder.htm"><!>GetSpecialFolder 方法<!>
+<OPTION VALUE="jsFileSystemGetTempName.htm"><!>GetTempName 方法<!>
+
+<OPTION VALUE="jsDriveIsReady.htm"><!>IsReady 属性<!>
+<OPTION VALUE="jsFolderIsRootFolder.htm"><!>IsRootFolder 属性<!>
+<OPTION VALUE="jsdicitem.htm"><!>Item 属性<!>
+<OPTION VALUE="jsdicitems.htm"><!>Items 方法<!>
+
+<OPTION VALUE="jsdicKey.htm"><!>Key 属性<!>
+<OPTION VALUE="jsdickeys.htm"><!>Keys 方法<!>
+
+<OPTION VALUE="jstextline.htm"><!>Line 属性<!>
+<OPTION VALUE="jsFileMove.htm"><!>Move 方法<!>
+<OPTION VALUE="jsFileSystemMoveFile.htm"><!>MoveFile 方法<!>
+<OPTION VALUE="jsFileSystemMoveFolder.htm"><!>MoveFolder 方法<!>
+
+<OPTION VALUE="jsFileName.htm"><!>Name 属性<!>
+<OPTION VALUE="jsfileOpenAsTextStream.htm"><!>OpenAsTextStream 方法<!>
+<OPTION VALUE="jsfileopenTextFile.htm"><!>OpenTextFile 方法<!>
+
+<OPTION VALUE="jsFileParentFolder.htm"><!>ParentFolder 属性<!>
+<OPTION VALUE="jsDrivePath.htm"><!>Path 属性<!>
+
+<OPTION VALUE="jstextread.htm"><!>Read 方法<!>
+<OPTION VALUE="jstextreadall.htm"><!>ReadAll 方法<!>
+<OPTION VALUE="jstextreadln.htm"><!>ReadLine 方法<!>
+<OPTION VALUE="jsdicremove.htm"><!>Remove 方法<!>
+<OPTION VALUE="jsdicremoveall.htm"><!>RemoveAll 方法<!>
+<OPTION VALUE="jsDriveRootFolder.htm"><!>RootFolder 属性<!>
+
+<OPTION VALUE="jsDriveSerialNumber.htm"><!>SerialNumber 属性<!>
+<OPTION VALUE="jsDriveShareName.htm"><!>ShareName 属性<!>
+<OPTION VALUE="jsFileShortName.htm"><!>ShortName 属性<!>
+<OPTION VALUE="jsFileShortPath.htm"><!>ShortPath 属性<!>
+<OPTION VALUE="jsFileSize.htm"><!>Size 属性<!>
+<OPTION VALUE="jstextskip.htm"><!>Skip 方法<!>
+<OPTION VALUE="jstextskipline.htm"><!>SkipLine 方法<!>
+<OPTION VALUE="jsFolderSubFolders.htm"><!>SubFolders 属性<!>
+
+<OPTION VALUE="jsobjTextStream.htm"><!>TextStream 对象<!>
+<OPTION VALUE="jsDriveTotalSize.htm"><!>TotalSize 属性<!>
+<OPTION VALUE="jsFileType.htm"><!>Type 属性<!>
+
+<OPTION VALUE="jsDriveVolumeName.htm"><!>VolumeName 属性<!>
+
+<OPTION VALUE="jstextwrite.htm"><!>Write 方法<!>
+<OPTION VALUE="jstextwriteBlankLines.htm"><!>WriteBlankLines 方法<!>
+<OPTION VALUE="jstextwriteln.htm"><!>WriteLine 方法<!>
+<OPTION VALUE="jsfsotocalt.htm"><!>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<!>  
+</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" LANGUAGE="JavaScript" onClick="DisplayTopic(  document.Form2.Target2.options[document.Form2.Target2.selectedIndex].value)"  Value="  转到！  ">
+</FORM>
+</TR>
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B><!>方法<!></B></FONT></TD>
+	<TD>	
+	<FORM NAME="Form3" ACTION="">
+	<SELECT NAME="Target3">
+<OPTION VALUE="jsdicadd.htm"><!>Add 方法 (Dictionary)<!>
+<OPTION VALUE="jsFolderAddFolders.htm"><!>Add 方法 (Folders)<!>
+
+<OPTION VALUE="jsFileSystemBuildPath.htm"><!>BuildPath 方法<!>
+
+<OPTION VALUE="jstextclose.htm"><!>Close 方法<!>
+<OPTION VALUE="jsFileCopy.htm"><!>Copy 方法<!>
+<OPTION VALUE="jsFileSystemCopyFile.htm"><!>CopyFile 方法<!>
+<OPTION VALUE="jsFileSystemCopyFolder.htm"><!>CopyFolder 方法<!>
+<OPTION VALUE="jsFileSystemCreateFolder.htm"><!>CreateFolder 方法<!>
+<OPTION VALUE="jsfilecreateTextFile.htm"><!>CreateTextFile 方法<!>
+
+<OPTION VALUE="jsFileDelete.htm"><!>Delete 方法<!>
+<OPTION VALUE="jsFileSystemDeleteFile.htm"><!>DeleteFile 方法<!>
+<OPTION VALUE="jsFileSystemDeleteFolder.htm"><!>DeleteFolder 方法<!>
+<OPTION VALUE="jsFileSystemDriveExists.htm"><!>DriveExists 方法<!>
+<OPTION VALUE="jsdicexists.htm"><!>Exists 方法<!>
+
+<OPTION VALUE="jsFileSystemFileExists.htm"><!>FileExists 方法<!>
+<OPTION VALUE="jsFileSystemFolderExists.htm"><!>FolderExists 方法<!>
+
+<OPTION VALUE="jsFileSystemGetAbsolutePathName.htm"><!>GetAbsolutePathName 方法<!>
+<OPTION VALUE="jsFileSystemGetBaseName.htm"><!>GetBaseName 方法<!>
+
+<OPTION VALUE="jsFileSystemGetDrive.htm"><!>GetDrive 方法<!>
+<OPTION VALUE="jsFileSystemGetDriveName.htm"><!>GetDriveName 方法<!>
+<OPTION VALUE="jsFileSystemGetExtensionName.htm"><!>GetExtensionName 方法<!>
+<OPTION VALUE="jsFileSystemGetFile.htm"><!>GetFile 方法<!>
+<OPTION VALUE="jsFileSystemGetFileName.htm"><!>GetFileName 方法<!>
+<OPTION VALUE="jsFileSystemGetFileVersion.htm"><!>GetFileVersion 方法<!>
+<OPTION VALUE="jsFileSystemGetFolder.htm"><!>GetFolder 方法<!>
+
+<OPTION VALUE="jsFileSystemGetParentFolderName.htm"><!>GetParentFolderName 方法<!>
+<OPTION VALUE="jsFileSystemGetSpecialFolder.htm"><!>GetSpecialFolder 方法<!>
+<OPTION VALUE="jsFileSystemGetTempName.htm"><!>GetTempName 方法<!>
+
+
+<OPTION VALUE="jsdicitems.htm"><!>Items 方法<!>
+
+<OPTION VALUE="jsdickeys.htm"><!>Keys 方法<!>
+
+<OPTION VALUE="jsFileMove.htm"><!>Move 方法<!>
+<OPTION VALUE="jsFileSystemMoveFile.htm"><!>MoveFile 方法<!>
+<OPTION VALUE="jsFileSystemMoveFolder.htm"><!>MoveFolder 方法<!>
+
+<OPTION VALUE="jsfileOpenAsTextStream.htm"><!>OpenAsTextStream 方法<!>
+<OPTION VALUE="jsfileopenTextFile.htm"><!>OpenTextFile 方法<!>
+
+<OPTION VALUE="jstextread.htm"><!>Read 方法<!>
+<OPTION VALUE="jstextreadall.htm"><!>ReadAll 方法<!>
+<OPTION VALUE="jstextreadln.htm"><!>ReadLine 方法<!>
+<OPTION VALUE="jsdicremove.htm"><!>Remove 方法<!>
+<OPTION VALUE="jsdicremoveall.htm"><!>RemoveAll 方法<!>
+
+<OPTION VALUE="jstextskip.htm"><!>Skip 方法<!>
+<OPTION VALUE="jstextskipline.htm"><!>SkipLine 方法<!>
+<OPTION VALUE="jstextwrite.htm"><!>Write 方法<!>
+<OPTION VALUE="jstextwriteBlankLines.htm"><!>WriteBlankLines 方法<!>
+<OPTION VALUE="jstextwriteln.htm"><!>WriteLine 方法<!>
+<OPTION VALUE="jsfsotocalt.htm"><!>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<!>
+
+	</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic (  document.Form3.Target3.options[document.Form3.Target3.selectedIndex].value)" Value="  转到！  ">
+
+</FORM>                                        
+</TR>
+
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B><!>对象<!></B></FONT></TD>
+	<TD>		
+	<FORM NAME="Form4" ACTION="">
+	<SELECT NAME="Target4">
+		<OPTION VALUE="jsobjDictionary.htm"><!>Dictionary 对象<!>
+		<OPTION VALUE="jsobjDrive.htm"><!>Drive 对象<!>
+		<OPTION VALUE="jscolDrives.htm"><!>Drives 集合<!>
+		<OPTION VALUE="jsobjFile.htm"><!>File 对象<!>
+		<OPTION VALUE="jscolFiles.htm"><!>Files 集合<!>
+		<OPTION VALUE="jsobjFileSystem.htm"><!>FileSystemObject 对象<!>
+		<OPTION VALUE="jsobjFolder.htm"><!>Folder 对象<!>
+		<OPTION VALUE="jscolFolders.htm"><!>Folders 集合<!>
+		<OPTION VALUE="jsobjTextStream.htm"><!>TextStream 对象<!>
+<OPTION VALUE="jsfsotocalt.htm"><!>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<!>
+	</SELECT>
+</TD>
+<TD WIDTH=80 VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic(   document.Form4.Target4.options[document.Form4.Target4.selectedIndex].value)" Value="  转到！  ">
+
+</FORM>
+</TR>
+
+
+<TR VALIGN=TOP><TD HEIGHT=40><FONT class='9v' ><B><!>属性<!></B></FONT></TD>
+	<TD>			
+	<FORM NAME="Form5" ACTION="">
+	<SELECT NAME="Target5">
+<OPTION VALUE="jstextatEndOfLine.htm"><!>AtEndOfLine 属性<!>
+<OPTION VALUE="jstextatEndOfStream.htm"><!>AtEndOfStream 属性<!>
+<OPTION VALUE="jsFileAttributes.htm"><!>Attributes 属性<!>
+<OPTION VALUE="jsDriveAvailableSpace.htm"><!>AvailableSpace 属性<!>
+
+<OPTION VALUE="jstextcolumn.htm"><!>Column 属性<!>
+<OPTION VALUE="jsdiccomparemode.htm"><!>CompareMode 属性<!>
+<OPTION VALUE="jsdiccount.htm"><!>Count 属性<!>
+
+<OPTION VALUE="jsFileDateCreated.htm"><!>DateCreated 属性<!>
+<OPTION VALUE="jsFileDateLastAccessed.htm"><!>DateLastAccessed 属性<!>
+<OPTION VALUE="jsFileDateLastModified.htm"><!>DateLastModified 属性<!>
+<OPTION VALUE="jsFileDrive.htm"><!>Drive 属性<!>
+<OPTION VALUE="jsDriveDriveLetter.htm"><!>DriveLetter 属性<!>
+<OPTION VALUE="jsFileSystemDrives.htm"><!>Drives 属性<!>
+<OPTION VALUE="jsDriveDriveType.htm"><!>DriveType 属性<!>
+
+<OPTION VALUE="jsFolderFiles.htm"><!>Files 属性<!>
+<OPTION VALUE="jsDriveFileSystem.htm"><!>FileSystem 属性<!>
+<OPTION VALUE="jsDriveFreeSpace.htm"><!>FreeSpace 属性<!>
+
+<OPTION VALUE="jsDriveIsReady.htm"><!>IsReady 属性<!>
+<OPTION VALUE="jsFolderIsRootFolder.htm"><!>IsRootFolder 属性<!>
+<OPTION VALUE="jsdicitem.htm"><!>Item 属性<!>
+<OPTION VALUE="jsdicKey.htm"><!>Key 属性<!>
+
+<OPTION VALUE="jstextline.htm"><!>Line 属性<!>
+
+<OPTION VALUE="jsFileName.htm"><!>Name 属性<!>
+<OPTION VALUE="jsfileParentFolder.htm"><!>ParentFolder 属性<!>
+<OPTION VALUE="jsDrivePath.htm"><!>Path 属性<!>
+
+<OPTION VALUE="jsDriveRootFolder.htm"><!>RootFolder 属性<!>
+
+<OPTION VALUE="jsDriveSerialNumber.htm"><!>SerialNumber 属性<!>
+<OPTION VALUE="jsDriveShareName.htm"><!>ShareName 属性<!>
+<OPTION VALUE="jsFileShortName.htm"><!>ShortName 属性<!>
+<OPTION VALUE="jsFileShortPath.htm"><!>ShortPath 属性<!>
+<OPTION VALUE="jsFileSize.htm"><!>Size 属性<!>
+<OPTION VALUE="jsFolderSubFolders.htm"><!>SubFolders 属性<!>
+
+<OPTION VALUE="jsDriveTotalSize.htm"><!>TotalSize 属性<!>
+<OPTION VALUE="jsFileType.htm"><!>Type 属性<!>
+
+<OPTION VALUE="jsDriveVolumeName.htm"><!>VolumeName 属性<!>
+<OPTION VALUE="jsfsotocalt.htm"><!>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<!>
+
+	</SELECT>
+</TD>
+<TD VALIGN=TOP>
+<INPUT TYPE="button" Language="JavaScript" onClick="DisplayTopic(  document.Form5.Target5.options[document.Form5.Target5.selectedIndex].value)" Value="  转到！  ">
+</FORM>
+</TR>
+
+</TABLE><!-- TABLE G - Close -->
+
+
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN-->
+<a href="jscopy.htm">(C) 2000 Microsoft Corporation. All Rights Reserved!</A> 
+<!--COPYRIGHT END--> </FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

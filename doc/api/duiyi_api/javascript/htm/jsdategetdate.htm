@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>getDate 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="getDate 方法">
+<META NAME="MS-HKWD" CONTENT="getDate">
+<META NAME="MS-HKWD" CONTENT="日期值">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="本地时间">
+<META NAME="MS-HKWD" CONTENT="整数">
+<META NAME="MS-HKWD" CONTENT="getUTCDate 方法">         
+
+<META NAME=MS-HAID CONTENT="jsdategetdate">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="getDate Method">
+<META NAME="Keywords" CONTENT="getDate method; getDate; dates; Date object; local time; integer; getUTCDate method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>getDate 方法</B></FONT>
+
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="Jstoc.htm">语言参考</A>&nbsp;<BR>
+<a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR></TABLE>
+<p>
+<FONT class='9v' >
+<a href="jsdategetDateC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdategetdateA.htm">应用于</a></font>
+<hr noshade class='9v' ><FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE><p>返回 <b>Date</b> 对象中用<a href="glossary.htm#deflocaltime">本地时间</A>表示的一个月中的日期值。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE>
+<i>objDate</i><b>.getDate()</b>
+
+</blockquote>
+<H5>说明</H5>
+<blockquote>
+要获取用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的日期值，请使用 <b>getUTCDate</b> 方法。
+<p>返回值是一个处于 1 到 31 之间的整数，它代表了相应的 <b>Date</b> 对象中的日期值。<P>
+
+下面这个例子说明了 <B>getDate</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function DateDemo()
+{
+  var d, s = "今天日期是: ";
+  d = new Date();
+  s += (d.getMonth() + 1) + "/";
+  s += <font color="#FF0000">d.getDate()</FONT> + "/";
+  s += d.getYear();
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</blockquote>
+
+
+</FONT>
+<hr noshade class='9v' >
+ 
+</font></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

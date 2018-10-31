@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>Exists 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Exists 方法">
+<META NAME="MS-HKWD" CONTENT="Exists">
+<META NAME="MS-HKWD" CONTENT="Dictionary 对象">
+<META NAME="MS-HKWD" CONTENT="主键">  
+
+<META NAME=MS-HAID CONTENT="jsdicexists">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="Exists Method">
+<META NAME="Keywords" CONTENT="Exists method; Exists; Dictionary object; keys">
+
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Exists 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2 </A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsdicexistsC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdicexistsA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>如果 <b>Dictionary</b> 对象中存在所指定的主键则返回  <b>true</b>，否则返回 <b>false</b>。</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><i>object</i><b>.</b><b>Exists(</b><i>key</i><b>)</b> <P>
+
+<b>Exists</b> 方法的语法包括下面这些部分：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT face=" 宋体" class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>object</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。总是一个 <b>Dictionary</b> 对象的名称。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>key</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。需要在 <b>Dictionary</b> 对象中搜索的 <i>key</i> 值。</FONT></TD></TR>
+</TABLE><P>
+
+下面这个例子说明了 <B>Exists</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function keyExists(k)
+{
+  var fso, s = "";
+  d = new ActiveXObject("Scripting.Dictionary");
+  d.Add("a", "Athens");
+  d.Add("b", "Belgrade");
+  d.Add("c", "Cairo");
+  if (<font color="#FF0000">d.Exists(</FONT>k<font color="#FF0000">)</FONT>)
+    s += "Specified key exists.";
+  else 
+    s += "Specified key doesn't exist.";
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

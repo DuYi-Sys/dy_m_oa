@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk--><TITLE>ScriptEngine 函数</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="ScriptEngine 函数">
+<META NAME="MS-HKWD" CONTENT="ScriptEngine">
+<META NAME="MS-HKWD" CONTENT="scripting 语言">
+<META NAME="MS-HKWD" CONTENT="VBScript">
+<META NAME="MS-HKWD" CONTENT="JScript">
+<META NAME="MS-HKWD" CONTENT="VBA">
+<META NAME="MS-HKWD" CONTENT="scripting 引擎">          
+
+<META NAME=MS-HAID CONTENT="jsfncScriptEngine">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="ScriptEngine function; ScriptEngine; scripting languages; VBScript; JScript; VBA; scripting engines">
+
+<META NAME="Description" CONTENT="ScriptEngine Function">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>ScriptEngine 函数</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' >
+<a href="jsfncScriptEngineC.htm"><!>请参阅<!></A></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回一个字符串，代表正在使用的脚本语言。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+
+<BLOCKQUOTE><b><!>ScriptEngine( )<!></b></blockquote>
+
+<H5><!>返回值<!></H5>
+<blockquote>
+
+<!><b>ScriptEngine</b> 函数可以返回下列任意字符串：<!><P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>字符串<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>JScript<!></FONT></TD>
+<TD><FONT class='9v' ><!>指明 Microsoft JScript 是当前的 Scripting 引擎。<!></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>VBA<!></FONT></TD>
+<TD><FONT class='9v' ><!>指明 Microsoft Visual Basic(R) for Applications 是当前的 Scripting 引擎。<!></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>VBScript<!></FONT></TD>
+<TD><FONT class='9v' ><!>指明 Microsoft Visual Basic Scripting Edition 是当前的 Scripting 引擎。<!></FONT></TD></TR>
+
+</TABLE><P>
+</BLOCKQUOTE>
+<H5><!>说明<!></H5>
+<blockquote>
+<!>下面的代码说明了 <b>ScriptEngine</b> 函数的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function GetScriptEngineInfo()
+{
+    var s;
+    s = ""; // 根据必要的信息创建字符串。
+    s += <font color="#FF0000">ScriptEngine()</font> + " Version ";
+    s += ScriptEngineMajorVersion() + ".";
+    s += ScriptEngineMinorVersion() + ".";
+    s += ScriptEngineBuildVersion();
+    return(s);
+}</font></pre></BLOCKQUOTE>
+
+</blockquote>
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

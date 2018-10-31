@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>slice 方法 (String)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="slice 方法">
+<META NAME="MS-HKWD" CONTENT="slice">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="从零开始的下标">
+<META NAME="MS-HKWD" CONTENT="字符串">      
+
+<META NAME=MS-HAID CONTENT="jsstringslice">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="slice Method (String)">
+<META NAME="Keywords" CONTENT="slice method; slice; String object; zero-based index; strings">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>slice 方法 (String)</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstringsliceC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringsliceA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回字符串的片段。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>stringObj</i>.<b>slice(</b><i>start</i>, [<i>end</i>]<b>)</b> 
+
+<P><b>slice</b> 方法的语法包括下述部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>stringObj</i></FONT></TD>
+<TD><FONT class='9v' >必选项。是一个 <b>String</b> 对象或文字。 </FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>start</i> </FONT></TD>
+<TD><FONT class='9v' >必选项。下标以 0 开始的 <i>stringObj</i> 指定部分起始索引。 </FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>end</i> </FONT></TD>
+<TD><FONT class='9v' >可选项。下标以 0 起始的 <i>stringObj</i> 的指定部分结束索引。</FONT></TD></TR>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE><b>slice</b> 方法返回一个包含  <i>stringObj</i> 的指定部分的 <b>String</b> 对象。
+<p>如果 <i>end</i>  是负数，就表示从 <i>stringObj</i> 结尾开始起算的一个正偏移量。另外，在此意义下，它不是从 0 开始起算的（例如， 如果 <i>end</i> =-1 则表示提取到字符串的结尾）。如果省略 <i>end</i> ，就一直提取到的 <i>stringObj</i> 结尾。
+
+<p>在下面的示例中，<b>slice</b> 方法的两种用法将返回相同的值。 第二个示例中的 -1 指向 <font face=" 宋体" class='9v' >str1</font> 中的最后一个字符，并作为提取操作的结束位置：
+<Blockquote><pre><font face=" 宋体" class='9v' >str1.<font color="#FF0000">slice(</font>0<font color="#FF0000">)</font></font>
+<font face=" 宋体" class='9v' >str2.<font color="#FF0000">slice(</font>0,-1<font color="#FF0000">)</font>
+</font></pre></blockquote>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

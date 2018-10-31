@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="FrameName" value="main">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="JScript">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="JScript 语言参考">
+			<param name="Local" value="htm/JStoc.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="特性信息">
+				<param name="Local" value="htm/JSFea1.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="按字母顺序的关键字列表">
+				<param name="Local" value="htm/JSAlp2.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="JScript 错误">
+				<param name="Local" value="htm/jsErrors.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="函数">
+				<param name="Local" value="htm/JSFun3.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="方法">
+				<param name="Local" value="htm/JSMet4.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="对象">
+				<param name="Local" value="htm/JSObj5.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="运算符">
+				<param name="Local" value="htm/JSOpe6.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="属性">
+				<param name="Local" value="htm/JSPro7.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="语句">
+				<param name="Local" value="htm/JSSta8.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="JScript 教程">
+			<param name="Local" value="htm/JStutor.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="什么是 JScript？">
+				<param name="Local" value="htm/about.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="JScript 基础教程">
+				<param name="Local" value="htm/JStutor.htm#JScriptBasics">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="编写 JScript 代码">
+					<param name="Local" value="htm/statement.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="JScript 的变量">
+					<param name="Local" value="htm/declare.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="JScript 的数据类型">
+					<param name="Local" value="htm/datatype.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="JScript 的运算符">
+					<param name="Local" value="htm/jsoperators.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="控制程序的流程">
+					<param name="Local" value="htm/conditionals.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="JScript 的函数">
+					<param name="Local" value="htm/functions.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="JScript 的对象">
+					<param name="Local" value="htm/objects.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="JScript 的保留关键字">
+					<param name="Local" value="htm/jsreserved.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="JScript 高级教程">
+				<param name="Local" value="htm/JStutor.htm#advancedjscript">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="递归">
+					<param name="Local" value="htm/recurse.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="变量范围">
+					<param name="Local" value="htm/scope.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="复制、传递和比较数据">
+					<param name="Local" value="htm/valref.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="使用数组">
+					<param name="Local" value="htm/usingarr.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="创建高级对象">
+					<param name="Local" value="htm/constructor.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="特殊字符">
+					<param name="Local" value="htm/specialcharacter.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="脚本问题解答">
+					<param name="Local" value="htm/cautions.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="在 Internet Explorer 中使用 JScript ">
+			<param name="Local" value="htm/JStutor.htm#usingjscript">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="在浏览器中显示信息">
+					<param name="Local" value="htm/writeclear.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="使用消息框">
+					<param name="Local" value="htm/Alert.htm">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="JScript 运行时库参考">
+			<param name="Local" value="htm/JSFSOTOC.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="特性信息">
+				<param name="Local" value="htm/jsscrunfea.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="按字母顺序的关键字列表">
+				<param name="Local" value="htm/jsscrunalp2.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="方法">
+				<param name="Local" value="htm/jsscrunmth.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="对象">
+				<param name="Local" value="htm/jsscrunobj.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="属性">
+				<param name="Local" value="htm/jsscrunpro.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="FileSystemObject 对象教程">
+			<param name="Local" value="htm/jsfsotutor.htm#filesystemobject">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FileSystemObject 对象模式">
+				<param name="Local" value="htm/sgUsingFileSystemObject.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FileSystemObject 和 Scripting 运行时库参考的介绍">
+				<param name="Local" value="htm/sgIntroToFileSystemObject.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FileSystemObject 对象">
+				<param name="Local" value="htm/sgFileSystemObjects.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="设计 FileSystemObject">
+				<param name="Local" value="htm/sgProgrammingFileSystemObject.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="处理驱动器和文件夹">
+				<param name="Local" value="htm/sgWorkingWithDrives.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="处理文件">
+				<param name="Local" value="htm/sgWorkingWithFiles.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FileSystemObject 示例代码">
+				<param name="Local" value="htm/sgFSOSample.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>

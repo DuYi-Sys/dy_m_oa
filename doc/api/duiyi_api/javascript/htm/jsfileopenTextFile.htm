@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>OpenTextFile 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="OpenTextFile 方法">
+<META NAME="MS-HKWD" CONTENT="OpenTextFile">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="文件打开">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+<META NAME="MS-HKWD" CONTENT="ForReading">
+<META NAME="MS-HKWD" CONTENT="ForAppending">
+<META NAME="MS-HKWD" CONTENT="TristateTrue">
+<META NAME="MS-HKWD" CONTENT="TristateFalse">
+<META NAME="MS-HKWD" CONTENT="TristateUseDefault">       
+
+<META NAME=MS-HAID CONTENT="jsfileopenTextFile"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="OpenTextFile method; OpenTextFile; files; opening files; FileSystemObject object; ForReading; ForAppending; TristateTrue; TristateFalse; TristateUseDefault">
+
+<META NAME="Description" CONTENT="OpenTextFile Method">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>OpenTextFile 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>&nbsp;<a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<!><P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsfileopenTextFileC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsfileopenTextFileA.htm">应用于</a></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>打开指定的文件并返回一个 <b>TextStream</b> 对象，可以通过这个对象对文件进行读、写或追加。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+
+<BLOCKQUOTE>
+	<!><i>object</i><b>.</b><b>OpenTextFile(</b><i>filename</i>[<b>,</b> <i>iomode</i>[<b>,</b> <i>create</i>[<b>,</b> <i>format</i>]]]<b>)</b><!><P>
+<!><b>OpenTextFile</b> 方法包括了以下部分：<!><P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+		<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>object<!></FONT></TD>
+		<TD><FONT class='9v' ><!>必选项。<!> <!><i>object</i> 应为 <b>FileSystemObject</b> 的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>filename<!></FONT></TD>
+		<TD><FONT class='9v' ><!>必选项。<!> <!>指明要打开文件的<a href="fsoglossary.htm#defStringExpression">字符串表达式</A>。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>iomode<!></FONT></TD>
+		<TD><FONT class='9v' ><!>可选项。<!> <!>可以是三个常数之一： <b>ForReading</b> 、 <b>ForWriting</b> 或 <b>ForAppending</b> 。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>create<!></FONT></TD>
+		<TD><FONT class='9v' ><!>可选项。<!> <!> Boolean 值，指明当指定的 <i>filename</i> 不存在时是否创建新文件。<!> <!>如果创建新文件则值为 <b>True</b> ，如果不创建则为 <b>False</b> 。<!> <!>如果忽略，则不创建新文件。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>format<!></FONT></TD>
+		<TD><FONT class='9v' ><!>可选项。<!>  <!>使用<b>三态</b>值中的一个来指明打开文件的格式。<!> <!>如果忽略，那么文件将以 ASCII 格式打开。<!>
+</FONT></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+<H5><!>设置<!></H5>
+<BLOCKQUOTE>
+<!><i>iomode</i> 参数可以是下列设置中的任一种：<!><p>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD WIDTH=15%><FONT class='9v' ><b><!>常数<!></b></font></TD>
+		<TD WIDTH=10%><FONT class='9v' ><b><!>值<!></b></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><b><!>描述<!></b></font></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>ForReading<!></B></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>1<!></font></TD>
+			<TD WIDTH= "*"><FONT class='9v' ><!>以只读方式打开文件。<!> <!>不能写这个文件。<!></font></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>ForWriting<!></B></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>2<!></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>以写方式打开文件<!></font></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>ForAppending<!></B></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>8<!></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>打开文件并从文件末尾开始写。<!></font></TD></TR>
+</TABLE><p>
+
+<!><i>format</i> 参数可以是下列设置中的任一种：<!><p>
+
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b><!>值<!></b></FONT></TD>
+		<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><b><!>TristateTrue<!></b></FONT></TD>
+		<TD><FONT class='9v' ><!>以 Unicode 格式打开文件。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><b><!>TristateFalse<!></b></FONT></TD>
+		<TD><FONT class='9v' ><!>以 ASCII 格式打开文件。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><b><!>TristateUseDefault<!></b></FONT></TD>
+		<TD><FONT class='9v' ><!>使用系统默认值打开文件。<!></FONT></TD></TR>
+</TABLE><P>
+</BLOCKQUOTE>
+
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的代码说明了如何使用 <b>OpenTextFile</b> 方法打开文件并追加文本：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >var fs, a, ForAppending;
+ForAppending = 8;
+fs = new ActiveXObject("Scripting.FileSystemObject");
+a = fs<FONT COLOR="#FF0000">.OpenTextFile(</FONT>"c:\\testfile.txt"<FONT COLOR="#FF0000">,</FONT> ForAppending<FONT COLOR="#FF0000">,</FONT> false<FONT COLOR="#FF0000">)</FONT>;
+...
+a.Close();
+</FONT></PRE></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

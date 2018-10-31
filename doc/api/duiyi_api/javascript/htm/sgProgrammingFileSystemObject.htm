@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<TITLE>设计 FileSystemObject</TITLE> 
+
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+
+<META NAME=MS-HAID CONTENT="sgProgrammingFileSystemObject">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META NAME="PRODUCT" CONTENT="Scripting Library">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="FileSystemObject">
+<META NAME="Description" CONTENT="Programming the FileSystemObject">
+<META NAME="Keywords" CONTENT="FileSystemObject object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) Scripting 库 - FileSystemObject</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>设计 FileSystemObject</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="sgFileSystemObjects.htm">上一页</A><br><a href="sgWorkingWithDrives.htm">下一页</A><P></FONT>
+
+</TD></TR>
+</TABLE><p>
+
+<hr noshade class='9v' >
+<blockquote>
+要用 <B>FileSystemObject</B> (FSO) 对象模式来编程，则：<p>
+<ul>
+<li>使用 <B>CreateObject</B> 方法来创建 <B>FileSystemObject</B> 对象。
+<li>在新创建的对象上使用适当的方法。
+<li>访问对象的属性。
+</ul>
+
+FSO 对象模式包含在 Scripting <a href="fsoglossary.htm#defTypeLibrary">类型库</A>中，该库位于 Scrrun.dll 文件中。因而，要使用 FSO 对象模式，必须把 Scrrun.dll 放在 Web 服务器的适当系统目录中。<p>
+</blockquote>
+
+<h5>创建 FileSystemObject 对象</h5>
+<blockquote>
+首先，使用 <B>CreateObject</B> 对象来创建 <B>FileSystemObject</B> 对象， 在 VBScript 中，使用下面的代码来创建 <B>FileSystemObject</B> 的一个实例： <p>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Dim fso
+Set fso = CreateObject("Scripting.FileSystemObject")
+</font></pre></blockquote>
+
+<a href="./sgFSOSample.htm#CreateFSO">示例代码</A>示范了如何创建 <B>FileSystemObject</B> 的一个实例。<p>
+
+在 JScript 中，使用下面的代码来做同样的事情：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >var fso;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+</font></pre></blockquote>
+
+在这两个示例中，<B>Scripting</B> 是类型库的名字，而 <B>FileSystemObject</B> 则是想要创建的对象的名字。可以只创建 <B>FileSystemObject</B> 对象的一个实例，而不管试图创建另一个实例的次数。<P>
+</blockquote>
+<H5>使用适当的方法</H5>
+<BLOCKQUOTE>
+其次，使用 <B>FileSystemObject</B> 对象的适当方法。例如，要创建一个新的对象，则使用 <B>CreateTextFile</B> 或 <B>CreateFolder</B> （FSO 对象模式不支持驱动器的创建或删除）。<P>
+
+要删除对象，则使用 <B>FileSystemObject</B> 对象的 <B>DeleteFile</B> 和 <B>DeleteFolder</B> 方法，或 <B>File</B> 和 <B>Folder</B> 对象的 <B>Delete</B> 方法。也可以使用适当的方法，来复制和移动文件与文件夹。 <P>
+
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v' ><b>注意</b>&nbsp;&nbsp;<B>FileSystemObject</B> 对象模式中的某些功能是多余的。例如，可以用 <B>FileSystemObject</B> 对象的 <B>CopyFile</B> 方法，也可以用 <B>File</B> 对象的 <B>Copy</B> 方法来复制文件。这两种方法功能是相同的；两种方法都能使编程灵活。</FONT></TD></TR>
+<TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE><P>
+</BLOCKQUOTE>
+<H5>访问现有驱动器、文件和文件夹</H5>
+<BLOCKQUOTE>
+要访问现有驱动器、文件或文件夹，则使用 <B>FileSystemObject</B> 对象中的适当的 "get" 方法：<P>
+
+<UL>
+<li><B>GetDrive</B>
+<li><B>GetFolder</B>
+<li><B>GetFile</B>
+</UL>
+
+在 VBScript 中要访问现有文件：<P>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Dim fso, f1
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set f1 = fso.GetFile("c:\test.txt")
+</font></pre></blockquote>
+
+在 JScript 中要做同样的事情，则使用下面的代码：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >var fso, f1;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+f1 = fso.GetFile("c:\\test.txt");
+</font></pre></blockquote>
+
+不要对新创建的对象使用 "get" 方法，因为 "create" 函数已经返回那个对象的一个句柄。例如，如果使用 <B>CreateFolder</B> 方法创建了一个新的文件夹，则不要使用 <B>GetFolder</B> 方法来访问它的属性，如 <B>Name</B>、<B>Path</B>、<B>Size</B>等等。只需设一个变量给 <B>CreateFolder</B> 函数，来获得新创建文件夹的句柄名，然后访问它的属性、方法和事件。要在 VBScript 中这样做，则使用下面的代码：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Sub CreateFolder
+  Dim fso, fldr
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set fldr = fso.CreateFolder("C:\MyTest")
+  Response.Write "Created folder: " & fldr.Name
+End Sub
+</font></pre></blockquote>
+
+在 JScript 中给 <B>CreateFolder</B> 函数设置一个变量，则使用下面的语法：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function CreateFolder()
+{
+  var fso, fldr;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  fldr = fso.CreateFolder("C:\\MyTest");
+  Response.Write("Created folder: " + fldr.Name);
+}
+</font></pre></blockquote></blockquote>
+
+<H5>访问对象的属性</H5>
+<blockquote>
+一旦有了对象的句柄，就可以访问它的属性。例如，要获得特定文件夹的名字，首先创建该对象的一个实例，然后用适当的方法获得它的句柄（在这个例子中是 <B>GetFolder</B> 方法，因为该文件夹已经存在了）。
+<p>在 VBScript 中，用该代码来获得 <B>GetFolder</B> 方法的一个句柄：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Set fldr = fso.GetFolder("c:\")
+</font></pre></blockquote>
+<p>在 JScript 中要做同样的事情，则使用下面的代码：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >var fldr = fso.GetFolder("c:\\");
+</font></pre></blockquote>
+
+现在，已经有了 <B>Folder</B> 对象的句柄，就可以检查它的 <B>Name</B> 属性了。在 VBScript 中使用下面的代码来检查：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Response.Write "Folder name is: " & fldr.Name
+</font></pre></blockquote>
+
+在 JScript 中要检查 <B>Name</B> 属性，则使用下面的语法：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Response.Write("Folder name is: " + fldr.Name);
+</font></pre></blockquote>
+
+要找出最后一次修改文件的时间，则使用下面的 VBScript 语法：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Dim fso, f1
+Set fso = CreateObject("Scripting.FileSystemObject")
+' 获得要查询的文件对象。
+Set f1 = fso.GetFile("c:\detlog.txt")  
+' 打印信息。
+Response.Write "File last modified: " & f1.DateLastModified 
+</font></pre></blockquote>
+
+在 JScript 中要找出同样的事情，则使用下面的代码：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >var fso, f1;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+// 获得要查询的文件对象。
+f1 = fso.GetFile("c:\\detlog.txt");  
+// 打印信息。
+Response.Write("File last modified: " + f1.DateLastModified); 
+</font></pre></blockquote>
+</blockquote>
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

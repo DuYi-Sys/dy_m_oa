@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk--><TITLE>caller 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="caller 属性">
+<META NAME="MS-HKWD" CONTENT="caller">
+<META NAME="MS-HKWD" CONTENT="函数执行">
+<META NAME="MS-HKWD" CONTENT="函数调用">                      
+
+<META NAME=MS-HAID CONTENT="jsfunCaller">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="caller Property">
+<META NAME="Keywords" CONTENT="caller property; caller; executing functions; calling functions">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>caller 属性</B></FONT><!>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<!><P></FONT>
+</TD></TR>
+</TABLE> 
+<FONT class='9v' ><P>
+<!><a href="jsfunCallerC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsfuncallerA.htm">应用于</a></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回一个对函数的引用，该函数调用了当前函数。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>functionname</i>.<b>caller</b><!>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>	
+<!>对于函数来说，<b>caller</b> 属性只有在函数执行时才有定义。<!> <!>如果函数是由 JScript 程序的顶层调用的，那么 <b>caller</b> 包含的就是 <b>null</b> 。<!><P>
+
+<!>如果在字符串上下文中使用 <B>caller</B> 属性，那么结果和 <i>functionname</i>.<B>toString</B> 一样，也就是说，显示的是函数的反编译文本。<!><P>
+
+<!>下面的例子说明了 <B>caller</B> 属性的用法：<!><p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function CallLevel()
+{
+  if (<font color="#FF0000">CallLevel.caller</FONT> == null)
+    return("CallLevel was called from the top level.");
+  else
+    return("CallLevel was called by another function.");
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

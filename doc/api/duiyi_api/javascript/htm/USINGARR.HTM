@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>使用数组</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="addressing 数组">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="属性">
+<META NAME="MS-HKWD" CONTENT="方法">
+<META NAME="MS-HKWD" CONTENT="下标">
+<META NAME="MS-HKWD" CONTENT="numbered 属性">
+<META NAME="MS-HKWD" CONTENT="数组下标">                                                      
+
+<META NAME=MS-HAID CONTENT="usingarr">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Using Arrays">
+<META NAME="Keywords" CONTENT="JScript tutorial; objects; arrays; addressing arrays; intrinsic objects; built-in objects; properties; methods; subscripts; numbered properties; indexing arrays">
+
+
+
+</HEAD>
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>使用数组</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm" TARGET="_top">JScript&nbsp;教程</A><BR><a href="valref.htm">上一页</A><br><a href="constructor.htm">下一页</A><P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+
+<P>
+<HR class='9v'  NOSHADE>
+
+<h5>数组下标</h5>
+<blockquote>
+JScript 中的数组是稀疏的。也就是说，如果一个数组具有三个元素，编号分别为 0、1 和 2，您就可以创建元素 50，而不必担心从 3 到 49 的参数。如果该数组有一个自动的 length 变量，（请参阅 <a href="builtinobjects.htm">固有对象</a>了解有关数组长度的自动监控的说明），该 length 变量被设为 51，而不是 4。当然您可以创建各元素的编号之间没有间隙的数组，不过没有必要这样做。实际上在 JScript 中，数组根本没有编号的下标。<p>
+
+在 JScript 中，对象和数组实质上是一样的。真正的差异不在于数据，而在于您引用数组的成员或对象的<a href="glossary.htm#defProperty">属性</a> 和 方法的方式。
+</blockquote>
+<h5>数组寻址</h5>
+<blockquote>
+有两种方式来引用数组中的成员。一般说来，可以使用方括号来引用数组。方括号中是一个数字或一个值为非负整数的<a href="glossary.htm#defExpression">表达式</a> 。下面的示例假定在脚本的其他地方已定义了<i>entryNum</i> 变量，且已赋值。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >theListing = addressBook[entryNum];
+theFirstLine = theListing[1];
+</FONT></pre></BLOCKQUOTE>
+
+这种寻址方法与对象寻址的方法是等价的，不过在对象寻址中在圆点后必须使用实际的属性名。如果没有这样的属性，代码将产生一个错误。<p>
+
+数组寻址的第二种方式是制作一个包含编号属性的对象/数组，然后用一个循环产生这些编号。下面的示例将产生两个数组：一个代表名字，一个代表地址，名字和地址均来自  <i>addressBook</i> 中的一个列表。每一项包含四个属性。例如，从<i>theListing</i>的 [Name1] 到
+[Name4] 属性产生的<i>theName</i>实例可能包含 "G." "Edward" "Heatherington" "IV", 或 "George" "" "Sand" ""。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >theListing = addressBook[entryNum];
+for (i = 1; i &lt 4; i++)  {
+theName[i] = theListing["Name" + i];
+theAddress[i] = theListing["Address" + i];
+}
+</FONT></pre></BLOCKQUOTE>
+
+虽然这个特定的实例很短，并且可以很容易地使用 "."这种记法来表示（也就是按地址而不是按数组来对 <i>theListing</i>、<i>theName</i>和 <i>theAddress</i> 寻址），但这并不总是可行的。有时特定的属性可能要在运行时才会存在，或者预先并不知道将是哪些项。例如，如果<i>addressBook</i> 数组不是编好号码的清单，而是按姓排列的，用户可能在正在运行该脚本时“随意”输入名称来查找人员。下面的实例假定在脚本的其他地方已提供了适当的函数定义。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >theListing = addressBook[getName()];
+theIndivListing = theListing[getFirstName()];
+</FONT></pre></BLOCKQUOTE>
+
+这是数组的关联寻址，也就是说，依靠完全任意的字符串来寻址。JScript 中的对象实际上就是关联数组。尽管可以（并且是频繁地〕使用 "."这种圆点寻址风格，但无论如何不是必选项。因为 JScript 对象的任何属性都可以使用数组标记法来寻址，因此 JScript 对象可以作为一个关联数组使用。<P>
+
+下面的代码创建并初始化数组的最常见格式：
+
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var myArray = new Array("Athens", "Belgrade", "Cairo");
+</FONT></pre></BLOCKQUOTE>
+
+该数组的每个元素都是使用其元素编号来寻址的；在本例中是 0、1 或 2。使用 <B>for...in</B> 语句，该数组可以从 0 开始到 2 结束来进行遍历。例如：
+
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >
+for (key in myArray)
+  response.write("Element value is " + MyArray[key] + "&lt;BR&gt;);
+</FONT></pre></BLOCKQUOTE>
+
+下面的代码创建并初始化一个包含三个元素的关联数组：
+
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var MyArray = {"a" : "Athens", "b" : "Belgrade", "c" : "Cairo" };
+</FONT></pre></BLOCKQUOTE>
+
+在该数组中，可以使用字符串("a"、 "b" 或 "c") 来对元素寻址，而不是用数组元素的编号 (0、1 或 2)寻址。这样就可以以更直观的寻址方案来创建和使用数组。同样可以使用上面显示的 <B>for...in</B> 语句代码来遍历该数组。
+
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END-->
+</FONT></FONT></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

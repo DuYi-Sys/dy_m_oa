@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>CreateTextFile 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="CreateTextFile 方法">
+<META NAME="MS-HKWD" CONTENT="CreateTextFile">
+<META NAME="MS-HKWD" CONTENT="创建文件">
+<META NAME="MS-HKWD" CONTENT="文件打开">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="Folder 对象">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">                 
+
+<META NAME=MS-HAID CONTENT="jsfilecreateTextFile"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="CreateTextFile method; CreateTextFile; creating files; opening files; files; Folder object; FileSystemObject object; TextStream object">
+
+<META NAME="Description" CONTENT="CreateTextFile Method">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>CreateTextFile 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<!><P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsfilecreateTextFileC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsfilecreateTextFileA.htm">应用于</a><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>创建指定的文件名并返回一个 <b>TextStream</b> 对象，可以使用这个对象对文件进行读写。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+
+<BLOCKQUOTE><!><i>object</i><b>.</b><b>CreateTextFile(</b><i>filename</i>[<b>,</b> <i>overwrite</i>[<b>,</b> <i>unicode</i>]]<b>)</b><!><P>
+
+<!><b>CreateTextFile</b> 方法包括了以下部分:<!><P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+		<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>object<!></FONT></TD>
+		<TD><FONT class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 或 <b>Folder</b> 对象的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>filename<!></FONT></TD>
+		<TD><FONT class='9v' ><!>必选项。<!> <!>指明所要创建文件的<a href="fsoglossary.htm#defStringExpression">字符串表达式</A>。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>overwrite<!></FONT></TD>
+		<TD><FONT class='9v' ><!>可选项。<!> <!> Boolean 值，指明能否覆盖已有文件。<!> <!>如果文件可以覆盖，则值为 <b>true</b> ，否则为 <b>false</b> 。<!> <!>如果忽略，则已有文件不能被覆盖。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><!>unicode<!></FONT></TD>
+		<TD><FONT class='9v' ><!>可选项。<!> <!> Boolean 值，指明文件是否以 Unicode 或 ASCII 文件方式创建。<!> <!>如果文件作为 Unicode 文件创建，则值为 <b>true</b> ，如果作为 ASCII 文件创建，则为 <b>false</b>。<!> <!>如果忽略，则假定为 ASCII 文件。<!></FONT></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<Blockquote><!>下面的代码说明了如何使用 <b>CreateTextFile</b> 方法来创建和打开一个文本文件：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >var fso = new ActiveXObject("Scripting.FileSystemObject");
+var a = fso.<FONT COLOR="#FF0000">CreateTextFile(</FONT>"c:\\testfile.txt"<FONT COLOR="#FF0000">,</FONT> true<FONT COLOR="#FF0000">)</FONT>;
+a.WriteLine("This is a test.");
+a.Close();
+</FONT></PRE></BLOCKQUOTE>
+<!>如果 <i>overwrite</i> 参数是 <b>false</b> ，或者没有提供这个参数，那么对于已有的 <i>filename</i> 将产生一个错误。<!>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

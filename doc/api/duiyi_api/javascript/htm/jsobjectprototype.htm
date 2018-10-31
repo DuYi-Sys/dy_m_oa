@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>prototype 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="prototype 属性">
+<META NAME="MS-HKWD" CONTENT="prototype">
+<META NAME="MS-HKWD" CONTENT="constructor 属性">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="自定义对象">
+<META NAME="MS-HKWD" CONTENT="添加功能">
+<META NAME="MS-HKWD" CONTENT="添加功能">
+<META NAME="MS-HKWD" CONTENT="固有对象">                                                     
+
+<META NAME=MS-HAID CONTENT="jsobjectprototype">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="prototype Property">
+<META NAME="Keywords" CONTENT="prototype Property; prototype; constructor property; intrinsic objects; user-defined objects; adding functions; adding functionality; built-in objects">
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>prototype 属性</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+<FONT class='9v' ><P>
+<a href="jsobjectprototypeC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjectprototypeA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回对象类型原型的引用。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>objectname</i>.<b>prototype</b><P>
+<i>objectname</i> 参数是对象的名称。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>用 <b>prototype</b> 属性提供对象的类的一组基本功能。
+对象的新实例“继承”赋予该对象原型的操作。
+<p>
+
+例如，要为 <b>Array</b> 对象添加返回数组中最大元素值的方法。
+要完成这一点，声明该函数，将它加入 <b>Array.prototype</b>，
+并使用它。
+<blockquote><pre><Font face=" 宋体" class='9v' >function array_max( )
+{
+  var i, max = this[0];
+  for (i = 1; i &lt; this.length; i++)
+  {
+     if (max &lt; this[i])
+	     max = this[i];
+  }
+  return max;
+}
+Array.<Font Color=#FF0000>prototype</font>.max = array_max;
+var x = new Array(1, 2, 3, 4, 5, 6);
+var y = x.max( );
+</font></pre></blockquote>
+
+该代码执行后，<i>y</i> 保存数组 <i>x</i> 中的最大值，或说 6。<p>
+
+所有 <a href="glossary.htm#defIntrinsicObject">JScript 固有对象</a>都有只读的 <b>prototype</b> 属性。可以象该例中那样为原型添加功能，但该对象不能被赋予不同的原型。然而，<a href="glossary.htm#defUserObject">用户定义的对象</a>可以被赋给新的原型。<p>
+本语言参考中每个内部对象的方法和属性列表指出哪些是对象原型的部分，哪些不是。
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

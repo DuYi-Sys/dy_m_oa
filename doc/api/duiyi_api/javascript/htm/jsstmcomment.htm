@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>Comment 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Comment 语句">
+<META NAME="MS-HKWD" CONTENT="Comment">
+<META NAME="MS-HKWD" CONTENT="注解">
+<META NAME="MS-HKWD" CONTENT="注释">
+<META NAME="MS-HKWD" CONTENT="注意">
+<META NAME="MS-HKWD" CONTENT="注解忽略">
+<META NAME="MS-HKWD" CONTENT="单行注释">
+<META NAME="MS-HKWD" CONTENT="多行注释">                                                
+
+<META NAME=MS-HAID CONTENT="jsstmcomment">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="Comment Statements">
+<META NAME="Keywords" CONTENT="Comment statements; Comment; comments; explanations; notes; ignoring comments; single-line comments; multiline comments">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Comment 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>使注解部分被 JScript 解析器忽略。
+</BLOCKQUOTE>
+
+<H5>语法 1</H5>
+
+<BLOCKQUOTE>
+单行注释：<br>
+<b>// </b><i>comment</i>
+</blockquote>
+<H5>语法 2</H5>
+<blockquote>
+多行注释：<br>
+<b>/*</b><br>
+<i>comment</i><br>
+<b>*/</b>
+<p><i>comment</i> 参数是想要包含到脚本中的注释。
+</BLOCKQUOTE>
+<h5>语法 3</h5>
+<blockquote>
+<b>//</b>@CondStatement
+</blockquote>
+<h5>语法 4</h5>
+<blockquote>
+<b>/*@</b><br>
+<i>condStatement</i><br>
+<b>@*/</b>
+<p><i>condStatement</i> 参数是条件编译被激活后使用的条件编译代码。如果使用的是语法 3，则在 "//" 和 "@" 字符间可以没有空格。
+</blockquote>
+<h5>说明</h5>
+<blockquote>
+用注释来使 JScript 解析器不读取脚本的某些部分。可以使用注释来在程序中包括解释性说明。
+<p>如果使用的是语法 1，则解析器忽略在注释标记和行尾间的所有文本。如果使用的是语法 2，则它忽略开始标记和结束标记之间的所有文本。
+<p>语法 3 和 4 用来支持条件编译，以保证与不支持那个特性的浏览器兼容。这些浏览器把这些形式的注释分别当成语法 1 和 2 对待。<P>
+
+下面示例说明了 <B>comment</B> 语句的最普通的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function myfunction(arg1, arg2)
+{
+  <font color="#FF0000">/*</FONT> 这是多行注释，可以根据需要跨越多行。<font color="#FF0000">*/</FONT>
+  var r;
+  <font color="#FF0000">//</FONT> 这是单行注释。
+  r = arg1 + arg2; <font color="#FF0000">//</FONT> 求两个参数的和。
+  return(r);
+}</FONT></PRE></BLOCKQUOTE>
+</blockquote>
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>length 属性 (Function)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="length 属性">
+<META NAME="MS-HKWD" CONTENT="length">
+<META NAME="MS-HKWD" CONTENT="定义参数">
+<META NAME="MS-HKWD" CONTENT="Function">
+<META NAME="MS-HKWD" CONTENT="Function 对象">               
+
+<META NAME=MS-HAID CONTENT="jsfunlength">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="length Property (Function)">
+<META NAME="Keywords" CONTENT="length property; length; defining arguments; functions; Function object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>length 属性 (Function)</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsfunlengthC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsfunlengthA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回函数定义的参数数目。<!>
+</BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>functionname</i>.<b>length</b><!><p>
+<!><i>functionname</i> 参数是必需，是被讨论的函数的名称。<!>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>函数的 <b>length</b> 属性是在创建函数实例时由 Scripting 引擎初始化的，值是函数定义中参数的数目。<!><p>
+
+<!>如果调用函数时参数的数目和它的 <b>length</b> 属性值不同，那么这时发生的情况将依赖于函数本身。<!><P>
+
+<!>下面的例子说明了 <B>length</B> 属性的用法：<!><p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function ArgTest(a, b)
+{
+   var i, s = "The ArgTest function expected ";
+   var numargs = ArgTest.arguments.length;
+   var expargs = <font color="#FF0000">ArgTest.length</FONT>;
+   if (expargs &lt; 2)
+     s += expargs + " argument. ";
+   else
+     s += expargs + " arguments. ";
+   if (numargs &lt; 2)
+     s += numargs + " was passed.";
+   else
+     s += numargs + " were passed.";
+   return(s);
+}
+</PRE></FONT></BLOCKQUOTE></BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

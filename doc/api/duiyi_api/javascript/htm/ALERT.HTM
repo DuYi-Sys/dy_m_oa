@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>使用消息框</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="信息框">
+<META NAME="MS-HKWD" CONTENT="用户输入">
+<META NAME="MS-HKWD" CONTENT="警告信息框">
+<META NAME="MS-HKWD" CONTENT="确认信息框">
+<META NAME="MS-HKWD" CONTENT="提示信息框">                                   
+
+<META NAME=MS-HAID CONTENT="alert">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Using Message Boxes">
+<META NAME="Keywords" CONTENT="JScript tutorial; message boxes; user input; Alert message box; Confirm message box; Prompt message box">
+
+</HEAD>
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>使用消息框</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm" TARGET="_top">JScript&nbsp;教程</A>&nbsp;<BR>&nbsp;<a href="writeclear.htm">上一页</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<HR class='9v'  NOSHADE>
+
+
+<h5>使用警告、提示和确认</h5>
+<blockquote>
+可以使用警告、确认和提示消息框来获得用户的输入。这些消息框是 <b>window</b> 对象的接口方法。由于 <b>window</b> 对象位于对象层次的顶层，因此实际应用中不必使用这些消息框的全名（例如 "window.alert()"），不过采用全名是一个好注意，这样有助于您记住这些消息框属于哪个对象。<p>
+
+
+</blockquote>
+<H5>警告消息框</h5>
+<BLOCKQUOTE><b>alert</b> 方法有一个参数，即希望对用户显示的文本字符串。该字符串不是 HTML 格式。该消息框提供了一个“确定”按钮让用户关闭该消息框，并且该消息框是模式对话框，也就是说，用户必须先关闭该消息框然后才能继续进行操作。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >window.alert("欢迎！请按“确定”继续。");
+</FONT></pre></BLOCKQUOTE>
+</blockquote>
+<h5>确认消息框</h5>
+<BLOCKQUOTE>
+使用确认消息框可向用户问一个“是-或-否”问题，并且用户可以选择单击“确定”按钮或者单击“取消”按钮。<b>confirm</b> 方法的返回值为 <b>true</b> 或 <b>false</b>。该消息框也是模式对话框：用户必须在响应该对话框（单击一个按钮）将其关闭后，才能进行下一步操作。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var truthBeTold = window.confirm("单击“确定”继续。单击“取消”停止。");
+if (truthBeTold) {
+window.alert("欢迎访问我们的　Web 页！");
+}  else  window.alert("再见啦！");
+</FONT></pre></BLOCKQUOTE>
+</blockquote>
+<h5>提示消息框</h5>
+<BLOCKQUOTE>
+提示消息框提供了一个文本字段，用户可以在此字段输入一个答案来响应您的提示。该消息框有一个“确定”按钮和一个“取消”按钮。如果您提供了一个辅助字符串参数，则提示消息框将在文本字段显示该辅助字符串作为默认响应。否则，默认文本为 "&lt;undefined&gt;"。
+<p>与<b>alert( )</b> 和 <b>confirm( )</b> 方法类似，<b>prompt</b> 方法也将显示一个模式消息框。用户在继续操作之前必须先关闭该消息框
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var theResponse = window.prompt("欢迎？","请在此输入您的姓名。");
+</FONT></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END-->
+</Font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

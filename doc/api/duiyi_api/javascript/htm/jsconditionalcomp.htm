@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>条件编译</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="条件编译">
+<META NAME="MS-HKWD" CONTENT="条件">
+<META NAME="MS-HKWD" CONTENT="调试">
+<META NAME="MS-HKWD" CONTENT="调试, 支持">
+<META NAME="MS-HKWD" CONTENT="注释">
+<META NAME="MS-HKWD" CONTENT="跟踪代码的执行">
+<META NAME="MS-HKWD" CONTENT="@acc_on 语句">
+<META NAME="MS-HKWD" CONTENT="if 语句">
+<META NAME="MS-HKWD" CONTENT="Set 语句">                                                            
+
+<META NAME=MS-HAID CONTENT="jsconditionalcomp">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="Conditional Compilation">
+<META NAME="Keywords" CONTENT="conditional compilation; Conditional; debugging support; comments; tracing code execution; @acc_on statement; if statement; set statement">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>条件编译</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsconditionalcompC.htm">请参阅</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>允许使用 JScript 语言的新特性，同时保持与不支持这些新功能的浏览器之间的兼容性。</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+通过在注释外部使用 <b>@cc_on</b> 语句或者使用 <b>@if</b> 或 <b>@set</b> 语句，就可以激活条件编译。条件编译的一些典型用法包括了使用 JScript 中的一些新功能，在脚本中嵌入对调试的支持，以及跟踪代码的执行等。<p>
+
+我们极力推荐将条件编译代码放置在注释中：
+<blockquote><pre><Font face=" 宋体" class='9v' >/*@cc_on @*/
+/*@if (@_jscript_version == 4)
+   alert("JScript version 4");
+   @else @*/
+   alert("You need a more recent script engine.");
+/*@end @*/
+</font></pre></blockquote>
+本例中使用了一种特殊的注释定界符，这种定界符只有在 <b>@cc_on</b> 条件编译语句激活的情况下才可以使用。不支持条件编译的 Scripting 引擎只能看到一条需要新的 scripting 引擎的提示消息。
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

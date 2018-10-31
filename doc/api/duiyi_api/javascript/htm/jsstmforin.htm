@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>for...in 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="for...in 语句">
+<META NAME="MS-HKWD" CONTENT="for...in">
+<META NAME="MS-HKWD" CONTENT="for 语句">
+<META NAME="MS-HKWD" CONTENT="语句执行">
+<META NAME="MS-HKWD" CONTENT="循环执行">
+<META NAME="MS-HKWD" CONTENT="循环语句">
+<META NAME="MS-HKWD" CONTENT="循环">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="重复">                                               
+
+<META NAME=MS-HAID CONTENT="jsstmforin">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="for...in Statement">
+<META NAME="Keywords" CONTENT="for...in statement; for...in; for statement; executing statements; executing loops; looping statements; looping; arrays; iterating">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>for...in 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' COLOR="#660033"><a href="jsstmforinC.htm">请参阅</a></font>
+
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>
+对应于一个对象的每个<a href="glossary.htm#defProperty">属性</a>，或一个数组的每个元素，执行一个或多个语句。
+</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE>
+<b>for</b> (<i>variable</i> <b>in</b> [<i>object</i> | <i>array</i>])<br>
+&nbsp;&nbsp;&nbsp;  <i>statement</i>
+
+
+<p><b>for</b> 语句的语法组成如下：
+<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>variable</i></FONT></TD>
+<TD><FONT class='9v' >一个<a href="glossary.htm#defVariable">变量</a>，它可以是 <i>object</i> 的任一属性或 <i>array</i> 的任一元素。
+</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>object, array</i></FONT></TD>
+<TD><FONT class='9v' >要在其上遍历的对象或数组。</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement</i></FONT></TD>
+<TD><FONT class='9v' >相对于 <i>object</i> 的每个属性或 <i>array</i> 的每个元素，都要被执行的语句。可以是<a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<h5>说明</h5>
+<blockquote>
+在循环的每次迭代前，<i>variable</i> 被赋予 <i>object</i> 的下一个属性或 <i>array</i> 的下一个元素。然后可以在循环内的任一语句中使用它，就好像正在使用 <i>object</i> 的该属性或 <i>array</i> 的该元素一样。<P>
+
+当在一个对象上迭代时，没有办法决定或控制把对象的成员赋给 <i>variable</i> 的次序。在数组内将按元素的次序执行迭代，也就是，0、1、2、……<P>
+
+下面示例说明了 <B>for ... in</B> 语句的用法，它把一个对象用作一个联合数组：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function ForInDemo()
+{
+  // 创建某些变量。
+  var a, key, s = "";
+  // 初始化对象。
+  a = {"a" : "Athens" , "b" : "Belgrade", "c" : "Cairo"}
+  // 迭代属性。
+  <font color="#FF0000">for (</FONT>key <font color="#FF0000">in</FONT> a<font color="#FF0000">)</FONT>
+  {
+     s += a[key] + "&ltBR&gt;";
+  }
+  return(s);
+}
+</font></pre></blockquote>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><HR noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v' ><b>注意</b>&nbsp;&nbsp;使用 <B>enumerator</B> 对象来迭代集合的成员。 </FONT></TD></TR><TR><TD COLSPAN=2 VALIGN=TOP><HR noshade class='9v' ></TD></TR></TABLE><P>
+</blockquote>
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,783 @@
+<html>
+
+<head>
+<!--Helium-sbrk-->
+<meta name="VI60_defaultClientScript" content="VBScript">
+<title>JScript 运行时库参考</title>
+<style>@import url(msdn_ie4.css);</style>
+<META NAME="MS-HKWD" CONTENT="运行时库参考">
+<META NAME="MS-HKWD" CONTENT="运行时库">
+<META NAME="Keywords" CONTENT="运行时库参考;运行时库">
+<link rel="STYLESHEET" type="text/css" href="style.css">
+<META NAME=MS-HAID CONTENT="jsfsotoc">
+ 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="JScript 运行时库参考">
+
+<script language="JavaScript">
+<!--
+function msieversion()
+{
+	var ua = window.navigator.userAgent
+	var msie = ua.indexOf ( "MSIE " )
+	if ( msie > 0 )		// is Microsoft Internet Explorer; return version number
+		return parseInt ( ua.substring ( msie+5, ua.indexOf ( ".", msie ) ) )
+	else
+		return 0	// is other browser
+}
+window.IEVersion = msieversion();
+
+
+// This part decides if it is IE4 then sends it to the correct page for it
+// Else sends it to the plane jane, stale cookie page.
+
+if (window.IEVersion < 4){
+  location.href = "jsfsotocalt.htm"
+  }
+document.onclick = showDetails
+document.onmouseover = doDocumentOnMouseOver ;
+document.onmouseout = doDocumentOnMouseOut ;
+
+// CHANGE HEADLINE COLOR ONMOUSEOVER
+
+function doDocumentOnMouseOver() {
+	var eSrc = window.event.srcElement ;
+    if (eSrc.className == "clsHeading") 
+	{ eSrc.style.color= "#6666FF" }
+
+  }
+
+// CHANGE HEADLINE COLOR ONMOUSEOUT
+function doDocumentOnMouseOut() {
+    var eSrc = window.event.srcElement ;
+    if (eSrc.className == "clsHeading") 
+		{ eSrc.style.color= "#000000" }
+  }
+var lastId = 0;
+function showDetails() {
+
+	if (window.event.srcElement.className == "clsHeading") 
+	{
+		var idString = window.event.srcElement.id
+		var idNumber = idString.substr((idString.length-1))
+		var eSrc = window.event.srcElement.parentElement
+		
+		if (lastId == idNumber) 
+		{
+			/*	If the current display mode is none then change it to display the 
+				selected blurb and hisde the explanation
+			*/		
+			if (window["idBlurb" + idNumber].style.display == 'none') 
+			{
+				// Change the image to be a minus
+				window["img" + idNumber].src ="images/blueminus.gif"; 
+				window["idBlurb" + idNumber].style.display = 'block';
+				explanation.style.display = 'none';
+			}
+			else 
+			{
+				// Change the image to be a plus
+				window["img" + idNumber].src ="images/blueplus.gif"; 
+				window["idBlurb" + idNumber].style.display = 'none';
+				explanation.style.display = 'block'	;
+			}	
+				
+		}
+		else 
+		{
+			if (lastId != 0) 
+				{
+					window["img" + lastId].src ="images/blueplus.gif"
+					window["idBlurb" + lastId].style.display = 'none';
+										
+				}
+			window["img" + idNumber].src ="images/blueminus.gif"; 
+			explanation.style.display = 'none'
+			window["idBlurb" + idNumber].style.display = 'block'
+		}		
+
+		lastId=idNumber
+	}
+	window.event.cancelBubble=true
+}
+-->
+</script>
+
+</HEAD>
+
+<body TOPMARGIN="0" LEFTMARGIN="20" BGCOLOR="#ffffff" LINK="#0033cc" VLINK="#666666" TEXT="#000000">
+<p>
+<font face=" 宋体" class='9v'>
+<table border="0" cellPadding="0" cellSpacing="0" width="100%">
+    
+    <tr vAlign="top">
+        <td style="BACKGROUND-COLOR: white" width="360"><!><font color="#660033" class='9v'>Microsoft(R) JScript(R)</font><br><font color="#660033" size="5"><b>Scripting 运行时库参考</b></font><!> </td>
+        <td align="right" style="BACKGROUND-COLOR: white">
+	<font class='9v'  ><!>&nbsp;
+	  <a href="JSTOC.htm">语言参考</A> <br>
+	  <a href="jsversion.htm">版本信息</A>
+	</font> 
+	</td>
+    </tr>
+</table><br>
+</font></p>
+
+<hr>
+
+<table border="0" cellPadding="0" cellSpacing="0" width="100%" height="100%" class="clsMainTable">
+
+  <tr>
+    <td id="Main" width="30%" height="100%" valign="top" class="clsMainTable">
+		<div><!--font class='9v'-->
+			<b>
+			<p id="heading1" class="clsHeading" TITLE="单击查阅信息列表"><img id="img1" src="images/blueplus.gif" WIDTH="18" HEIGHT="23"><!>&nbsp;特性信息<!></p>
+			<p id="heading2" class="clsHeading" TITLE="单击查阅字母顺序的关键字列表"><img id="img2" src="images/blueplus.gif" WIDTH="18" HEIGHT="23"><!>&nbsp;字母顺序的关键字列表<!></p>
+			<p id="heading3" class="clsHeading" TITLE="单击查阅方法列表"><img id="img3" src="images/blueplus.gif" WIDTH="18" HEIGHT="23"><!>&nbsp;方法<!></p>	
+			<p id="heading4" class="clsHeading" TITLE="单击查阅对象列表"><img id="img4" src="images/blueplus.gif" WIDTH="18" HEIGHT="23"><!>&nbsp;对象<!></p>
+			<p id="heading5" class="clsHeading" TITLE="单击查阅属性列表"><img id="img5" src="images/blueplus.gif" WIDTH="18" HEIGHT="23"><!>&nbsp;属性<!></p>	
+			</b>
+		</div>
+	</td>
+    <td id="Contents" width="60%" height="100%" valign="top" class="clsMainTable">
+		<div STYLE="BACKGROUND-COLOR: #eeeeee"  id="explanation" ><!>&nbsp;<!><P>
+<CENTER><B><!>欢迎使用 Scripting 运行时库参考<!></B></CENTER><P>
+<BLOCKQUOTE>
+<!--font class='9v'-->
+<!>通过对信息进行分组，可以使您方便地研究 Scripting 运行时库的各个主题。<!><P>
+
+<!>可以在“字母顺序的关键字列表”中找到按照字母顺序排列的 Scripting 运行时库的所有主题。<!> <!>如果只需要查看某一个主题（例如对象），则有对该主题进行详细说明的章节可供查阅。<!> <P>
+<!>如何操作呢？<!> <!>单击左边任意一个标题，即可显示该标题所包含的项目列表。<!> <!>再从该列表中选择想要查看的主题。<!> <!>打开所选主题之后，就能够很容易地连接到其他相关章节。<!><P>
+
+<!>好了，现在就开始行动，赶快进去看一看吧！<!> <!>学习一些语句，琢磨各种方法，或者研究一些函数。<!> <!>您将会发现 Scripting 运行时库是多么灵活多用！<!> </BLOCKQUOTE>
+</div>
+		
+		
+		<div ID="idBlurb1" style="DISPLAY: none">
+
+			<table BORDER="0" CELLPADDING="0" CELLSPACING="2" WIDTH="100%" STYLE="FONT-SIZE: 10pt">
+<font class='9v'>
+    	<TD WIDTH="33%"><B><!>特性<!></B><BR></TD>
+		<TD><B><!>描述<!></B></TD></TR>
+				<tr VALIGN="top">
+					<td WIDTH="33%"><A class=clsTOCItem 
+                        href="jsgrpruntimeobjectfeatures.htm" ><!>Microsoft Scripting 运行时特性<!></A><br>
+					</td>
+					<td><!>目前
+                        Microsoft Scripting 运行时库中的特性列表<!></td>
+				</tr>
+			</table>
+		</div>
+		<div ID="idBlurb2" style="DISPLAY: none">
+			<table STYLE="FONT-SIZE: 10pt" BORDER="0" CELLPADDING="2" CELLSPACING="2" WIDTH="100%">
+<font class='9v'>
+    	<TD WIDTH="33%"><B><!>语言元素<!></B><BR></TD>
+		<TD><B><!>描述<!></B></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicadd.htm"><!>Add 方法 (Dictionary)<!></A></TD>
+		<TD><!>向 <B>Dictionary</B> 对象中添加主键和项目对。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderAddFolders.htm"><!>Add 方法 (Folders)<!></A></TD>
+		<TD><!>向 <B>Folders</B> 集合中添加新的 <B>Folder</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextatEndOfLine.htm"><!>AtEndOfLine 属性<!></A></TD>
+		<TD><!>如果在 <B>TextStream</B>文件中文件指针紧接在 end-of-line 标志之前则返回 <B>True</B> ；如果不是则返回 <B>False</B>。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextatEndOfStream.htm"><!>AtEndOfStream 属性<!></A></TD>
+		<TD><!>如果在 <B>TextStream</B> 文件中文件指针到达文件尾则返回 <B>True</B> ；如果不是则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileAttributes.htm"><!>Attributes 属性<!></A></TD>
+		<TD><!>设置或返回文件或文件夹的属性。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveAvailableSpace.htm"><!>AvailableSpace 属性<!></A></TD>
+		<TD><!>向用户返回指定驱动器或网络共享上的可用空间大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemBuildPath.htm"><!>BuildPath 方法<!></A></TD>
+		<TD><!>将一个名称追加到已有的路径后。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextclose.htm"><!>Close 方法<!></A></TD>
+		<TD><!>关闭打开的 <B>TextStream</B> 文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextcolumn.htm"><!>Column 属性<!></A></TD>
+		<TD><!>返回 <B>TextStream</B> 文件中当前字符所在的列号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdiccomparemode.htm"><!>CompareMode 属性<!></A></TD>
+		<TD><!>设置和返回在 <B>Dictionary</B> 对象中对字符串键进行比较的比较方式。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileCopy.htm"><!>Copy 方法<!></A></TD>
+		<TD><!>将指定文件或文件夹从一个位置复制到另一个位置。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemCopyFile.htm"><!>CopyFile 方法<!></A></TD>
+		<TD><!>将一个或多个文件从一个位置复制到另一个位置。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemCopyFolder.htm"><!>CopyFolder 方法<!></A></TD>
+		<TD><!>将文件夹从一个位置完全复制到另一个位置。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdiccount.htm"><!>Count 属性<!></A></TD>
+		<TD><!>返回集合或 <B>Dictionary</B> 对象中的项目数。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemCreateFolder.htm"><!>CreateFolder 方法<!></A></TD>
+		<TD><!>创建文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsfilecreateTextFile.htm"><!>CreateTextFile 方法<!></A></TD>
+		<TD><!>创建指定的文件名并返回可用于读写该文件的 <B>TextStream</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDateCreated.htm"><!>DateCreated 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹创建的日期和时间。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDateLastAccessed.htm"><!>DateLastAccessed 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹最后一次访问的日期和时间。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDateLastModified.htm"><!>DateLastModified 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹最后一次修改的日期和时间。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDelete.htm"><!>Delete 方法<!></A></TD>
+		<TD><!>删除指定的文件或文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDeleteFile.htm"><!>DeleteFile 方法<!></A></TD>
+		<TD><!>删除指定文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDeleteFolder.htm"><!>DeleteFolder 方法<!></A></TD>
+		<TD><!>删除指定文件夹及其内容。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsobjDictionary.htm"><!>Dictionary 对象<!></A></TD>
+		<TD><!>存储数据键和项目对的对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsobjDrive.htm"><!>Drive 对象<!></A></TD>
+		<TD><!>提供了对特定磁盘驱动器或网络共享的属性的访问。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDrive.htm"><!>Drive 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹所在驱动器的驱动器号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDriveExists.htm"><!>DriveExists 方法<!></A></TD>
+		<TD><!>如果指定驱动器存在则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveDriveLetter.htm"><!>DriveLetter 属性<!></A></TD>
+		<TD><!>返回本地物理驱动器或网络共享的驱动器号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jscolDrives.htm"><!>Drives 集合<!></A></TD>
+		<TD><!>包含所有可用驱动器的只读集合。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDrives.htm"><!>Drives 属性<!></A></TD>
+		<TD><!>返回一个 <B>Drives</B> 集合，由所有本地机器上可用的 <B>Drive</B> 对象组成 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveDriveType.htm"><!>DriveType 属性<!></A></TD>
+		<TD><!>返回说明指定驱动器类型的值。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicexists.htm"><!>Exists 方法<!></A></TD>
+		<TD><!>如果 <B>Dictionary</B> 对象中存在指定键则返回 <B>True</B> ，否则返回 <B>False</B> 。<!></TD></TR>
+	
+	<TR VALIGN=top>
+		<TD><a href="jsobjFile.htm"><!>File 对象<!></A></TD>
+		<TD><!>提供了对文件所有属性的访问。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemFileExists.htm"><!>FileExists 方法<!></A></TD>
+		<TD><!>如果指定文件存在则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jscolFiles.htm"><!>Files 集合<!></A></TD>
+		<TD><!>文件夹中所有 <B>File</B> 对象的集合。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderFiles.htm"><!>Files 属性<!></A></TD>
+		<TD><!>返回一个 <B>Files</B> 集合，由所有包含在指定文件夹中的 <B>File</B> 对象组成，包括那些设置了隐藏和系统文件属性的文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsobjFileSystem.htm"><!>FileSystemObject 对象<!></A></TD>
+		<TD><!>提供了对计算机文件系统的访问。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveFileSystem.htm"><!>FileSystem 属性<!></A></TD>
+		<TD><!>返回指定驱动器所使用的文件系统类型。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsobjFolder.htm"><!>Folder 对象<!></A></TD>
+		<TD><!>提供了对文件夹所有属性的访问。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jscolFolders.htm"><!>Folders 集合<!></A></TD>
+		<TD><!>包含在一个 <B>Folder</B> 对象中的所有 <B>Folder</B> 对象的集合。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemFolderExists.htm"><!>FolderExists 方法<!></A></TD>
+		<TD><!>如果指定文件夹存在则返回 <B>True</B> ;否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveFreeSpace.htm"><!>FreeSpace 属性<!></A></TD>
+		<TD><!>向用户返回指定驱动器或网络共享上可用空间的大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetAbsolutePathName.htm"><!>GetAbsolutePathName 方法<!></A></TD>
+		<TD><!>根据所提供的路径说明返回完整明确的路径。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetBaseName.htm"><!>GetBaseName 方法<!></A></TD>
+		<TD><!>根据提供的路径说明返回一个字符串，包含文件或文件夹的基本名称（不包括任何文件扩展名）。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetDrive.htm"><!>GetDrive 方法<!></A></TD>
+		<TD><!>返回相应于指定路径中驱动器的 <B>Drive</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetDriveName.htm"><!>GetDriveName 方法<!></A></TD>
+		<TD><!>根据指定路径返回包含驱动器名称的字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetExtensionName.htm"><!>GetExtensionName 方法<!></A></TD>
+		<TD><!>返回一个字符串，包含路径中最后成分的扩展名。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFile.htm"><!>GetFile 方法<!></A></TD>
+		<TD><!>返回相应于指定路径中文件的 <B>File</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFileName.htm"><!>GetFileName 方法<!></A></TD>
+		<TD><!>返回指定路径中的最后文件名或文件夹名，该路径不能是驱动器说明。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFileVersion.htm">GetFileVersion 方法</A></TD>
+		<TD>返回指定文件的版本号码。</TD></TR>
+
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFolder.htm"><!>GetFolder 方法<!></A></TD>
+		<TD><!>返回相应于指定路径中文件夹的 <B>Folder</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetParentFolderName.htm"><!>GetParentFolderName 方法<!></A></TD>
+		<TD><!>返回一个字符串，包含指定路径中最后文件或文件夹的父文件夹名。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetSpecialFolder.htm"><!>GetSpecialFolder 方法<!></A></TD>
+		<TD><!>返回指定的特殊文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetTempName.htm"><!>GetTempName 方法<!></A></TD>
+		<TD><!>返回一个随机生成的临时文件或文件夹名称。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveIsReady.htm"><!>IsReady 属性<!></A></TD>
+		<TD><!>如果指定驱动器已就绪则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderIsRootFolder.htm"><!>IsRootFolder 属性<!></A></TD>
+		<TD><!>如果指定文件夹是根文件夹则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicitem.htm"><!>Item 属性<!></A></TD>
+		<TD><!>根据 <B>Dictionary</B> 对象中指定的 <i>key</i> 设置或返回  <i>item</i> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicitems.htm"><!>Items 方法<!></A></TD>
+		<TD><!>返回包含 <B>Dictionary</B> 对象中所有项目的数组。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicKey.htm"><!>Key 属性<!></A></TD>
+		<TD><!>在 <B>Dictionary</B> 对象中设置 <i>key</i> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdickeys.htm"><!>Keys 方法<!></A></TD>
+		<TD><!>返回包含了 <B>Dictionary</B> 对象中全部已有键的数组。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextline.htm"><!>Line 属性<!></A></TD>
+		<TD><!>返回 <B>TextStream</B> 文件中的当前行号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileMove.htm"><!>Move 方法<!></A></TD>
+		<TD><!>将指定文件或文件夹从一个位置移动到另一个位置。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemMoveFile.htm"><!>MoveFile 方法<!></A></TD>
+		<TD><!>从一个位置向另一个位置移动一个或多个文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemMoveFolder.htm"><!>MoveFolder 方法<!></A></TD>
+		<TD><!>从一个位置向另一个位置移动一个或多个文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileName.htm"><!>Name 属性<!></A></TD>
+		<TD><!>设置或返回指定文件或文件夹的名称。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsfileOpenAsTextStream.htm"><!>OpenAsTextStream 方法<!></A></TD>
+		<TD><!>打开指定文件并返回可用于读、写或追加该文件的 <B>TextStream</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsfileopenTextFile.htm"><!>OpenTextFile 方法<!></A></TD>
+		<TD><!>打开指定文件并返回可用于读、写或追加该文件的 <B>TextStream</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileParentFolder.htm"><!>ParentFolder 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹的父文件夹对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDrivePath.htm"><!>Path 属性<!></A></TD>
+		<TD><!>返回指定文件、文件夹或驱动器的路径。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextread.htm"><!>Read 方法<!></A></TD>
+		<TD><!>从 <B>TextStream</B> 文件中读取指定数量的字符并返回结果字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextreadall.htm"><!>ReadAll 方法<!></A></TD>
+		<TD><!>读取整个 <B>TextStream</B> 文件并返回结果字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextreadln.htm"><!>ReadLine 方法<!></A></TD>
+		<TD><!>从 <B>TextStream</B> 文件中读取整行（在 newline 字符前，但不包括它）并返回结果字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicremove.htm"><!>Remove 方法<!></A></TD>
+		<TD><!>从 <B>Dictionary</B> 对象中删除一对键和项目。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicremoveall.htm"><!>RemoveAll 方法<!></A></TD>
+		<TD><!>删除 <B>Dictionary</B> 对象中的所有键和项目对。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveRootFolder.htm"><!>RootFolder 属性<!></A></TD>
+		<TD><!>返回表示指定驱动器上根文件夹的 <B>Folder</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveSerialNumber.htm"><!>SerialNumber 属性<!></A></TD>
+		<TD><!>返回用于唯一标识驱动器卷的数字序列号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveShareName.htm"><!>ShareName 属性<!></A></TD>
+		<TD><!>返回指定驱动器的网络共享名。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileShortName.htm"><!>ShortName 属性<!></A></TD>
+		<TD><!>返回一些程序使用的短名称，这些短名称由需要以前的 8.3 命名规范的程序使用。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileShortPath.htm"><!>ShortPath 属性<!></A></TD>
+		<TD><!>返回一些程序使用的短路径，这些短路径名由要以前的 8.3 命名规范的程序使用。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSize.htm"><!>Size 属性<!></A></TD>
+		<TD><!>以字节为单位返回指定文件或文件夹的大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextskip.htm"><!>Skip 方法<!></A></TD>
+		<TD><!>在读取 <B>TextStream</B> 文件时掠过指定数目的字符。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextskipline.htm"><!>SkipLine 方法<!></A></TD>
+		<TD><!>在读取 <B>TextStream</B> 文件时掠过下一行。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderSubFolders.htm"><!>SubFolders 属性<!></A></TD>
+		<TD><!>返回由指定文件夹中包含的所有文件夹组成的 <B>Folders</B> 集合，包括那些设置了隐藏和系统文件属性的文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsobjTextStream.htm"><!>TextStream 对象<!></A></TD>
+		<TD><!>便于对文件的顺序访问。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveTotalSize.htm"><!>TotalSize 属性<!></A></TD>
+		<TD><!>以字节为单位返回驱动器或网络共享的总共空间大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileType.htm"><!>Type 属性<!></A></TD>
+		<TD><!>返回关于文件或文件夹类型的信息。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveVolumeName.htm"><!>VolumeName 属性<!></A></TD>
+		<TD><!>设置或返回指定驱动器的卷号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextwrite.htm"><!>Write 方法<!></A></TD>
+		<TD><!>向 <B>TextStream</B> 文件中写入指定字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextwriteBlankLines.htm"><!>WriteBlankLines 方法<!></A></TD>
+		<TD><!>向 <B>TextStream</B> 文件中写入指定数量的 newline 字符。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextwriteln.htm"><!>WriteLine 方法<!></A></TD>
+		<TD><!>向 <B>TextStream</B> 文件中写入指定字符串和 newline 字符。<!></TD></TR>
+
+			</table>
+	
+		</div>
+
+
+		<div ID="idBlurb3" style="DISPLAY: none">
+
+			<table BORDER="0" CELLPADDING="0" CELLSPACING="2" WIDTH="100%" STYLE="FONT-SIZE: 10pt">
+<font class='9v'>
+    	<TD WIDTH="33%"><B><!>语言元素<!></B><BR></TD>
+		<TD><B><!>描述<!></B></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicadd.htm"><!>Add 方法 (Dictionary)<!></A></TD>
+		<TD><!>向 <B>Dictionary</B> 对象中添加一对键和项目。 <!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderAddFolders.htm"><!>Add 方法 (Folders)<!></A></TD>
+		<TD><!>向 <B>Folders</B> 集合中添加新的 <B>Folder</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemBuildPath.htm"><!>BuildPath 方法<!></A></TD>
+		<TD><!>在已有路径后追加一个名称。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextclose.htm"><!>Close 方法<!></A></TD>
+		<TD><!>关闭打开的 <B>TextStream</B> 文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileCopy.htm"><!>Copy 方法<!></A></TD>
+		<TD><!>将指定文件或文件夹从一个位置复制到另一个位置。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemCopyFile.htm"><!>CopyFile 方法<!></A></TD>
+		<TD><!>从一个位置向另一个位置复制一个或多个文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemCopyFolder.htm"><!>CopyFolder 方法<!></A></TD>
+		<TD><!>从一个位置向另一个位置复制整个文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemCreateFolder.htm"><!>CreateFolder 方法<!></A></TD>
+		<TD><!>创建文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsfilecreateTextFile.htm"><!>CreateTextFile 方法<!></A></TD>
+		<TD><!>创建指定的文件名并返回可用于读写该文件的 <B>TextStream</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDelete.htm"><!>Delete 方法<!></A></TD>
+		<TD><!>删除指定文件或文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDeleteFile.htm"><!>DeleteFile 方法<!></A></TD>
+		<TD><!>删除指定文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDeleteFolder.htm"><!>DeleteFolder 方法<!></A></TD>
+		<TD><!>删除指定文件夹及其内容。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDriveExists.htm"><!>DriveExists 方法<!></A></TD>
+		<TD><!>如果指定驱动器存在则返回 <B>True</B> ；如果不存在则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicexists.htm"><!>Exists 方法<!></A></TD>
+		<TD><!>如果 <B>Dictionary</B> 对象中存在指定键则返回 <B>True</B> ，否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemFileExists.htm"><!>FileExists 方法<!></A></TD>
+		<TD><!>如果指定文件存在则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemFolderExists.htm"><!>FolderExists 方法<!></A></TD>
+		<TD><!>如果指定文件夹存在则返回 <B>True</B> ;否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetAbsolutePathName.htm"><!>GetAbsolutePathName 方法<!></A></TD>
+		<TD><!>根据所提供的路径说明返回完整明确的路径。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetBaseName.htm"><!>GetBaseName 方法<!></A></TD>
+		<TD><!>根据提供的路径说明返回一个字符串，包含文件或文件夹的基本名称（不包括任何文件扩展名）。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetDrive.htm"><!>GetDrive 方法<!></A></TD>
+		<TD><!>返回相应于指定路径中驱动器的 <B>Drive</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetDriveName.htm"><!>GetDriveName 方法<!></A></TD>
+		<TD><!>根据指定路径返回包含驱动器名称的字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetExtensionName.htm"><!>GetExtensionName 方法<!></A></TD>
+		<TD><!>返回一个字符串，包含路径中最后成分的名称。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFile.htm"><!>GetFile 方法<!></A></TD>
+		<TD><!>返回相应于指定路径中文件的 <B>File</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFileName.htm"><!>GetFileName 方法<!></A></TD>
+		<TD><!>返回指定路径中的最后文件名或文件夹名，该路径不能是驱动器说明。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFileVersion.htm">GetFileVersion 方法</A></TD>
+		<TD>返回指定文件的版本号码。</TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetFolder.htm"><!>GetFolder 方法<!></A></TD>
+		<TD><!>返回相应于指定路径中文件夹的 <B>Folder</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetParentFolderName.htm"><!>GetParentFolderName 方法<!></A></TD>
+		<TD><!>返回一个字符串，包含指定路径中最后文件或文件夹的父文件夹名。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetSpecialFolder.htm"><!>GetSpecialFolder 方法<!></A></TD>
+		<TD><!>返回指定的特殊文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemGetTempName.htm"><!>GetTempName 方法<!></A></TD>
+		<TD><!>返回一个随机生成的临时文件或文件夹名称。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicitems.htm"><!>Items 方法<!></A></TD>
+		<TD><!>返回包含 <B>Dictionary</B> 对象中所有项目的数组。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdickeys.htm"><!>Keys 方法<!></A></TD>
+		<TD><!>返回包含了 <B>Dictionary</B> 对象中全部已有键的数组。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileMove.htm"><!>Move 方法<!></A></TD>
+		<TD><!>将指定文件或文件夹从一个位置移动到另一个位置。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemMoveFile.htm"><!>MoveFile 方法<!></A></TD>
+		<TD><!>从一个位置向另一个位置移动一个或多个文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemMoveFolder.htm"><!>MoveFolder 方法<!></A></TD>
+		<TD><!>从一个位置向另一个位置移动一个或多个文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsfileOpenAsTextStream.htm"><!>OpenAsTextStream 方法<!></A></TD>
+		<TD><!>打开指定文件并返回可用于读、写或追加该文件的 <B>TextStream</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsfileopenTextFile.htm"><!>OpenTextFile 方法<!></A></TD>
+		<TD><!>打开指定文件并返回可用于读、写或追加该文件的 <B>TextStream</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextread.htm"><!>Read 方法<!></A></TD>
+		<TD><!>从 <B>TextStream</B> 文件中读取指定数量的字符并返回结果字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextreadall.htm"><!>ReadAll 方法<!></A></TD>
+		<TD><!>读取整个 <B>TextStream</B> 文件并返回结果字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextreadln.htm"><!>ReadLine 方法<!></A></TD>
+		<TD><!>从 <B>TextStream</B> 文件中读取整行（在 newline 字符前，但不包括它）并返回结果字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicremove.htm"><!>Remove 方法<!></A></TD>
+		<TD><!>从 <B>Dictionary</B> 对象中删除一个键和项目对。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicremoveall.htm"><!>RemoveAll 方法<!></A></TD>
+		<TD><!>删除 <B>Dictionary</B> 对象中的所有键和项目对。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextskip.htm"><!>Skip 方法<!></A></TD>
+		<TD><!>在读取 <B>TextStream</B> 文件时掠过指定数目的字符。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextskipline.htm"><!>SkipLine 方法<!></A></TD>
+		<TD><!>在读取 <B>TextStream</B> 文件时掠过下一行。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextwrite.htm"><!>Write 方法<!></A></TD>
+		<TD><!>向 <B>TextStream</B> 文件中写入指定字符串。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextwriteBlankLines.htm"><!>WriteBlankLines 方法<!></A></TD>
+		<TD><!>向 <B>TextStream</B> 文件中写入指定数量的 newline 字符。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextwriteln.htm"><!>WriteLine 方法<!></A></TD>
+		<TD><!>向 <B>TextStream</B> 文件中写入指定字符串和 newline 字符。<!></TD></TR>
+</TABLE></DIV>
+		
+		<div ID="idBlurb4" style="DISPLAY: none">
+		<table BORDER="0" CELLPADDING="2" CELLSPACING="2" WIDTH="100%" STYLE="FONT-SIZE: 10pt">
+<font class='9v'>
+    	<TD WIDTH="33%"><B><!>语言元素<!></B><BR></TD>
+		<TD><B><!>描述<!></B></TD></TR>
+			<tr VALIGN="top">
+				<td><a href="jsobjDictionary.htm" ><!>Dictionary 对象<!></A></td>
+				<td><!>存储数据键和项目对的对象。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jsobjDrive.htm" 
+                        ><!>Drive 对象<!></A></td>
+				<td><!>提供了对特定磁盘驱动器或网络共享的属性的访问。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jscolDrives.htm" 
+                        ><!>Drives 集合<!></A></td>
+				<td><!>包含所有可用驱动器的只读集合。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jsobjFile.htm" 
+                        ><!>File 对象<!></A></td>
+				<td><!>提供了对文件所有属性的访问。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jscolFiles.htm" 
+                        ><!>Files 集合<!></A></td>
+				<td><!>文件夹中所有 <B>File</B> 对象的集合。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jsobjFileSystem.htm" 
+                        ><!>FileSystemObject 对象<!></A></td>
+				<td><!>提供了对计算机文件系统的访问。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jsobjFolder.htm" 
+                        ><!>Folder 对象<!></A></td>
+				<td><!>提供了对文件夹所有属性的访问。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jscolFolders.htm" 
+                        ><!>Folders 集合<!></A></td>
+				<td><!>包含在一个 <B>Folder</B> 对象中的所有 <B>Folder</B> 对象的集合。<!></td></tr>
+			<tr VALIGN="top">
+				<td><a href="jsobjTextStream.htm" 
+                        ><!>TextStream 对象<!></A></td>
+				<td><!>便于对文件的顺序访问。<!></td></tr>
+		</table>
+		</div>
+    
+		<div ID="idBlurb5" style="DISPLAY: none">
+			<table STYLE="FONT-SIZE: 10pt" BORDER="0" CELLPADDING="2" CELLSPACING="2" WIDTH="100%">
+<font class='9v'>
+    	<TD WIDTH="33%"><B><!>语言元素<!></B><BR></TD>
+		<TD><B><!>描述<!></B></TD></TR>
+	<TR VALIGN=top>
+		<TD WIDTH="33%"><a href="jstextatEndOfLine.htm"><!>AtEndOfLine 属性<!></A></TD>
+		<TD><!>如果在 <B>TextStream</B>文件中文件指针紧接在 end-of-line 标志之前则返回 <B>True</B> ；否则返回 <B>False</B>。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextatEndOfStream.htm"><!>AtEndOfStream 属性<!></A></TD>
+		<TD><!>如果在 <B>TextStream</B> 文件中文件指针到达文件尾则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileAttributes.htm"><!>Attributes 属性<!></A></TD>
+		<TD><!>设置或返回文件或文件夹的属性。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveAvailableSpace.htm"><!>AvailableSpace 属性<!></A></TD>
+		<TD><!>向用户返回指定驱动器或网络共享上的可用空间大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextcolumn.htm"><!>Column 属性<!></A></TD>
+		<TD><!>返回 <B>TextStream</B> 文件中当前字符所在的列号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdiccomparemode.htm"><!>CompareMode 属性<!></A></TD>
+		<TD><!>设置和返回在 <B>Dictionary</B> 对象中对字符串键进行比较的比较方式。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdiccount.htm"><!>Count 属性<!></A></TD>
+		<TD><!>返回集合或 <B>Dictionary</B> 对象中的项目数。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDateCreated.htm"><!>DateCreated 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹创建的日期和时间。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDateLastAccessed.htm"><!>DateLastAccessed 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹最后一次访问的日期和时间。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDateLastModified.htm"><!>DateLastModified 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹最后一次修改的日期和时间。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileDrive.htm"><!>Drive 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹所在驱动器的驱动器号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveDriveLetter.htm"><!>DriveLetter 属性<!></A></TD>
+		<TD><!>返回本地物理驱动器或网络共享的驱动器号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSystemDrives.htm"><!>Drives 属性<!></A></TD>
+		<TD><!>返回一个 <B>Drives</B> 集合，由所有本地机器上可用的 <B>Drive</B> 对象组成 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveDriveType.htm"><!>DriveType 属性<!></A></TD>
+		<TD><!>返回说明指定驱动器类型的值。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderFiles.htm"><!>Files 属性<!></A></TD>
+		<TD><!>返回一个 <B>Files</B> 集合，由所有包含在指定文件夹中的 <B>File</B> 对象组成，包括那些设置了隐藏和系统文件属性的文件。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveFileSystem.htm"><!>FileSystem 属性<!></A></TD>
+		<TD><!>返回指定驱动器所使用的文件系统类型。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveFreeSpace.htm"><!>FreeSpace 属性<!></A></TD>
+		<TD><!>向用户返回指定驱动器或网络共享上可用空间的大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveIsReady.htm"><!>IsReady 属性<!></A></TD>
+		<TD><!>如果指定驱动器已就绪则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderIsRootFolder.htm"><!>IsRootFolder 属性<!></A></TD>
+		<TD><!>如果指定文件夹是根文件夹则返回 <B>True</B> ；否则返回 <B>False</B> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicitem.htm"><!>Item 属性<!></A></TD>
+		<TD><!>根据 <B>Dictionary</B> 对象中指定的 <i>key</i> 设置或返回  <i>item</i> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsdicKey.htm"><!>Key 属性<!></A></TD>
+		<TD><!>在 <B>Dictionary</B> 对象中设置 <i>key</i> 。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jstextline.htm"><!>Line 属性<!></A></TD>
+		<TD><!>返回 <B>TextStream</B> 文件中的当前行号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileName.htm"><!>Name 属性<!></A></TD>
+		<TD><!>设置或返回指定文件或文件夹的名称。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsfileParentFolder.htm"><!>ParentFolder 属性<!></A></TD>
+		<TD><!>返回指定文件或文件夹的父文件夹对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDrivePath.htm"><!>Path 属性<!></A></TD>
+		<TD><!>返回指定文件、文件夹或驱动器的路径。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveRootFolder.htm"><!>RootFolder 属性<!></A></TD>
+		<TD><!>返回表示指定驱动器上根文件夹的 <B>Folder</B> 对象。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveSerialNumber.htm"><!>SerialNumber 属性<!></A></TD>
+		<TD><!>返回用于唯一标识驱动器卷的数字序列号。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveShareName.htm"><!>ShareName 属性<!></A></TD>
+		<TD><!>返回指定驱动器的网络共享名。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileShortName.htm"><!>ShortName 属性<!></A></TD>
+		<TD><!>返回一些程序使用的短名称，这些短名由需要以前的 8.3 命名规范的程序使用。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileShortPath.htm"><!>ShortPath 属性<!></A></TD>
+		<TD><!>返回一些程序使用的短路径，这些短路径由需要以前的 8.3 文件名规范的程序使用。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileSize.htm"><!>Size 属性<!></A></TD>
+		<TD><!>以字节为单位返回指定文件或文件夹的大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFolderSubFolders.htm"><!>SubFolders 属性<!></A></TD>
+		<TD><!>返回由指定文件夹中包含的所有文件夹组成的 <B>Folders</B> 集合，包括那些设置了隐藏和系统文件属性的文件夹。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveTotalSize.htm"><!>TotalSize 属性<!></A></TD>
+		<TD><!>以字节为单位返回驱动器或网络共享的总共空间大小。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsFileType.htm"><!>Type 属性<!></A></TD>
+		<TD><!>返回关于文件或文件夹类型的信息。<!></TD></TR>
+	<TR VALIGN=top>
+		<TD><a href="jsDriveVolumeName.htm"><!>VolumeName 属性<!></A></TD>
+		<TD><!>设置或返回指定驱动器的卷号。<!></TD></TR>
+			</table>
+		</div>
+	</td>
+  </tr>
+</table>
+<P>
+<HR>
+<P>
+<font face=" 宋体" class='9v'>
+<a href="jscopy.htm" target=_top ><!>(C)2000 Microsoft Corporation.<!> 
+<!>All rights reserved.<!></A> 
+</FONT>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

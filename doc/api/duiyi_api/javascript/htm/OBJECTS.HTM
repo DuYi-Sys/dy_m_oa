@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>JScript 的对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="创建对象">
+<META NAME="MS-HKWD" CONTENT="方法">
+<META NAME="MS-HKWD" CONTENT="属性">
+<META NAME="MS-HKWD" CONTENT="数组">                                         
+
+<META NAME=MS-HAID CONTENT="objects">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="JScript Objects">
+<META NAME="Keywords" CONTENT="JScript tutorial; objects; intrinsic objects; built-in objects; creating objects; methods; properties; arrays">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>JScript 的对象</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><br><a href="functions.htm">上一页</A><br><a href="jsreserved.htm">下一页</A><P></FONT>
+</TD></TR>
+</TABLE><p>
+
+
+<hr noshade class='9v' >
+<h5>什么是对象？</h5>
+<blockquote>
+在 Microsoft JScript 中，对象本质上就是属性和方法的集合。方法是作为某个对象成员的函数，属性是作为对象成员的一个值或一组值（数组或对象的形式）。JScript 支持三种对象：<a href="builtinobjects.htm">固有对象</a>、<a href="createobjects.htm">创建自己的对象</a>以及浏览器对象，后者将在其他地方介绍。
+
+</blockquote>
+<h5>对象也是数组</h5>
+<blockquote>
+在 JScript 中，对象和数组是一样处理的。可以按名称（使用对象名称，后跟一个圆点和属性的名称）来引用一个对象的任何成员（属性和方法）, 也可以按其数组下标索引来引用。JScript 中下标的是从 0 开始编号的，也可以用其名称来引用下标。<p>
+
+因此可以用多种方式来引用一个属性。下面所有语句都是等价的。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >theWidth = spaghetti.width;
+theWidth = spaghetti[3];  // [3] 是 "width" 的索引。
+theWidth = spaghetti["width"];
+</FONT></pre></BLOCKQUOTE>
+
+虽然可以使用方括号按其数字索引来引用一个属性，但不能使用圆点 (.) 带索引号。下面的语句将产生一个错误。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >theWidth = spaghetti.3;
+</FONT></pre></BLOCKQUOTE>
+
+当一个对象中的某个属性是另一个对象时，可以直接扩展这种命名约定。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var init4 = toDoToday.shoppingList[3].substring(0,1);  // 数组 shoppingList 是 toDoToday 的一个属性。
+</FONT></pre></BLOCKQUOTE>
+
+对象包含其他对象作为其属性的这种情况可以产生具有多个下标的数组，虽然并不直接支持多重数组。下面的代码创建了一个从 0 乘 0 到 16 乘 16 的乘法表。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var multTable = new Array(17);  		// 产生乘法表的外壳。
+for (var j = 0; j &lt; multTable.length; j++)  { 	// 准备用行进行填充。
+    var aRow = new Array(17);  			// 创建一行。
+    for (var i = 0; i &lt; aRow.length; i++)  { 	// 准备填充这一行。
+    aRow[i] = (i + " times " + j + " = " + i*j); 	// 计算并存储值。
+    }
+multTable[j] = aRow;  // 将已填充的行放入表中。
+}
+</FONT></pre></BLOCKQUOTE>
+
+要引用这种数组中的一个元素，可以使用多重方括号。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var multiply3x7 = multTable[3][7];
+</FONT></pre></BLOCKQUOTE>
+
+下面的语句将产生一个错误。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var multiply3x7 = multTable[3, 7];
+</FONT></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

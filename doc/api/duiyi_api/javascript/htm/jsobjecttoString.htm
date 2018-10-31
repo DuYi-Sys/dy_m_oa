@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<TITLE>toString 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="toString 方法">
+<META NAME="MS-HKWD" CONTENT="toString">
+<META NAME="MS-HKWD" CONTENT="string">
+<META NAME="MS-HKWD" CONTENT="转换">
+<META NAME="MS-HKWD" CONTENT="转换为字符串">
+<META NAME="MS-HKWD" CONTENT="字符串转换">                     
+
+<META NAME=MS-HAID CONTENT="jsobjecttoString">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="toString Method">
+<META NAME="Keywords" CONTENT="toStringmethod; toString; string; conversion; conversion to string; string conversion">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>toString 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+<FONT class='9v' ><P>
+<a href="jsobjecttoStringC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjecttostringA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回对象的字符串表示。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>objectname</i>.<b>toString(</b>[<i>radix</i>]<b>)</b><P>
+
+<B>toString</B> 方法语法有以下部分：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>objectname</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。要得到字符串表示的对象。</FONT></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>radix</i></FONT></TD><TD><FONT class='9v' >可选项。指定将数字值转换为字符串时的进制。</FONT></TD></TR></TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>toString</b> 方法是所有内建的 JScript 对象的方法。它的操作依赖于对象的类型：<p>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>对象</b></FONT></TD>
+<TD><FONT class='9v' ><b>操作</b></FONT></TD></TR>
+<tr valign=top>
+<TD><FONT class='9v' ><b>Array</b></FONT></TD>
+<TD><FONT class='9v' >将 <b>Array</b> 的元素转换为字符串。结果字符串由逗号分隔，且连接起来。</FONT></TD>
+</TR>
+<tr valign=top>
+<TD><FONT class='9v' ><b>Boolean</b></FONT></TD>
+<TD><FONT class='9v' >如果 Boolean 值是 <b>true</b>，则返回 <FONT face=" 宋体" class='9v' >“true”</font>。否则，返回 <FONT face=" 宋体" class='9v' >“false”</font></FONT></TD>
+</TR>
+<tr valign=top>
+<TD><FONT class='9v' ><b>Function</b></FONT></TD>
+<TD><FONT class='9v' >返回按如下格式返回的字符串，其中 <i>functionname</i> 是被调用 <b>toString</b> 方法函数的名称：<pre><FONT face=" 宋体" class='9v' >function functionname( ) { [native code] }
+</font></pre></FONT></TD>
+</TR>
+<tr valign=top>
+<TD><FONT class='9v' ><b>Number</b></FONT></TD>
+<TD><FONT class='9v' >返回数字的文字表示。</FONT></TD>
+</TR>
+<tr valign=top>
+<TD><FONT class='9v' ><b>String</b></FONT></TD>
+<TD><FONT class='9v' >返回 <b>String</b> 对象的值。</FONT></TD>
+</TR>
+
+
+<tr valign=top>
+<TD><FONT class='9v' >默认</FONT></TD>
+<TD><FONT class='9v' >返回 <FONT face=" 宋体" class='9v' >“[object objectname]”</font>，其中 <FONT face=" 宋体" class='9v' >objectname</font> 是对象类型的名称。</FONT></TD>
+</TR></TABLE> <P>
+
+下面的例子演示了使用带有 radix 参数的 toString 方法：
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function CreateRadixTable ()
+{
+  var s1, s2, s3, x;
+  document.write("Hex    Dec   Bin&lt;BR&gt;");
+  for (x = 0; x &lt; 16; x++)
+  {
+    switch(x)
+    {
+      case 0 : 
+        s1 = "      ";
+        s2 = "    ";
+        s3 = "   ";
+        break;
+      case 1 :
+        s1 = "      ";
+        s2 = "    ";
+        s3 = "   ";
+        break;
+      case 2 :
+        s3 = "  ";
+        break;
+      case 3 : 
+        s3 = "  ";
+        break;
+      case 4 : 
+        s3 = " ";
+        break;
+      case 5 :
+        s3 = " ";
+        break;
+      case 6 : 
+        s3 = " ";
+        break;
+      case 7 : 
+        s3 = " ";
+        break;
+      case 8 :
+        s3 = "" ;
+        break;
+      case 9 :
+        s3 = "";
+        break;
+      default: 
+        s1 = "     ";
+        s2 = "";
+        s3 = "    ";
+    }
+    document.write(" ", <font color="#FF0000">x.toString(</FONT>16<font color="#FF0000">)</FONT>, s1, <font color="#FF0000">x.toString(</FONT>10<font color="#FF0000">)</FONT>, s2, s3, <font color="#FF0000">x.toString(</FONT>2<font color="#FF0000">)</FONT>, "&lt;BR&gt;");
+  }
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

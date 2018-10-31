@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>DriveType 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Drivetype 属性">
+<META NAME="MS-HKWD" CONTENT="Drivetype">
+<META NAME="MS-HKWD" CONTENT="驱动器">
+<META NAME="MS-HKWD" CONTENT="Drive 类型">
+<META NAME="MS-HKWD" CONTENT="Drive 对象">     
+
+<META NAME=MS-HAID CONTENT="jsDriveDriveType"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Drivetype property; DriveType; drives; drive types; Drive object">
+
+<META NAME="Description" CONTENT="DriveType Property">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT  class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>DriveType 属性</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3 </A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsDriveDriveTypeC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsDriveDriveTypeA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个值，表示所指定驱动器的类型。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>object</i>.<b>DriveType</b>
+
+<P>其中 <i>object</i> 总是一个 <b>Drive</b> 对象。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+下面这段代码说明了 <b>DriveType</b> 属性的用法：
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowDriveType(drvpath)
+{
+  var fso, d, s, t;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  d = fso.GetDrive(drvpath);
+  switch (<font color = "#ff0000">d.DriveType</FONT>)
+  {
+    case 0: t = "Unknown"; break;
+    case 1: t = "Removable"; break;
+    case 2: t = "Fixed"; break;
+    case 3: t = "Network"; break;
+    case 4: t = "CD-ROM"; break;
+    case 5: t = "RAM Disk"; break;
+  }	
+  s = "Drive " + d.DriveLetter + ": - " + t;
+  return(s);
+}</font></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

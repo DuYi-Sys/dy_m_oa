@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>控制程序的流程</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="条件语句">
+<META NAME="MS-HKWD" CONTENT="Boolean 值">
+<META NAME="MS-HKWD" CONTENT="if 语句">
+<META NAME="MS-HKWD" CONTENT="if...else 语句">
+<META NAME="MS-HKWD" CONTENT="条件运算符">
+<META NAME="MS-HKWD" CONTENT="trinary 运算符">
+<META NAME="MS-HKWD" CONTENT="?: 运算符">
+<META NAME="MS-HKWD" CONTENT="循环语句">
+<META NAME="MS-HKWD" CONTENT="for 语句">
+<META NAME="MS-HKWD" CONTENT="for...in 语句">
+<META NAME="MS-HKWD" CONTENT="while 语句">
+<META NAME="MS-HKWD" CONTENT="do...while 语句">
+<META NAME="MS-HKWD" CONTENT="switch 语句">
+<META NAME="MS-HKWD" CONTENT="break 语句">
+<META NAME="MS-HKWD" CONTENT="continue 语句">                                                                                         
+
+<META NAME=MS-HAID CONTENT="conditionals">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Controlling Program Flow">
+<META NAME="Keywords" CONTENT="JScript tutorial; conditional statements; boolean values; if statement; if...else statement; conditional operator; trinary operator; ?: operator; looping statements; for statement; for...in statement; while statement; do...while statement; switch statement; break statement; continue statement; ">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>
+控制程序的流程
+</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><br><a href="jsoperators.htm">上一页</A><br><a href="functions.htm">下一页</A><P></FONT>
+
+</TD></TR>
+</TABLE><p>
+
+
+<hr noshade class='9v' >
+<h5> 为什么要控制执行流程？</h5>
+<blockquote>
+经常需要脚本在不同的条件下完成不同的事情。例如，您可以编写一个每小时检查时间的脚本，并在这一天中适当地更改某些参数。您也可以编写一个可以接收某种输入并采取相应操作的脚本。或者可以编写一个重复指定操作的脚本。<p>
+
+您可以测试若干种条件。Microsoft JScript 中所有的条件测试结果都是 Boolean 值，因此任何测试的结果是 <b>true</b> 或 <b>false</b>。您可以自由地测试 Boolean 类型、数值类型或字符串类型的值。<p>
+
+JScript 提供了用于各种可能性的控制结构。最简单的控制结构是条件语句。
+</blockquote>
+
+<h5> 使用条件语句</h5>
+<BLOCKQUOTE>
+JScript 支持 <b>if</b> 和 <a href="jsstmif.htm"><b>if...else</b></a> 条件语句。在 <b>if</b> 语句中将测试一个条件，如果该条件满足测试，就将执行所编写的 JScript 编码。（在 <b>if...else</b> 语句中，如果条件不满足测试，则将执行不同的代码。）最简单的 <b>if</b> 语句格式可以在一行中写完，不过更常见的是多行的 <b>if</b> 和 <b>if...else</b> 语句。<p>
+
+下述示例演示了使用 <b>if</b> 和 <b>if...else</b> 语句的各种可能的语法。第一个示例演示了最简单的 Boolean 测试。当（且仅当）括号之间的项的值为 <b>true</b> 时，<b>if</b> 后续的语句或语句块才会被执行。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >// smash() 函数是在该代码的其他地方定义的。
+if (newShip)
+   smash(champagneBottle,bow);  // Boolean 测试，看 newShip 是否为真。
+
+// 在本示例中，除非两个条件都为真，否则该测试将不会被满足。
+if (rind.color == "deep yellow " && rind.texture == "large and small wrinkles")
+{
+        theResponse = ("Is it a Crenshaw melon? &lt;br&gt; ");
+}
+
+// 在本示例中，只要任何一个条件为真，则测试即会满足。
+var theReaction = "";
+if ((lbsWeight &gt; 15) || (lbsWeight &gt; 45))
+{
+    theReaction = ("Oh, what a cute kitty! &lt;br&gt;");
+}
+else
+    theReaction = ("That's one huge cat you've got there! &lt;br&gt;");
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>条件运算符</h5>
+<BLOCKQUOTE>
+JScript 也支持隐式的条件格式。该格式在要测试的条件后使用一个问号（而不是在条件前的 <b>if</b> ），并指定两个可选项，一个在满足条件时使用，另一个在条件不满足时使用。两个选择项之间用一个冒号隔开。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var hours = "";
+
+// 下面的代码指定 hours 是包含 theHour 的内容，
+// 还是包含 theHour - 12 的内容。
+
+hours += (theHour &gt;= 12) ? " PM" : " AM";
+</FONT></pre></BLOCKQUOTE>
+
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR><P><TD VALIGN=TOP><FONT class='9v' ><BR>
+
+<b>提示</b>&nbsp;&nbsp; 如果要一起测试多个条件，并且知道某个条件比其他条件更可能满足或不满足测试，（根据这些测试是用 OR (||) 还是 AND (&&) 连接的，可以通过将该条件放在条件语句的最前面来加速脚本的执行。例如，如果三个条件都必须为真（使用 && 运算符），并且第二个测试失败，则第三个条件不会被测试。 
+<P>类似地，如果多个条件中只要有一个为真（使用 || 运算符），则当任何一个条件满足该测试时测试则停止。如果要测试的条件包括函数调用或其他代码，这种处理方式就特别有效。<p>
+快速判别的副作用的一个示例是：在下例中如果 runfirst() 返回 0 或 <b>false</b>， 则 runsecond 不会被执行。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >if ((runfirst() == 0) || (runsecond() == 0))
+// 若干代码  </font></pre></BLOCKQUOTE>
+</FONT></TD></TR><P><TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE>
+
+</blockquote>
+<h5>使用重复或循环</h5>
+<BLOCKQUOTE>
+有多种方式来重复执行一条语句或语句块。通常重复执行被称为 循环。 典型情况是用某个变量测试来进行控制，每执行一次循环变量的取值都会更改。 Microsoft JScript 支持很多种循环： <a href="jsstmfor.htm"><b>for</b></a> 循环、 <a href="jsstmforin.htm"><b>for...in</b></a> 循环、 <a href="jsstmwhile.htm"><b>while</b></a> 循环、 <a href="jsstmdowhile.htm"><b>do...while</b></a> 循环和 <a href="jsstmswitch.htm"><b>switch</b></a> 循环。
+</blockquote>
+<h5>使用 <b>for</b> 循环</h5>
+<BLOCKQUOTE>
+<b>for</b> 语句指定了一个计数器变量，一个测试条件，以及更新该计数器的操作。在每次执行循环之前（这称为一遍循环或一次重复），都将测试该条件。在执行该循环后，计算机变量将在下一次循环之前被更新。<p>
+
+如果循环条件永不会满足，则根本不会执行该循环。如果测试条件始终满足，则将导致无限循环。在有些情况下，前者可能是合乎需要的，而后者几乎没有用处，因此在编写循环条件时一定要小心。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >/*
+更新表达式 （下例中的 "icount++"）将在循环结束时被执行，即在构成循环主体的语句块被执行后，在测试条件之前。
+*/
+
+var howFar = 11;  // 将循环次数限制为 11。
+
+var sum = new Array(howFar);  // 创建一个称为 sum 并具有 11 个成员的数组，这 11 个成员从 0 到 10。
+var theSum = 0;
+sum[0] = 0;
+
+for(var icount = 1; icount &lt; howFar; icount++)  {        // 在本例中将从 1 到 10 进行计数。
+theSum += icount;
+sum[icount] = theSum;
+}
+
+var newSum = 0;
+for(var icount = 1; icount &gt; howFar; icount++)  {        // 该循环根本不会被执行。
+newSum += icount;
+}
+
+var sum = 0;
+for(var icount = 1; icount &gt; 0; icount++)  {        // 这是一个无限循环。
+sum += icount;
+}
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>使用 <b>for...in</b> 循环</h5>
+<blockquote>JScript 提供了一种特别的循环方式来遍历一个<a href="objects.htm">对象</a>的所有属性。 <b>for...in</b> 循环中的循环计数器将遍历数组中的所有索引。它是一个字符串，而不是数字。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >for (j in tagliatelleVerde)  // tagliatelleVerde 是一个有多个属性的对象
+{
+// 各种 JScript 代码语句。
+}
+</FONT></pre></BLOCKQUOTE>
+</blockquote>
+<h5>使用 <b>while</b> 循环</h5>
+<blockquote><b>while</b> 循环与 <b>for</b> 循环非常相似。其不同之处是 <b>while</b> 循环没有内置的计数器或更新表达式。如果已经有由变量赋值反映的变化条件，并且希望使用该条件来控制语句或语句块的循环执行，就可以使用<b>while</b> 循环。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var theMoments = "";
+var theCount = 42;        // 初始化计数器变量。
+while (theCount &gt;= 1)  {
+    if (theCount &gt; 1)  {
+        theMoments = "Only " + theCount + " moments left!";
+}
+    else  {
+        theMoments = "Only one moment left!";
+    }
+theCount--;        // 更新计数器变量。
+}
+theMoments = "BLASTOFF!";
+</FONT></pre></BLOCKQUOTE>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR><P><TD VALIGN=TOP><FONT class='9v' ><BR>
+
+<b>注意</b>&nbsp;&nbsp;由于 <b>while</b> 循环没有显式的内置计数器变量，因此比其他类型更容易产生无限循环。此外，部分原因是不易发现循环条件是在何时何地被更新的，因此很容易编写了一个实际上从不更新条件的 <b>while</b> 循环。在编写 <b>while</b> 循环时应特别小心。<p>
+</FONT></TD></TR><P><TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE>
+</blockquote>
+
+<h5>使用 <b>break</b> 和 <b>continue</b> 语句</h5>
+<blockquote>
+Microsoft JScript 提供了一个语句来停止执行循环。<a href="jsstmbreak.htm"><b>break</b></a> 语句可以用来在某些（特别）条件被满足时停止执行循环。<a href="jsstmcontinue.htm"><b>continue</b></a> 语句可以用来立即跳至下一次循环，即跳过余下的代码块并更新计数器变量，如 <b>for</b> 或 <b>for...in</b> 循环一样。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var theComment = "";
+var theRemainder = 0;
+var theEscape = 3;
+var checkMe = 27;
+for (kcount = 1; kcount &lt;= 10; kcount++) 
+{
+    theRemainder = checkMe % kcount;
+    if (theRemainder == theEscape)
+      {
+            break;  // 第一次遇到 remainder 等于 escape 时就从循环退出。
+}
+theComment = checkMe + " divided by " + kcount + " leaves a remainder of  " + theRemainder;
+}
+
+for (kcount = 1; kcount &lt;= 10; kcount++) 
+{
+   theRemainder = checkMe % kcount;
+   if (theRemainder != theEscape) 
+
+   {
+      continue;  // 只选择那些等于 escape 的 remainders，忽略其它。
+}
+// 使用选中的 remainders 的 JScript 代码。
+}
+
+var theMoments = "";
+var theCount = 42;  // 初始化计数器。
+while (theCount &gt;= 1)  {
+// if (theCount &lt; 10)  {  // 警告！
+// 这里使用 continue 将导致一个无限循环！。
+// continue;
+// }
+    if (theCount &gt; 1)  {
+        theMoments = "Only " + theCount + " moments left!";
+}
+    else  {
+        theMoments = "Only one moment left!";
+    }
+theCount--;  // 更新计数器。
+}
+theCount = "BLASTOFF!";
+</FONT></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

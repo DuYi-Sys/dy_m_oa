@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>BuildPath 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="BuildPath 方法">
+<META NAME="MS-HKWD" CONTENT="BuildPath">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+<META NAME="MS-HKWD" CONTENT="path">    
+
+<META NAME=MS-HAID CONTENT="jsFileSystemBuildPath"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="BuildPath method; BuildPath; FileSystemObject object; path">
+
+<META NAME="Description" CONTENT="BuildPath Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>BuildPath 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemBuildPathC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemBuildPathA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>在已存在路径后追加名称。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>BuildPath(</b><i>path</i>, <i>name</i><b>)</b><!> 
+
+<P><!><b>BuildPath</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>object<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>path<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>将被追加 <i>name</i> 的并存在的路径。<!> <!>路径可以是绝对的或相对的，同时不需要指定已有文件夹。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>name<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>被追加到已存在的 <i>path</i> 后的名称。<!>
+</FONT></TD></TR>
+
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>如果需要，<b>BuildPath</b> 方法会在已有路径和名称之间另外再插入一个路径分隔符。<!><P>
+
+<!>下面的例子说明了 <b>BuildPath</b> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function GetBuildPath(path)
+{
+  var fso, newpath;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  newpath = <font color="#FF0000">fso.BuildPath(</FONT>path, "New  Folder"<font color="#FF0000">)</FONT>;
+  return(newpath);
+}  
+</PRE></FONT></PRE></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

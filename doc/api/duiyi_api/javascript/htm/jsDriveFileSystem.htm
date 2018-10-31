@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>FileSystem 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="FileSystem 属性">
+<META NAME="MS-HKWD" CONTENT="FileSystem">
+<META NAME="MS-HKWD" CONTENT="文件系统">
+<META NAME="MS-HKWD" CONTENT="Drive 对象">        
+
+<META NAME=MS-HAID CONTENT="jsDriveFileSystem"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="FileSystem property; FileSystem; file systems; Drive object">
+
+<META NAME="Description" CONTENT="FileSystem Property">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>FileSystem 属性</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时错误</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3 </A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsDriveFileSystemC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsDriveFileSystemA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回指定驱动器所使用的文件系统的类型。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>object</i>.<b>FileSystem</b>
+
+<P>其中 <i>object</i> 总是一个 <b>Drive</b> 对象。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+可能的返回类型包括 FAT、NTFS、和 CDFS。
+
+<p>下面这段代码说明了 <b>FileSystem</b> 属性的用法：
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowFileSystemType(drvPath)
+{
+  var fso,d, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  d = fso.GetDrive(drvPath);
+  s = <font color="#FF0000">d.FileSystem</font>;
+  return(s);
+}</font></pre></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

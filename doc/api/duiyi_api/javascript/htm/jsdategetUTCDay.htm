@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>getUTCDay 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="getUTCDay 方法">
+<META NAME="MS-HKWD" CONTENT="getUTCDay">
+<META NAME="MS-HKWD" CONTENT="天">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="全球标准时间">
+<META NAME="MS-HKWD" CONTENT="UTC">
+<META NAME="MS-HKWD" CONTENT="getDay 方法">                     
+
+<META NAME=MS-HAID CONTENT="jsdategetUTCDay">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="">
+
+<META NAME="Description" CONTENT="getUTCDay Method">
+<META NAME="Keywords" CONTENT="getUTCDay method; getUTCDay; days; Date object; Universal Coordinated Time; UTC; getDay method">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>getUTCDay 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3 </A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsdategetUTCDayC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdategetUTCDayA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回 <b>Date</b> 对象中用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的一周中的日期值。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>objDate.</i><b>getUTCDay()</b> 
+
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+要获取用<a href="glossary.htm#deflocaltime">本地时间</a>表示的一周中的日期值，请使用 <b>getDate</b> 方法。<p>
+<B>getUTCDay</B> 方法的返回值是一个处于 0 到 6 之间的整数，它代表了一周中的某一天，返回值与一周中日期的对应关系如下：
+<blockquote>
+0 = 星期天<br>
+1 = 星期一<br>
+2 = 星期二<br>
+3 = 星期三<br>
+4 = 星期四<br>
+5 = 星期五<br>
+6 = 星期六<br>
+</blockquote>
+
+下面这个例子说明了 <B>getUTCDay</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function DateDemo()
+{
+  var d, day, x, s = "今天是 ";
+  var x = new Array("星期日", "星期一", "星期二");
+  x = x.concat("星期三","星期四", "星期五");
+  x = x.concat("星期六");
+  d = new Date();
+  day = <font color="#FF0000">d.getUTCDay()</FONT>;
+  return(s += x[day]);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

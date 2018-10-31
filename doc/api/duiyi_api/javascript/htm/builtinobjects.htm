@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>固有对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="内置对象">
+<META NAME="MS-HKWD" CONTENT="Array 对象">
+<META NAME="MS-HKWD" CONTENT="Boolean 对象">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="Function 对象">
+<META NAME="MS-HKWD" CONTENT="Global 对象">
+<META NAME="MS-HKWD" CONTENT="Math 对象">
+<META NAME="MS-HKWD" CONTENT="Number 对象">
+<META NAME="MS-HKWD" CONTENT="Object 对象">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="属性">
+<META NAME="MS-HKWD" CONTENT="方法">
+<META NAME="MS-HKWD" CONTENT="下标">
+<META NAME="MS-HKWD" CONTENT="new 运算符">
+<META NAME="MS-HKWD" CONTENT="Array 构造函数">
+<META NAME="MS-HKWD" CONTENT="length 属性">
+<META NAME="MS-HKWD" CONTENT="substring 方法">
+<META NAME="MS-HKWD" CONTENT="UTC">
+<META NAME="MS-HKWD" CONTENT="MAX_VALUE 属性">
+<META NAME="MS-HKWD" CONTENT="MIN_VALUE 属性">
+<META NAME="MS-HKWD" CONTENT="NaN 属性">
+<META NAME="MS-HKWD" CONTENT="POSITIVE_INFINITY 属性">
+<META NAME="MS-HKWD" CONTENT="NEGATIVE_INFINITY 属性">
+<META NAME="MS-HKWD" CONTENT="isNaN 函数">                                                                                         
+
+<META NAME=MS-HAID CONTENT="builtinobjects">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="JScript Intrinsic Objects">
+<META NAME="Keywords" CONTENT="JScript tutorial; intrinsic objects; built-in objects; Array object; Boolean object; Date object; Function object; Global object; Math object; Number object; Object object; String object; properties; methods; subscripts; new operator; Array constructor; length property; substring method; UTC; MAX_VALUE property; MIN_VALUE property; NaN property; POSITIVE_INFINITY property; NEGATIVE_INFINITY property; isNaN function">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>固有对象</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A>&nbsp;<br>&nbsp;<a href="objects.htm">上一个</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE><p>
+
+
+<HR class='9v'  NOSHADE>
+<P>
+<BLOCKQUOTE>
+Microsoft JScript 提供了九个固有（或称“内置”）对象。它们是 <b>Array</b>、<b>Boolean</b>、<b>Date</b>、<b>Function</b>、<b>Global</b>、<b>Math</b>、<b>Number</b>、<b>Object</b>和<b>String</b> 对象。 每个固有对象都有与之关联的方法和属性，这些方法和属性均在<a href="jstoc.htm">语言参考</a>中详细描述。 这里描述了几个对象。
+
+</blockquote>
+
+<h5>Array 对象</h5>
+<blockquote>
+在 JScript 中，对象作为数组处理，数组作为对象处理。数组的下标完全等价于对象的属性，可以按数字引用（如果对其指定了名称，则也可以按名称来引用）。要创建一个新数组，请使用 <b>new</b> 运算符和 <b>Array()</b> <a href="glossary.htm#defConstructor">构造函数</a>，如下例所示。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var theMonths = new Array(12)  {
+theMonths[0] = "一月";
+theMonths[1] = "二月";
+theMonths[2] = "三月";
+theMonths[3] = "四月";
+theMonths[4] = "五月";
+theMonths[5] = "六月";
+theMonths[6] = "七月";
+theMonths[7] = "八月";
+theMonths[8] = "九月";
+theMonths[9] = "十月";
+theMonths[10] = "十一月";
+theMonths[11] = "十二月";
+}
+</FONT></pre></BLOCKQUOTE>
+
+在使用 <b>Array</b> 关键字来创建数组时，JScript 在该数组中包括了一个只写的 <a href="jsarraylength.htm">length</a>  属性，用来记录数组中的项数。如果您没有指定一个数值，则 length 被设置为 0，且数组没有任何项。如果您指定了一个数值，则 length 被设置为该数值。如果您指定了多个参数，则这些参数将作为数组的项，并将参数的个数指定给 length 属性，如下例所示。该示例与上一节示例等价。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var theMonths = new Array("一月", "二月", "三月", "四月", "五月", "六月", 
+"七月", "八月", "九月", "十月", "十一月", "十二月");
+</FONT></pre></BLOCKQUOTE>
+
+对于使用 <b>Array</b> 关键字创建的数组，当给数组添加元素时，JScript 将自动更改 <b> length </b>的数值。
+</blockquote>
+<h5>String 对象</h5>
+<blockquote>
+在 JScript 中字符串是对象。这意味着在任何时候声明一个字符串变量或使用一个字符串文字，实际上就是创建一个新的字符串对象。<a href="jsobjstring.htm"><b>String</b></a> 对象有若干内置方法，您可以对该字符串使用这些方法。其中一个方法是 <a href="jsstringsubstring.htm"><b>substring</b></a> 方法，用于返回该字符串的一部分。该方法需要两个数字作为其参数。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >aString = "0123456789";
+var aChunk = aString.substring(4, 7);  // 将 aChunk 设置为 "456"。
+var aNotherChunk = aString.substring(7, 4);  // 将 aNotherChunk 设置为 "456"。
+
+// 使用前面的 Array 创建示例：
+firstLetter = theMonths [5].substring(0,1);  // 将 firstLetter 变量设置为 "J"。
+</FONT></pre></BLOCKQUOTE>
+
+<b>String</b> 对象的另一个属性是 <a href="jsstringlength.htm"><b>length</b></a> 属性。该属性包含该字符串中的字符个数，如果是空字符串则该属性为 0。这是一个数值型数值，并可以在计算中直接使用。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var howLong = "Hello World".length  // 将 howLong 变量设置为 11。
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>Math 对象</h5>
+<blockquote>
+<a href="jsobjmath.htm"><b>Math</b></a> 对象有许多属性和方法，全部都是预定义的。这些属性都是特定数值。其中一个是 pi 的值（近似为 3.14159...）。下面就是 <b>Math.PI</b> 属性的示例。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >//  radius 变量已经声明并赋值。
+var circleArea = Math.PI * radius * radius;  // 注意 Math 和 PI 的大写。
+</FONT></pre></BLOCKQUOTE>
+
+<b>Math</b> 对象的内置方法之一是求幂，即  <a  href="jsmathpow.htm"><b>pow</b></a> 方法，求一个数的指定幂次。下例使用了 pi 属性和求幂方法。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >// 该公式计算给定半径的球体的体积。
+volume = (4/3)*(Math.PI*Math.pow(radius,3));
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>Date 对象</h5>
+<blockquote>
+使用 <a href="jsobjdate.htm"><b>Date</b></a> 对象可获得当天的日期，并计算日期之间的间隔。该对象有许多属性和方法，都是预定义的。通常， <b>Date</b> 对象提供了星期几、月、日、年；以及包括时、分、秒的时间信息。该信息以从 1970 年 1 月 1 日 00:00:00.000 GMT 以来的毫秒数为基准。GMT 代表“格林尼治标准时间”；更标准的术语是 UTC 或曰“全球标准时间”，这是由世界时间标准组织（World Time Standard）发布的符号。<p>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR><P><TD VALIGN=TOP><FONT class='9v' >
+
+<b>注意</b>&nbsp;&nbsp;就 JScript 而言，时间是从 1970 年 1 月 1日的午夜开始的，您不能让 JScript 创建一个 <b>Date</b> 对象来表示在此之前的时间。如果需要处理更早的时间，您必须自己编写代码实现，这可是一个艰巨的任务。
+</FONT></TD></TR><P><TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE><p>
+
+要创建一个新的 <b>Date</b> 对象，您可以使用 <a href="jsoprnew.htm"><b>new</b></a> 运算符。下面的示例计算今年已经过去的天数和还剩下的天数。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >/*
+该示例使用了前面定义的月份数组。第一个语句将今天的日期指定给 thisIsToday，其格式为 "周工作日 月份 日 00:00:00 年份"。
+*/
+var thisIsToday = new Date();
+
+var toDay = new Date();  // 获取今天的日期。
+
+// 提取年、月、日信息。
+var thisYear = toDay.getYear() + 1900;
+var thisMonth = theMonths[toDay.getMonth()];
+var thisDay = thisMonth  + " " + toDay.getDate() + "," + (parseInt(toDay.getYear()) + 1900);
+
+// 确定从开始以来的天数 #。
+thisDay = Math.round(Date.parse(thisDay)/8.64e7);
+
+// 对今年的第一天采取同样的操作。
+var firstDay = "Jan 1, " + thisYear;
+firstDay = Math.floor(Date.parse(firstDay)/8.64e7); 
+
+// 对今年的最后一天在此采取同样的操作，以防止闰年。
+var lastDay = "Dec 31, " + thisYear;
+lastDay = Math.floor(Date.parse(lastDay)/8.64e7);
+
+// 计算这一年的天数。
+var daysInYear = (lastDay - firstDay) + 1;
+
+// 确定已过去多少天，还剩下多少天。
+var daysElapsed = thisDay - firstDay;
+var daysLeft = daysInYear - daysElapsed; 
+
+// 对普遍情况建立评论。
+var comment1 = "今年已过去 " + daysElapsed+ " 天。";
+var comment2 = "这意味着在 " + "thisYear" + " 还有 " + daysLeft + " 天。";
+
+// 包含特殊情况：一年的开始&结束，以及只剩一天。
+if (daysElapsed == 0)  {
+comment1 = "今天是 " + thisYear + " 的 1 月 1 日。";
+}
+if (daysElapsed == 1) {
+comment1 = "只过去了一天。";
+}
+if(daysElapsed == daysInYear) {
+comment1 = thisYear + " 快要结束了。";
+}
+
+if (daysLeft == 0)  {
+comment2 = "新年最诚挚的祝福！";
+}
+if (daysLeft == 1)  {
+comment2 = thisYear + "只剩下一天了。";
+}
+if (daysLeft == daysInYear)  {
+comment2 = "新年快乐！";
+}
+</FONT></pre></BLOCKQUOTE>
+</blockquote>
+<h5>Number 对象</h5>
+<blockquote>
+除了在 <b>Math</b> 对象中可用的特定数值属性（例如 <b>PI</b> ）之外，在  Microsoft JScript 中还可以由 <b>Number</b> 对象得到若干其他属性。
+<p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0><TR>
+<TD BGCOLOR="#DDDDDD" COLSPAN=1><FONT class='9v' ><B>属性</B></FONT></TD><TD BGCOLOR="#DDDDDD" COLSPAN=1><FONT class='9v' ><B>描述</B></FONT></TD>
+</TR>
+<TR>
+        <TD><FONT class='9v' >MAX_VALUE</FONT></TD><TD><FONT class='9v' >最大的可能数值，大约为
+1.79E+308； 可以是正数也可以是负数。（对不同的系统这个数值有稍许变化。）<p></FONT></TD>
+      </TR>
+<TR VALIGN=TOP>
+        <TD><FONT class='9v' >MIN_VALUE</FONT></TD><TD><FONT class='9v' >最小的可能数值，大约为 2.22E-308；可以是正数也可以是负数。（对不同的系统这个数值有稍许变化。）</FONT></TD>
+      </TR>
+<TR VALIGN=TOP>
+        <TD><FONT class='9v' >NaN</FONT></TD><TD><FONT class='9v' >专用的非数值型取值，“不是一个数。”</FONT></TD>
+      </TR>
+<TR VALIGN=TOP>
+        <TD><FONT class='9v' >POSITIVE_INFINITY</FONT></TD><TD><FONT class='9v' >任何比 Number.MAX_VALUE 大的正数<br>都将自动转换为这个值；用 "Inf" 表示。</FONT></TD>
+      </TR>
+<TR VALIGN=TOP>
+        <TD><FONT class='9v' >NEGATIVE_INFINITY</FONT></TD><TD><FONT class='9v' >任何比 -Number.MAX_VALUE 更小的负数<br>都将自动转换为这个值；用 "-Inf" 表示。</FONT></TD>
+      </TR>
+</TABLE>
+
+<P>
+
+<b>Number.NaN</b> 是一个特别的属性，被定义为“不是一个数”。例如，除零操作将返回 <b>NaN</b>。对一个不能解释为数值的字符串进行转换也将返回  <b>Number.NaN</b>。<b>NaN</b> 不等于任何数值，也不等于它本身。如果要对 <b>NaN</b> 结果进行测试，请不要对 <b>Number.NaN</b> 进行比较；而应使用 <b>isNaN()</b> 函数。
+</blockquote>
+
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

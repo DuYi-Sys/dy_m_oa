@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>GetAbsolutePathName 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="GetAbsolutePathName 方法">
+<META NAME="MS-HKWD" CONTENT="GetAbsolutePathName">
+<META NAME="MS-HKWD" CONTENT="绝对路径">
+<META NAME="MS-HKWD" CONTENT="paths">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">       
+
+<META NAME=MS-HAID CONTENT="jsFileSystemGetAbsolutePathName"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="GetAbsolutePathName method; GetAbsolutePathName; absolute path; paths; FileSystemObject object">
+
+<META NAME="Description" CONTENT="GetAbsolutePathName Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>GetAbsolutePathName 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemGetAbsolutePathNameC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemGetAbsolutePathNameA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>根据提供的路径说明返回明确完整的路径。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>GetAbsolutePathName(</b><i>pathspec</i><b>)</b><!> 
+
+<P><!><b>GetAbsolutePathName</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<tr valign=top><td><font class='9v' ><!>object<!></font></td>
+<td><font class='9v' ><!>必需<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></FONT></TD></TR>
+<tr valign=top><td><font class='9v' ><!>pathspec<!></font></td>
+<TD><FONT class='9v' ><!>必选项。<!> <!>要变为明确完整路径的路径说明<!></font></td></tr>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>如果路径提供了从指定驱动器的根开始的完整的引用，那么它就是明确和完整的。<!> <!>如果路径指定的是映射驱动器的根文件夹，那么完整的路径将只能由一个路径分隔符 (\) 结束。<!><p>
+
+<!>假设当前目录是 c:\mydocuments\reports ，下表说明了 <b>GetAbsolutePathName</b> 方法的操作。<!><p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>pathspec<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>返回的路径<!></b></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>"c:"<!></FONT></TD>
+<TD><FONT class='9v' ><!>"c:\mydocuments\reports"<!></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>"c:.."<!></FONT></TD>
+<TD><FONT class='9v' ><!>"c:\mydocuments"<!></FONT></td></tr>
+<tr valign=top><td><font class='9v' ><!>"c:\\"<!></font></td>
+<td><font class='9v' ><!>"c:\"<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>"c:*.*\\may97"<!></font></td>
+<td><font class='9v' ><!>"c:\mydocuments\reports\*.*\may97"<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>"region1"<!></font></td>
+<td><font class='9v' ><!>"c:\mydocuments\reports\region1"<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>"c:\\..\\..\\mydocuments"<!></font></td>
+<td><font class='9v' ><!>"c:\mydocuments"<!></font></td></tr>
+</TABLE><P>
+
+<!>下面的例子说明了 <B>GetAbsolutePathName</B> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function ShowAbsolutePath(path)
+{
+  var fso, s= "";
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  s += <font color="#FF0000">fso.GetAbsolutePathName(</FONT>path<font color="#FF0000">)</FONT>;
+  return(s);
+}
+
+</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

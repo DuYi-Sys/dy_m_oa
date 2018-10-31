@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>JScript 的数据类型</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="数据类型">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="号码">
+<META NAME="MS-HKWD" CONTENT="Boolean">
+<META NAME="MS-HKWD" CONTENT="未定义">
+<META NAME="MS-HKWD" CONTENT="Null">          
+
+<META NAME=MS-HAID CONTENT="datatype">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="JScript Data Types">
+<META NAME="Keywords" CONTENT="JScript tutorial; data types; strings; objects; string; object; number; Boolean; undefined; null">
+
+</HEAD>
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>JScript 的数据类型</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><br><a href="declare.htm">上一页</A><br><a href="jsoperators.htm">下一页</A><P></FONT>
+
+
+</TD></TR>
+</TABLE><p>
+
+
+<hr noshade class='9v' >
+
+
+
+<h5>JScript 的数据类型有哪些？</h5>
+<blockquote>
+Microsoft JScript 有六种数据类型。主要的类型有 number、string、object 以及 Boolean 类型。其他两种类型为 <b>null</b> 和 <a href="glossary.htm#defundefined"><b>undefined</b></a>。</blockquote>.
+
+<h5>String 数据类型</h5>
+<blockquote>
+字符串是用单引号或双引号来说明的。（使用单引号来输入包含引号的字符串。）一个字符串也是 JScript 中的一个对象，不过是个特殊情形，有专门的属性。下面是字符串的示例：
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >"The cow jumped over the moon." 
+'"Avast, ye lubbers!" roared the technician.' 
+"42"
+</FONT></pre></BLOCKQUOTE>
+字符串可以包括零个或多个统一编码的字符。如果包含零个字符，则成为零长度字符串 ("")。
+</blockquote>
+
+<h5>数值数据类型</h5>
+
+<blockquote>
+JScript 支持整数和浮点数。整数可以为正数、0 或者负数；浮点数可以包含小数点、也可以包含一个 "e"（大小写均可，在科学记数法中表示“10的幂”）、或者同时包含这两项。这些数遵循数值表示的 IEEE 754 标准。最后，还有一些特殊的数值：
+<UL>
+<LI><B>NaN</b>，即不是一个数
+<LI>正无穷
+<LI>负无穷
+<LI>正数 0
+<LI>负数 0 
+</UL>
+
+整数可以以 10 （十进制）、8 （八进制）和 16 （十六进制）作为基数来表示。<p>
+
+八进制整数用一个前导 "0" 指明，并可以包含从 0 到 7 的数字。如果某个数字有一个前导 "0" 但是又包含数字 "8"和/或 "9"，则该数字是一个十进制数。如果一个应该为八进制的数中包含了字母 "e" (或 "E") 将会产生一个错误。<p>
+
+十六进制("hex") 整数用前导 "0x" 指明（其中的 "X" 大小写均可），并且可以包含从 0 到 9 的数字以及从 A 到 F 的字符（字母的大小写均可）。字母 "e" 在十六进制记数法中是一个允许的数字，但并不是表示这是一个指数。字母 A 到 F 是作为单个的数字，用来表示以 10 为基数的 10 到 15 这些数。也就是说，0xF 等于 15，而 0x10 就等于 16。<p>
+
+八进制数和十六进制数可以是负数，但不能是小数。一个以单个 "0" 开头并包含一个小数点的数是一个十进制的浮点数；如果一个数以 "0x" 或 "00"开头并包含一个小数点，则该小数点右边的任何数都将被忽略。<p>
+一些示例：
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >.0001, 0.0001, 1e-4, 1.0e-4  // 四个浮点数，它们互等。
+3.45e2                       // 一个浮点数，等于 345。
+42                           // 一个整数。
+0377                         // 一个八进制整数，等于255。
+00.0001                      // 由于八进制数不能有小数部分，因此这个数等于 0。
+0378                         // 一个整数，等于 378。
+0Xff                         // 一个十六进制整数，等于 255。
+0x37CF                       // 一个十六进制整数，等于 14287。
+0x3e7                        // 一个十六进制整数，等于 999。
+0x3.45e2                     // 由于十六进制数不能有小数部分，因此这个数等于 3。
+</FONT></pre></BLOCKQUOTE>
+</blockquote>
+<h5>Boolean 类型</h5>
+<blockquote>
+可能的 Boolean 值有 <b>true</b> 和 <b>false</b>。这是两个特殊值，不能用作 1 和 0。<P>
+
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR><P><TD VALIGN=TOP><FONT class='9v' >
+<p><b>注意</b>&nbsp;&nbsp;在比较中，任何等于 0 的表达式被视为 false，而任何不等于 0 的语句都被视为 true。对下面的表达式求值将得到 true：
+</FONT></TD></TR>
+<P><TR><TD COLSPAN=2 VALIGN=TOP>
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >
+(false == 0)</FONT></pre></BLOCKQUOTE>
+<hr noshade class='9v' ></TD></TR></TABLE><P>
+有关比较的详细信息，请参阅<a href="conditionals.htm">控制程序的流程</a>。
+
+
+</BLOCKQUOTE>
+<H5>Undefined 数据类型</H5>
+<BLOCKQUOTE>
+一个为 undefined 的值就是指在变量被创建后，但未给该变量赋值以前所具有的值。</BLOCKQUOTE>
+<H5>Null 数据类型</H5>
+<BLOCKQUOTE><B>null</b> 值就是没有任何值，什么也不表示。
+</BLOCKQUOTE>
+
+
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

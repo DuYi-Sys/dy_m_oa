@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>setMilliseconds 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="setMilliSeconds 方法">
+<META NAME="MS-HKWD" CONTENT="setMilliSeconds">
+<META NAME="MS-HKWD" CONTENT="本地时间">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="毫秒">
+<META NAME="MS-HKWD" CONTENT="setutcMilliSeconds 方法">
+<META NAME="MS-HKWD" CONTENT="getMilliSeconds 方法">                 
+
+<META NAME=MS-HAID CONTENT="jsdatesetMilliseconds">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="setMilliseconds Method">
+<META NAME="Keywords" CONTENT="setMilliseconds method; setMilliseconds; local time; Date object; milliseconds; setUTCMilliseconds method; getMilliseconds method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>setMilliseconds 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdatesetMillisecondsC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdatesetMillisecondsA.htm">应用于</a></font>
+<hr noshade class='9v' >
+<FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE>设置 <b>Date</b> 对象中用<a href="glossary.htm#deflocaltime">本地时间</a>表示的毫秒值。
+</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>objDate.</i><b>setMilliseconds(</b><i>numMilli</i><b>)</b>
+
+<P>其中 <i>numMilli</i> 参数是一个等于毫秒值的数值。</BLOCKQUOTE>
+
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+如果没有指定可选项，那么所有使用可选项的 <b>set</b> 方法都将使用从相应的  <b>get</b> 方法返回的数值作为可选项的数值。例如，如果 <i>numMonth</i> 参数是可选的，但是没有被指定，JScript 将使用从 <b>getMonth</b> 方法返回的值作为该参数的值。
+<p>要设置用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的毫秒值，请使用 <b>setUTCMilliseconds</b> 方法。
+<p>如果 <i>numMilli</i> 的值大于 999 或者是负数，所保存的秒钟数 (以及分钟，小时，等等，如果需要的话) 将增加适当的数量。<P>
+
+下面这个例子说明了 <B>setMilliseconds</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function SetMSecDemo(nmsec)
+{  
+  var d, s;
+  var sep = ":";
+  d = new Date();
+  <font color="#FF0000">d.setMilliseconds(</FONT>nmsec<font color="#FF0000">)</FONT>;
+  s = "Current setting is ";
+  s += d.toLocaleString() + sep + d.getMilliseconds();
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

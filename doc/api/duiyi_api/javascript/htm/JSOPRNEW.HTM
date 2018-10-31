@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>new 运算符</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="new 运算符">
+<META NAME="MS-HKWD" CONTENT="new">
+<META NAME="MS-HKWD" CONTENT="创建对象">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="构造函数">
+<META NAME="MS-HKWD" CONTENT="this 语句">                    
+
+<META NAME=MS-HAID CONTENT="jsoprnew">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="new Operator">
+<META NAME="Keywords" CONTENT="new operator; new; creating objects; operators; constructors; this statement">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>new 运算符</B></FONT><br>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsoprnewC.htm">请参阅</a></font>
+ 
+
+<hr noshade class='9v' >
+<h5>描述</h5>
+<blockquote>创建一个新对象。
+</blockquote>
+<h5>语法</h5>
+<blockquote><p><b>new</b> <i>constructor</i>[<b>(</b><i>arguments</i><b>)</b>]
+<p><i>constructor</i> 参数调用对象的<a href="glossary.htm#defConstructor">构造函数</a>。如果构造函数没有参数，则可以省略圆括号。
+</blockquote>
+
+<h5>说明</h5>
+<blockquote><b>new</b> 运算符执行下面的任务：
+<ol>
+<li>创建一个没有成员的对象。
+<li>为那个对象调用构造函数，传递一个指针给新创建的对象作为 <b>this</b> 指针。</ol>
+然后构造函数根据传递给它的参数初始化该对象。
+<p>
+下面这些是有效的 <b>new</b> 运算符的用法例子：
+<blockquote><pre><FONT face=" 宋体" class='9v' >my_object = <FONT COLOR="#FF0000">new</font> Object;
+my_array = <FONT COLOR="#FF0000">new</font> Array();
+my_date = <FONT COLOR="#FF0000">new</font> Date("Jan 5 1996");
+</font></pre></blockquote>
+</blockquote>
+
+<hr noshade class='9v' >
+
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

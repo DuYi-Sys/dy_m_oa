@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>exec 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="exec 方法">
+<META NAME="MS-HKWD" CONTENT="exec">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="字符串匹配">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="变量">
+<META NAME="MS-HKWD" CONTENT="文字">
+<META NAME="MS-HKWD" CONTENT="RegExp 对象">                               
+
+<META NAME=MS-HAID CONTENT="jsregexpressexec">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="exec Method">
+<META NAME="Keywords" CONTENT="exec method; exec; Reguar Expression object; matching strings; strings; arrays; variables; literals; RegExp object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>exec 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsregexpressexecC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsregexpressexecA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>在指定字符串中运行查找来获得匹配。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>rgexp</i>.<b>exec(</b><i>str</i><b>)</b>
+
+<P><b>exec</b> 方法的语法组成部分如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<TD><FONT class='9v' ><i>rgexp</i></FONT></TD>
+<TD><FONT class='9v' >必选项。<b>正则表达式</b> 对象。可以是变量名或文字。</FONT></TD></TR>
+<TR VALIGN=TOP >
+<TD><FONT class='9v' ><i>str</i></FONT></TD>
+<TD><FONT class='9v' >必选项。要执行查找的字符串。</FONT></TD></TR>
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>exec</b> 方法查找的结果被放在一个数组中。
+<p>
+如果 <b>exec</b> 方法没有找到匹配，则它返回 <b>null</b>。如果它找到一个或多个匹配，则 <b>exec</b> 方法返回一个数组，并且更新 <b>RegExp</b> 对象，来反映查找结果。<P>
+
+下面的例子举例说明了 <B>exec</B> 方法的用法：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function ExecDemo()
+{
+  var s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"
+  var r = new RegExp("g", "i");
+  var a = <font color="#FF0000">r.exec(</FONT>s<font color="#FF0000">)</FONT>;
+  document.write(a);
+  r.compile("g");
+  var a = <font color="#FF0000">r.exec(</FONT>s<font color="#FF0000">)</FONT>;
+  document.write(a);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

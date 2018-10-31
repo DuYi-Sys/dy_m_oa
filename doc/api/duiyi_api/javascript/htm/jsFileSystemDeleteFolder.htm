@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>DeleteFolder 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="DeleteFolder 方法">
+<META NAME="MS-HKWD" CONTENT="DeleteFolder">
+<META NAME="MS-HKWD" CONTENT="文件夹删除">
+<META NAME="MS-HKWD" CONTENT="folders">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">        
+
+<META NAME=MS-HAID CONTENT="jsFileSystemDeleteFolder"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="DeleteFolder method; DeleteFolder; deleting folders; folders; FileSystemObject object">
+
+<META NAME="Description" CONTENT="DeleteFolder Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>DeleteFolder 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemDeleteFolderC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemDeleteFolderA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>删除指定的文件夹及其内容。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>DeleteFolder (</b> <i>folderspec</i>[, <i>force</i>] <b>);</b><!>
+
+<P><!><b>DeleteFolder</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>object<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>folderspec<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>要删除的文件夹的名称。<!> <!><i>folderspec</i> 可以在最后的路径成分中包含通配字符。<!></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>force<!></FONT></TD>
+<TD><FONT class='9v' ><!>可选项。<!> <!> Boolean 值，如果要删除设置了只读属性的文件夹，则为 <b>true</b> ；否则为 <b>false</b> （默认）。<!></FONT></TD></TR>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!><b>DeleteFolder</b> 方法不区分文件夹是否包含了内容。<!> <!>删除指定的文件夹时不考虑其中是否有内容。<!>
+
+<p><!>如果找不到匹配的文件夹则出错。<!> <!><b>DeleteFolder</b> 方法在遇到第一个错误时终止。<!> <!>出错后不试图回滚或撤消出错前做的修改。<!><P>
+
+<!>下面的例子说明了 <B>DeleteFolder</B> 方法的用法:<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function DeleteFolder(folderspec)
+{
+  var fso;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  <font color="#FF0000">fso.DeleteFolder(</FONT>folderspec<font color="#FF0000">)</FONT>;
+}
+</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

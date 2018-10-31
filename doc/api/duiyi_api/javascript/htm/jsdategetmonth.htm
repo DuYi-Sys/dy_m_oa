@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>getMonth 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="getMonth 方法">
+<META NAME="MS-HKWD" CONTENT="getMonth">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="月">
+<META NAME="MS-HKWD" CONTENT="本地时间">
+<META NAME="MS-HKWD" CONTENT="getUTCMonth 方法">           
+
+<META NAME=MS-HAID CONTENT="jsdategetmonth">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="getMonth Method">
+<META NAME="Keywords" CONTENT="getMonth method; getMonth; Date object; months; local time; getUTCMonth method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>getMonth 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdategetmonthC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdategetmonthA.htm">应用于</a></font>
+<hr noshade class='9v' ><FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回 <b>Date</b> 对象中用<a href="glossary.htm#deflocaltime">本地时间</a>表示的月份值。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE>
+<i>objDate</i><b>.getMonth()</b>
+
+</blockquote>
+
+<H5>说明</H5>
+<BLOCKQUOTE>要获取用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的月份值，请使用 <b>getUTCMonth</b> 方法。
+<p><b>getMonth</b> 方法返回一个处于 0 到 11 之间的整数，它代表 <b>Date</b> 对象中的月份值。这个整数并不等于按照惯例来表示月份的数字，而是要比按惯例表示的值小 1。如果一个 <b>Date</b> 对象中保存的时间值是 "Jan 5, 1996 08:47:00"，那么 <b>getMonth</b> 方法就会返回 0。<P>
+
+下面这个例子说明了 <B>getMonth</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function DateDemo()
+{
+  var d, s = "今天日期是: ";
+  d = new Date();
+  s += (<font color="#FF0000">d.getMonth()</FONT> + 1) + "/";
+  s += d.getDate() + "/";
+  s += d.getYear();
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

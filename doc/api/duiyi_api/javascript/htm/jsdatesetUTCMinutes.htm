@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>setUTCMinutes 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="setUTCMinutes 方法">
+<META NAME="MS-HKWD" CONTENT="setUTCMinutes">
+<META NAME="MS-HKWD" CONTENT="setMinutes 方法">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="分钟">
+<META NAME="MS-HKWD" CONTENT="全球标准时间">
+<META NAME="MS-HKWD" CONTENT="UTC">
+<META NAME="MS-HKWD" CONTENT="getUTCMinutes 方法">                        
+
+<META NAME=MS-HAID CONTENT="jsdatesetUTCMinutes">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="setUTCMinutes Method">
+<META NAME="Keywords" CONTENT="setUTCMinutes method; setUTCMinutes; setMinutes method; Date object; minutes; Universal Coordinated Time; UTC; getUTCMinutes method">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>setUTCMinutes 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3 </A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsdatesetUTCMinutesC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdatesetUTCMinutesA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>设置 <b>Date</b> 对象中用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的分钟值。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>objDate</i>.<b>setUTCMinutes(</b><i>numMinutes</i>[<b>,</b> <i>numSeconds</i>[<b>,</b> <i>numMilli</i>]]<b>)</b>
+
+<P><b>setUTCMinutes</b> 方法的语法包括下面这些部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><font class='9v' ><i>numMinutes</i></font></td>
+<td><font class='9v' >必选项。等于分钟值的数值。</font></td></tr>
+<tr valign=top>
+<td><font class='9v' ><i>numSeconds</i></font></td>
+<td><font class='9v' >可选项。等于秒钟值的数值。如果使用了 <i>numMilli</i> 参数，那么此参数也必须提供。</font></td></tr>
+<tr valign=top>
+<td><font class='9v' ><i>numMilli</i></font></td>
+<td><font class='9v' >可选项。等于毫秒值的数值。</font></td></tr>
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+如果没有指定可选项，那么所有使用可选项的 <b>set</b> 方法都将使用从相应的  <b>get</b> 方法返回的数值作为可选项的数值。例如，如果 <i>numMonth</i> 参数是可选的，但是没有被指定，JScript 将使用从 <b>getMonth</b> 方法返回的值作为该参数的值。
+
+<p>要将分钟值修改为用<a href="glossary.htm#deflocaltime">本地时间</a>表示的形式，请使用 <b>setMinutes</b> 方法。<p>
+如果参数的的值超出其范围或者是负数，其他被保存的值都将相应地得到修改。例如，如果所保存的日期是 "Jan 5, 1996 00:00:00"，且调用了<b>setUTCMinutes(70)</b>方法，那么日期将被改变为 "Jan 5, 1996 01:10:00.00."<P>
+
+下面这个例子说明了 <B>setUTCMinutes</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function SetUTCMinutesDemo(nmin, nsec)
+{  
+  var d, s;
+  var sep = ":";
+  d = new Date();
+  <font color="#FF0000">d.setUTCMinutes(</FONT>nmin<font color="#FF0000">,</FONT>nsec<font color="#FF0000">)</FONT>;
+  s = "Current setting is " + d.toUTCString() 
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

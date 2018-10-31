@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<TITLE>编写 JScript 代码</TITLE>
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="语句">
+<META NAME="MS-HKWD" CONTENT="表达式">
+<META NAME="MS-HKWD" CONTENT="注释">
+<META NAME="MS-HKWD" CONTENT="单行注解">
+<META NAME="MS-HKWD" CONTENT="多行注解">
+<META NAME="MS-HKWD" CONTENT="变量">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="赋值运算符">
+<META NAME="MS-HKWD" CONTENT="赋值运算符">                                                            
+
+<META NAME=MS-HAID CONTENT="statement">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Writing JScript Code">
+<META NAME="Keywords" CONTENT="JScript tutorial; statements; expressions; comments; single-line comments; multiline comments; variables; strings; assignment operator; assigning values">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>编写 JScript 代码</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><BR><a href="about.htm">上一页</A><br><a href="declare.htm">下一页</A><P></FONT>
+
+
+</TD></TR>
+</TABLE><p>
+
+
+<HR class='9v'  NOSHADE>
+
+<blockquote>
+与其他许多编程语言一样， Microsoft JScript 是用文本方式编写的，并被组织成为语句、由相关的语句集组成的块、以及注释。在一条语句内可以使用<a href="glossary.htm#defVariable">变量</a>、比如字符串和数字的立即数、以及表达式。
+
+</blockquote>
+<H5>语句</H5>
+<blockquote>
+JScript 的代码<b>语句</b>由一行中的一个或多个项和符号组成。每行开始一条新的语句，不过显式地终止语句是一个好方法。可以用分号 (;)来实现，分号是 JScript 的终止字符。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >aBird = "Robin";
+var today = new Date();
+</FONT></pre></BLOCKQUOTE>
+
+用大括号括起来的一组 JScript 语句称为一个语句块。例如，在函数和条件语句中常使用语句块。<P>
+
+在下面的示例中，第一条语句是一个函数定义的开始，该定义由一个五条语句的语句块组成。最后三条语句没有用大括号围起来，因此不是语句块，也不是该函数定义的一部分。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >function convert(inches)  {
+    feet = inches / 12;  //  这五条语句属于一个语句块。
+    miles = feet / 5280;
+    nauticalMiles = feet / 6080;
+    cm = inches * 2.54;
+    meters = inches / 39.37;
+}
+km = meters / 1000;  //  这三条语句不在语句块内。
+kradius = km;
+mradius = miles;
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>注释</h5>
+<blockquote>
+单行的 JScript 注释以一对正斜杠(//)开始。多行注释以一个正斜杠加一个星号的组合(/*)开始,并以其逆向顺序 (*/)结束。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >aGoodIdea = "Comment your code thoroughly.";  //  这是一个单行注释。
+
+/*
+这是一个用来解释前面的代码语句的多行注释。
+
+该语句将一个值赋给 aGoodIdea 变量。用引号包含的这种值称为一个文字。文字显式并直接包含信息；而不是简接地引用信息。（引号不属于该文字的内容。）
+*/
+
+//  这是另一种多行注释，写成一系列单行注释。
+//  在执行完该语句后，可以使用 aGoodIdea 变量的名字来引用其内容，
+//  如下一条语句那样，即采用连接操作将字符串文字添加到
+//  aGoodIdea 变量，以创建一个新的变量。
+
+var extendedIdea = aGoodIdea + " You never know when you'll have to figure out what it does.";
+</FONT></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<H5>赋值和等式</H5>
+<BLOCKQUOTE>
+
+JScript 中使用等于号 (=)来表示赋值操作。也就是说，JScript 代码语句可以写成
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >anInteger = 3;
+</FONT></pre></BLOCKQUOTE>
+
+这表示“将 3 赋给变量 anInteger”或“anInteger 的值为 3”。在比较两个值是否相等时，应使用一对等于号 (==)。这些内容将在 <a href="conditionals.htm">控制程序的流程</a> 中详细介绍。
+
+
+</BLOCKQUOTE>
+<H5>表达式</H5>
+<BLOCKQUOTE>
+
+JScript 表达式是指那些可以作为 <a href="glossary.htm#defBoolean">Boolean</a> 或
+<a href="glossary.htm#defNumericExpression">数值表达式</a> 的部分。表达式包括 "+" 这种类似的符号字符，而不是类似于“与...相加”这样的词汇。任何值、变量、运算符、以及表达式的合法组合都可以构成一个表达式。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var anExpression = "3 * (4 / 5)";
+var aSecondExpression = "Math.PI * radius * 2";
+var aThirdExpression = aSecondExpression + "%" + anExpression;
+var aFourthExpression = "(" + aSecondExpression + ") % (" + anExpression + ")";
+</FONT></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

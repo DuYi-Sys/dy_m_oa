@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>match 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="match 方法">
+<META NAME="MS-HKWD" CONTENT="match">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="exec 方法">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="RegExp 对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="MS-HKWD" CONTENT="字符串匹配">                                    
+
+<META NAME=MS-HAID CONTENT="jsstringmatch">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="match Method">
+<META NAME="Keywords" CONTENT="match method; match; String object; Regular Expression object; strings; exec method; arrays; RegExp object; regular expressions; matching strings">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>match 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstringmatchC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringmatchA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>使用<b>正则表达式</b>对象对字符串进行查找，并将结果作为数组返回。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>stringObj</i>.<b>match(</b><i>rgExp</i><b>)</b> <br>
+
+<P><b>match</b> 方法的语法包括下述部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+
+<tr valign=top>
+<td><FONT class='9v' ><i>stringObj</i></font></td>
+<td><FONT class='9v' >必选项。对其进行查找的 <b>String</b> 对象或文字。</font></td>
+</tr>
+<tr valign=top>
+<td><FONT class='9v' ><i>rgExp</i></font></td>
+<td><FONT class='9v' >必选项。在查找中使用的正则表达式。</font></td>
+</tr>
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>match</b> 方法与 <b>exec</b> 方法有些相似，将返回一个数组。该数组的元素 0 包含最后匹配的字符，元素 1...<i>n</i> 包含与正则表达式中任何用插入符分开的子字符串匹配的内容。<p>
+该方法将更新 <b>RegExp</b> 对象的内容。<P>
+
+下面的示例演示了<B>match</B> 方法的用法：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function MatchDemo()
+{
+  var r, re;
+  var s = "The quick brown fox jumped over the lazy yellow dog.";
+  re = /fox/i;
+  r = <font color="#FF0000">s.match(</FONT>re<font color="#FF0000">)</FONT>;
+  return(r);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

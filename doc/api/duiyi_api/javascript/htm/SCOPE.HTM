@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>变量范围</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="全局范围">
+<META NAME="MS-HKWD" CONTENT="局部范围">
+<META NAME="MS-HKWD" CONTENT="变量声明">
+<META NAME="MS-HKWD" CONTENT="全局变量">
+<META NAME="MS-HKWD" CONTENT="局部变量">
+<META NAME="MS-HKWD" CONTENT="undefined">                                   
+
+<META NAME=MS-HAID CONTENT="scope">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Variable Scope">
+<META NAME="Keywords" CONTENT="JScript tutorial; global scope; local scope; declaring variables; global variables; local variables; undefined">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>变量范围</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><br><a href="recurse.htm">上一页</A><br><a href="valref.htm">下一页</A><P></FONT>
+</TD></TR>
+</TABLE><p>
+
+
+<hr noshade class='9v' >
+<BLOCKQUOTE>
+<p>
+Microsoft JScript 有两种变量范围：全局和局部。如果在任何函数定义之外声明了一个 <a href="glossary.htm#defVariable">变量</a> ，则该变量为全局变量，且该变量的值在整个持续范围内都可以访问和修改。如果在函数定义内声明了一个变量，则该变量为局部变量。每次执行该函数时都会创建和破坏该变量；且它不能被该函数外的任何事物访问。<p>
+
+一个局部变量的名称可以与某个全局变量的名称相同，但这是完全不同和独立的两个变量。因此，更改一个变量的值不会影响另一个变量的值。在声明局部变量的函数内，只有该局部变量有意义。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var aCentaur = "a horse with rider,";  // aCentaur 的全局定义。
+
+// JScript 代码，为简洁起见有省略。
+function antiquities()  // 在这个函数中声明了一个局部 aCentaur 变量。
+{
+
+// JScript 代码，为简洁起见有省略。
+var aCentaur = "A centaur is probably a mounted Scythian warrior";
+
+// JScript 代码，为简洁起见有省略。
+  aCentaur += ", misreported; that is, ";  // 添加到局部变量。
+
+// JScript 代码，为简洁起见有省略。
+}  // 函数结束。
+
+var nothinginparticular = antiquities();
+aCentaur += " as seen from a distance by a naive innocent.";
+
+/*
+在函数内，该变量的值为 "A centaur is probably a mounted Scythian warrior,
+misreported; that is, "；在函数外，该变量的值为这句话的其余部分：
+"a horse with rider, as seen from a distance by a naive innocent."
+*/  
+</FONT></pre></BLOCKQUOTE>
+
+很重要的一点是注意变量是否是在其所属范围的开始处声明的。有时这会导致意想不到的情况。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var aNumber = 100;
+var withAdditive = 0;
+
+withAdditive += aNumber;  // withAdditive 现在是 100。
+tweak();
+withAdditive += aNumber;  // withAdditive 现在是 200。
+
+function tweak()  {
+var newThing = 0;  // 显示声明 newThing 变量。
+// 如果不注释下一条语句，将产生一个错误。
+// newThing = aNumber;
+// 下一条语句将值 42 赋给局部的 aNumber，该变量是隐式声明的。
+aNumber = 42;
+if (false)  {
+    var aNumber;  // 该语句永远不会执行。
+    aNumber = "Hello!";  //  该语句永远不会执行。
+    }  // 条件语句结束。
+}  // 该函数定义结束。
+</FONT></pre></BLOCKQUOTE>
+
+被注释掉的语句试图将局部变量 <i>aNumber</i> 的值赋给局部变量 <i>newThing</i> 的值。尽管事实上在函数的其他地方定义了一个局部 <i>aNumber</i> 变量，并且因此在整个函数内都存在，这样做也不会成功。 <i>aNumber</i> 变量在代码中这条语句的位置处没有被赋值，因此是 <a href="glossary.htm#defundefined">undefined</a>。
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

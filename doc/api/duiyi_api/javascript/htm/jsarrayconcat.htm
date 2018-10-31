@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>concat 方法 (数组)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="concat 方法">
+<META NAME="MS-HKWD" CONTENT="concat">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="数组组合">
+<META NAME="MS-HKWD" CONTENT="创建数组">
+<META NAME="MS-HKWD" CONTENT="组合">
+<META NAME="MS-HKWD" CONTENT="数组组合">
+<META NAME="MS-HKWD" CONTENT="Array 对象">                                        
+
+<META NAME=MS-HAID CONTENT="jsarrayconcat">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="concat Method (Array)">
+<META NAME="Keywords" CONTENT="concat method; concat; arrays; combining arrays; creating arrays; concatenation; concatenating arrays; Array object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>concat 方法 (数组)</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsarrayconcatC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsarrayconcatA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个新数组，这个新数组是由两个数组组合而成的。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>array1</i>.<b>concat(</b><i>array2</i><b>)</b> 
+
+<P><b>concat</b> 方法的语法包括下面这些部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>array1</i> </FONT></TD>
+<TD><FONT class='9v' >必选项。一个与 <i>array2</i> 进行连接的 <b>Array</b> 对象。  </FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' >array2 </FONT></TD>
+<TD><FONT class='9v' >必选项。一个连接到 <i>array1</i> 末尾的 <b>Array</b> 对象。</FONT></TD></TR>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE><b>concat</b> 方法返回一个 <b>Array</b> 对象，其中包含了 <i>array1</i> 和 <i>array2</i> 的连接。
+<p>如果一个对象引用被从 <i>array1</i> 或 <i>array2</i> 复制到结果中，那么结果中的对象引用仍然指向同一个对象。对该对象的改变将同时反映在两个数组中。<P>
+
+下面这个例子说明了 <B>concat</B> 方法的用法:
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function ConcatArrayDemo()
+{
+  var a, b, c;
+  a = new Array(0,1,2,3,4);
+  b = new Array(5,6,7,8,9);
+  c = <font color="#FF0000">a.concat(b)</FONT>;
+  return(C)
+}</FONT></PRE></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

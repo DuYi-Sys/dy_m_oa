@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>OpenAsTextStream 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="OpenAsTextStream 方法">
+<META NAME="MS-HKWD" CONTENT="OpenAsTextStream">
+<META NAME="MS-HKWD" CONTENT="File 对象">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="文件打开">
+<META NAME="MS-HKWD" CONTENT="ForReading">
+<META NAME="MS-HKWD" CONTENT="ForWriting">
+<META NAME="MS-HKWD" CONTENT="ForAppending">
+<META NAME="MS-HKWD" CONTENT="TristateTrue">
+<META NAME="MS-HKWD" CONTENT="TristateFalse">
+<META NAME="MS-HKWD" CONTENT="TristateUseDefault">       
+
+<META NAME=MS-HAID CONTENT="jsFileOpenAsTextStream"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="OpenAsTextStream method; OpenAsTextStream; File object; files; opening files; ForReading; ForWriting; ForAppending; TristateTrue; TristateFalse; TristateUseDefault">
+
+<META NAME="Description" CONTENT="OpenAsTextStream Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>OpenAsTextStream 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileOpenAsTextStreamC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileOpenAsTextStreamA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>打开指定的文件并返回一个 <b>TextStream</b> 对象，可以通过这个对象对文件进行读、写或追加。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i><b>.OpenAsTextStream(</b>[<i>iomode</i>, [<i>format</i>]]<b>)</b><!> 
+
+<P><!><b>OpenAsTextStream</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>object<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>应为 <b>File</b> 对象的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>iomode<!></FONT></TD>
+<TD><FONT class='9v' ><!>可选项。<!> <!>指明输入/输出的模式。<!> <!>可以是三个常数之一： <b>ForReading</b> 、 <b>ForWriting</b> 或 <b>ForAppending</b> 。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>format<!></FONT></TD>
+<TD><FONT class='9v' ><!>可选项。<!> <!>使用<b>三态</b>值中的一个来指明打开文件的格式。<!> <!>如果忽略，文件将以 ASCII 格式打开。<!>
+</FONT></TD></TR>
+
+</TABLE></BLOCKQUOTE>
+<H5><!>设置<!></H5>
+<BLOCKQUOTE>
+<!><i>iomode</i> 参数可以是下列设置中的任一种：<!><p>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD WIDTH=15%><FONT class='9v' ><b><!>常数<!></b></font></TD>
+		<TD WIDTH=10%><FONT class='9v' ><b><!>值<!></b></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><b><!>描述<!></b></font></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>ForReading<!></B></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>1<!></font></TD>
+			<TD WIDTH= "*"><FONT class='9v' ><!>以只读方式打开文件。<!> <!>不能写这个文件。<!></font></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>ForWriting<!></B></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>2<!></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>以写方式打开文件。<!> <!>如果存在同名的文件，那么它以前的内容将被覆盖。<!></font></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>ForAppending<!></B></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>8<!></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>打开文件并从文件末尾开始写。<!></font></TD></TR>
+</TABLE><P>
+<!><i>format</i> 参数可以是下列设置中的任一种：<!><p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD WIDTH=15%><FONT class='9v' ><b><!>常数<!></b></font></TD>
+		<TD WIDTH=10%><FONT class='9v' ><b><!>值<!></b></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><b><!>描述<!></b></font></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><b><!>TristateUseDefault<!></b></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>-2<!></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>使用系统默认值打开文件。<!></font></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><b><!>TristateTrue<!></b></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>-1<!></font></TD>
+			<TD WIDTH= "*"><FONT class='9v' ><!>以 Unicode 方式打开文件。<!></font></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><b><!>TristateFalse<!></b></font></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>&nbsp;0<!></font></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>以 ASCII 方式打开文件。<!></font></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!><b>OpenAsTextStream</b> 方法提供的功能和 <b>FileSystemObject</b> 的 <b>OpenTextFile</b> 方法一样。<!> <!>另外， <b>OpenAsTextStream</b> 方法可以用来写文件。<!>
+<p><!>下面的代码说明了 <b>OpenAsTextStream</b> 方法的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function TextStreamTest( )
+{
+    var fso, f, ts, s;
+    var ForReading = 1, ForWriting = 2, ForAppending = 8;
+    var TristateUseDefault = -2, TristateTrue = -1, TristateFalse = 0;
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    fso.CreateTextFile( "test1.txt" );           // 创建文件。
+    f = fso.GetFile("test1.txt");
+    ts = <font color="#FF0000">f.OpenAsTextStream(</font>ForWriting<font color="#FF0000">,</font> TristateUseDefault<font color="#FF0000">)</font>;
+    ts.Write( "Hello World" );
+    ts.Close( );
+    ts = <font color="#FF0000">f.OpenAsTextStream(</font>ForReading<font color="#FF0000">,</font> TristateUseDefault<font color="#FF0000">)</font>;
+    s = ts.ReadLine( );
+    ts.Close( );
+    return(s);
+}</font></pre></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

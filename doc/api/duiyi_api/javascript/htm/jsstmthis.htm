@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>this 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="this 语句">
+<META NAME="MS-HKWD" CONTENT="this">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="构造函数">
+<META NAME="MS-HKWD" CONTENT="对象构造函数">
+<META NAME="MS-HKWD" CONTENT="window 对象">                   
+
+<META NAME=MS-HAID CONTENT="jsstmthis">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="this Statement">
+<META NAME="Keywords" CONTENT="this statement; this; objects; constructors; object constructors; window object">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>this 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmthisC.htm">请参阅</a></font>
+<hr noshade class='9v' >
+
+
+<h5>描述</h5>
+<Blockquote>
+指当前对象。
+</blockquote>
+
+<h5>语法</h5>
+<blockquote><b>this</b>.<i>property</i></blockquote>
+
+<h5>说明</h5>
+<Blockquote><b>this</b> 关键字通常在对象的 <a href="glossary.htm#defConstructor">构造函数</a>中使用，用来引用对象。在下面示例中，<b>this</b> 指的是新创建的 Car 对象，并给三个属性赋值：
+<blockquote><pre><FONT face=" 宋体" class='9v' >function Car(color, make, model)
+{
+  <FONT COLOR="#FF0000">this</font>.color = color;
+  <FONT COLOR="#FF0000">this</font>.make = make;
+  <FONT COLOR="#FF0000">this</font>.model = model;
+}
+</font></pre></blockquote>
+
+对于 JScript 的客户版本，如果在其他所有对象的上下文之外使用 <b>this</b>，则它指的是 <b>window</b> 对象。
+</blockquote>
+
+<hr noshade class='9v' >
+
+</font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

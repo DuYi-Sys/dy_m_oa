@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>item 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="item 方法">
+<META NAME="MS-HKWD" CONTENT="item">
+<META NAME="MS-HKWD" CONTENT="items">
+<META NAME="MS-HKWD" CONTENT="集合">
+<META NAME="MS-HKWD" CONTENT="undefined">
+<META NAME="MS-HKWD" CONTENT="Enumerator 对象">         
+
+<META NAME=MS-HAID CONTENT="jsenumitem">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="item Method">
+<META NAME="Keywords" CONTENT="item Method; item; items; collections; undefined; Enumerator object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>item 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsenumitemC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsenumitemA.htm">应用于</A><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回集合中的当前项。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>myEnum</i>.<b>item( )</b><!> 
+
+<P><!><i>myEnum</i> 参数是任意  <b>Enumerator</b> 对象。<!>
+</BLOCKQUOTE>
+<H5><!>返回值<!></H5>
+<blockquote>
+<!><b>item</b> 方法返回当前项。<!> <!>如果集合为空或者当前项没有定义，那么将返回 <a href="glossary.htm#defundefined"><b>undefined</b></a> 。<!>
+</blockquote>
+<h5><!>说明<!></h5>
+<blockquote>
+<p><!>在下面的代码中，使用了 <b>item</b> 方法返回 <b>Drives</b> 集合中的一个成员：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowDriveList()
+{
+  var fso, s, n, e, x;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  e = new Enumerator(fso.Drives);
+  s = "";
+  for (; !e.atEnd(); e.moveNext())
+  {
+    x = <font color="#FF0000">e.item()</font>;
+    s = s + x.DriveLetter;
+    s += " - ";
+    if (x.DriveType == 3)
+      n = x.ShareName;
+    else if (x.IsReady)
+      n = x.VolumeName;
+    else
+      n = "[驱动器未就绪]";
+    s +=  n + "&lt;br&gt";
+  }
+  return(s);
+}
+</font></pre></BLOCKQUOTE>
+</blockquote>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

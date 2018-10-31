@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>lastIndexOf 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="lastIndexOf 方法">
+<META NAME="MS-HKWD" CONTENT="lastIndexOf">
+<META NAME="MS-HKWD" CONTENT="IndexOf 方法">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="index">
+<META NAME="MS-HKWD" CONTENT="子字符串">       
+
+<META NAME=MS-HAID CONTENT="jsstringlastindexof">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="lastIndexOf Method">
+<META NAME="Keywords" CONTENT="lastIndexOf method; lastIndexOf; IndexOf method; String object; index; substrings">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>lastIndexOf 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsstringlastIndexOfC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsstringlastindexofA.htm">应用于</a></font>
+<hr noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回 <b>String</b> 对象中子字符串最后出现的位置。</BLOCKQUOTE>
+<h5>语法</h5>
+<BLOCKQUOTE>
+strVariable.<b>lastIndexOf(</b><i>substring</i>, <i>startindex</i><b>)</b><br>
+"String Literal".<b>lastIndexOf(</b><i>substring</i>, <i>startindex</i><b>)</b>
+
+<p><b>lastIndexOf</b> 方法的语法参数有：
+<p>
+<table WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD>
+</TR>
+<tr VALIGN=TOP>
+ <td><FONT class='9v' ><i>substring</i></FONT></td>
+ <td><FONT class='9v' >要在 <b>String </b>对象内查找的子字符串。</FONT></td>
+</tr>
+<tr VALIGN=TOP>
+ <td><FONT class='9v' ><i>startindex</i></FONT></td>
+ <td><FONT class='9v' >可选的整数值，指出在 <b>String</b> 对象内进行查找的开始索引位置。如果省略，则查找从字符串的末尾开始。</FONT></td>
+</tr>
+</table>
+
+</blockquote>
+
+
+<h5>说明</h5>
+<BLOCKQUOTE>
+<b>lastIndexOf</b> 方法返回一个整数值，指出 <b>String</b> 对象内子字符串的开始位置。如果没有找到子字符串，则返回 -1。
+
+<p>如果 <i>startindex</i> 是负数，则 <i>startindex</i> 被当作零。如果它比最大字符位置索引还大，则它被当作最大的可能索引。
+
+<p>从右向左执行查找。否则，该方法和 <b>indexOf</b> 相同。<P>
+
+下面的示例说明了 <B>lastIndexOf</B> 方法的用法：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function lastIndexDemo(str2)
+{
+  var str1 = "BABEBIBOBUBABEBIBOBU"
+  var s = <font color="#FF0000">str1.lastIndexOf(</FONT>str2<font color="#FF0000">)</FONT>;
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</FONT>
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>Dictionary 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Dictionary 对象">
+<META NAME="MS-HKWD" CONTENT="Dictionary">
+<META NAME="MS-HKWD" CONTENT="主键和条目">
+<META NAME="MS-HKWD" CONTENT="ActiveXobject 对象">
+<META NAME="MS-HKWD" CONTENT="主键">
+<META NAME="MS-HKWD" CONTENT="items">          
+
+<META NAME=MS-HAID CONTENT="jsobjDictionary">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="Dictionary Object">
+<META NAME="Keywords" CONTENT="Dictionary object; Dictionary; item and key pairs; ActiveXObject object; keys; items">
+
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Dictionary 对象</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsobjDictionaryC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjDictionaryM.htm">方法</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjDictionaryP.htm">属性</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>存储数据键和项目对的对象。</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><b>y = new ActiveXObject("Scripting.Dictionary")</b> </blockquote>
+
+<H5>说明</H5>
+<BLOCKQUOTE><b>Dictionary</b> 对象等价于 PERL 联合数组。项目可以是数据的任何形式，并存储在数组中。每个项目都与一个具有唯一性的键相联。该键用于取得单个项目，并且通常是整数或字符串，但也可以是除数组以外的任何类型。<P>
+下面代码演示了如何创建 <b>Dictionary</b> 对象:
+<blockquote><PRE><FONT face=" 宋体" class='9v' >var y = new ActiveXObject("<FONT COLOR="#FF0000">Scripting.Dictionary</FONT>");
+y.add ("a", "test");
+if (y.Exists("a"))
+  document.write("true");
+...
+</FONT></PRE></blockquote>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

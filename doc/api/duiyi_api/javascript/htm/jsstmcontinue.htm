@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>continue 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="continue 语句">
+<META NAME="MS-HKWD" CONTENT="continue">
+<META NAME="MS-HKWD" CONTENT="循环终止">
+<META NAME="MS-HKWD" CONTENT="循环语句">
+<META NAME="MS-HKWD" CONTENT="labeled 语句">
+<META NAME="MS-HKWD" CONTENT="标识">
+<META NAME="MS-HKWD" CONTENT="while 语句">
+<META NAME="MS-HKWD" CONTENT="do...while 语句">
+<META NAME="MS-HKWD" CONTENT="for 语句">
+<META NAME="MS-HKWD" CONTENT="for...in 语句">
+<META NAME="MS-HKWD" CONTENT="循环执行">                                                         
+
+<META NAME=MS-HAID CONTENT="jsstmcontinue">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="continue Statement">
+<META NAME="Keywords" CONTENT="continue statement; continue; terminating loops; looping statements; labeled statements; labels; while statement; do...while statement; for statement; for...in statement; executing loops">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>continue 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmcontinueC.htm">请参阅</a></font>
+
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>
+停止循环的当前迭代，并开始新的迭代。
+</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE>
+<b>continue</b> [<i>label</i>];<p>
+可选的 <i>label</i> 参数指定 <b>continue</b> 应用于哪条语句。  
+</BLOCKQUOTE>
+
+<h5>说明</h5>
+<blockquote>
+只能在 <b>while</b>、<b>do...while</b>、<b>for</b>、或 <b>for...in</b> 循环内使用 <b>continue</b> 语句。 执行 <b>continue</b> 语句会停止当前循环的迭代，并从循环的开始处继续程序流程。这样对不同的循环类型有如下影响：
+<ul>
+<li><b>while</b> 和 <b>do...while</b> 循环检查它们的条件，如果条件为 true，则再次执行循环。
+<li><b>for</b> 循环执行它们的递增表达式，如果测试表达式为 true，则再次执行循环。
+<li><b>for...in</b> 循环继续进行指定变量的下一个字段，并再次执行循环。 
+</ul><P>
+
+下面示例说明了 <B>continue</B> 语句的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function skip5()
+{
+  var s = "", i=0;
+  while (i &lt; 10) 
+  {
+    i++;
+    // 跳过 5
+    if (i==5)
+    {
+      <font color="#FF0000">continue</FONT>;
+    }
+   s += i;
+  }
+  return(s);
+}</FONT></PRE></BLOCKQUOTE>
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

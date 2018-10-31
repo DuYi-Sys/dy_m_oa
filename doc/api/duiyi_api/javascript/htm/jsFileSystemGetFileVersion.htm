@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>GetFileVersion 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="GetFileVersion 方法">
+<META NAME="MS-HKWD" CONTENT="GetFileVersion">
+<META NAME="MS-HKWD" CONTENT="文件名">
+<META NAME="MS-HKWD" CONTENT="路径">
+<META NAME="MS-HKWD" CONTENT="FileSystemObject 对象">
+
+<META NAME=MS-HAID CONTENT="jsFileSystemGetFileVersion"> 
+<META NAME="CATEGORY" CONTENT="语言参考"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="GetFileVersion method; GetFileVersion; file name; paths; FileSystemObject object">
+
+<META NAME="Description" CONTENT="GetFileVersion Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE="宋体" class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v'  COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>GetFileVersion 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v'>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v'><p>
+<a href="jsFileSystemGetFileVersionC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemGetFileVersionA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回指定文件的版本号。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>Object</i>.<b>GetFileVersion(</b><i>pathspec</i><b>)</b> 
+
+<P><b>GetFileVersion</b> 方法的语法包括以下几部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v'><b>部分</b></FONT></TD>
+<TD><FONT class='9v'><b>描述</b></FONT></TD></TR>
+<tr valign=top><td><font class='9v'><i><!>object<!></i></font></td>
+<td><font class='9v'>必选项。总是一个 <b>FileSystemObject</b> 的名字。</font></td></tr>
+<tr valign=top><td><font class='9v'><i><!>pathspec<!></i></font></td>
+<td><font class='9v'>必选项。指向特定文件的（绝对或相对）路径。</font></td></tr>
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+如果 <i>pathspec</i> 并不以所命名的文件结束，或者文件并不包含版本信息，<b>GetFileVersion</b> 方法将返回长度为0的字符串("")。<i></i>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v'><b>注意</b>&nbsp;&nbsp;<b>GetFileVersion</b> 方法只处理所提供的路径字符串。它并不会尝试对路径进行解析，也不会检查指定的路径是否存在。</FONT></TD></TR>
+<TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE><P>
+下面的例子说明了 <B>GetFileVersion</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT FACE="Courier New" class='9v' >function ShowFileVersion(pathspec)
+{
+  var fso, s = "";
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  s += <font color="#FF0000">fso.GetFileVersion(</FONT>pathspec<font color="#FF0000">)</FONT>;
+  if (s == "")
+    s = "无可用的版本信息。";
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v'>
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

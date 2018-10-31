@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>setTime 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="setTime 方法">
+<META NAME="MS-HKWD" CONTENT="setTime">
+<META NAME="MS-HKWD" CONTENT="getTime 方法">
+<META NAME="MS-HKWD" CONTENT="setUTCTime 方法">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="时间">
+<META NAME="MS-HKWD" CONTENT="日期">         
+
+<META NAME=MS-HAID CONTENT="jsdatesettime">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="setTime Method">
+<META NAME="Keywords" CONTENT="setTime method; setTime; getTime method; setUTCTime method; Date object; times; dates">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>setTime 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdatesettimeC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdatesettimeA.htm">应用于</a></font>
+<hr noshade class='9v' >
+<FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE>设置 <b>Date</b> 对象的日期和时间值。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE>
+<i>objDate</i>.<b>setTime(</b><i>milliseconds</i><b>)</b>
+
+<p><i>milliseconds</i> 参数是一个整数值，它代表从格林威治标准时间（GMT）的 1970 年 1 月 1 日午夜开始所经过的毫秒数。 
+</blockquote>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+如果 <i>milliseconds</i> 是一个负值，那它就表示 1970 年之前的日期。可用的日期范围大约是 1970 年 1 月 1 日午夜的前后各 285,616 年。 
+<p>使用 <b>setTime</b> 方法来设置日期和时间与时区无关。<P>
+
+下面这个例子说明了 <B>setTime</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function SetTimeTest(newtime)
+{
+  var d, s;
+  d = new Date();
+  <font color="#FF0000">d.setTime(</FONT>newtime<font color="#FF0000">)</FONT>;
+  s = "Current setting is ";
+  s += d.toUTCString();
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

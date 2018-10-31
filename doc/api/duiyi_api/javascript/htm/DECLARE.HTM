@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<TITLE>JScript 的变量</TITLE>
+<META NAME="MS-HKWD" CONTENT="变量">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="变量">
+<META NAME="MS-HKWD" CONTENT="var 语句">
+<META NAME="MS-HKWD" CONTENT="存储值">
+<META NAME="MS-HKWD" CONTENT="变量声明">
+<META NAME="MS-HKWD" CONTENT="变量命名">
+<META NAME="MS-HKWD" CONTENT="区分大小写">
+<META NAME="MS-HKWD" CONTENT="强制数据类型">
+<META NAME="MS-HKWD" CONTENT="类型转换">
+<META NAME="MS-HKWD" CONTENT="函数转换">                                                                             
+
+<META NAME=MS-HAID CONTENT="declare">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="JScript Variables">
+<META NAME="Keywords" CONTENT="variables; JScript tutorial; variables; var statement; storing values; declaring variables; naming variables; case sensitivity; coercing data types; converting types; conversion functions">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>
+JScript 的变量
+</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><BR><a href="statement.htm">上一页</A><br><a href="datatype.htm">下一页</A><P></FONT>
+
+
+</TD></TR>
+</TABLE><p>
+
+
+<hr noshade class='9v' >
+
+
+<BLOCKQUOTE>
+在 Microsoft JScript 中变量用来存放脚本中的值。这是一个使用名称来检索和操作值的方式。如果能有效地使用变量，能有助于理解脚本所做的工作。
+
+</blockquote>
+<h5>变量声明</h5>
+<blockquote>
+尽管不是必须的，但在使用变量之前先进行声明是一种好的习惯。可以使用 <b>var</b> 语句来进行变量声明。只有当要在函数中声明一个局部变量时，才必须使用 <b>var</b> 语句。所谓局部变量就是那些只在函数内有效的变量。在其他任何时候，推荐方法是在使用之前先用
+<b>var</b> 语句来声明变量。
+
+<p>下面是变量声明的代码示例：
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var mim = "A man, a plan, a canal, Panama!";  	// mim 中存储的值是 string 类型。
+					// 引号中的这句话就是赋给 mim 的值，为字符串文字。
+
+var ror = 3;        				// ror 中存储的值为 numeric 类型。
+var nen = true;       			// nen 中存储的值为 Boolean 类型。
+var fif = 2.718281828       			// fif 中存储的值为 numeric 类型。
+</FONT></pre></BLOCKQUOTE>
+
+
+</blockquote>
+<H5>变量命名</H5>
+<blockquote>
+JScript 是一种区分大小写的语言，因此将一个变量命名为 <i>myCounter </i> 和将其命名为 <i>mYCounter</i> 是不一样的。 另外，变量的名称其长度可以任意，但必须遵循若干规则：
+<ul>
+<li>第一个字符必须是一个字母（大小写均可）、或一个下划线(_)或一个美元符 ($)。
+<li>后续的字符可以是字母、数字、下划线或美元符。
+<li>变量名称不能是 <a href="jsreserved.htm">保留字</a>。
+</ul>
+合法的变量名称示例：
+<ul>
+<li>_pagecount
+<li>Part9
+<li>Number_Items
+</ul>
+
+一些无效的变量名称：
+<ul>
+<li>99Balloons     			// 以数字开头。
+<li>Smith&Wesson   			// & 对变量名而言不是一个合法的字符。
+</ul>
+
+如果要声明一个变量并进行初始化，但又不指定任何特殊值，可以将其指定为一个专用值
+<a href="glossary.htm#defnull"><b>null</b></a>。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var zaz = null;
+var notalot = 3 * zaz;        // 此时 notalot 为 0。
+</FONT></pre></BLOCKQUOTE>
+
+如果声明了一个变量但没有对其赋值，该变量存在，且为
+<a href="glossary.htm#defundefined">undefined</a> 类型。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var godot;
+var waitingFor = 1 * godot;  // 由于 godot 为 undefined 类型，因此 waitingFor 的值为 NaN。
+</FONT></pre></BLOCKQUOTE>
+
+如果直接对变量赋值，就隐式地声明了一个变量（即不使用 <b>var</b>）。不过，不能在根本没有声明的情况下就使用一个变量。这样做将导致运行时产生错误。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >lel = "";  	// 变量 lel 已隐式声明。
+
+var aMess = vyv + zez;	// 产生一个错误，因为 vyv 和 zez 不存在。
+</FONT></pre></BLOCKQUOTE>
+
+
+</blockquote>
+<h5>强制转换</h5>
+<blockquote>
+由于 JScript 是一种自由类型的语言，JScript 中的变量在技术上没有固定的类型。不过，它们具有与其包含的值的类型等价的类型。在某些环境下可能将变量的自动转换（或强制转换）或数据的一部分强制为别的类型。Number 类型易于被包括在字符串中，但字符串不能直接包含到数值中，为此提供了显式的转换函数 <a href="jsglobalparseInt.htm"><b>parseInt()</b></a> 和
+<a href="jsglobalparseFloat.htm"><b>parseFloat()</b></a>。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var theFrom = 1;
+var theTo = 10;
+var doWhat = "Count from ";
+doWhat += theFrom + " to " + theTo + ".";        
+</FONT></pre></BLOCKQUOTE>
+
+执行该代码后，<i>doWhat</i> 变量的值为 "Count from 1 to 10."
+其中的数字数据被强制为字符串格式。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var nowWhat = 0;
+nowWhat += 1 + "10";  	// 在本例中，由于 "10" 是一个字符串，
+			// "+=" 运算符其连接作用。
+</FONT></pre></BLOCKQUOTE>
+
+执行该代码后，<i>nowWhat</i> 变量的值为 "0110"。执行下述步骤可获得该结果：
+<ol>
+<li> 查看 1 和 "10" 的类型。"10" 为一个字符串，1 为数值类型，因此该数被强制为一个字符串。
+<li> 由于 <b>+</b> 运算符两边的值都是字符串，因此执行字符串连接操作。其结果为 "110"
+<LI> 查看 += 两边的值的类型。  <i>nowWhat</i> 包含一个数，而 "110" 是字符串，因此将数转换为一个字符串。
+<li> 由于现在 += 运算符两边都是字符串，因此执行字符串连接操作。其结果为"0110"。
+<li> 将结果存放到 <i>nowWhat</i>。
+</ol>
+
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var nowThen = 0;
+nowThen += 1 + parseInt("10");        // 在本例中 "+=" 执行加法。
+</FONT></pre></BLOCKQUOTE>
+
+执行该代码后，<i>nowThen</i> 变量包含整数 11。
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

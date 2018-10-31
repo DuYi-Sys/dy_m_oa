@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>左移赋值运算符 (&lt;&lt;=)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="左移赋值运算符">
+<META NAME="MS-HKWD" CONTENT="左移赋值">
+<META NAME="MS-HKWD" CONTENT="&lt">
+<META NAME="MS-HKWD" CONTENT="&lt">
+<META NAME="MS-HKWD" CONTENT="<<= 运算符">
+<META NAME="MS-HKWD" CONTENT="#NAME?">
+<META NAME="MS-HKWD" CONTENT="左移运运算符">
+<META NAME="MS-HKWD" CONTENT="复合赋值运算符">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="移动位">
+<META NAME=MS-HAID CONTENT="jsoprlshftequ">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="Left Shift Assignment operator; Left Shift Assignment; &lt; &lt; <<= operator; Left Shift operator; compound assignment operators; operators; shifting bits">
+
+<META NAME="Description" CONTENT="&lt;&lt;= Operator">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>&lt;&lt;= 运算符</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsoprlshftequC.htm">请参阅</a></font>
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>用来把表达式的所有位向左移</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>result</i> <b>&lt;&lt;=</b> <i>expression</i><P>
+
+<b>&lt;&lt;=</b> 运算符的语法组成部分如下：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>result</i></FONT></TD>
+		<TD><FONT class='9v' >任何<a href="glossary.htm#defvariable">变量</a>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>expression</i></FONT></TD>
+		<TD><FONT class='9v' >任何<a href="glossary.htm#defExpression">表达式</a>。</FONT></TD></TR></TABLE>
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+使用 <b>&lt;&lt;=</b> 运算符与使用下面的语句是等效的：
+<blockquote><pre><FONT face=" 宋体" class='9v' >result = result &lt;&lt; expression
+</font></pre></blockquote>
+<b>&lt;&lt;=</b> 运算符把 <i>result</i> 的所有位向左移动 <i>expression</i> 所指定的位数。例如：
+<blockquote><pre><FONT face=" 宋体" class='9v' >var temp
+temp = 14
+temp <FONT COLOR="#FF0000">&lt;&lt;=</font> 2 
+</font></pre></blockquote>
+变量 <i>temp</i> 的值是 56，因为 14 （即二进制的 00001110）左移两位等于 56 （即二进制的 00111000）。在移动时用零来填充右边空出的位。
+<p>关于 <b>&lt;&lt;=</b> 运算符何时产生<a href="glossary.htm#defRTErr">运行时错误</A>的信息，请参阅<a href="jsarithmetic.htm">运算符操作</a>表。
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+  
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

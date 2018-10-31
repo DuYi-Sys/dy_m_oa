@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>Files 集合</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Files 集合">
+<META NAME="MS-HKWD" CONTENT="Files">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="file 对象">
+<META NAME="MS-HKWD" CONTENT="for 语句">
+<META NAME="MS-HKWD" CONTENT="Enumerator 对象">
+<META NAME="MS-HKWD" CONTENT="遍历集合">                           
+
+<META NAME=MS-HAID CONTENT="jscolFiles">
+ 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Files collection; Files; files; File objects; for statement; Enumerator object; iterating collections">
+
+<META NAME="Description" CONTENT="Files Collection">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Files 集合</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+<a href="jsversion.htm">版本&nbsp;3 </A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jscolFilesC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jscolFilesP.htm">属性</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jscolFilesM.htm">方法</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>一个文件夹中所有 <b>File</b> 对象的集合。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+下面这个例子说明了如何获得一个 <b>Files</b> 集合以及如何使用 <B>Enumerator</B> 对象和 <B>for</B> 语句来遍历该集合：
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowFolderFileList(folderspec)
+{
+  var fso, f, f1, fc, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.GetFolder(folderspec);
+  fc = new Enumerator(<font color="#FF0000">f.files</font>);
+  s = "";
+  for (; !fc.atEnd(); fc.moveNext())
+  {
+      s += fc.item();
+      s += "&lt;br&gt;";
+  }
+  return(s);
+}</font></pre></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

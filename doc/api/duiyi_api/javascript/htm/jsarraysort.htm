@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>sort 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="sort 方法">
+<META NAME="MS-HKWD" CONTENT="sort">
+<META NAME="MS-HKWD" CONTENT="Array 对象">
+<META NAME="MS-HKWD" CONTENT="元素排序">
+<META NAME="MS-HKWD" CONTENT="数组">            
+
+<META NAME=MS-HAID CONTENT="jsarraysort">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="sort Method">
+<META NAME="Keywords" CONTENT="sort method; sort; Array object; sorting elements; arrays">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>sort 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2 </A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsarraysortC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsarraysortA.htm">应用于</a></font>
+<hr noshade class='9v' >
+<h5>描述</h5>
+<blockquote><p>返回一个元素已经进行了排序的 <b>Array</b> 对象。
+</blockquote>
+<h5>语法</h5>
+<blockquote>
+<i>arrayobj</i>.<b>sort(</b><i>sortfunction</i><b>)</b>
+
+<p><i>sortfunction </i> 参数是用来确定元素顺序的函数的名称。如果这个参数被省略，那么元素将按照 ASCII 字符顺序进行升序排列。
+
+</blockquote>
+
+<h5>说明</h5>
+<blockquote>
+<b>sort</b> 方法将 <b>Array</b> 对象进行适当的排序；在执行过程中并不会创建新的 <b>Array</b> 对象。
+<p>如果为 <i>sortfunction</i> 参数提供了一个函数，那么该函数必须返回下列值之一：
+
+<ul>
+<li>负值，如果所传递的第一个参数比第二个参数小。
+<li>零，如果两个参数相等。
+<li>正值，如果第一个参数比第二个参数大。
+</ul><P>
+
+下面这个例子说明了 <B>sort</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function SortDemo()
+{
+  var a, l;
+  a = new Array("X" ,"y" ,"d", "Z", "v","m","r");
+  l = <font color="#FF0000">a.sort()</FONT>;
+  return(l);
+}</FONT></PRE></BLOCKQUOTE>
+
+</blockquote><p><hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

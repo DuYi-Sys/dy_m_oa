@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>@set 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="@set 语句">
+<META NAME="MS-HKWD" CONTENT="Conditional set 语句">
+<META NAME="MS-HKWD" CONTENT="Conditional set">
+<META NAME="MS-HKWD" CONTENT="创建变量">
+<META NAME="MS-HKWD" CONTENT="条件编译">
+<META NAME="MS-HKWD" CONTENT="@if 语句">                                                    
+
+<META NAME=MS-HAID CONTENT="jsstmset">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="@set Statement">
+<META NAME="Keywords" CONTENT="@set statement; conditional set statement; conditional set; creating variables; conditional compilation; @if statement">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>@set 语句</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsstmSetC.htm">请参阅</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>用条件编译语句来创建变量。
+</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><b>@set</b> @varname = <i>term</i>
+<P><b>@set</b> 语句的语法组成如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>varname</i></FONT></TD>
+<TD><FONT class='9v' >有效的 JScript 变量名。必须总在前面放置一个 "@" 字符。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>term</i></FONT></TD>
+<TD><FONT class='9v' >零或多个一元运算符，后跟一个常数、条件编译变量、或圆括号括起来的表达式。</FONT></TD></TR>
+
+
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+条件编译支持数字和 Boolean 变量。不支持字符串。用 <b>@set</b> 创建的变量通常在条件编译语句中使用，但也可以在 JScript 代码的任何地方使用。<p>
+变量声明的例子看起来如下：
+<blockquote><pre><Font face=" 宋体" class='9v' ><Font Color="#FF0000">@set</font> @myvar1 = 12
+<Font Color="#FF0000">@set</font> @myvar2 = (@myvar1 * 20)
+<Font Color="#FF0000">@set</font> @myvar3 = @_jscript_version
+</pre></font></blockquote>
+在园括号括起来的表达式中支持下面的运算符：
+<ul>
+<li><b>! ~</b>
+<li><b>* / %</b>
+<li><b>+ - </b>
+<li><b>&lt;&lt;  &gt;&gt;  &gt;&gt;&gt;</b>
+<li><b>&lt; &lt;= &gt; &gt;=</b>
+<li><b>== != === !==</b>
+<li><b>& ^ |</b>
+<li><b>&& ||</b>
+</ul>
+如果在变量被定义前使用了这个变量，则它的值是 <b>NaN</b>。<b>NaN</b> 可以用 <b>@if</b> 语句来检查：
+<blockquote><pre><Font face=" 宋体" class='9v' >@if (@newVar != @newVar)
+  ...
+</pre></font></blockquote>
+这样做能成功是因为 <b>NaN</b> 是不等于它自己的唯一值。
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

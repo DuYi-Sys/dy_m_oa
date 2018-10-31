@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>lastIndex 属性（正则表达式）</TITLE>
+<META NAME="MS-HKWD" CONTENT="lastIndex 属性">
+<META NAME="MS-HKWD" CONTENT="lastIndex">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="字符串对象">
+<META NAME="MS-HKWD" CONTENT="变量">
+<META NAME="MS-HKWD" CONTENT="文字">
+<META NAME="MS-HKWD" CONTENT="index">
+<META NAME="MS-HKWD" CONTENT="exec 方法">
+<META NAME="MS-HKWD" CONTENT="match 方法">
+<META NAME="MS-HKWD" CONTENT="replace 方法">
+<META NAME="MS-HKWD" CONTENT="split 方法">
+<META NAME="MS-HKWD" CONTENT="test 方法">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="Keywords" CONTENT="lastIndex 属性;lastIndex;正则表达式对象;字符串对象;变量;文字;index;exec 方法;match 方法;replace 方法;split 方法;test 方法;正则表达式"><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME=MS-HAID CONTENT="jsregexpresslastIndex">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="lastIndex Property (Regular Expression)">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT face=" 宋体" class='9v' >
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>lastIndex 属性（正则表达式）</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsregexpresslastIndexC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsregexpresslastIndexA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>指定索引，下一个匹配从该索引处开始。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>rgexp</i>.<b>lastIndex</b> [= <i>index</i>]
+<P><b>lastIndex</b> 属性的语法组成部分如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<TD><FONT class='9v' ><i>rgexp</i></FONT></TD>
+<TD><FONT class='9v' >必选项。<b>正则表达式</b> 对象。可以是变量名或文字。</FONT></TD></TR>
+<TR VALIGN=TOP >
+<TD><FONT class='9v' ><i>index</i></FONT></TD>
+<TD><FONT class='9v' >索引，下一个匹配从该索引处开始。</FONT></TD></TR>
+
+</table>
+</blockquote>
+<h5>说明</h5>
+<blockquote>
+<b>lastIndex</b> 属性被 <b>exec</b> 方法、以及 <b>String</b> 对象的 <b>match</b>、<b>replace</b>、和 <b>split</b> 方法修改。<p>
+下面的规则应用于 <b>lastIndex</b> 的值：
+<ul>
+<li> 如果 <b>lastIndex</b> 大于字符串的长度，则 <b>test</b> 和 <b>exec </b>方法失败，并且 <b>lastIndex</b> 被设置为零。
+<li> 如果 <b>lastIndex</b> 等于字符串的长度，且模式与空字符串匹配，则正则表达式匹配。否则匹配失败，并且 <b>lastIndex</b> 被重置为零。
+<li> 否则，<b>lastIndex</b> 被设置为紧接最近的匹配的下一个位置。
+</ul>
+</blockquote>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>

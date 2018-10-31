@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>GetFileName 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="GetFileName 方法">
+<META NAME="MS-HKWD" CONTENT="GetFileName">
+<META NAME="MS-HKWD" CONTENT="文件名">
+<META NAME="MS-HKWD" CONTENT="paths">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">     
+
+<META NAME=MS-HAID CONTENT="jsFileSystemGetFileName"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="GetFileName method; GetFileName; file name; paths; FileSystemObject object">
+
+<META NAME="Description" CONTENT="GetFileName Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>GetFileName 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemGetFileNameC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemGetFileNameA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回指定路径的最后成分，但指定的路径不能只是驱动器说明。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>GetFileName(</b><i>pathspec</i><b>)</b><!> 
+
+<P><!><b>GetFileName</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<tr valign=top><td><font class='9v' ><!>object<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>pathspec<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>指定文件的路径（绝对的或相对的）。<!></font></td></tr>
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>如果 <i>pathspec</i> 没有以文件名成分结束，那么 <b>GetFileName</b> 方法将返回长度为零的字符串 ("") 。<!>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v' ><!><b>注意</b>&nbsp;&nbsp;<b>GetFileName</b> 方法只作用于所提供的路径字符串。<!> <!>不会试图解析路径，也不会检查路径存在与否。<!></FONT></TD></TR>
+<TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE><P>
+<!>下面的例子说明了 <B>GetFileName</B> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function ShowFileName(filespec)
+{
+  var fso, s = "";
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  s += <font color="#FF0000">fso.GetFileName(</FONT>filespec<font color="#FF0000">)</FONT>;
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

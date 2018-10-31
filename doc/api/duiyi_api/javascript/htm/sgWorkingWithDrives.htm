@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<TITLE>处理驱动器和文件夹</TITLE> 
+
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+
+<META NAME=MS-HAID CONTENT="sgWorkingWithDrives">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META NAME="PRODUCT" CONTENT="Scripting Library">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="FileSystemObject">
+<META NAME="Description" CONTENT="Working with Drives and Folders">
+<META NAME="Keywords" CONTENT="FileSystemObject object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) Scripting 库 - FileSystemObject</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>处理驱动器和文件夹</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="sgProgrammingFileSystemObject.htm">上一页</A><br><a href="sgWorkingWithFiles.htm">下一页</A><P></FONT>
+</TD></TR>
+</TABLE><p>
+
+<hr noshade class='9v' >
+<blockquote>
+使用 <B>FileSystemObject</B> (FSO) 对象模式，可以有计划地处理驱动器和文件夹，就像在 Windows 资源管理器中交互式地处理它们一样。可以复制和移动文件夹，获取有关驱动器和文件夹的信息，等等。<p>
+</blockquote>
+
+<h5>获取有关驱动器的信息</h5>
+<blockquote>
+可以用 <b>Drive</b> 对象来获得有关各种驱动器的信息，这些驱动器是实物地或通过网络连接到系统上的。它的属性可以用来获得下面的信息内容：<p>
+<ul>
+<li>驱动器的总容量，以字节为单位（<b>TotalSize</b> 属性）
+<li>驱动器的可用空间是多少，以字节为单位（<b>AvailableSpace</b> 或 <b>FreeSpace</b> 属性）
+<li>哪个号被赋给了该驱动器（<b>DriveLetter</b> 属性）
+<li>驱动器的类型是什么，如可移动的、固定的、网络的、CD-ROM 或 RAM 磁盘（<b>DriveType</b> 属性）
+<li>驱动器的序列号（<b>SerialNumber </b>属性）
+<li>驱动器使用的文件系统类型，如 FAT、FAT32、NTFS 等等（<b>FileSystem</b> 属性）
+<li>驱动器是否可以使用（<b>IsReady</b> 属性）
+<li>共享和/或卷的名字（<b>ShareName</b> 和 <b>VolumeName</b> 属性）
+<li>驱动器的路径或根文件夹（<b>Path</b> 和 <b>RootFolder</b> 属性）
+</ul>
+请考察<a href="./sgFSOSample.htm#DriveInfo">示例代码</A>，来领会如何在 <B>FileSystemObject</B>      中使用这些属性。<P>
+</blockquote>
+<h5>Drive 对象的用法示例</h5>
+<blockquote>
+使用 <b>Drive</b> 对象来收集有关驱动器的信息。在下面的代码中，没有对实际的 <b>Drive</b> 对象的引用；相反，使用 <b>GetDrive</b> 方法来获得现有 <b>Drive</b> 对象的引用（在这个例子中就是 drv）。<p>
+下面示例示范了如何在 VBScript 中使用 <b>Drive</b> 对象：
+ 
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Sub ShowDriveInfo(drvPath)
+  Dim fso, drv, s
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set drv = fso.GetDrive(fso.GetDriveName(drvPath))
+  s = "Drive " & UCase(drvPath) & " - "
+  s = s & drv.VolumeName & "&lt;br&gt;"
+  s = s & "Total Space: " & FormatNumber(drv.TotalSize / 1024, 0)
+  s = s & " Kb" & "&lt;br&gt;"
+  s = s & "Free Space: " & FormatNumber(drv.FreeSpace / 1024, 0)
+  s = s & " Kb" & "&lt;br&gt;"
+  Response.Write s
+End Sub
+</font></pre></BLOCKQUOTE>
+
+下面的代码说明在 JScript 中实现同样的功能：
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowDriveInfo1(drvPath)
+{
+  var fso, drv, s ="";
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  drv = fso.GetDrive(fso.GetDriveName(drvPath));
+  s += "Drive " + drvPath.toUpperCase()+ " - ";
+  s += drv.VolumeName + "&lt;br&gt;";
+  s += "Total Space: " + drv.TotalSize / 1024;
+  s += " Kb" + "&lt;br&gt;"; 
+  s += "Free Space: " + drv.FreeSpace / 1024;
+  s += " Kb" + "&lt;br&gt;";
+  Response.Write(s);
+}
+</font></pre></BLOCKQUOTE>
+</blockquote>
+
+<h5>处理文件夹</h5>
+<blockquote>
+在下面的表中，描述了普通的文件夹任务和执行它们的方法。 <p>
+<table width= "87%" border=1 cellpadding=5 cellspacing=0>
+<tr valign=top bgcolor="#dddddd"><td><font class='9v' ><b>任务</b></font></td><td><font class='9v' ><b>方法</b></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >创建文件夹。</font></td>
+    <td><FONT class='9v' ><B>FileSystemObject.CreateFolder</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >删除文件夹。</font></td>
+    <td><FONT class='9v' ><B>Folder.Delete</B> 或 <B>FileSystemObject.DeleteFolder</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >移动文件夹。</font></td>
+    <td><FONT class='9v' ><B>Folder.Move</B> 或 <B>FileSystemObject.MoveFolder</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >复制文件夹。</font></td>
+    <td><FONT class='9v' ><B>Folder.Copy</B> 或 <B>FileSystemObject.CopyFolder</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >检索文件夹的名字。</font></td>
+    <td><FONT class='9v' ><B>Folder.Name</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >如果文件夹在驱动器上存在，则找出它。</font></td>
+    <td><FONT class='9v' ><B>FileSystemObject.FolderExists</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >获得现有 <B>Folder</B> 对象的实例。</font></td>
+    <td><FONT class='9v' ><B>FileSystemObject.GetFolder</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >找出文件夹的父文件夹名。</font></td>
+    <td><FONT class='9v' ><B>FileSystemObject.GetParentFolderName</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >找出系统文件夹的路径。</font></td>
+    <td><FONT class='9v' ><B>FileSystemObject.GetSpecialFolder</B></font></td></tr>
+</table>
+<P>
+请考察<a href="./sgFSOSample.htm#FolderInfo">示例代码</A>，来看看在 <B>FileSystemObject</B> 中使用了多少种这些的方法和属性。<P>
+
+下面的示例示范了如何在 VBScript 中使用 <b>Folder</b> 和 <b>FileSystemObject</b> 对象，来操作文件夹和获得有关它们的信息：<p>
+	
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Sub ShowFolderInfo()
+  Dim fso, fldr, s
+  ' 获得 FileSystemObject 的实例。
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  ' 获得 Drive 对象。
+  Set fldr = fso.GetFolder("c:")
+  ' 打印父文件夹名字。
+  Response.Write "Parent folder name is: " & fldr & "&lt;br&gt;"
+  ' 打印驱动器名字。
+  Response.Write "Contained on drive " & fldr.Drive & "&lt;br&gt;"
+  ' 打印根文件名。
+  If fldr.IsRootFolder = True Then
+    Response.Write "This is the root folder." & ""&lt;br&gt;"&lt;br&gt;"
+  Else
+    Response.Write "This folder isn't a root folder." & "&lt;br&gt;&lt;br&gt;" 
+  End If
+  ' 用 FileSystemObject 对象创建新的文件夹。
+  fso.CreateFolder ("C:\Bogus")
+  Response.Write "Created folder C:\Bogus" & "&lt;br&gt;"
+  ' 打印文件夹的基本名字。
+  Response.Write "Basename = " & fso.GetBaseName("c:\bogus") & "&lt;br&gt;"
+  ' 删除新创建的文件夹。
+  fso.DeleteFolder ("C:\Bogus")
+  Response.Write "Deleted folder C:\Bogus" & "&lt;br&gt;"
+End Sub
+</font></pre></BLOCKQUOTE>
+下面的示例显示如何在 JScript 中使用 <b>Folder</b> 和 <b>FileSystemObject</b> 对象：
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowFolderInfo()
+{
+  var fso, fldr, s = "";
+  // 获得 FileSystemObject 的实例。
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  // 获得 Drive 对象。
+  fldr = fso.GetFolder("c:");
+  // 打印父文件夹名。
+  Response.Write("Parent folder name is: " + fldr + "&lt;br&gt;");
+  // 打印驱动器名字。
+  Response.Write("Contained on drive " + fldr.Drive + "&lt;br&gt;");
+  // 打印根文件名。
+  if (fldr.IsRootFolder)
+    Response.Write("This is the root folder.");
+  else
+    Response.Write("This folder isn't a root folder.");
+  Response.Write("&lt;br&gt;&lt;br&gt;");
+  // 用 FileSystemObject 对象创建新的文件夹。
+  fso.CreateFolder ("C:\\Bogus");
+  Response.Write("Created folder C:\\Bogus" + "&lt;br&gt;");
+  // 打印文件夹的基本名。
+  Response.Write("Basename = " + fso.GetBaseName("c:\\bogus") + "&lt;br&gt;");
+  // 删除新创建的文件夹。
+  fso.DeleteFolder ("C:\\Bogus");
+  Response.Write("Deleted folder C:\\Bogus" + "&lt;br&gt;");
+}
+</font></pre></BLOCKQUOTE>
+</blockquote>
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

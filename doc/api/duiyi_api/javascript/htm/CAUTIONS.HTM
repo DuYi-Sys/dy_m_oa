@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>脚本问题解答</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="自动类型强制">
+<META NAME="MS-HKWD" CONTENT="强制数据类型">
+<META NAME="MS-HKWD" CONTENT="运算符优先级">
+<META NAME="MS-HKWD" CONTENT="计算表达式">
+<META NAME="MS-HKWD" CONTENT="for...in 语句">
+<META NAME="MS-HKWD" CONTENT="循环语句">
+<META NAME="MS-HKWD" CONTENT="with 语句">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="this 语句">
+<META NAME="MS-HKWD" CONTENT="assigning 函数">
+<META NAME="MS-HKWD" CONTENT="方法">
+<META NAME="MS-HKWD" CONTENT="属性">
+<META NAME="MS-HKWD" CONTENT="语法">                                                                                    
+
+<META NAME=MS-HAID CONTENT="cautions">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Troubleshooting Your Scripts">
+<META NAME="Keywords" CONTENT="JScript tutorial; automative type coercion; coercing data types; operator precedence; evaluating expressions; for...in statement; looping statements; with statement; objects; this statement; assigning functions; methods; properties; syntax">
+
+
+</HEAD>
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>脚本问题解答</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm" TARGET="_top">JScript&nbsp;教程</A><BR><a href="specialcharacter.htm">上一页</A><br><a href="writeclear.htm">下一页</A><P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+
+<P>
+<HR class='9v'  NOSHADE>
+<P>
+<blockquote>
+如果不够细致，任何编程语言都有一些可能发生错误的地方，而且每种语言都有其特殊之处。例如，对于 <a href="glossary.htm#defnull"><b>null</b></a> 值： Microsoft JScript 中这个值与 C 或 C++ 语言中的 <b>null</b> 值所起的作用是不一样的。 
+<p>下面提供了一些在编写 JScript 脚本时可能遇到的问题。
+
+</blockquote>
+<h5>语法错误</h5>
+<blockquote>
+由于编程语言中的语法比自然语言的语法要严格得多，因此在编写脚本时对细节应倍加关注。例如，如果您本意是将字符串作为某个参数，但是在键入时忘了使用引号引起来，就会产生问题。 
+</blockquote>
+<h5>脚本解释顺序</h5>
+<blockquote>
+对 JScript 的解释是 Web 浏览器的 HTML 语法分析处理的一部分。因此，如果在文档的  &lt;HEAD&gt; 标识中放置了一个脚本，则将在检查所有的 &lt;BODY&gt; 标识之前加以解释。如果在 &lt;BODY&gt; 标识中将创建对象，但由于在分析处理 &lt;HEAD&gt; 标识时这些对象尚不存在，因而不能被脚本操作。
+
+</blockquote>
+
+<h5>自动类型强制</h5>
+<blockquote>JScript 是一种具有自动强制的自由类型语言。因此，尽管实际上不同类型的值是不相等的，但对下述示例中的表达式求值都将得到 <b>true</b>。 
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >"100" == 100
+false == 0
+</FONT></pre></BLOCKQUOTE>
+
+
+</blockquote>
+<h5>运算符优先级</h5>
+<blockquote>
+在对<A REF="glossary.htm#defExpression">表达式</a>求值时某个特定运算符的执行主要是根据 <a href="jsoperatorpre.htm">运算符优先级</a> ，而不是表达式的位置。因此，在下面的示例中，乘法将先于减法执行，尽管在该表达式中第一个出现的运算符是减法。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >theRadius = aPerimeterPoint - theCenterpoint * theCorrectionFactor;
+</FONT></pre></BLOCKQUOTE>
+
+
+</blockquote>
+<h5>对对象使用 for...in 循环</h5>
+<blockquote>
+当使用 <a href="jsstmforin.htm"><b>for...in</b></a> 循环对某个对象的属性进行遍历时，不必预先确定或管理将要指定给该循环计数器变量的对象字段的顺序。此外，在该语言的不同实现方案中该顺序可能会不一样。
+
+</blockquote>
+<h5>with 关键字</h5>
+<blockquote>
+<a href="jsstmwith.htm"><b>with</b></a> 语句可以方便地用来引用某个特定对象中已有的属性，但是不能用来给对象添加属性。要给对象创建新的属性，必须明确地引用该对象。
+
+</blockquote>
+<h5>this 关键字</h5>
+<blockquote>
+尽管可以在对象的定义范围内使用 <a href="jsstmthis.htm"><b>this</b></a> 关键字来引用该对象本身，但是当函数不是该对象的定义时，就不能象普通情况那样使用 <b>this</b> 或类似的关键字来引用当前的执行函数。如果该函数被指定为某个对象的方法，则可以在该函数内使用 <b>this</b> 关键字来引用该对象。
+
+</blockquote>
+<h5>编写一个写脚本的脚本</h5>
+<blockquote>
+当解释程序遇到&lt;/SCRIPT&gt;标记时会终止当前脚本。要显示"&lt;/SCRIPT&gt;" 本身，请将其改写为至少两个字符串，例如 "&lt;/SCR" 和 "IPT&gt;"，这样就可以在输出语句中将其连接在一起。
+
+</blockquote>
+<h5>隐式窗口引用</h5>
+<blockquote>
+由于同时可以打开多个窗口，任何隐式的窗口引用都被指向当前窗口。对于其他窗口必须使用显式引用。
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END-->
+</font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

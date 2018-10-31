@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>while 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="while 语句">
+<META NAME="MS-HKWD" CONTENT="while">
+<META NAME="MS-HKWD" CONTENT="do...while 语句">
+<META NAME="MS-HKWD" CONTENT="语句执行">
+<META NAME="MS-HKWD" CONTENT="条件">
+<META NAME="MS-HKWD" CONTENT="执行循环">
+<META NAME="MS-HKWD" CONTENT="执行循环">
+<META NAME="MS-HKWD" CONTENT="循环语句">                                                    
+
+<META NAME=MS-HAID CONTENT="jsstmwhile">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="while Statement">
+<META NAME="Keywords" CONTENT="while statement; while; do...while statement; executing statements; conditions; executing loops; terminating loops; looping statements">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>while 语句</B></FONT><br>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmwhileC.htm">请参阅</a></font>
+
+
+<hr noshade class='9v' >
+<h5>描述</h5>
+<Blockquote>
+执行一个语句，直到指定的条件为 <b>false</b>。
+
+</blockquote>
+
+<h5>语法</h5>
+<Blockquote>
+<b>while </b>(<i>expression</i>)<br>
+&nbsp;&nbsp;&nbsp;<i>statement</i>
+<p><b>while</b> 语句的语法组成如下：
+<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>expression</i></FONT></TD>
+<TD><FONT class='9v' ><a href="glossary.htm#defBoolean"> Boolean 表达式</A>，在循环的每次迭代前被检查。 如果 <i>expression</i> 是 <b>true</b>，则执行循环。如果 <i>expression</i> 是 <b>false</b>，则结束循环。<P>
+</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement</i></FONT></TD>
+<TD><FONT class='9v' > <i>expression</i> 是 <b>true</b> 时要执行的语句。可以是<a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD>
+</TR>
+</TABLE>
+
+</blockquote>
+
+<h5>说明</h5>
+<Blockquote>
+<b>while</b> 语句在循环第一次被执行前检查 <i>expression</i>。如果 <i>expression</i> 此次是 <b>false</b>，则该循环一次都不被执行。<P>
+
+下面示例说明了 <B>while</B> 语句的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function BreakTest(breakpoint)
+{
+   var i = 0;
+   <font color="#FF0000">while (</FONT>i &lt; 100<font color="#FF0000">)</FONT>
+   {
+   if (i == breakpoint)
+     break;
+     i++;
+   }
+   return(i);
+}</FONT></PRE></BLOCKQUOTE>
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

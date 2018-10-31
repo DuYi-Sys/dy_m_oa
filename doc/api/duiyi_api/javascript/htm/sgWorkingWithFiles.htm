@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<TITLE>处理文件</TITLE> 
+
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+
+<META NAME=MS-HAID CONTENT="sgWorkingWithFiles">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META NAME="PRODUCT" CONTENT="Scripting Library">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="FileSystemObject">
+<META NAME="Description" CONTENT="Working with Files">
+<META NAME="Keywords" CONTENT="FileSystemObject object">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) Scripting 库 - FileSystemObject</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>处理文件</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="sgWorkingWithDrives.htm">上一页</A><br><a href="sgFSOSample.htm">下一页</A><P></FONT>
+
+
+</TD></TR>
+</TABLE><p>
+
+<hr noshade class='9v' >
+<blockquote>
+
+有两种主要的文件处理类型：<p>
+<ul>
+<li>创建、添加或删除数据，以及读取文件
+<li>移动、复制和删除文件
+</ul>
+</blockquote>
+
+<h5>创建文件</h5>
+<blockquote>
+创建空文本文件（有时被叫做“文本流”）有三种方法。<p> 第一种方法是用 <b>CreateTextFile</b> 方法。 下面的示例示范了在 VBScript 中如何用这种方法来创建文本文件：<p>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Dim fso, f1
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set f1 = fso.CreateTextFile("c:\testfile.txt", True)
+</font></pre></BLOCKQUOTE>
+
+要在 JScript 中用这种方法，则使用下面的代码：<p>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >var fso, f1;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+f1 = fso.CreateTextFile("c:\\testfile.txt", true);
+</font></pre></BLOCKQUOTE>
+
+请考察<a href="./sgFSOSample.htm#CreateTextFile">示例代码</A>，来领会如何在 <B>FileSystemObject</B> 中使用 <B>CreateTextFile</B> 方法。<P>
+
+创建文本文件的第二种方法是，使用 <b>FileSystemObject</b> 对象的 <b>OpenTextFile</b> 方法，并设置 <b>ForWriting</b> 标志。在 VBScript 中，代码就像下面的示例一样： 
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Dim fso, ts
+Const ForWriting = 2
+Set fso = CreateObject("Scripting. FileSystemObject")
+Set ts = fso.OpenTextFile("c:\test.txt", ForWriting, True)
+</font></pre></BLOCKQUOTE>
+
+要在 JScript 中使用这种方法来创建文本文件，则使用下面的代码：<p>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >var fso, ts;
+var ForWriting= 2;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+ts = fso.OpenTextFile("c:\\test.txt", ForWriting, true);
+</font></pre></BLOCKQUOTE>
+
+创建文本文件的第三种方法是，使用 <b>OpenAsTextStream</b> 方法，并设置 <b>ForWriting</b> 标志。要使用这种方法，在 VBScript 中使用下面的代码：<p>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Dim fso, f1, ts
+Const ForWriting = 2
+Set fso = CreateObject("Scripting.FileSystemObject")
+fso.CreateTextFile ("c:\test1.txt")
+Set f1 = fso.GetFile("c:\test1.txt")
+Set ts = f1.OpenAsTextStream(ForWriting, True)
+</font></pre></BLOCKQUOTE>
+
+在 JScript 中，则使用下面示例中的代码：<p>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >var fso, f1, ts;
+var ForWriting = 2;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+fso.CreateTextFile ("c:\\test1.txt");
+f1 = fso.GetFile("c:\\test1.txt");
+ts = f1.OpenAsTextStream(ForWriting, true);
+</font></pre></BLOCKQUOTE>
+
+</blockquote>
+
+<h5>添加数据到文件中</h5>
+<blockquote>
+一旦创建了文本文件，使用下面的三个步骤向文件添加数据：<p>
+<ol>
+<li>打开文本文件。
+<li>写入数据。
+<li>关闭文件。
+</ol>
+
+要打开现有的文件，则使用 <b>FileSystemObject</b> 对象的 <b>OpenTextFile</b> 方法或 <b>File</b> 对象的 <b>OpenAsTextStream</b> 方法。<p>
+
+要写数据到打开的文本文件，则根据下表所述任务使用 <b>TextStream</b> 对象的 <b>Write</b>、<b>WriteLine</b> 或 <B>WriteBlankLines</B> 方法。<P>
+
+<table width= "87%" border=1 cellpadding=5 cellspacing=0>
+<tr valign=top bgcolor="#dddddd"><td><font class='9v' ><b>任务</b></font></td><td><font class='9v' ><b>方法</b></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >向打开的文本文件写数据，不用后续一个新行字符。</font></td>
+    <td><FONT class='9v' ><B>Write</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >向打开的文本文件写数据，后续一个新行字符。</font></td>
+    <td><FONT class='9v' ><B>WriteLine</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >向打开的文本文件写一个或多个空白行。</font></td>
+    <td><FONT class='9v' ><B>WriteBlankLines</B></font></td></tr>
+</table><P>
+
+请考察<a href="./sgFSOSample.htm#WriteToFile">示例代码</A>，来领会如何在 <B>FileSystemObject</B> 对象中使用 <B>Write</B>、<B>WriteLine</B> 和 <B>WriteBlankLines</B> 方法。<P>
+
+要关闭一个打开的文件，则使用 <b>TextStream</b> 对象的 <b>Close</b> 方法。<p>
+
+请考察<a href="./sgFSOSample.htm#Close">示例代码</A>，来领会如何在 <B>FileSystemObject</B> 中使用 <B>Close</B> 方法。<p>
+
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v' ><b>注意</b>&nbsp;&nbsp;新行字符包含一个或几个字符（取决于操作系统），以把光标移动到下一行的开始位置（回车/换行）。注意某些字符串末尾可能已经有这个非打印字符了。</FONT></TD></TR>
+<TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE><P>
+下面的 VBScript 例子示范了如何打开文件，和同时使用三种写方法来向文件添加数据，然后关闭文件：<p>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Sub CreateFile()
+  Dim fso, tf
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set tf = fso.CreateTextFile("c:\testfile.txt", True)
+  ' 写一行，并且带有新行字符。
+  tf.WriteLine("Testing 1, 2, 3.") 
+  ' 向文件写三个新行字符。      
+  tf.WriteBlankLines(3) 
+  ' 写一行。
+  tf.Write ("This is a test.") 
+  tf.Close
+End Sub</font></pre></BLOCKQUOTE>
+
+这个示例示范了在 JScript 中如何使用这三个方法：<p>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function CreateFile()
+{
+  var fso, tf;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  tf = fso.CreateTextFile("c:\\testfile.txt", true);
+  // 写一行，并且带有新行字符。
+  tf.WriteLine("Testing 1, 2, 3.") ;
+  // 向文件写三个新行字符。  
+  tf.WriteBlankLines(3) ;
+  // 写一行。
+  tf.Write ("This is a test.");
+  tf.Close();
+}</font></pre></BLOCKQUOTE>
+</blockquote>
+
+
+<h5>读取文件</h5>
+<blockquote>
+
+要从文本文件读取数据，则使用 <B>TextStream</B> 对象的 <B>Read</B>、<B>ReadLine</B> 或 <B>ReadAll</B> 方法。下表描述了不同的任务应使用哪种方法。<p>
+<table width= "87%" border=1 cellpadding=5 cellspacing=0>
+<tr valign=top bgcolor="#dddddd"><td><font class='9v' ><b>任务</b></font></td><td><font class='9v' ><b>方法</b></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >从文件读取指定数量的字符。</font></td>
+    <td><FONT class='9v' ><B>Read</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >读取一整行（一直到但不包括新行字符）。</font></td>
+    <td><FONT class='9v' ><B>ReadLine</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >读取文本文件的整个内容。</font></td>
+    <td><FONT class='9v' ><B>ReadAll</B></font></td></tr>
+</table><P>
+
+请考察<a href="./sgFSOSample.htm#ReadFromFile">示例代码</A>，来领会如何在 <B>FileSystemObject</B> 中使用 <B>ReadAll</B> 和 <B>ReadLine</B> 方法。<P>
+
+如果使用 <b>Read</b> 或 <b>ReadLine</b> 方法，并且想跳过数据的特殊部分，则使用 <b>Skip</b> 或 <b>SkipLine</b> 方法。read 方法的结果文本存在一个字符串中，该字符串可以显示在一个控件中，也可以用字符串函数（如 <b>Left</b>、<b>Right</b> 和 <b>Mid</b>）来分析，连接等等。<p>
+
+下面的 VBScript 示例示范了如何打开文件，和如何写数据到文件中并从文件读取数据：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Sub ReadFiles
+  Dim fso, f1, ts, s
+  Const ForReading = 1
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set f1 = fso.CreateTextFile("c:\testfile.txt", True)
+  ' 写一行。
+  Response.Write "Writing file &lt;br&gt;"
+  f1.WriteLine "Hello World"
+  f1.WriteBlankLines(1)
+  f1.Close
+  ' 读取文件的内容。
+  Response.Write "Reading file &lt;br&gt;"
+  Set ts = fso.OpenTextFile("c:\testfile.txt", ForReading)
+  s = ts.ReadLine
+  Response.Write "File contents = '" & s & "'"
+  ts.Close
+End Sub
+</font></pre></BLOCKQUOTE>
+
+下面的代码示范了在 JScript 中做同样的事：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ReadFiles()
+{
+  var fso, f1, ts, s;
+  var ForReading = 1;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f1 = fso.CreateTextFile("c:\\testfile.txt", true);
+  // 写一行。
+  Response.Write("Writing file &lt;br&gt;");
+  f1.WriteLine("Hello World");
+  f1.WriteBlankLines(1);
+  f1.Close();
+  // 读取文件的内容。
+  Response.Write("Reading file &lt;br&gt;");
+  ts = fso.OpenTextFile("c:\\testfile.txt", ForReading);
+  s = ts.ReadLine();
+  Response.Write("File contents = '" + s + "'");
+  ts.Close();
+}
+</font></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>移动、复制和删除文件</h5>
+<blockquote>
+FSO 对象模式各有两种方法移动、复制和删除文件，如下表所述。<P>
+
+<table width= "87%" border=1 cellpadding=5 cellspacing=0>
+<tr valign=top bgcolor="#dddddd"><td><font class='9v' ><b>任务</b></font></td><td><font class='9v' ><b>方法</b></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >移动文件</font></td>
+    <td><FONT class='9v' ><B>File.Move</B> 或 <B>FileSystemObject.MoveFile</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >复制文件</font></td>
+    <td><FONT class='9v' ><B>File.Copy</B> 或 <B>FileSystemObject.CopyFile</B></font></td></tr>
+<tr VALIGN=TOP>
+  <td><FONT class='9v' >删除文件</font></td>
+    <td><FONT class='9v' ><B>File.Delete</B> 或 <B>FileSystemObject.DeleteFile</B></font></td></tr>
+</table><P>
+
+请考察<a href="./sgFSOSample.htm#DeleteFile">示例代码</A>，来领会在 <B>FileSystemObject</B> 中删除文件的两种方法。<P>
+
+下面的 VBScript 示例，在驱动器 C 的根目录中创建一个文本文件，向其中写一些信息，然后把它移动到 \tmp 目录中，并在 \temp 中做一个备份，最后把它们从两个目录中删掉。<P>
+
+要运行下面的示例，需要先在驱动器 C 的根目录中创建 \tmp 和 \temp 目录：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >Sub ManipFiles
+  Dim fso, f1, f2, s
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  Set f1 = fso.CreateTextFile("c:\testfile.txt", True)
+  Response.Write "Writing file &lt;br&gt;"
+  ' 写一行。
+  f1.Write ("This is a test.")
+  ' 关闭文件。
+  f1.Close
+  Response.Write "Moving file to c:\tmp &lt;br&gt;"
+  ' 获取 C 的根目录(C:\)中的文件的句柄。
+  Set f2 = fso.GetFile("c:\testfile.txt")
+  ' 把文件移动到 \tmp 目录。
+  f2.Move ("c:\tmp\testfile.txt")
+  Response.Write "Copying file to c:\temp &lt;br&gt;"
+  ' 把文件复制到 \temp 目录。
+  f2.Copy ("c:\temp\testfile.txt")
+  Response.Write "Deleting files &lt;br&gt;"
+  ' 获得文件当前位置的句柄。
+  Set f2 = fso.GetFile("c:\tmp\testfile.txt")
+  Set f3 = fso.GetFile("c:\temp\testfile.txt")
+  ' 删除文件。
+  f2.Delete
+  f3.Delete
+  Response.Write "All done!"
+End Sub
+</font></pre></BLOCKQUOTE>
+
+下面的代码示范了在 JScript 中做同样的事：<P>
+
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ManipFiles()
+{
+  var fso, f1, f2, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f1 = fso.CreateTextFile("c:\\testfile.txt", true);
+  Response.Write("Writing file &lt;br&gt;");
+  // 写一行。
+  f1.Write("This is a test.");
+  // 关闭文件。
+  f1.Close();
+  Response.Write("Moving file to c:\\tmp &lt;br&gt;");
+  // 获取 C 的根目录(C:\)中的文件的句柄。
+  f2 = fso.GetFile("c:\\testfile.txt");
+  // 把文件移动到 \tmp 目录。
+  f2.Move ("c:\\tmp\\testfile.txt");
+  Response.Write("Copying file to c:\\temp &lt;br&gt;");
+  // 把文件复制到 \temp 目录。
+  f2.Copy ("c:\\temp\\testfile.txt");
+  Response.Write("Deleting files &lt;br&gt;");
+  // 获得文件当前位置的句柄。
+  f2 = fso.GetFile("c:\\tmp\\testfile.txt");
+  f3 = fso.GetFile("c:\\temp\\testfile.txt");
+  // 删除文件。
+  f2.Delete();
+  f3.Delete();
+  Response.Write("All done!");
+}
+</font></pre></BLOCKQUOTE>
+</blockquote>
+
+<hr noshade class='9v' >
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END-->
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

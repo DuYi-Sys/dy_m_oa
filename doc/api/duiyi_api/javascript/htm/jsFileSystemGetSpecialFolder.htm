@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>GetSpecialFolder 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="GetSpecialFolder 方法">
+<META NAME="MS-HKWD" CONTENT="GetSpecialFolder">
+<META NAME="MS-HKWD" CONTENT="特殊文件夹">
+<META NAME="MS-HKWD" CONTENT="WindowsFolder">
+<META NAME="MS-HKWD" CONTENT="SystemFolder">
+<META NAME="MS-HKWD" CONTENT="TemporaryFolder">
+<META NAME="MS-HKWD" CONTENT="paths">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">       
+
+<META NAME=MS-HAID CONTENT="jsFileSystemGetSpecialFolder"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="GetSpecialFolder method; GetSpecialFolder; special folders; WindowsFolder; SystemFolder; TemporaryFolder; paths; FileSystemObject object">
+
+<META NAME="Description" CONTENT="GetSpecialFolder Method">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>GetSpecialFolder 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+<a href="jsVersion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemGetSpecialFolderC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemGetSpecialFolderA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回指定的特殊文件夹对象。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>GetSpecialFolder(</b><i>folderspec</i><b>)</b><!> 
+
+<P><!><b>GetSpecialFolder</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<tr valign=top><td><font class='9v' ><!>object<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>folderspec<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>要返回的特殊文件夹的名称。<!> <!>可以为下面设置中显示的任意常数。<!></font></td></tr>
+</TABLE></BLOCKQUOTE>
+
+<H5><!>设置<!></H5>
+<BLOCKQUOTE>
+<!><i>folderspec</i> 参数可以取以下的任意值：<!><p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD WIDTH=15%><FONT class='9v' ><b><!>常数<!></b></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><b><!>值<!></b></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>WindowsFolder<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>0<!></FONT></TD>
+			<TD WIDTH= "*"><FONT class='9v' ><!>Windows 文件夹，包含了由 Windows 操作系统安装的文件。<!></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>SystemFolder<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>1<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>包含库、字体，以及设备驱动程序的 System 文件夹<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>TemporaryFolder<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>2<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>用于存储临时文件的 Temp 文件夹。<!> <!>这个路径可以在 TMP 环境变量中找到。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+</TABLE><P>
+
+<!>下面的例子说明了 <B>GetSpecialFolder</B> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >var fso, tempfile;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+
+function CreateTempFile()
+{
+  var tfolder, tfile, tname, fname, TemporaryFolder = 2;
+  tfolder = <font color="#FF0000">fso.GetSpecialFolder(</FONT>TemporaryFolder<font color="#FF0000">)</FONT>;
+  tname = fso.GetTempName();
+  tfile = tfolder.CreateTextFile(tname);
+  return(tfile);
+}
+tempfile = CreateTempFile();
+tempfile.writeline("Hello World");
+tempfile.close();
+</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

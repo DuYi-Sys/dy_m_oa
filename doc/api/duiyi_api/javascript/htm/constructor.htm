@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>创建高级对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="构造函数">
+<META NAME="MS-HKWD" CONTENT="new 语句">
+<META NAME="MS-HKWD" CONTENT="this 语句">
+<META NAME="MS-HKWD" CONTENT="prototypes">
+<META NAME="MS-HKWD" CONTENT="Function 构造函数">
+<META NAME="MS-HKWD" CONTENT="创建对象">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="对象的初始化">
+<META NAME="MS-HKWD" CONTENT="prototype 属性">
+<META NAME="MS-HKWD" CONTENT="anonymous 函数">                                                
+
+<META NAME=MS-HAID CONTENT="constructor">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Advanced Object Creation">
+<META NAME="keywords" CONTENT="JScript tutorial; constructors; new statement; this statement; prototypes; Function constructor; creating objects; objects; initializing objects; prototype properties; anonymous function">
+
+
+</HEAD>
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>创建高级对象</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm" TARGET="_top">JScript&nbsp;教程</A><BR><a href="usingarr.htm">上一页</A><br><a href="specialcharacter.htm">下一页</A><P></FONT>
+</TD></TR>
+</TABLE> 
+
+<p>
+<HR class='9v'  NOSHADE>
+
+<h5>使用构造函数来创建对象</h5>
+<blockquote>
+在 Microsoft JScript 中，可以使用构造函数来创建和生成<a href="objects.htm">对象</a>类。您可以使用 <b>new</b> 语句来调用一个构造函数。该语句将返回其创建的内容。
+
+<p>Function 构造函数这个特例可用来创建匿名的函数。所谓匿名函数是指没有名称的函数。例如，可以使用 Function 构造函数来生成一个 “不工作”的函数，作为在另一个函数内的指示。这种函数只会从一个位置调用，不需要名称。 
+<p>在下例中，这个匿名函数将生成一行“姓名和电子邮件地址”列表。该函数检查 <i>firstNameFirst</i> 变量的值来决定是先输入名还是姓，然后检查 <i>emailNameFirst</i> 变量的值来决定是先输入姓名还是电子邮件地址。该示例假定已在别的位置设置了<i>firstNameFirst</i> 和 <i>emailNameFirst</i> 的值。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >for (j = 1; j &lt; addressList[length]; j++) 
+{
+oneListingLine = new Function(emailNameFirst, firstNameFirst, addressList, j, theName = new Function(firstNameFirst, addressList, j, var theName=(addressList[j].firstName + addressList[j].lastName); 
+if(firstNameFirst)
+      {
+      theName=(addressList[j].firstName + addressList[j].lastName);
+      },) ; 
+if (emailNameFirst) 
+      {
+theListing = addressList[j].emailName+ ":\t" + theName 
+      } else theListing = theName + ":\t" + addressList[j].emailName; return theListing;)
+document.write(oneListingLine + "&lt;br&gt;");
+}
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>编写构造函数</h5>
+<blockquote>
+要编写自己的构造函数，可以在构造函数中使用 <b>this</b> 关键字来引用新创建的对象。该构造函数将初始化该对象。<p>
+
+尽管在下面的示例中构造函数是从 0 索引开始的，但这并不是必选项。例如，如果希望某个参数指明数组或对象的实际索引数，您可以将 1 作为第一个索引开始。 在该示例中，该参数是 <i>extent</i> 来使其区别于由内置的 <b>Array( )</b> 对象中自动维护的 length 参数。如果编写了给数组添加属性的代码，必需更新 <i>extent</i> 参数（或您自己的对应参数），因为该参数不是由 JScript 维护的。注意即使是这个极端简单的示例也使用了对象（点）和数组（方括号）的标注风格来引用当前对象。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >function MakeStringArray(length) {
+this.extent = length;
+for (iNum = 0; iNum &lt; length; i++) {
+this[iNum] = "";
+}
+}
+
+// 使用该构造函数来创建和初始化一个数组。
+myStringArray = new MakeStringArray(63);
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>使用原型来创建对象</h5>
+<blockquote>
+在编写对象定义时，可以使用 <i>prototype</i> 属性来创建由该定义生成且所有对象都具有的属性。原型属性将按引用复制给类中的每个对象，因此这一类中的所有对象的这个属性都相同。不过，可以在一个对象中更改原型属性的值，新的值将覆盖默认值，但仅在该实例中有效。属于这个类的其他对象不受此更改的影响。
+
+<p>使用这个原则，可以给 JScript 语言内部的对象定义附加属性，所有这些对象都具有原型。例如，如果要在计算中使用一个特殊的常数，而在 <b>Math</b> 和 <b>Number</b> 对象中提供的常数没有包括该常数，则可以自己定义，并对其指定各自的对象原型，或对象类的原型属性。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >Math.prototype.Avogadro = 6.0232E23;
+function howManyMolecules(wtGrams,molWt) {
+return ((wtGrams/molWt)*Math.prototype.Avogadro);
+}
+document.write("There are " + howManyMolecules(window.prompt("How many grams?",0),window.prompt
+("What's the molecular weight?",0)) +
+ " molecules in that amount.");
+</FONT></pre></BLOCKQUOTE>
+
+也许还需要指出的一点是，您可以定义一个函数，将其指定为 String.prototype 的一个方法，并在脚本的任何地方随字符串使用该函数。下面的示例假定已有一个在脚本的其他地方定义的、称为 "theElements" 的 元素周期表（Periodic Chart）数组,该数组中包含了元素的符号、名称、原子数以及其他相关信息。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >
+function atomName(theSymbol) {
+return(theElements[theSymbol].fullName);
+}
+
+String.prototype.atomName = atomName;
+
+function decodeFormula(theFormula) {
+var theCurrentPiece = "";
+var theDecodedFormula = "";
+for (i = 1; i = theFormula.length ; i++);
+if (theFormtheCurrentPiece 
+// 将公式字符串分为符号和数字的数组。
+// 循环该公式数组并装配拆开的字符串。每一项为：
+theDecodedFormula += formula[n].number
+theDecodedFormula += " ";
+theDecodedFormula += formula[n].symbol.prototype.atomName;
+theDecodedFormula += " "
+// 循环结束。
+
+return theDecodedFormula;
+}
+
+decodeFormula(window.prompt("Formula?","Al2O3"));
+</FONT></pre></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END-->
+</FONT></font>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

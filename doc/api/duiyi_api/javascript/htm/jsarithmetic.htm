@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>运算符操作</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="运算符操作">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="数据类型">
+<META NAME="MS-HKWD" CONTENT="表达式">
+<META NAME="MS-HKWD" CONTENT="逻辑运算符">
+<META NAME="MS-HKWD" CONTENT="运行时间错误">                         
+
+<META NAME=MS-HAID CONTENT="jsarithmetic">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="Operator Behavior">
+<META NAME="Keywords" CONTENT="operator behavior; operators; data types; expressions; logical operators; run-time errors">
+
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>运算符操作</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+<p>
+
+<FONT class='9v' >
+<hr noshade class='9v' >
+<blockquote>
+下表描述了大多数 Microsoft JScript 运算符的操作。行和列分别代表在 JScript 中一个运算符两边可能的不同表达式类型。而表中的各项说明了操作结果。  
+
+<p><b>E</b> 表示<a href="glossary.htm#defRTErr">运行时间错误</A>。而 <b>N</b> 表示数值结果，如果是逻辑运算符，则表示 Boolean 结果。
+<p>
+<table WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<tr VALIGN=TOP BGCOLOR="#DDDDDD">
+<th><font class='9v' >&nbsp;</font></th><th><font class='9v' >obj</font></th><th><font class='9v' >as</font></th><th><font class='9v' >ns</font></th><th><font class='9v' >num</font></th><th><font class='9v' >bool</font></th><th><font class='9v' >undef</font></th><th><font class='9v' >null</font></th>
+</tr>
+
+<tr VALIGN=TOP ><td BGCOLOR="#DDDDDD"><FONT class='9v' ><b>obj</b></font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td></tr>
+
+<tr VALIGN=TOP ><td BGCOLOR="#DDDDDD"><FONT class='9v' ><b>as</b></font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td></tr>
+
+<tr VALIGN=TOP ><td BGCOLOR="#DDDDDD"><FONT class='9v' ><b>ns</b></font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td></tr>
+
+<tr VALIGN=TOP ><td BGCOLOR="#DDDDDD"><FONT class='9v' ><b>num</b></font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td></tr>
+
+<tr VALIGN=TOP ><td BGCOLOR="#DDDDDD"><FONT class='9v' ><b>bool</b></font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >N</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td></tr>
+
+<tr VALIGN=TOP ><td BGCOLOR="#DDDDDD"><FONT class='9v' ><b>undef</b></font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td></tr>
+
+<tr VALIGN=TOP ><td BGCOLOR="#DDDDDD"><FONT class='9v' ><b>null</b></font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td><td><font class='9v' >E</font></td></tr>
+
+</table><p>
+<font size=0>obj = 对象、as = 包含文字和数字的字符串、ns = 数字字符串、num = 数字、bool = Boolean、undef = undefined、null = null 值。</FONT>
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>Function 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="函数对象">
+<META NAME="MS-HKWD" CONTENT="函数">
+<META NAME="MS-HKWD" CONTENT="对象包装器">
+<META NAME="MS-HKWD" CONTENT="函数数据类型">
+<META NAME="MS-HKWD" CONTENT="创建函数">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="固有对象">                                                
+
+<META NAME=MS-HAID CONTENT="jsobjFunction">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="Function Object">
+<META NAME="Keywords" CONTENT="Function object; Function; object wrappers; function data type; creating functions; intrinsic objects; built-in objects">
+
+</HEAD>
+
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Function 对象</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+<FONT class='9v' ><P>
+<a href="jsobjFunctionC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjFunctionM.htm">方法</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjFunctionP.htm">属性</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>创建新的函数。</BLOCKQUOTE>
+
+<H5>语法 1</H5>
+<BLOCKQUOTE><b>function</b> <i>functionname</i><b>( [</b><i>argname1</i> <b>[, ...</b> <i>argnameN</i><b>]] )</b><br>
+<b>{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</b><i>body</i><br>
+<b>}</b><br> </blockquote>
+<H5>语法 2</H5>
+<Blockquote>
+<b>var</b> <i>functionname</i> <b>= new Function( [</b><i>argname1</i>, <b>[... </b><i>argnameN</i><b>,]]</b> <i>body</i><b> );</b><p>
+
+<b>Function</b> 对象语法有以下部分：<p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>functionname</i></FONT></TD>
+		<TD><FONT class='9v' >最新创建函数的名称</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>argname1...argnameN</i></FONT></TD>
+		<TD><FONT class='9v' >可选的函数接收的参数列表。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>body</i></FONT></TD>
+		<TD><FONT class='9v' >包含调用该函数时被执行的 JScript 代码块的字符串。</FONT></TD></TR>
+
+</TABLE>
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+函数 JScript 中的基本数据类型。语法 1 创建在必要时由 JScript 转换为 <b>Function</b> 对象的函数值。JScript 在调用函数时将用语法 2 创建的函数转换为 <b>Fnction</b> 对象。
+<p>语法 1 是 JScript 中创建函数的基本方法。语法 2 是用于显式创建函数对象的另一方法。
+<p>例如，要创建将传递给它的两个参数相加的函数，可以用两种方法中的任一种完成：
+
+<h5>例子 1</h5>
+<blockquote><pre><font face=" 宋体" class='9v' ><Font Color=#FF0000>function</font> add(x, y)
+{
+   return(x + y);
+}</font></pre></blockquote>
+
+<h5>例子 2</h5>
+<blockquote><pre><font face=" 宋体" class='9v' >var add = new <Font Color=#FF0000>Function(</font>"x", "y", "return(x+y)"<Font Color=#FF0000>)</font>;</font></pre></blockquote>
+
+在两种情况下，都可以用如下代码行调用该函数：
+<blockquote><pre><font face=" 宋体" class='9v' >add(2, 3);
+</font></pre></blockquote>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR>
+<TR><TD VALIGN=TOP>
+<FONT class='9v' ><b>注意</b>&nbsp;&nbsp;在调用函数时，请确保包含了括号和必需的参数。调用函数时不用括号导致返回函数的文本而不是函数执行的结果。
+</FONT></TD></TR><TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE>
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

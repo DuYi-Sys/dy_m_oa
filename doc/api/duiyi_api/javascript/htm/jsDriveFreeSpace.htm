@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>FreeSpace 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="FreeSpace 属性">
+<META NAME="MS-HKWD" CONTENT="FreeSpace">
+<META NAME="MS-HKWD" CONTENT="AvailableSpace 属性">
+<META NAME="MS-HKWD" CONTENT="Drive 对象">        
+
+<META NAME=MS-HAID CONTENT="jsDriveFreeSpace"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="FreeSpace property; FreeSpace; AvailableSpace property; Drive object">
+
+<META NAME="Description" CONTENT="FreeSpace Property">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>FreeSpace 属性</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsDriveFreeSpaceC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsDriveFreeSpaceA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>向用户返回指定驱动器或网络共享上的可用空间的大小。只读。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>object</i>.<b>FreeSpace</b> 
+
+<P><i>object</i> 应为 <b>Drive</b> 对象。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+典型情况中，由 <b>FreeSpace</b> 属性返回的值和由 <b>AvailableSpace</b> 属性返回的值是相同的。对于支持 quotas 的计算机系统来说两者有可能不同。
+
+<p>下面的代码说明了 <b>FreeSpace</b> 属性的用法：
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowFreeSpace(drvPath)
+{
+  var fso, d, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  d = fso.GetDrive(fso.GetDriveName(drvPath));
+  s = "Drive " + drvPath.toUpperCase( ) + " - ";
+  s += d.VolumeName + "&lt;br&gt;";
+  s += "Free Space: " + <font color="#FF0000">d.FreeSpace</font>/1024 + " Kbytes";
+  return(s);
+}</font></pre></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

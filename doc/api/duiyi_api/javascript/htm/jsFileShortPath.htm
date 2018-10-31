@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>ShortPath 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="ShortPath 属性">
+<META NAME="MS-HKWD" CONTENT="ShortPath">
+<META NAME="MS-HKWD" CONTENT="路径">
+<META NAME="MS-HKWD" CONTENT="File 对象">
+<META NAME="MS-HKWD" CONTENT="Folder 对象">       
+
+<META NAME=MS-HAID CONTENT="jsFileShortPath"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="ShortPath property; ShortPath; paths; File object; Folder object">
+
+<META NAME="Description" CONTENT="ShortPath Property">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>ShortPath 属性</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileShortPathC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileShortPathA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回短路径名，这些短文件名由需要以前的 8.3 文件命名规范的程序使用。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>ShortPath</b><!>
+
+<P><!><i>object</i> 应为 <b>File</b> 或 <b>Folder</b> 对象。<!>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的代码通过一个 <b>File</b> 对象说明了 <b>ShortName</b> 属性的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowShortPath(filespec)
+{
+    var fso, f, s;
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    f = fso.GetFile(filespec);
+    s = "The short path for " + "" + f.Name;
+    s += "" + "&lt;br&gt;";
+    s += "is: " + "" + <font color="#FF0000">f.ShortPath</font> + "";
+    return(s);
+}</font></pre></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

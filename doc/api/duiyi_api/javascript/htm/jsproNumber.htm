@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>number 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="number 属性">
+<META NAME="MS-HKWD" CONTENT="number">
+<META NAME="MS-HKWD" CONTENT="错误值">
+<META NAME="MS-HKWD" CONTENT="自定义错误">
+<META NAME="MS-HKWD" CONTENT="Error 对象">
+<META NAME="MS-HKWD" CONTENT="错误">
+<META NAME="MS-HKWD" CONTENT="错误处理">
+<META NAME="MS-HKWD" CONTENT="错误处理">                                   
+
+<META NAME=MS-HAID CONTENT="jsproNumber">
+ 
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+
+<META NAME="Keywords" CONTENT="number property; number; error number; user-defined-errors; Error object; errors; error-handling; handling errors">
+
+<META NAME="Description" CONTENT="number Property">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>number 属性</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR>
+<a href="jsversion.htm">版本&nbsp;5</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE>
+<FONT class='9v' ><P>
+
+<a href="jsproNumberC.htm">请参阅</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsproNumberA.htm">应用于</A></FONT><HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回或设置与特定错误相联系的数字值。<b>Error</b> 对象的默认<a href="glossary.htm#defProperty">属性</a>是 <b>number</b>。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>object</i><b>.number</b> [<b>= </b><i>errornumber</i>]<P>
+<b>number</b> 属性的语法组成部分如下：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>object</i></FONT></TD>
+<TD><FONT class='9v' >任意 <b>Error</b> 对象的实例。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>errornumber</i></FONT></TD>
+<TD><FONT class='9v' >表示一个错误的整数。</FONT></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+错误号是一个 32 位的值。高 16 位字是设施代码，而低字才是真正的错误代码。<p>
+
+下面的例子举例说明了 <b>number</b> 属性的用法：<p>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >try
+ { x = y					// 产生错误。}
+catch(var e){				// 创建局部变量 e。
+  document.write(e)                    		// 打印 &quot;[object Error]&quot;。
+  document.write(<font color="#FF0000">e.number&gt;&gt;16 &amp; 0x1FFF</FONT>)		// 打印 10，设施代码。
+  document.write(<font color="#FF0000">e.number &amp; 0xFFFF</FONT>)    		// 打印 5009，错误代码。
+  document.write(e.description)       		// 打印 &quot;'y' is undefined&quot;。
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

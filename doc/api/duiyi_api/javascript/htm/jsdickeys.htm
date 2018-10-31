@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>Keys 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="主键 方法">
+<META NAME="MS-HKWD" CONTENT="主键">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="主键">
+<META NAME="MS-HKWD" CONTENT="Dictionary 对象">    
+
+<META NAME=MS-HAID CONTENT="jsdickeys">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="Keys method; Keys; arrays; keys; Dictionary object">
+
+<META NAME="Description" CONTENT="Keys Method">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Keys 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2 </A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsdickeysC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdickeysA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回一个数组，其中包含了一个 <b>Dictionary</b> 对象中的全部现有的主键。</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><i>object</i><b>.Keys( )</b> <P>
+
+其中 <i>object</i> 总是一个 <b>Dictionary</b> 对象的名称。</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>下面这段代码说明了 <b>Keys</b> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function KeysDemo()
+{
+  var a, d, i, s;					// 创建一些变量。
+  d = new ActiveXObject("Scripting.Dictionary");  
+  d.Add ("a", "Athens");					// 添加一些主键和条目。
+  d.Add ("b", "Belgrade");
+  d.Add ("c", "Cairo");
+  a = (new VBArray(<font color="#FF0000">d.Keys()</font>)).toArray();				// 获得主键。
+  s = "";
+  for (i in a)						// 遍历 dictionary。
+  {
+    s += a[i] + " - " + d(a[i]) + "&lt;br&gt;";
+  }
+  return(s);						// 返回结果。
+}
+</FONT></PRE></blockquote>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

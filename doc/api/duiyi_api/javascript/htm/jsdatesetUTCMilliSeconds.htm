@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>setUTCMilliseconds 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="setutcMilliSeconds 方法">
+<META NAME="MS-HKWD" CONTENT="setutcMilliSeconds">
+<META NAME="MS-HKWD" CONTENT="setMilliSeconds 方法">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="小时">
+<META NAME="MS-HKWD" CONTENT="全球标准时间">
+<META NAME="MS-HKWD" CONTENT="UTC">
+<META NAME="MS-HKWD" CONTENT="getutcMilliSeconds 方法">                      
+
+<META NAME=MS-HAID CONTENT="jsdatesetUTCMilliseconds">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="setUTCMilliseconds Method">
+<META NAME="Keywords" CONTENT="setUTCMilliseconds method; setUTCMilliseconds; setMilliseconds method; Date object; hours; Universal Coordinated Time; UTC; getUTCMilliseconds method">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>setUTCMilliseconds 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3 </A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsdatesetUTCMillisecondsC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdatesetUTCMillisecondsA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>设置 <b>Date</b> 对象中用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的毫秒值。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>objDate</i><b>.setUTCMilliseconds(</b><i>numMilli</i><b>)</b>
+
+<P>其中 <i>numMilli</i> 参数是一个等于毫秒值的数值。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+
+要设置用 <a href="glossary.htm#deflocaltime">本地时间</a>表示的毫秒值，请使用 <b>setMilliseconds</b> 方法。
+<p> 如果 <i>numMilli</i> 的值大于 999 或者是负数，那么秒钟数（以及分钟、小时等等，如果需要的话）将增加一个适当的数量。<P>
+
+下面这个例子说明了 <B>setUTCMilliseconds</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function SetUTCMSecDemo(nmsec)
+{  
+  var d, s;
+  var sep = ":";
+  d = new Date();
+  <font color="#FF0000">d.setUTCMilliseconds(</FONT>nmsec<font color="#FF0000">)</FONT>;
+  s = "Current setting is ";
+  s += d.toUTCString() + sep + d.getUTCMilliseconds();
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

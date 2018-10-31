@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>lastIndex 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME=MS-HAID CONTENT="jsRegExplastIndex">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="lastIndex Property ">
+<META NAME="Keywords" CONTENT="">
+<META NAME="MS-HKWD" CONTENT="">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>lastIndex 属性</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsRegExplastindexC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsRegExplastindexA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回字符位置，它是被查找字符串中最后一次成功匹配的开始位置。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><b>RegExp.lastIndex</b><br>
+
+</blockquote>
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>lastIndex</b> 属性是基于零的，也就是说，第一个字符的索引是零。不论何时产生一个成功匹配，它的值都被修改。<P>
+
+<b>lastIndex</b> 属性被 <B>RegExp</B> 对象的 <b>exec</b> 和 <B>test</B> 方法，以及 <b>String</b> 对象的 <b>match</b>、<b>replace</b>、和 <b>split</b> 方法修改。<p>
+下面的规则应用于 <b>lastIndex</b> 的值：
+<ul>
+<li> 如果还没有匹配，则 lastIndex 被设置为 -1.
+<li> 如果 <b>lastIndex</b> 比字符串的长度大，则 <b>test</b> 和 <b>exec</b> 失败，并且 <b>lastIndex</b> 被设置为 -1。
+<li> 如果 <b>lastIndex</b> 等于字符串的长度，且模式与空字符串匹配，则正则表达式匹配。否则，匹配失败并且 <b>lastIndex</b> 被重置为 -1。
+<li> 否则，<b>lastIndex</b> 被设置为紧接最近的匹配的下一个位置。
+</ul>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

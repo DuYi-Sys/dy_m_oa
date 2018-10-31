@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>逗号运算符 (,)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="， 运算符">
+<META NAME="MS-HKWD" CONTENT="，">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="顺序执行">
+<META NAME="MS-HKWD" CONTENT="多重赋值">
+<META NAME="MS-HKWD" CONTENT="for 循环">
+<META NAME="MS-HKWD" CONTENT="for 语句">
+<META NAME="MS-HKWD" CONTENT="循环语句">                                                                                             
+
+<META NAME=MS-HAID CONTENT="jsoprcomma">
+ 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT=", operator; comma operator; comma; operators; executing sequentially; multiple evaluation; for loop; for statement; looping statements">
+
+<META NAME="Description" CONTENT=", Operator">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>, 运算符</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p>
+<a href="jsoprcommaC.htm">请参阅</a>
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>顺序执行两个表达式。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>expression1</i><b>,</b> <i>expression2</i><P>
+
+<b>,</b> 运算符的语法组成部分如下：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>expression1</i></FONT></TD>
+		<TD><FONT class='9v' >任何<a href="glossary.htm#defExpression">表达式</A></FONT>。</TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>expression2</i></FONT></TD>
+		<TD><FONT class='9v' >任何表达式。</FONT></TD></TR>
+
+</TABLE>
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+
+<b>,</b> 运算符使它两边的表达式以从左到右的顺序被执行，并获得右边表达式的值。<b>,</b> 运算符最普通的用途是在 <b>for</b> 循环的递增表达式中使用。例如：
+<Blockquote><pre><FONT face=" 宋体" class='9v' >for (i = 0; i &lt; 10; i++<FONT COLOR="#FF0000">,</font> j++)
+{
+  k = i + j;
+}
+</font></pre></blockquote>
+每次通过循环的末端时， <b>for</b> 语句只允许单个表达式被执行。<b>,</b> 运算符被用来允许多个表达式被当作单个表达式，从而规避该限制。
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+  
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

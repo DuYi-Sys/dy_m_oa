@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>IsRootFolder 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="IsRootFolder 属性">
+<META NAME="MS-HKWD" CONTENT="IsRootFolder">
+<META NAME="MS-HKWD" CONTENT="根文件夹">
+<META NAME="MS-HKWD" CONTENT="Folder 对象">       
+
+<META NAME=MS-HAID CONTENT="jsFolderIsRootFolder"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="IsRootFolder property; IsRootFolder; root folder; Folder object">
+
+<META NAME="Description" CONTENT="IsRootFolder Property">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>IsRootFolder 属性</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFolderIsRootFolderC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFolderIsRootFolderA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>如果指定的文件夹是根文件夹则返回 <b>True</b> ；否则返回 <b>False</b> 。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>IsRootFolder</b><!>
+
+<P><!><i>object</i> 应为 <b>Folder</b> 对象。<!>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的代码说明了 <b>IsRootFolder</b> 属性的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function DisplayLevelDepth(pathspec)
+{
+  var fso, f, n, s = "";
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.GetFolder(pathspec);
+  n = 0;
+  if (<font color="#FF0000">f.IsRootFolder</font>)
+      s = "The specified folder is the root folder."
+  else
+  {
+    do
+    { 
+      f = f.ParentFolder;
+      n++;
+    }
+    while (!<font color="#FF0000">f.IsRootFolder</font>)
+    s = "The specified folder is nested " + n + " levels deep."
+  }
+  return(s);
+}</font></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

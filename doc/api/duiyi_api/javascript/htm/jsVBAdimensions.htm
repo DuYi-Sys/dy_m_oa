@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>dimensions 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="dimensions 方法">
+<META NAME="MS-HKWD" CONTENT="dimensions">
+<META NAME="MS-HKWD" CONTENT="VBArray 对象">
+<META NAME="MS-HKWD" CONTENT="dimensions">  
+
+
+<META NAME=MS-HAID CONTENT="jsVBAdimensions">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="dimensions Method">
+<META NAME="Keywords" CONTENT="dimensions method; dimensions; VBArray object; dimensions">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>dimensions 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsVBAdimensionsC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsVBAdimensionsA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回 VBArray 的维数。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>array</i>.<b>dimensions( )</b> <p>
+<i>array</i> 参数为一个 <b>VBArray</b> 对象。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>dimensions</b> 方法提供了一个获取指定的 VBArray 维数的方法。<P>
+
+下面的示例包括三个部分。第一部分是用来创建一个 Visual Basic 安全数组的 VBScript 代码。第二部分是  JScript 代码，确定该安全数组的维数和每一维的上界。这两部分都放在 HTML 页中的 &lt;HEAD&gt; 部分。第三部分是位于 &lt;BODY&gt; 部分的 JScript 代码，用来运行其他两个部分。
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >&lt;HEAD&gt;
+&lt;SCRIPT LANGUAGE="VBScript"&gt;
+&lt;!--
+Function CreateVBArray()
+  Dim i, j, k
+  Dim a(2, 2)
+  k = 1
+  For i = 0 To 2
+    For j = 0 To 2
+      a(j, i) = k
+      k = k + 1
+    Next
+  Next
+  CreateVBArray = a
+End Function
+--&gt;
+&lt;/SCRIPT&gt;
+<P>
+&lt;SCRIPT LANGUAGE="JScript"&gt;
+&lt;!--
+function VBArrayTest(vba)
+{
+  var i, s;
+  var a = new VBArray(vba);
+  for (i = 1; i &lt;= <font color="#FF0000">a.dimensions()</FONT>; i++)
+  {
+    s = "The upper bound of dimension ";
+    s += i + " is ";
+    s += a.ubound(i)+ ".&lt;BR&gt;";
+  }
+  return(s);
+}
+--&gt;
+&lt;/SCRIPT&gt;
+&lt;/HEAD&gt;
+<P>
+&lt;BODY&gt;
+&lt;SCRIPT language="jscript"&gt;
+  document.write(VBArrayTest(CreateVBArray()));
+&lt;/SCRIPT&gt;
+&lt;/BODY&gt;</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>for 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="for 语句">
+<META NAME="MS-HKWD" CONTENT="for">
+<META NAME="MS-HKWD" CONTENT="for...in 语句">
+<META NAME="MS-HKWD" CONTENT="执行语句">
+<META NAME="MS-HKWD" CONTENT="执行循环">
+<META NAME="MS-HKWD" CONTENT="循环语句">
+<META NAME="MS-HKWD" CONTENT="条件">
+<META NAME="MS-HKWD" CONTENT="递增">                                                   
+
+<META NAME=MS-HAID CONTENT="jsstmfor">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="for Statement">
+<META NAME="Keywords" CONTENT="for statement; for; for...in statement; executing statements; executing loops; looping statements; conditions; incrementing">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>for 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmforC.htm">请参阅</a></font>
+
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>
+只要指定条件为 true 都执行语句块。
+</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE>
+<b>for</b> (<i>initialization</i>; <i>test</i>; <i>increment</i>)<br>
+&nbsp;&nbsp;&nbsp;  <i>statement</i>
+
+
+<p><b>for</b> 语句的语法组成如下：
+<p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>initialization</i></FONT></TD>
+<TD><FONT class='9v' >一个
+<a href="glossary.htm#defExpression">表达式</A>。该表达式只在执行循环前被执行一次。
+</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD>`<FONT class='9v' ><i>test</i></FONT></TD>
+<TD><FONT class='9v' >一个<a href="glossary.htm#defBoolean"> Boolean 表达式</a>。如果 <i>test</i> 是 <b>true</b>，则 <i>statement</i> 被执行。如果 <i>test</i> 是 <b>false</b>，则循环结束。 </FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>increment</i></FONT></TD>
+<TD><FONT class='9v' >一个表达式。在每次经过循环的最后执行该递增表达式。</FONT></TD>
+</TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>statement</i></FONT></TD>
+<TD><FONT class='9v' > <i>test</i> 是 <b>true</b> 时要执行的语句。可以是<a href="glossary.htm#defCompoundStatement">复合语句</a>。</FONT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<h5>说明</h5>
+<blockquote>循环要执行确定的次数，通常使用 <b>for</b> 循环。下面的例子示范了一个 <b>for</b> 循环。
+<blockquote><pre><FONT face=" 宋体" class='9v' >/* 在开始时 i 被设为 0，并在每次重复的最后被增加 1。
+在循环重复前，如果 i 不小于 10，则循环结束。 */
+var myarray = new Array();
+<FONT COLOR="#FF0000">for</font> (i = 0; i &lt; 10; i++) 
+{                        
+  myarray[i] = i;                
+}
+</font></pre></blockquote>
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

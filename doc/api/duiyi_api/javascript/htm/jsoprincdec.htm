@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>递增 (++) 和递减 (--) 运算符</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="decrement 运算符">
+<META NAME="MS-HKWD" CONTENT="decrement">
+<META NAME="MS-HKWD" CONTENT="increment 运算符">
+<META NAME="MS-HKWD" CONTENT="increment">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="递增值">
+<META NAME="MS-HKWD" CONTENT="递减值">                                                                                                               
+
+<META NAME=MS-HAID CONTENT="jsoprincdec"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="++ and -- Operators">
+<META NAME="Keywords" CONTENT="++ operator; -- operator; decrement operator; decrement; increment operator; increment; operators; incrementing values; decrementing values">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>++ 和 -- 运算符</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p>
+<a href="jsoprincdecC.htm">请参阅</a>
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>把变量递增一或递减一。</BLOCKQUOTE>
+<H5>语法 1</H5>
+<BLOCKQUOTE><i>result</i> <b>=</b> <b>++</b><i>variable</i><br>
+            <i>result</i> <b>=</b> <b>--</b><i>variable</i><br>
+            <i>result</i> <b>=</b> <i>variable</i><b>++</b><br>
+            <i>result</i> <b>=</b> <i>variable</i><b>--</b><br>
+</blockquote>
+
+<H5>语法 2</H5>
+<blockquote>
+<b>++</b><i>variable</i><br>
+<b>--</b><i>variable</i><br>
+<i>variable</i><b>++</b><br>
+<i>variable</i><b>--</b><br>
+
+<p><b>++</b> 和 <b>--</b> 运算符的语法组成部分如下：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0><TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>result</i></FONT></TD>
+<TD><FONT class='9v' >任何<a href="glossary.htm#defvariable">变量</A>。</FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>variable</i></FONT></TD>
+<TD><FONT class='9v' >任何变量。</FONT></TD></TR></TABLE>
+</BLOCKQUOTE>
+<H5>说明</H5>
+<BLOCKQUOTE>
+递增和递减运算符，是修改存在变量中的值的快捷方式。包含其中一个这种运算符的表达式的值，依赖于该运算符是在变量前面还是在变量后面：
+<Blockquote><pre><FONT face=" 宋体" class='9v' >var j, k;
+k = 2;
+j = <FONT COLOR="#FF0000">++</font>k;
+</font></pre></blockquote>
+因为递增发生在表达式被求值前，所以值 3 赋给了 <i>j</i>。 
+<P>和下面的例子对照：
+<Blockquote><pre><FONT face=" 宋体" class='9v' >var j, k;
+k = 2;
+j = k<FONT COLOR="#FF0000">++</font>;
+</font></pre></blockquote>
+在此，因为递增发生在表达式被求值后，所以值 2 赋给了 j。
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+  
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

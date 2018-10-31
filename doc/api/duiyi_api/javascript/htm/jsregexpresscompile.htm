@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>compile 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="compile 方法">
+<META NAME="MS-HKWD" CONTENT="compile">
+<META NAME="MS-HKWD" CONTENT="正则表达式对象">
+<META NAME="MS-HKWD" CONTENT="正则表达式">
+<META NAME="MS-HKWD" CONTENT="正则表达式编译">
+<META NAME="MS-HKWD" CONTENT="字符串">
+<META NAME="MS-HKWD" CONTENT="字符串表达式">
+<META NAME="MS-HKWD" CONTENT="变量">
+<META NAME="MS-HKWD" CONTENT="文字">                                                   
+
+<META NAME=MS-HAID CONTENT="jsregexpresscompile">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="compile Method">
+<META NAME="Keywords" CONTENT="compile method; compile; Regular Expression object; regular expressions; compiling regular expressions; strings; string expressions; variables; literals">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>compile 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsregexpresscompileC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsregexpresscompileA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>把一个正则表达式编译为内部格式。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>rgexp</i>.<b>compile(</b><i>pattern</i><b>)</b>
+
+<P><b>compile</b> 方法的语法组成部分如下：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>rgexp</i></FONT></TD>
+<TD><FONT class='9v' >必选项。<b>正则表达式</b>对象。 可以是变量名或文字。</FONT></TD></TR>
+<TR VALIGN=TOP >
+<TD><FONT class='9v' ><i>pattern</i></FONT></TD>
+<TD><FONT class='9v' >必选项。<a href="glossary.htm#defStringExpression">字符串表达式</a>，它包含要被编译的正则表达式模式。</FONT></TD></TR>
+</TABLE></BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>compile</b> 方法把 <i>pattern</i> 转换为内部的格式，从而执行得更快。例如，这使得可以在循环中更有效地使用正则表达式。<P>
+
+下面的例子举例说明了 <B>compile</B> 方法的用法：
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function CompileDemo()
+{
+  var s = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"
+  				// 只为大写字母创建正则表达式。
+  var r = new RegExp("[A-Z]", "g");
+  var a = s.match(r)			// 查找匹配。
+  document.write(a);
+  				// 只为小写字母编译正则表达式。
+  <font color="#FF0000">r.compile(</FONT>"[a-z]"<font color="#FF0000">,</FONT> "g"<font color="#FF0000">)</FONT>;
+  var a = s.match(r)			// 查找匹配。
+  document.write(a);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

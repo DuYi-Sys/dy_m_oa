@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>setMonth 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="setMonth 方法">
+<META NAME="MS-HKWD" CONTENT="setMonth">
+<META NAME="MS-HKWD" CONTENT="getMonth 方法">
+<META NAME="MS-HKWD" CONTENT="setUTCMonth 方法">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="月">
+<META NAME="MS-HKWD" CONTENT="本地时间">             
+
+<META NAME=MS-HAID CONTENT="jsdatesetmonth">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="setMonth Method">
+<META NAME="Keywords" CONTENT="setMonth method; setMonth; getMonth method; setUTCMonth method; Date object; months; local time">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>setMonth 方法</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdatesetmonthC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdatesetmonthA.htm">应用于</a></font>
+<hr noshade class='9v' >
+<FONT FACE=" 宋体"  class='9v'>
+
+<H5>描述</H5>
+<BLOCKQUOTE>设置 <b>Date</b> 对象中用<a href="glossary.htm#deflocaltime">
+本地时间</a>表示的月份值。
+</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>objDate</i>.<b>setMonth(</b><i>numMonth</i>[<b>,</b> <i>dateVal</i>]<b>)</b>
+
+<P><b>setMonth</b> 方法的语法有下面这些部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<tr valign=top>
+<td><font class='9v' ><i>numMonth</i></font></td>
+<td><font class='9v' >必选项。一个等于月份值的数值。</font></td></tr>
+<tr valign=top>
+<td><font class='9v' ><i>dateVal</i></font></td>
+<td><font class='9v' >可选项。一个代表日期的数值。如果没有提供此参数，那么将使用通过调用 <b>getDate</b> 方法而得到的数值。</font></td></tr>
+ 
+</TABLE></BLOCKQUOTE>
+<H5>说明</H5>
+<BLOCKQUOTE>要设置用<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a>表示的月份值，请使用 <b>setUTCMonth</b> 方法。
+<p>如果 <i>numMonth</i> 的值大于 11 (月份 0 表示一月)或者是一个负数，那么所保存的年份将相应地得到改变。例如，如果所保存的日期是 "Jan 5, 1996" 并且调用了 <b>setMonth(14)</b> 方法，那么该日期就被改变为 "Mar 5, 1997."<P>
+
+下面这个例子说明了 <B>setMonth</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function SetMonthDemo(newmonth)
+{  
+  var d, s;
+  d = new Date();
+  <font color="#FF0000">d.setMonth(</FONT>newmonth<font color="#FF0000">)</FONT>;
+  s = "Current setting is ";
+  s += d.toLocaleString(); 
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+ 
+</BLOCKQUOTE>
+
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

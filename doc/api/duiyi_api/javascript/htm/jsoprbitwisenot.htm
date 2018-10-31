@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>按位“非”运算符 (~)</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="~ 运算符">
+<META NAME="MS-HKWD" CONTENT="按位“非”运算符">
+<META NAME="MS-HKWD" CONTENT="按位“非”">
+<META NAME="MS-HKWD" CONTENT="一元运算符">
+<META NAME="MS-HKWD" CONTENT="相反数">
+<META NAME="MS-HKWD" CONTENT="运算符">
+<META NAME="MS-HKWD" CONTENT="按位运算符">                     
+
+<META NAME=MS-HAID CONTENT="jsoprbitwisenot">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="~ operator; bitwise NOT operator; bitwise NOT; unary operator; negation; operators; bitwise operators">
+
+<META NAME="Description" CONTENT="~ Operator">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>~ 运算符</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><a href="jsoprbitwisenotC.htm">请参阅</a>
+<hr noshade class='9v' >
+<H5>描述</H5>
+<BLOCKQUOTE>对一个表达式执行按位“非”（取反）。</BLOCKQUOTE>
+<H5>语法</H5>
+<BLOCKQUOTE><i>result</i> <b>=</b> <b>~</b> <i>expression</i><P>
+<b>~</b> 运算符的语法组成部分如下：<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0><TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>result</i></FONT></TD>
+<TD><FONT class='9v' >任何<a href="glossary.htm#defVariable">变量。</a></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>expression</i></FONT></TD>
+<TD><FONT class='9v' >任何<a href="glossary.htm#defExpression">表达式</A>。</FONT></TD></TR></TABLE>
+</BLOCKQUOTE>
+<H5>说明</H5>
+<BLOCKQUOTE>
+所有一元运算符，如 <b>~</b> 运算符，以如下规则来求表达式的值：
+<ul>
+<li>如果将它用于 <a href="glossary.htm#defundefined">undefined</A> 或 <b>null</b> 表达式，则产生一个运行时错误。
+<li>对象被转换成字符串。
+<li>如果可能，字符串被转换为数字。如果不能，则产生一个运行时错误。
+<li>Boolean 值被当作数字（如果是 false 则为 0，如果是 true 则为 1）。</ul>
+用该运算符来生成数字。 
+
+
+<p><b>~</b> 运算符查看表达式的二进制表示法的值，并执行按位非操作。该操作的结果如下所示：
+
+<Blockquote><pre><FONT face=" 宋体" class='9v' >0101    (expression)
+----
+1010    (result)
+</font></pre></blockquote>
+表达式中的任何一位为 1，则在结果中相应位变为 0。表达式中的任何一位为 0，则在结果中相应位变为 1。
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+  
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

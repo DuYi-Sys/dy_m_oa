@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>创建自己的对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="创建对象">
+<META NAME="MS-HKWD" CONTENT="自定义对象">
+<META NAME="MS-HKWD" CONTENT="this 语句">
+<META NAME="MS-HKWD" CONTENT="定义属性">
+<META NAME="MS-HKWD" CONTENT="方法">
+<META NAME="MS-HKWD" CONTENT="属性">
+<META NAME="MS-HKWD" CONTENT="for...in 语句">
+<META NAME="MS-HKWD" CONTENT="循环语句">
+<META NAME="MS-HKWD" CONTENT="索引">                                                                
+
+<META NAME=MS-HAID CONTENT="createobjects">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Creating Your Own Objects">
+<META NAME="Keywords" CONTENT="JScript tutorial; creating objects; user-defined objects; this statement; defining properties; methods; properties; for...in statement; looping statements; indexing">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>创建自己的对象</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A>&nbsp;<br>&nbsp;<a href="objects.htm">上一页</A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE><p>
+
+
+<hr noshade class='9v' >
+<P>
+<BLOCKQUOTE>
+要创建一个对象的实例，首先必须定义该对象，即通过给定适当的属性以及方法。例如，下面的示例定义了一个 pasta 对象。请注意关键字 <a href="jsstmthis.htm"><b>this</b></a>，需要使用这个关键字来引用当前对象。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >function pasta( grain, grain2, width, shape, shapenum, extent, egg )
+{
+  this.length = 7;   			// 对象的属性数量，不包括其本身。
+  this.grain = grain;   		// 是用哪种粮食制成的？ (string 类型)
+  this.grain2 = grain2;   		// 是否使用了其他面粉？ (string 类型)
+  this.width = width;    		// 有多宽？ (number 类型)
+  this.shape = shape;  		// 横截面是什么类型？ (string 类型)
+  this.shapenum = shapenum; 		// 是某种已登记的形状吗？ (number 类型)
+  this.extent = extent;    		// 有多长？ (number 类型)
+  this.egg = egg;  			// 是否使用了蛋黄作为粘合剂？ (Boolean 类型)
+}
+</FONT></pre></BLOCKQUOTE>
+
+在定义了对象后，就可以使用 <a href="jsoprnew.htm"><b>new</b></a> 运算符来创建该对象的实例。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var spaghetti = new pasta("wheat", "", 0.2, "circle", 9, 30, true);
+var linguine = new pasta("wheat", "", 0.3, "oval", 17, 30, true);
+</FONT></pre></BLOCKQUOTE>
+
+可以给一个对象的实例添加属性来更改该实例，但这些属性不会成为该对象定义的一部分，除非专门添加该属性，否则也不会在其他实例中出现。如果希望在该对象的所有实例中都具有额外的属性，必须将其添加到该对象的定义部分。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >// 给 spaghetti 添加额外的属性。
+spaghetti.color = "pale straw";
+spaghetti.drycook = 7;
+spaghetti.freshcook = 0.5;
+
+var chowFun = new pasta("rice", "", 3, "flat", , 12, false); 
+/*
+chowFun 对象、linguine 对象和 pasta 对象的定义中都没有给 spaghetti 对象的三个额外属性。
+*/
+</FONT></pre></BLOCKQUOTE>
+
+</blockquote>
+<h5>在定义部分包括方法</h5>
+<blockquote>
+在对象的定义部分也可以包括方法。下面的示例创建了一个由字符串数组和一个方法组成的对象。该方法将一个字符串添加到该数组，同时增加了该数组的大小。请注意这将使得该对象的每个实例能无限地增大。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >function addItem(newItem)  			// 定义一个扩大列表的函数。
+{
+    this.length += 1;  			// 增加数组的长度。
+    this[(this.length-1)] = newItem;  		// 添加新项，并保持项的编号方式。
+}
+
+function shoppingList(firstItem) 		// 定义一个 "shopping list" 对象。
+{
+    this.length = 2; 				// 该对象的属性个数，不包括该一个。
+    this.addItem = addItem;  			// 包括 addItem 函数，作为一个方法。
+    this[(this.length-1)] = firstItem; 		// 第一项的编号为 1。
+}
+
+var myList = new shoppingList("Milk");
+myList.addItem("Eggs"); 			// 使用该方法来添加 Eggs，这将成为第 2 项。
+myList.addItem("Breadfruit");  			// Breadfruit 变成第 3 项。
+</FONT></pre></BLOCKQUOTE>
+
+此时，该数组的内容如下：
+<ul>
+<li>myList[length] 为 4
+<li>myList[addItem] 为 addItem 函数
+<li>myList[1] 为 Milk
+<li>myList[2] 为 Eggs
+<li>myList[3] 为 Breadfruit
+</ul>
+请注意，如果索引是按照严格的数字方式处理，则该索引可能与您所预期的不完全一致。如果对该数组执行 <a href="jsstmforin.htm"><b>for...in</b></a> 循环，该循环将按照此处给出的顺序进行循环，且循环变量为 "length" 的初始值，而不是 0。
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

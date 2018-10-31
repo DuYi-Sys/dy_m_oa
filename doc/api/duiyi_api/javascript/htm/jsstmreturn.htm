@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>return 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="return 语句">
+<META NAME="MS-HKWD" CONTENT="return">
+<META NAME="MS-HKWD" CONTENT="exiting 函数">
+<META NAME="MS-HKWD" CONTENT="返回值">
+<META NAME="MS-HKWD" CONTENT="执行终止">
+<META NAME="MS-HKWD" CONTENT="function 语句">                                    
+
+<META NAME=MS-HAID CONTENT="jsstmreturn">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="return Statement">
+<META NAME="Keywords" CONTENT="return statement; return; exiting functions; returning values; terminating execution; function statement">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>return 语句</B></FONT><br>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE> 
+<p>
+<FONT class='9v' ><a href="jsstmreturnC.htm">请参阅</a></font>
+
+<hr noshade class='9v' >
+<h5>描述</h5>
+<blockquote>从当前函数退出，并从那个函数返回一个值。</blockquote>
+<h5>语法</h5>
+<blockquote><p><b>return</b> [<i>expression</i>];
+<p><i>expression</i> 参数是要从函数返回的值。如果省略，则该函数不返回值。
+
+</blockquote>
+
+<h5>说明</h5>
+<blockquote>用 <b>return</b> 语句来终止一个函数的执行，并返回 <i>expression</i> 的值。如果 <i>expression</i> 被省略，或在函数内没有 <b>return</b> 语句被执行，则把值 <a href="glossary.htm#defundefined">undefined</a> 赋给调用当前函数的<a href="glossary.htm#defExpression">表达式</a>。<P>
+下面示例说明了 <B>return</B> 语句的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function myfunction(arg1, arg2)
+{
+  var r;
+  r = arg1 * arg2;
+  <font color="#FF0000">return(</FONT>r<font color="#FF0000">)</FONT>;
+}</FONT></PRE></BLOCKQUOTE>
+
+</blockquote>
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>VBArray 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="VBArray 对象">
+<META NAME="MS-HKWD" CONTENT="VBArray">
+
+<META NAME=MS-HAID CONTENT="jsobjVBArray">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="VBArray object; VBArray; Visual Basic; safe arrays; accessing safe arrays">
+
+<META NAME="Description" CONTENT="VBArray Object">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>VBArray 对象</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsobjVBArrayC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjVBArrayM.htm">方法</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsobjVBArrayP.htm">属性</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>提供对 Visual Basic 安全数组的访问。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><b>new VBArray(</b><i>safeArray</i><b>)</b> 
+
+<P><i>safeArray</i> 是 <b>VBArray</b> 值。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+<b>VBArrays</b> 是只读的，并且不能被直接创建。在传递给 <b>VBArray</b> 构造函数之前 <i>safeArray</i> 参数必须已获得 <b>VBArray </b>值。这只能通过从已有的 ActiveX 或其它对象获得值才能做到。<p>
+<b>VBArrays</b> 可以有多维。每一维的下标可以不一样。<b>dimensions</b> 方法取得数组的维数；<b>lbound</b> 和 <b>ubound</b> 方法取得每个维的下标范围。<P>
+
+下面的例子由三部分组成。第一部分是创建 Visual Basic 安全数组的 VBScript 代码。第二部分是将 VB 安全数组转换为 JScript 数组的 JScript 代码。这两部分都放到 HTML 页的 &lt;HEAD&gt; 节中。第三部分是放在 &lt;BODY&gt; 节中以运行其它两部分的 JScript 代码。
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >&lt;HEAD&gt;
+&lt;SCRIPT LANGUAGE="VBScript"&gt;
+&lt;!--
+Function CreateVBArray()
+  Dim i, j, k
+  Dim a(2, 2)
+  k = 1
+  For i = 0 To 2
+    For j = 0 To 2
+      a(j, i) = k
+      document.writeln(k)
+      k = k + 1
+    Next
+    document.writeln("&lt;BR&gt;")
+  Next
+  CreateVBArray = a
+End Function
+--&gt;
+&lt;/SCRIPT&gt;
+&lt;SCRIPT LANGUAGE="JScript"&gt;
+&lt;!--
+function VBArrayTest(vbarray)
+{
+  var a = <font color="#FF0000">new VBArray(</FONT>vbarray<font color="#FF0000">)</FONT>;
+  var b = a.toArray();
+  var i;
+  for (i = 0; i &lt 9; i++) 
+  {
+    document.writeln(b[i]);
+  }
+}
+--&gt;
+&lt;/SCRIPT&gt;
+&lt/HEAD&gt;
+&ltBODY&gt;
+&lt;SCRIPT LANGUAGE="JScript"&gt;
+&lt;!--
+  VBArrayTest(CreateVBArray());
+--&gt;
+&lt;/SCRIPT&gt;
+&lt/BODY&gt;
+</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

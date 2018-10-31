@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>@if 语句</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="@if 语句">
+<META NAME="MS-HKWD" CONTENT="Conditional if 语句">
+<META NAME="MS-HKWD" CONTENT="Conditional if">
+<META NAME="MS-HKWD" CONTENT="条件执行">
+<META NAME="MS-HKWD" CONTENT="@if">
+<META NAME="MS-HKWD" CONTENT="else">                                   
+
+<META NAME=MS-HAID CONTENT="jsstmconditionalif">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="@if Statement">
+<META NAME="Keywords" CONTENT="@if statement; conditional if statement; conditional if; conditional execution; elif; else">
+
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>@if 语句</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+
+
+</TD></TR>
+</TABLE>
+<p> 
+<FONT class='9v' ><a href="jsstmconditionalifC.htm">请参阅</a> </font>
+
+<hr noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>根据表达式的值，有条件地执行一组语句。</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><b>@if</b> (<i>condition1</i>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>text1</i><br>
+[<b>@elif</b> (<i>condition2</i>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>text2</i>]<br>
+[<b>@else</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>text3</i>]<br>
+<b>@end</b>
+
+<p>
+<b>@if</b> 语句的语法组成如下：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0><TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR><TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>condition1, condition2</i></FONT></TD>
+<TD><FONT class='9v' >可以强制转换为<a href="glossary.htm#defBoolean"> Boolean 表达式</A>的表达式。
+</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>text1</i></FONT></TD>
+<TD><FONT class='9v' > <i>condition1</i> 是 <b>true</b> 时要解析的文本。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>text2</i></FONT></TD>
+<TD><FONT class='9v' > <i>condition1</i> 是 <b>false</b> 且 <i>condition2</i> 是 <b>true</b> 时要解析的文本。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>text3</i></FONT></TD>
+<TD><FONT class='9v' > <i>condition1</i> 和 <i>condition2</i> 都是 <b>false</b> 时要解析的文本。</FONT></TD></TR>
+</TABLE></BLOCKQUOTE>
+<H5>说明</H5>
+<BLOCKQUOTE>
+在书写 <b>@if</b> 语句时，不必将每个子句放到不同的行。可以使用多个 <b>@elif</b> 子句，但是，所有 <b>@elif</b> 子句必须在 <b>@else</b> 子句之前出现。<p>
+通常使用 <b>@if</b> 语句来决定应当使用若干选项中的哪个选项来进行文本输出。例如：
+<BLOCKQUOTE><pre><Font face=" 宋体" class='9v' >alert(<Font COlor="#FFOOOO">@if (</font>@_win32<Font Color="#FFOOOO">)</font> "using Windows NT or Windows 95" <Font Color="#FFOOOO">@else</font> "using Windows 3.1" <Font Color="#FFOOOO">@end</font>)</font></pre></blockquote>
+</BLOCKQUOTE>
+
+
+
+
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

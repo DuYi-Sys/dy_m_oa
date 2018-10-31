@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>Copy 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Copy 方法">
+<META NAME="MS-HKWD" CONTENT="Copy">
+<META NAME="MS-HKWD" CONTENT="文件复制">
+<META NAME="MS-HKWD" CONTENT="文件夹复制">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="folders">
+<META NAME="MS-HKWD" CONTENT="File 对象">
+<META NAME="MS-HKWD" CONTENT="Folder 对象">                    
+
+<META NAME=MS-HAID CONTENT="jsFileCopy"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Copy method; Copy; copying files; copying folders; files; folders; File object; Folder object">
+
+<META NAME="Description" CONTENT="Copy Method">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Copy 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileCopyC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileCopyA.htm">应用于</A><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>将指定文件或文件夹从一个位置复制到另一位置。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i><B>.Copy( </b> <i>destination</i>[, <i>overwrite</i>] <b>);</b><!>
+
+<P><!><b>Copy</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>object<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>应为 <b>File</b> 或 <b>Folder</b> 对象的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>destination<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>复制文件或文件夹的目的位置。<!> <!>不允许通配字符。<!></FONT></TD></TR>
+<TR VALIGN=TOP><TD><FONT class='9v' ><!>overwrite<!></FONT></TD>
+<TD><FONT class='9v' ><!>可选项。<!> <!> Boolean 值，如果要覆盖已有文件或文件夹，则为 <b>True</b> （默认）；否则，则为 <b>False</b> 。<!></FONT></TD></TR>
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!><b>Copy</b> 方法对单个 <b>File</b> 或 <b>Folder</b> 所产生的结果和使用 <b>FileSystemObject.CopyFile</b> 或 <b>FileSystemObject.CopyFolder</b> 所执行的操作结果一样，其中，后者把由 <i>object</i> 所引用的文件或文件夹作为参数传递。<!> <!>但是请注意，后两种替换方法能够复制多个文件或文件夹。<!><P>
+
+<!>下面的例子说明了 <B>Copy</B> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >var fso, f;
+fso = new ActiveXObject("Scripting.FileSystemObject");
+f = fso.CreateTextFile("c:\\testfile.txt", true);
+f.WriteLine("This is a test.");
+f.Close();
+f = fso.GetFile("c:\\testfile.txt");
+<font color="#FF0000">f.Copy(</FONT>"c:\\windows\\desktop\\test2.txt"<font color="#FF0000">)</FONT>;
+</PRE></FONT></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

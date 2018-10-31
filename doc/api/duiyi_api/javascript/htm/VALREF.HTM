@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>复制、传递和比较数据</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="数据类型">
+<META NAME="MS-HKWD" CONTENT="按值">
+<META NAME="MS-HKWD" CONTENT="按引用">
+<META NAME="MS-HKWD" CONTENT="对象">
+<META NAME="MS-HKWD" CONTENT="数组">
+<META NAME="MS-HKWD" CONTENT="函数">
+<META NAME="MS-HKWD" CONTENT="数传递">
+<META NAME="MS-HKWD" CONTENT="Boolean 值传递">
+<META NAME="MS-HKWD" CONTENT="对象传递">
+<META NAME="MS-HKWD" CONTENT="数组传递">
+<META NAME="MS-HKWD" CONTENT="函数传递">
+<META NAME="MS-HKWD" CONTENT="参数传递">
+<META NAME="MS-HKWD" CONTENT="字符串比较">                                                                                
+
+<META NAME=MS-HAID CONTENT="valref">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="Copying, Passing, and Comparing Data">
+<META NAME="keywords" CONTENT="JScript tutorial; data types; by value; by reference; objects; arrays; functions; passing numbers; passing Boolean values; passing objects; passing arrays; passing functions; passing parameters; comparing strings">
+
+
+</HEAD>
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END--><FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>复制、传递和比较数据</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm" TARGET="_top">JScript&nbsp;教程</A><BR><a href="scope.htm">上一节</A><br><a href="usingarr.htm">下一节</A><P></FONT>
+
+
+</TD></TR>
+</TABLE> 
+
+<p>
+<HR class='9v'  NOSHADE>
+
+<BLOCKQUOTE>
+<P>
+在 Microsoft JScript 中，对数据的处理取决于该数据的类型。
+</blockquote>
+<h5>按值和按引用的比较</h5>
+<blockquote>
+Numbers 和 Boolean 类型的值 (<b>true</b> 和 <b>false</b>) 是按值来复制、传递和比较的。当按值复制或传递时，将在计算机内存中分配一块空间并将原值复制到其中。然后，即使更改原来的值，也不会影响所复制的值（反过来也一样），因为这两个值是独立的实体。<p>
+
+对象、数组以及函数在大多数环境中都是按引用来复制、传递和比较的。 当按地址复制或传递时，实际是创建一个指向原始项的指针，然后就像拷贝一样来使用该指针。如果随后更改原始项，则将同时更改原始项和复制项（反过来也一样）。实际上只有一个实体；“复本”并不是一个真正的复本，而只是该数据的又一个引用。<p>
+
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR><P><TD VALIGN=TOP><FONT class='9v' >
+<b>注意</b>&nbsp;&nbsp;可以更改对象和数组的该操作，方法是为其指定 <a href="jsoprassign.htm"><b>assign( )</b></a> 方法。</FONT></TD></TR><P><TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE><P>
+最后，字符串是按引用复制和传递的，但是是按值来比较的。
+<p><TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR><P><TD VALIGN=TOP><FONT class='9v' ><b>注意</b>&nbsp;&nbsp;鉴于 <a href="glossary.htm#defASCII">ASCII</a> 和 ANSI 字符集的构造方法，按序列顺序大写字母位于小写字母的前面。例如 "Zoo" 小于  "aardvark"。 </FONT></TD></TR><P><TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE>
+</blockquote>
+
+<h5>传递参数给函数</h5>
+<blockquote>
+按值传递一个参数给函数就是制作该参数的一个独立复本，即一个只存在于该函数内的复本。另外，如果按引用传递一个参数，且该函数更改了该参数的值，则这个值在脚本的任何位置都会被改变。
+</blockquote>
+
+<h5>检验数据</h5>
+<blockquote>
+当按值进行检验时，是比较两个截然不同的项以查看它们是否相等。通常，该比较是逐字节进行的。当按引用进行检验时，是看这两项是否是指向同一个原始项的指针。如果是，则比较结果是相等；如果不是，即使它们每个字节都包含完全一样的值，比较结果也为不相等。<p>
+
+按引用复制和传递字符串能节约内存；但是由于在字符串被创建后不能进行更改，因此可以按值进行比较。这样可以检查两个字符串是否包含相同的内容，即使它们是完全独立产生的。</blockquote>
+
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END-->
+</FONT></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

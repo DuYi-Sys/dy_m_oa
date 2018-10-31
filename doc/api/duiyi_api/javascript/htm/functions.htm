@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>JScript 的函数</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="函数">
+<META NAME="MS-HKWD" CONTENT="固有函数">
+<META NAME="MS-HKWD" CONTENT="intrinsic 函数">
+<META NAME="MS-HKWD" CONTENT="arguments">
+<META NAME="MS-HKWD" CONTENT="参数">
+<META NAME="MS-HKWD" CONTENT="escape 方法">
+<META NAME="MS-HKWD" CONTENT="unescape 方法">
+<META NAME="MS-HKWD" CONTENT="eval 方法">
+<META NAME="MS-HKWD" CONTENT="创建函数">
+<META NAME="MS-HKWD" CONTENT="自定义函数">                                                        
+
+<META NAME=MS-HAID CONTENT="functions">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="JScript Functions">
+<META NAME="Keywords" CONTENT="JScript tutorial; functions; built-in functions; intrinsic functions; arguments; parameters; escape method; unescape method; eval method; creating functions; user-defined functions">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>JScript 的函数</B></FONT><br>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><br><a href="conditionals.htm">上一页</A><br><a href="objects.htm">下一页</A><P></FONT>
+
+
+</TD></TR>
+</TABLE><p>
+
+
+<hr noshade class='9v' >
+
+<h5>什么是函数？</h5>
+<blockquote>
+Microsoft JScript 的函数执行各种操作。函数还可以返回结果。有时是计算或比较的结果。<p>
+
+函数将若干操作合并在一个名字下。这样就可以简化代码。可以编写一组语句为其命名，然后通过调用该语句组并给其传递所需的任何信息，根据需要随时执行整个语句组。<p>
+
+给函数传递信息的方式是在函数名后用圆括号将信息括起来。要传递给某个函数的信息的各部分被称为参数。有些函数不需要任何参数；有些函数可能要带一个参数；有些可能有多个。甚至有一些函数的参数个数取决于使用该函数的方式。<p>
+
+JScript 支持两种函数：即在语言中内置的函数，以及自己创建的函数。<p>
+
+
+</blockquote>
+<h5>特殊的内置函数</h5>
+<blockquote>
+JScript 语言中包括若干内置的函数。有些可以用来处理表达式和特殊字符，以及将字符串转换为数值。<p>
+
+例如，<a href="jsglobalescape.htm"><b>escape()</b></a> 和 <a href="jsglobalunescape.htm"><b>unescape()</b></a> 用来转换 HTML 代码中具有特殊意义的字符、不能直接输入到文字的字符。例如，尖括号 "&lt;" 和 "&gt;"，描述了 HTML 标识。<p>
+
+<b>escape</b> 函数将任何特殊字符作为其参数，并返回代表该字符的转义码。每个转义码由两个数字以及后跟的一个百分号 (%) 组成。<b>unescape</b> 函数就是对应的逆函数。它的参数为由两个数字和一个百分号组成的字符串，并返回一个字符。<p>
+
+另一个有用的内置函数是 <a href="jsglobaleval.htm"><b>eval()</b></a>，该函数对用字符串形式表示的任何合法数学表达式求值。<b>eval()</b> 函数有一个参数，即要求值的表达式。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var anExpression = "6 * 9 % 7";
+var total = eval(anExpression);        // 将 5 赋给变量 total。
+var yetAnotherExpression = "6 * (9 % 7)";
+total = eval(yetAnotherExpression)        // 将 12 赋给变量 total。
+
+var totality = eval("...surrounded by acres of clams.");        // 产生一个错误。
+</FONT></pre></BLOCKQUOTE>
+
+有关这些以及其他内置函数的详细信息，请参阅 <a href="jstoc.htm"> 语言参考</a>。
+
+</blockquote>
+<h5>创建自己的函数</h5>
+<blockquote>
+可以创建自己的函数并在需要的地方使用。一个函数定义由一个 function 语句和一个 JScript 语句块组成。<p>
+
+下面示例中的 checkTriplet 函数将三角形的边长作为其参数，然后通过检查这三个数是否能组成一个 Pythagorean （毕达哥拉斯）三元组（直角三角形斜边长的平方等于其它两条边长的平方和。），从而计算出该三角形是否为直角三角形。 checkTriplet 函数调用另两个函数中的其中一个来进行实际测试。<p>
+
+请注意使用了非常小的数 (“epsilon”) 作为该测试的浮点数版本的一个测试变量。因为浮点数计算不精确和存在舍入误差，因此直接判断斜边的平方是否等于另两边的平方和是不实际的，除非已知该问题中的三个值都是整数。由于直接测试更精确，因此该示例中的代码先判断这个数是否适当，如果是，再使用。
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var epsilon = 0.0000000000001;  // 用于测试的非常小的数。
+var triplet = false;
+
+function integerCheck(a, b, c)  {  // 适用于整数的检验函数。
+    if ( (a*a) == ((b*b) + (c*c)) )  {  // 具体的检验代码。
+    triplet = true;
+    }
+}  // 整数判别函数结束。
+
+function floatCheck(a, b, c)  {  // 适用于浮点数的检验函数。
+var theCheck = ((a*a) - ((b*b) + (c*c)))  // 求检验数。
+    if (theCheck &lt; 0)  {  // 判别需要使用绝对值，如果 theCheck 为负数，先转为相应的正数。
+    theCheck *= -1;
+    }
+    if (epsilon &gt; theCheck)  {  // 如果足够接近非常小值，则可以认为满足条件！
+    triplet = true;
+    }
+}  // 浮点数判别函数结束。
+
+function checkTriplet(a, b, c)  {  // 三元组判别函数。首先将最长边设为 "a"。
+var d = 0;  // 创建一个临时存放变量。
+    if (c &gt; b)  {  // 如果 c 大于 b，两者进行交换。
+    d = c;
+    c = b;
+    b = d;
+    }  // 否则无需操作。
+    if (b &gt; a)  {  // 如果 b 大于 a，两者进行交换。
+    d = b;
+    b = a;
+    a = d;
+    }  // 否则无需操作。
+
+// 如果是直角三角形，则 "a" 边现在就是斜边。
+
+    if (((a%1) == 0) && ((b%1) == 0) && ((c%1) == 0))  {  // 测试所有 3 个值是否均为整数？
+    integerCheck(a, b, c);  // 如果是，则使用精确判别。
+    }
+    else
+        floatCheck(a, b, c);  // 如果不是，则求最可能的结果。
+}  // 三元组判别函数结束。
+
+// 下面三条语句指定示例值，以进行测试。
+var sideA = 5;
+var sideB = 5;
+var sideC = Math.sqrt(50);
+
+checkTriplet(sideA, sideB, sideC);  // 调用该函数。在调用后， triplet 即包含了结果。
+</FONT></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

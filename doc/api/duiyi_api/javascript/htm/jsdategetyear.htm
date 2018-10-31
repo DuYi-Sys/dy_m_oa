@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>getYear 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="getYear 方法">
+<META NAME="MS-HKWD" CONTENT="getYear">
+<META NAME="MS-HKWD" CONTENT="数据对象">
+<META NAME="MS-HKWD" CONTENT="年">
+<META NAME="MS-HKWD" CONTENT="getFullYear 方法">         
+
+<META NAME=MS-HAID CONTENT="jsdategetyear">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="getYear Method">
+<META NAME="Keywords" CONTENT="getYear method; getYear; Date object; years; getFull Year method">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>
+getYear 方法
+</B></FONT>
+
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdategetyearC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdategetyearA.htm">应用于</a></font>
+<hr noshade class='9v' ><FONT class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE><p>返回 <b>Date</b> 对象中的年份值。</BLOCKQUOTE>
+<h5>语法</h5><P>
+<BLOCKQUOTE>
+<i>objDate</i><b>.getYear( )</b>
+
+</blockquote>
+
+<H5>说明</H5>
+<BLOCKQUOTE>这个方法已经过时，之所以提供这个方法，是为了保持向后的兼容性。请改用 <b>getFullYear</b> 方法。
+<P>对于1900-1999这段时间而言，返回的年份值是一个两位数字的整数，它代表了所保存的年份与 1900 年之间的差距。而对于其它的年份，返回值是一个四位的整数。例如，1996 年的返回值是 96，而 1825 和 2025 年的返回值则相应地为 1825 和 2025。<P>
+
+<P><b>注意</b> 对于 JScript 1.0 版，<b>getYear</b> 返回的值始终为 <b>Date</b> 对象中的年份与 1900 年之间的差距。例如，1899 年的返回值是 -1， 而 2000 年的返回值是 100。 </P>
+
+下面这个例子说明了 <B>getYear</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function DateDemo()
+{
+  var d, s = "今天日期是: ";
+  d = new Date();
+  s += (d.getMonth() + 1) + "/";
+  s += d.getDate() + "/";
+  s += <font color="#FF0000">d.getYear()</FONT>;
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+ 
+</font></FONT></BODY>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

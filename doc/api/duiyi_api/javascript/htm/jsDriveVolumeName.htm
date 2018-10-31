@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>VolumeName 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="VolumeName 属性">
+<META NAME="MS-HKWD" CONTENT="VolumeName">
+<META NAME="MS-HKWD" CONTENT="Drive 对象">    
+
+<META NAME=MS-HAID CONTENT="jsDriveVolumeName"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="VolumeName property; VolumeName; Drive object">
+
+<META NAME="Description" CONTENT="VolumeName Property">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>VolumeName 属性</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">SCripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsDriveVolumeNameC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsDriveVolumeNameA.htm">应用于</A><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>设置或返回指定驱动器的卷名。<!> <!>读/写。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>VolumeName</b> [= <i>newname</i>]<!>
+
+<p><!><b>VolumeName</b> 属性包括以下部分：<!><p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>object<!></FONT></TD>
+<TD><FONT class='9v' ><!>必选项。<!> <!>总是为 <b>Drive</b> 对象的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>newname<!></FONT></TD>
+<TD><FONT class='9v' ><!>可选项。<!> <!>如果提供了这个部分,那么 <i>newname</i> 就将成为指定的 <i>object</i> 的新名称。<!></FONT></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的代码说明了 <b>VolumeName</b> 属性的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function SpaceReport(drvPath)
+{
+  var fso, d, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  d = fso.GetDrive(fso.GetDriveName(drvPath));
+  s = "Drive " + drvPath + " - ";
+  s += <font color="#FF0000">d.VolumeName</font> + "&lt;br&gt;";
+  s += "Total Space: "+ d.TotalSize/1024 + " Kbytes &lt;br&gt;";
+  s += "Free Space:  " + d.FreeSpace/1024 + " Kbytes";
+  return(s);
+}</font></pre></BLOCKQUOTE>
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

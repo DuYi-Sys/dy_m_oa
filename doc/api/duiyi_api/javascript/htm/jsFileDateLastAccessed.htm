@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>DateLastAccessed 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="DateLastAccessed 属性">
+<META NAME="MS-HKWD" CONTENT="DateLastAccessed">
+<META NAME="MS-HKWD" CONTENT="文件访问">
+<META NAME="MS-HKWD" CONTENT="文件夹访问">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="folders">
+<META NAME="MS-HKWD" CONTENT="日期和时间">
+<META NAME="MS-HKWD" CONTENT="File 对象">
+<META NAME="MS-HKWD" CONTENT="Folder 对象">                       
+
+<META NAME=MS-HAID CONTENT="jsFileDateLastAccessed"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="DateLastAccessed property; DateLastAccessed; accessing files; accessing folders; files; folders; date and time; File object; Folder object">
+
+<META NAME="Description" CONTENT="DateLastAccessed Property">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>DateLastAccessed 属性</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileDateLastAccessedC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileDateLastAccessedA.htm">应用于</A><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回最后访问指定文件或文件夹的日期和时间。<!> <!>只读。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>DateLastAccessed</b><!>
+
+<P><!><i>object</i> 应为 <b>File</b> 或 <b>Folder</b> 对象。<!>
+</BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的代码通过一个文件说明了 <b>DateLastAccessed</b> 属性的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ShowFileAccessInfo(filespec)
+{
+  var fso, f, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.GetFile(filespec);
+  s = filespec.toUpperCase() + "&lt;br&gt;";
+  s += "创建时间： " + f.DateCreated + "&lt;br&gt;";
+  s += "最近一次访问时间：" + <font color="#FF0000">f.DateLastAccessed</font> + "&lt;br&gt;";
+  s += "最近一次修改时间： " + f.DateLastModified;
+  return(s);
+}</font></pre></BLOCKQUOTE>
+
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v' ><!><b>重要</b>&nbsp;&nbsp;这个方法的操作依赖于底层的操作系统。<!> <!>如果操作系统不支持提供时间信息，那么将不会返回任何信息。<!>
+</FONT></TD></TR>
+<TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE>
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

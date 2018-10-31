@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD><TITLE>TextStream 对象</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">
+<META NAME="MS-HKWD" CONTENT="TextStream">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="顺序访问">
+<META NAME="MS-HKWD" CONTENT="CreateTextFile 方法">             
+
+<META NAME=MS-HAID CONTENT="jsobjTextStream">
+ 
+
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Keywords" CONTENT="TextStream object; TextStream; FileSystemObject object; files; sequential access; CreateTextFile method">
+
+<META NAME="Description" CONTENT="TextStream Object">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>TextStream 对象</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsobjTextStreamC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjTextStreamM.htm">方法</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="jsobjTextStreamP.htm">属性</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>方便对文件的顺序访问。</BLOCKQUOTE>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE>
+
+<b>TextStream</b>.{<i>property</i> | <i>method</i>( )}<p>
+
+<i>property</i> 和 <i>method</i> 参数可以是与 <b>TextStream</b> 对象相连的任何属性和方法。请注意在实际使用时，<b>TextStream</b> 被从 <b>FileSystemObject</b> 返回的代表 <b>TextStream</b> 对象的变量占位符代替。
+</BLOCKQUOTE>
+
+<H5>说明</H5>
+<BLOCKQUOTE>
+
+在下面的代码中，<font class='9v' face=" 宋体">a</font> 是由 <b>FileSystemObject</b> 的 <b>CreateTextFile</b> 方法返回的 <b>TextStream</b> 对象： 
+<blockquote><PRE><FONT face=" 宋体" class='9v' >var fso = new ActiveXObject("Scripting.FileSystemObject");
+var a = fso.CreateTextFile("c:\\testfile.txt", true);
+a.WriteLine("这是一个测试。");
+a.Close();
+</FONT></PRE></blockquote>
+<b>WriteLine</b> 和 <b>Close</b> 是  <b>TextStream</b> 对象的两个方法。
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+
+</FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

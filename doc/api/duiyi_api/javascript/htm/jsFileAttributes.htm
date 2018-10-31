@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>Attributes 属性</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="Attributes 属性">
+<META NAME="MS-HKWD" CONTENT="属性">
+<META NAME="MS-HKWD" CONTENT="属性值">
+<META NAME="MS-HKWD" CONTENT="文件">
+<META NAME="MS-HKWD" CONTENT="文件夹">
+<META NAME="MS-HKWD" CONTENT="File 对象">
+<META NAME="MS-HKWD" CONTENT="Folder 对象">
+<META NAME="MS-HKWD" CONTENT="普通">
+<META NAME="MS-HKWD" CONTENT="只读">
+<META NAME="MS-HKWD" CONTENT="隐藏">
+<META NAME="MS-HKWD" CONTENT="系统">
+<META NAME="MS-HKWD" CONTENT="卷">
+<META NAME="MS-HKWD" CONTENT="目录">
+<META NAME="MS-HKWD" CONTENT="存档">
+<META NAME="MS-HKWD" CONTENT="压缩">          
+
+<META NAME=MS-HAID CONTENT="jsFileAttributes"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Attributes property; Attributes; attributes; files; folders; File object; Folder object; Normal; ReadOnly; Hidden; System; Volume; Directory; Archive; Compressed">
+
+<META NAME="Description" CONTENT="Attibutes Property">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Attributes 属性</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileAttributesC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileAttributesA.htm">应用于</A><!></FONT>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>设置或返回文件或文件夹的属性。<!> <!>根据不同属性为读/写或只读。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>Attributes</b> [= <i>newattributes</i>]<!>
+
+<p><!><b>Attributes</b> 属性包括以下部分：<!><p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>object<!></FONT></TD>
+<TD><FONT class='9v' ><!> 必选项。<!> <!>应为 <b>File</b> 或 <b>Folder</b> 对象的名称。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><!>newattributes<!></FONT></TD>
+<TD><FONT class='9v' ><!>可选项。<!> <!>如果提供了这个部分，那么 <i>newattributes</i> 将成为指定的 <i>object</i> 的新属性值。<!></FONT></TD></TR>
+</TABLE>
+
+</BLOCKQUOTE>
+<H5><!>设置<!></H5>
+<BLOCKQUOTE>
+<!><i>newattributes</i> 参数可以是下列各值或者这些值的任意逻辑组合：<!><p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD WIDTH=15%><FONT class='9v' ><b><!>常数<!></b></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><b><!>值<!></b></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>Normal<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>0<!></FONT></TD>
+			<TD WIDTH= "*"><FONT class='9v' ><!>普通文件。<!> <!>不设置属性。<!></FONT></TD></TR>
+
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>ReadOnly<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>1<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>只读文件。<!> <!>属性为读/写。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>Hidden<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>2<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>隐藏文件。<!> <!>属性为读/写。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>System<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>4<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>系统文件。<!> <!>属性为读/写。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>Volume<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>8<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>磁盘驱动器卷标。<!> <!>属性为只读。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>Directory<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>16<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>文件夹或目录。<!> <!>属性为只读。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>Archive<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>32<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>文件在上次备份后已经修改。<!> <!>属性为读/写。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>Alias<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>64<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>链接或者快捷方式。<!> <!>属性为只读。<!></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD WIDTH=15%><FONT class='9v' ><B><!>Compressed<!></B></FONT></TD>
+		<TD ALIGN=CENTER WIDTH=10%><FONT class='9v' ><!>128<!></FONT></TD>
+			<TD WIDTH="*"><FONT class='9v' ><!>压缩文件。<!> <!>属性为只读。<!></FONT></TD></TR>
+
+</TABLE>
+</BLOCKQUOTE>
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>下面的代码通过一个文件说明了 <b>Attributes</b> 属性的用法：<!>
+<BLOCKQUOTE><pre><font face=" 宋体" class='9v' >function ToggleArchiveBit(filespec)
+{
+  var fso, f, r, s;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.GetFile(filespec)
+  if (<font color="#FF0000">f.attributes</font> && 32)
+  {
+    <font color="#FF0000">f.attributes</font> = <font color="#FF0000">f.attributes</font> - 32;
+    s = "Archive bit is cleared.";
+  }
+  else
+  {
+    <font color="#FF0000">f.attributes</font> = <font color="#FF0000">f.attributes</font> + 32;
+    s =  "Archive bit is set.";
+  }
+  return(s);
+}</font></pre></BLOCKQUOTE>
+
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

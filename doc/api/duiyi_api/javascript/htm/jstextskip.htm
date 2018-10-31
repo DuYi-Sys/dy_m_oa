@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>Skip 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="Skip 方法">
+<META NAME="MS-HKWD" CONTENT="Skip">
+<META NAME="MS-HKWD" CONTENT="跳过字符">
+<META NAME="MS-HKWD" CONTENT="TextStream 对象">             
+
+
+<META NAME=MS-HAID CONTENT="jstextskip">
+ 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="Skip method; Skip; skipping characters; TextStream object">
+
+<META NAME="Description" CONTENT="Skip Method">
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>Skip 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;2</A>&nbsp;<P></FONT>
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jstextskipC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jstextskipA.htm">应用于</a></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>
+
+
+在读取 <b>TextStream </b>文件时跳过指定个数的字符。</BLOCKQUOTE><P>
+
+<H5>语法</H5>
+
+<BLOCKQUOTE><i>object</i><b>.Skip(</b><i>characters</i><b>)</b><P>
+
+<b>Skip</b> 方法的语法包括下述部分：<P>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>object</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。总是某个 <b>TextStream </b>对象的名称。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>characters</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。在读取文件时要跳过的字符个数。</FONT></TD></TR>
+</TABLE>
+
+</BLOCKQUOTE>
+<H5>说明</H5>
+<blockquote>
+
+被跳过的字符即被放弃。<P>
+
+下面的示例演示了<B>Skip</B> 方法的用法：<P>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function SkipDemo()
+{
+  var fso, f, r;
+  var ForReading = 1, ForWriting = 2;
+  fso = new ActiveXObject("Scripting.FileSystemObject")
+  f = fso.OpenTextFile("c:\\testfile.txt", ForWriting, true);
+  f.WriteLine("Hello world!");
+  f.WriteLine("JScript is fun");
+  f.Close();
+  f = fso.OpenTextFile("c:\\testfile.txt", ForReading);
+  <font color="#FF0000">f.Skip(</FONT>6<font color="#FF0000">)</FONT>;
+  r = f.ReadLine();
+  return(r);
+}</PRE></FONT></BLOCKQUOTE>
+
+
+
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

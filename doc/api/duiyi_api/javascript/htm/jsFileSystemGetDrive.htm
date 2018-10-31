@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>GetDrive 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="GetDrive 方法">
+<META NAME="MS-HKWD" CONTENT="GetDrive">
+<META NAME="MS-HKWD" CONTENT="驱动器路径">
+<META NAME="MS-HKWD" CONTENT="paths">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">  
+
+<META NAME=MS-HAID CONTENT="jsFileSystemGetDrive"> 
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="GetDrive method; GetDrive; drive path; paths; FileSystemObject object">
+
+<META NAME="Description" CONTENT="GetDrive Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>GetDrive 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemGetDriveC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemGetDriveA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>返回相应于指定路径中驱动器的 <b>Drive</b> 对象。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>GetDrive (</b> <i>drivespec</i> <b>)</b>;<!>
+
+<P><!><b>GetDrive</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<tr valign=top><td><font class='9v' ><!>object<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>drivespec<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!><i>drivespec</i> 参数可以是驱动器号 (c) 、带冒号的驱动器号 (c:) 、带冒号和路径分隔符的驱动器号 (c:\) ，或者任意网络共享的说明 (\\computer2\share1) 。<!></font></td></tr>
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>对于网络共享，需要进行检查以确保共享存在。<!><p>
+
+<!>如果 <i>drivespec</i> 和可接受的形式不一致或是不存在，那么将产生错误。<!><p>
+
+<!>要在普通的路径字符串上调用 <b>GetDrive</b> 方法，可以使用以下序列来获取适于作为 <i>drivespec</i> 的字符串。<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >DriveSpec = GetDriveName(GetAbsolutePathName(Path))
+</FONT></PRE></BLOCKQUOTE>
+<!>下面的例子说明了 <B>GetDrive</B> 方法的用法：<!>
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >function ShowFreeSpace(drvPath)
+{
+  var fso, d, s ="";
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  d = <font color="#FF0000">fso.GetDrive(</FONT>fso.GetDriveName(drvPath)<font color="#FF0000">)</FONT>;
+  s = "Drive " + drvPath.toUpperCase( ) + " - ";
+  s += d.VolumeName + "&lt;br&gt;";
+  s += "Free Space: " + d.FreeSpace/1024 + " Kbytes";
+  return(s);
+}</PRE></FONT></BLOCKQUOTE>
+
+
+</BLOCKQUOTE>
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

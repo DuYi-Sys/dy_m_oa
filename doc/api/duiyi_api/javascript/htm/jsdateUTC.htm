@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>UTC 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="UTC 方法">
+<META NAME="MS-HKWD" CONTENT="UTC">
+<META NAME="MS-HKWD" CONTENT="日期">
+<META NAME="MS-HKWD" CONTENT="毫秒">
+<META NAME="MS-HKWD" CONTENT="毫秒计算">
+<META NAME="MS-HKWD" CONTENT="全球标准时间">
+<META NAME="MS-HKWD" CONTENT="UTC">
+<META NAME="MS-HKWD" CONTENT="setTime 方法">
+<META NAME="MS-HKWD" CONTENT="数据对象构造函数">                                              
+
+<META NAME=MS-HAID CONTENT="jsdateUTC"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Language Reference">
+<META NAME="Description" CONTENT="UTC Method">
+<META NAME="Keywords" CONTENT="UTC method; UTC; dates; milliseconds; computing milliseconds; Univeral Coordinated Time; UTC; setTime method; Date object constructor">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>
+UTC 方法
+</B></FONT>
+</TD>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;1 </A>&nbsp;<P></FONT>
+
+
+</TD></TR>
+</TABLE>
+<p><FONT class='9v' >
+<a href="jsdateUTCC.htm">请参阅</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsdateUTCA.htm">应用于</a></font><hr noshade class='9v' >
+<h5>描述</h5>
+
+<blockquote><p>返回<a href="glossary.htm#defUTCtime">全球标准时间 (UTC)</a> (或 GMT) 的 1970 年 1 月 1 日到所指定日期之间所间隔的毫秒数。</blockquote>
+
+<h5>语法</h5>
+
+<blockquote><b>Date.UTC(</b><i>year</i>, <i>month</i>, <i>day</i>[<b>,</b> <i>hours</i>[<b>,</b> <i>minutes</i>[<b>,</b> <i>seconds</i>[<b>,</b><i>ms</i>]]]]<b>)</b>
+
+<p><b>UTC</b> 方法的语法包括这些部分：
+
+<p>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+	<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+		<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>year</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。为了获得跨世纪日期处理的精确性，需要使用完整的年份表示法。如果 <i>year</i> 处于 0 到 99 之间，那么 <i>year</i> 就被假定为 1900 + <i>year</i>。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>month</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。月份是一个处于 0 到 11 之间的整数 (一月到十二月)。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>date</i></FONT></TD>
+		<TD><FONT class='9v' >必选项。日期是一个处于 1 到 31 之间的整数。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>hours</i></FONT></TD>
+		<TD><FONT class='9v' >可选项。如果提供了 <i>minutes</i>，那么此项也必须提供。0 到 23 之间的一个整数 (午夜到 11pm)，用来指定小时。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>minutes</i></FONT></TD>
+		<TD><FONT class='9v' >可选的，如果提供了 <i>seconds</i>，那么此项也必须提供。 0 到 59 之间的一个整数，用来指定分钟值。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>seconds</i></FONT></TD>
+		<TD><FONT class='9v' >可选项。如果提供了 <i>milliseconds</i>，那么此项也必须提供。从 0 到 59 之间的一个整数，用来指定秒钟值。</FONT></TD></TR>
+<TR VALIGN=TOP>
+	<TD><FONT class='9v' ><i>ms</i></FONT></TD>
+		<TD><FONT class='9v' >可选项。从 0 到 999 之间的一个整数，用来指定毫秒数。</FONT></TD></TR>
+</TABLE>
+</blockquote>
+
+<h5>说明</h5>
+<Blockquote><p><b>UTC</b> 方法返回从 UTC 的 1970 年 1 月 1 日午夜到所指定日期之间的毫秒数。这个返回值可以用在 <b>setTime</b> 方法中和 <b>Date</b> 对象的<a href="glossary.htm#defConstructor">构造函数</a>中。如果一个参数的值超出其范围或者是一个负数，那么其他保存过的值将相应地得到改变。例如，如果使用者指定 150 秒，JScript 会将该数值重新定义为 2 分钟 30 秒。
+
+<p><b>UTC</b> 方法和 <b>Date</b> 对象的接受日期值的构造函数之间的差别在于： <b>UTC</b> 方法假设 UTC，而 <b>Date</b> 对象的构造函数假定<a href="glossary.htm#deflocaltime">本地时间</a>。
+<p><b>UTC</b> 方法是一个静态方法。因此，<b>Date</b> 对象不一定要在创建完之后才可以使用。<b>UTC</b> 方法的调用方式如下：
+<blockquote><pre><font face=" 宋体" 
+class='9v' >var datestring = "November 1, 1997 10:15 AM";
+<FONT COLOR= "#FF0000">Date.UTC(</FONT>datestring<FONT COLOR= "#FF0000">)</FONT></pre></font></blockquote>
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><HR noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v' ><b>注意</b>&nbsp;&nbsp;如果  <i>year</i> 的值在 0 到 99 之间请使用 1900 + year 来计算年份。</FONT></TD></TR><TR><TD COLSPAN=2 VALIGN=TOP><HR noshade class='9v' ></TD></TR></TABLE><P>
+
+下面这个例子说明了 <B>UTC</B> 方法的用法：
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function DaysBetweenDateAndNow(yr, mo, dy)
+{
+  var d, r, t1, t2, t3;
+  var MinMilli = 1000 * 60
+  var HrMilli = MinMilli * 60
+  var DyMilli = HrMilli * 24
+  t1 = <font color="#FF0000">Date.UTC(</FONT>yr<font color="#FF0000">,</FONT> mo<font color="#FF0000">,</FONT> dy<font color="#FF0000">)</FONT>
+  d = new Date();
+  t2 = d.getTime();
+  if (t2 &gt;= t1) 
+    t3 = t2 - t1;
+  else
+    t3 = t1 - t2;
+  r = Math.round(t3 / DyMilli);
+  return(r);
+}</FONT></PRE></BLOCKQUOTE>
+</Blockquote>
+<hr noshade class='9v' >
+ 
+</font></BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

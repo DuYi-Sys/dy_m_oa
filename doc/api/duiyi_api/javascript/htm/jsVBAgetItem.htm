@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<TITLE>getItem 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+
+<META NAME="MS-HKWD" CONTENT="getItem 方法">
+<META NAME="MS-HKWD" CONTENT="getItem">
+<META NAME="MS-HKWD" CONTENT="VBArray 对象">
+<META NAME="MS-HKWD" CONTENT="项检索">
+<META NAME="MS-HKWD" CONTENT="项获取">
+<META NAME="MS-HKWD" CONTENT="dimensions">                   
+
+
+<META NAME=MS-HAID CONTENT="jsVBAgetItem">
+<META NAME="CATEGORY" CONTENT="Language Reference"> 
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Description" CONTENT="getItem Method">
+<META NAME="Keywords" CONTENT="getItem method; getItem; VBArray object; retrieving items; getting items; dimensions">
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>getItem 方法</B></FONT></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstoc.htm">语言参考</A>&nbsp;<BR><a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<a href="jsVBAgetItemC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsVBAgetItemA.htm">应用于</A></FONT>
+<HR noshade class='9v' >
+
+<H5>描述</H5>
+<BLOCKQUOTE>返回指定位置的项。</BLOCKQUOTE>
+
+<H5>语法</H5>
+<BLOCKQUOTE><i>safeArray</i>.<b>getItem(</b><i>dimension1</i>[, dimension2, ...], dimensionn<b>)</b> 
+
+<P><b>getItem</b> 方法的语法包括下述部分：
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b>部分</b></FONT></TD>
+<TD><FONT class='9v' ><b>描述</b></FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>safeArray</i></FONT></TD>
+<TD><FONT class='9v' >必选项。是一个 <b>VBArray</b> 对象。</FONT></TD></TR>
+<TR VALIGN=TOP>
+<TD><FONT class='9v' ><i>dimension1, ..., dimensionn</i></FONT></TD>
+<TD><FONT class='9v' >指定所需的 VBArray 元素的确切位置。 <i>n</i> 等于 VBArray 的维数。</FONT></TD></TR>
+</TABLE><P>
+
+下面的示例包括三个部分。第一部分是用来创建一个 Visual Basic 安全数组的 VBScript 代码。第二部分是 JScript 代码，遍历该安全数组并打印每个元素的内容。这两部分都放在 HTML 页中的 &lt;HEAD&gt; 部分。第三部分是位于 &lt;BODY&gt; 部分的 JScript 代码，用来运行其他两个部分。
+
+<BLOCKQUOTE>
+<PRE><FONT face=" 宋体" class='9v' >&lt;HEAD&gt;
+&lt;SCRIPT LANGUAGE="VBScript"&gt;
+&lt;!--
+Function CreateVBArray()
+  Dim i, j, k
+  Dim a(2, 2)
+  k = 1
+  For i = 0 To 2
+    For j = 0 To 2
+      a(i, j) = k
+      document.writeln(k)
+      k = k + 1
+    Next
+    document.writeln("&lt;BR&gt;")
+  Next
+  CreateVBArray = a
+End Function
+--&gt;
+&lt;/SCRIPT&gt;
+&lt;SCRIPT LANGUAGE="JScript"&gt;
+&lt;!--
+function GetItemTest(vbarray)
+{
+  var i, j;
+  var a = new VBArray(vbarray);
+  for (i = 0; i &lt;= 2; i++)
+  {
+    for (j =0; j &lt;= 2; j++)
+    {
+      document.writeln(<font color="#FF0000">a.getItem(</FONT>i<font color="#FF0000">,</FONT> j<font color="#FF0000">)</FONT>);
+    }
+  }
+}--&gt;
+&lt;/SCRIPT&gt;
+&lt/HEAD&gt;
+&ltBODY&gt;
+&lt;SCRIPT LANGUAGE="JScript"&gt;
+&lt;!--
+  GetItemTest(CreateVBArray());
+--&gt;
+&lt;/SCRIPT&gt;
+&lt/BODY&gt;
+</PRE></FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

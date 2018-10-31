@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>JScript 的保留关键字</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="JScript 教程">
+<META NAME="MS-HKWD" CONTENT="关键字">
+<META NAME="MS-HKWD" CONTENT="保留关键字">
+<META NAME="MS-HKWD" CONTENT="固有对象">
+<META NAME="MS-HKWD" CONTENT="固有对象">                            
+
+<META NAME=MS-HAID CONTENT="jsreserved">
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="CATEGORY" CONTENT="Tutorial">
+<META NAME="Description" CONTENT="JScript Reserved Keywords">
+<META NAME="Keywords" CONTENT="JScript tutorial; keywords; reserved keywords; intrinsic objects; built-in objects">
+
+</HEAD>
+
+
+
+<BODY BGCOLOR=FFFFFF LINK=#0033CC>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<FONT class='9v' COLOR=#660033>Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR=#660033><B>JScript 的保留关键字</B></FONT><br>
+
+</td>
+<TD ALIGN=RIGHT>
+<FONT class='9v' >&nbsp;<a href="jstutor.htm">JScript&nbsp教程</A><br><a href="objects.htm">上一页</A><br><a href="recurse.htm">下一页</A><P></FONT>
+</td></TR>
+</TABLE><p>
+
+
+<HR class='9v'  NOSHADE>
+<BLOCKQUOTE>
+JScript 有许多保留关键字。这些关键字可分为三种类型：JScript 保留关键字、将来的保留字和应避免的单词。
+<p>
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR BGCOLOR=#DDDDDD VALIGN=TOP ALIGN=CENTER><TH COLSPAN=5><Font class='9v' ><b>JScript 关键字</b></font></TH></tr>
+<tr><td><Font class='9v' >break</Font></td><td><Font class='9v' >false</Font></td><td><Font class='9v' >in</Font></td><td><Font class='9v' >this</Font></td><td><Font class='9v' >void</Font></td></tr>
+
+<tr><td><Font class='9v' >continue</Font></td><td><Font class='9v' >for</Font></td><td><Font class='9v' >new</Font></td><td><Font class='9v' >true</Font></td><td><Font class='9v' >while</Font></td></tr>
+
+<tr><td><Font class='9v' >delete</Font></td><td><Font class='9v' >function</Font></td><td><Font class='9v' >null</Font></td><td><Font class='9v' >typeof</Font></td><td><Font class='9v' >with</Font></td></tr>
+
+<tr><td><Font class='9v' >else</Font></td><td><Font class='9v' >if</Font></td><td><Font class='9v' >return</Font></td><td><Font class='9v' >var</Font></td><td><Font class='9v' ></Font>&nbsp;</td></tr>
+</table>
+<p>&nbsp;
+
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR BGCOLOR=#DDDDDD VALIGN=TOP ALIGN=CENTER><TH COLSPAN=4><Font class='9v' ><b>JScript 将来的关键字</b></font></TH></tr>
+<tr><td><Font class='9v' >case</Font></td><td><Font class='9v' >debugger</Font></td><td><Font class='9v' >export</Font></td><td><Font class='9v' >super</Font></td></tr>
+<tr><td><Font class='9v' >catch</Font></td><td><Font class='9v' >default</Font></td><td><Font class='9v' >extends</Font></td><td><Font class='9v' >switch</Font></td></tr>
+<tr><td><Font class='9v' >class</Font></td><td><Font class='9v' >do</Font></td><td><Font class='9v' >finally</Font></td><td><Font class='9v' >throw</Font></td></tr>
+<tr><td><Font class='9v' >const</Font></td><td><Font class='9v' >enum</Font></td><td><Font class='9v' >import</Font></td><td><Font class='9v' >try</Font></td></tr>
+</table>
+
+<Font class='9v' ><p>要避免的单词是那些已经用作 JScript 的内部对象或函数的名称的字。例如 <i>string</i> 或 <i>parseInt</i> 等单词均属此列。
+<p>使用前两类中的任何关键字都会在第一次载入脚本时导致编译错误。如果使用第三类中的保留字，则当您试图在同一个脚本中使用其作为变量，同时又要使用其原来的实体时，可能会出现奇怪的问题。例如，下面的脚本不会完全按照您所想的那样被执行：
+</FONT>
+<BLOCKQUOTE><pre><FONT face=" 宋体" class='9v' >var String;
+var text = new String("This is a string object");
+</FONT></pre></BLOCKQUOTE>
+在本例中，您将得到一个错误，称 String 不是一个对象。不过很多使用已有标识符的例子并没有这么明显。
+</BLOCKQUOTE>
+
+<hr noshade class='9v' >
+
+<!--COPYRIGHT BEGIN--><!--COPYRIGHT END--> 
+</FONT> 
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

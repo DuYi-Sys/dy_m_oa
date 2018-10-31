@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"><HTML>
+<HEAD>
+<!--Helium-sbrk-->
+<TITLE>MoveFile 方法</TITLE><style>@import url(msdn_ie4.css);</style>
+<link disabled rel="stylesheet" href="msdn_ie3.css">
+<META NAME="MS-HKWD" CONTENT="MoveFile 方法">
+<META NAME="MS-HKWD" CONTENT="MoveFile">
+<META NAME="MS-HKWD" CONTENT="files">
+<META NAME="MS-HKWD" CONTENT="文件移动">
+<META NAME="MS-HKWD" CONTENT="FileSystemobject 对象">      
+
+<META NAME=MS-HAID CONTENT="jsFileSystemMoveFile"> 
+<META NAME="CATEGORY" CONTENT="Language Reference">  
+<META NAME="MS.LOCALE" CONTENT="ZH-CN">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<META NAME="PRODUCT" CONTENT="JScript">
+<META NAME="TECHNOLOGY" CONTENT="SCRIPTING">
+<META NAME="Keywords" CONTENT="MoveFile method; MoveFile; files; moving files; FileSystemObject object">
+
+<META NAME="Description" CONTENT="MoveFile Method">
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF" LINK="#0033CC">
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<FONT FACE=" 宋体"  class='9v'>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%><TR VALIGN=TOP><TD WIDTH=380>
+<!><FONT class='9v' COLOR="#660033">Microsoft(R) JScript(R)</FONT><BR>
+<FONT SIZE=5 COLOR="#660033"><B>MoveFile 方法</B></FONT><!></TD>
+
+
+<TD ALIGN=RIGHT>
+<FONT class='9v' ><!>&nbsp;<a href="jsfsotoc.htm">Scripting&nbsp;运行时库参考</A>&nbsp;<BR>
+&nbsp;<a href="jsversion.htm">版本&nbsp;3</A>&nbsp;<!><P></FONT>
+
+</TD></TR>
+</TABLE> 
+
+<FONT class='9v' ><p>
+<!><a href="jsFileSystemMoveFileC.htm">请参阅</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="jsFileSystemMoveFileA.htm">应用于</A></FONT><!>
+<HR noshade class='9v' >
+
+<H5><!>描述<!></H5>
+<BLOCKQUOTE><!>从一个位置向另一个位置移动一个或多个文件。<!></BLOCKQUOTE>
+
+<H5><!>语法<!></H5>
+<BLOCKQUOTE><!><i>object</i>.<b>MoveFile (</b> <i>source</i>, <i>destination</i> <b>)</b>;<!>
+
+<P><!><b>MoveFile</b> 方法的语法包括了以下部分：<!>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR VALIGN=TOP BGCOLOR="#DDDDDD">
+<TD><FONT class='9v' ><b><!>部分<!></b></FONT></TD>
+<TD><FONT class='9v' ><b><!>描述<!></b></FONT></TD></TR>
+<tr valign=top><td><font class='9v' ><!>object<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>应为 <b>FileSystemObject</b> 的名称。<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>source<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>所要移动的文件的路径。<!> <!><i>source</i> 参数的字符串只能在路径的最后成分中包含通配字符。<!></font></td></tr>
+<tr valign=top><td><font class='9v' ><!>destination<!></font></td>
+<td><font class='9v' ><!>必选项。<!> <!>文件要移到的路径。<!> <!><i>destination</i> 参数不能包含通配字符。<!></font></td></tr>
+
+</TABLE></BLOCKQUOTE>
+
+<H5><!>说明<!></H5>
+<BLOCKQUOTE>
+<!>如果 <i>source</i> 包含了通配字符，或者 <i>destination</i> 以路径分隔符 (\) 结束，那么将假定 <i>destination</i> 指定了一个已有的文件夹，匹配的文件将移入其中。<!> <!>否则，将假定 <i>destination</i> 为需要创建的目的文件名。<!> <!>无论哪种情况，如果移动的是单个文件，将有三种可能：<!>
+<ul>
+<li><!>如果 <i>destination</i> 不存在，那么那么文件将被移动。<!> <!>这是普通情况。<!>
+<li><!>如果 <i>destination</i> 是已经存在了的文件，那么将出错。<!>
+<li><!>如果 <i>destination</i> 是目录，那么也将出错。<!>
+</ul>
+
+<!>如果 <i>source</i> 中使用的通配字符无法匹配任何文件，那么也将出错。<!> <!><b>MoveFile</b> 方法在遇到第一个错误时终止。<!> <!>出错后不会试图回滚任何出错前所做的修改。<!>
+
+<TABLE CELLSPACING=0 CELLPADDING=0 BORDER=0 WIDTH=87%><TR><TD COLSPAN=2 VALIGN=BOTTOM><hr noshade class='9v' ></TD></TR><TR>
+<TD VALIGN=TOP><FONT class='9v' ><!><b>重要</b>&nbsp;&nbsp;只有在操作系统支持时，才能通过这种方法在卷之间移动文件。<!> </FONT></TD></TR>
+<TR><TD COLSPAN=2 VALIGN=TOP><hr noshade class='9v' ></TD></TR></TABLE><P>
+<!>下面的例子说明了 <B>MoveFile</B> 方法的用法：<!>
+<BLOCKQUOTE><PRE><FONT face=" 宋体" class='9v' >function MoveFile2Desktop(filespec)
+{
+  var fso;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  <font color="#FF0000">fso.MoveFile(</FONT>filespec<font color="#FF0000">,</FONT> "c:\\windows\\desktop\\"<font color="#FF0000">)</FONT>;
+}</PRE></FONT></BLOCKQUOTE>
+
+<hr noshade class='9v' >
+<FONT class='9v' >
+ 
+</FONT></FONT></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
